@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlrg8r506uodf"]
+
+[ext_resource type="Script" uid="uid://c6riqh68mq76v" path="res://items/whiskey_bottle.gd" id="1_0qty8"]
+[ext_resource type="Texture2D" uid="uid://u682qbejpra2" path="res://item_sprites/jtr_whiskey.png" id="1_gdkjd"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0qty8"]
+radius = 0.11816406
+height = 0.48516846
+
+[node name="WhiskeyBottle" type="Area3D"]
+script = ExtResource("1_0qty8")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+billboard = 1
+texture = ExtResource("1_gdkjd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.008392334, 0)
+shape = SubResource("CapsuleShape3D_0qty8")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

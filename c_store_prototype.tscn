@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://pf0ein572cyu"]
+[gd_scene load_steps=18 format=3 uid="uid://pf0ein572cyu"]
 
 [ext_resource type="Script" uid="uid://byt2xuix81f60" path="res://navigation_ui.gd" id="1_uxvq6"]
 [ext_resource type="Script" uid="uid://cqlrtaadyc8ne" path="res://checkout_button.gd" id="2_fknbs"]
@@ -6,12 +6,40 @@
 [ext_resource type="Script" uid="uid://bshdoahlbaerl" path="res://station_manager.gd" id="2_p7mdc"]
 [ext_resource type="Script" uid="uid://x8hxv077j6ue" path="res://customer_manager.gd" id="3_ktsie"]
 [ext_resource type="PackedScene" uid="uid://dmtb05ljv8xe2" path="res://models/store/6twelve-elbolillo.glb" id="3_p7mdc"]
+[ext_resource type="Script" uid="uid://qs3puiuwun67" path="res://clear_selection_button.gd" id="4_ctecg"]
 [ext_resource type="Script" uid="uid://cec6h4qgkhb4x" path="res://order_manager.gd" id="4_ka4yf"]
+[ext_resource type="Texture2D" uid="uid://dnv77q35mp2cd" path="res://npc_sprites/construction_dude_1.png" id="8_yip5n"]
+[ext_resource type="Texture2D" uid="uid://dgtgdrxt5nrgi" path="res://npc_sprites/biker_dude_1.png" id="9_6ggm5"]
+[ext_resource type="PackedScene" uid="uid://dlrg8r506uodf" path="res://items/whiskey_bottle.tscn" id="11_wqdg6"]
+[ext_resource type="Script" uid="uid://cpfbilrsee2l7" path="res://scanner_area.gd" id="12_ugrqj"]
 
 [sub_resource type="Environment" id="Environment_p7mdc"]
 background_mode = 1
 background_color = Color(0.3722513, 0.3722513, 0.3722512, 1)
 background_energy_multiplier = 0.75
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ggm5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_yip5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6ggm5")
+}],
+"loop": false,
+"name": &"customers",
+"speed": 5.0
+}]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0ov8"]
+albedo_color = Color(0.017538792, 5.95618e-07, 0.17644054, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6inot"]
+material = SubResource("StandardMaterial3D_r0ov8")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hckn7"]
+size = Vector3(1, 0.8574219, 1)
 
 [node name="CStorePrototype" type="Node3D"]
 
@@ -39,6 +67,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_uxvq6")
 station_manager = NodePath("../../Managers/StationManager")
 
@@ -87,6 +116,18 @@ layout_mode = 2
 [node name="RegisterLabel" type="Label" parent="UI/RegisterUI/VBoxContainer"]
 layout_mode = 2
 text = "Register"
+
+[node name="CurrentTotalLabel" type="Label" parent="UI/RegisterUI/VBoxContainer"]
+layout_mode = 2
+text = "Total: $0.00"
+
+[node name="MoneyGivenLabel" type="Label" parent="UI/RegisterUI/VBoxContainer"]
+layout_mode = 2
+text = "Customer Paid: $0.00"
+
+[node name="ChangeInput" type="LineEdit" parent="UI/RegisterUI/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Enter Change"
 
 [node name="CheckoutButton" type="Button" parent="UI/RegisterUI/VBoxContainer" node_paths=PackedStringArray("order_manager")]
 layout_mode = 2
@@ -145,6 +186,12 @@ order_manager = NodePath("../../../../../Managers/OrderManager")
 layout_mode = 2
 text = "Selected: none"
 
+[node name="ClearSelectionButton" type="Button" parent="UI/WallItemUI/VBoxContainer" node_paths=PackedStringArray("order_manager")]
+layout_mode = 2
+text = "Clear Selection"
+script = ExtResource("4_ctecg")
+order_manager = NodePath("../../../../Managers/OrderManager")
+
 [node name="Managers" type="Node" parent="."]
 
 [node name="StationManager" type="Node" parent="Managers" node_paths=PackedStringArray("camera", "counter_marker", "register_marker", "wall_marker", "customer_dialogue_panel", "register_ui", "wall_item_ui")]
@@ -157,16 +204,20 @@ customer_dialogue_panel = NodePath("../../UI/CustomerDialoguePanel")
 register_ui = NodePath("../../UI/RegisterUI")
 wall_item_ui = NodePath("../../UI/WallItemUI")
 
-[node name="CustomerManager" type="Node" parent="Managers" node_paths=PackedStringArray("dialogue_label", "order_manager")]
+[node name="CustomerManager" type="Node" parent="Managers" node_paths=PackedStringArray("dialogue_label", "order_manager", "customer_sprite")]
 script = ExtResource("3_ktsie")
 dialogue_label = NodePath("../../UI/CustomerDialoguePanel/MarginContainer/DialogueLabel")
 order_manager = NodePath("../OrderManager")
+customer_sprite = NodePath("../../Customers/AnimatedSprite3D")
 
-[node name="OrderManager" type="Node" parent="Managers" node_paths=PackedStringArray("selected_items_label", "result_label", "customer_manager")]
+[node name="OrderManager" type="Node" parent="Managers" node_paths=PackedStringArray("selected_items_label", "result_label", "customer_manager", "current_total_label", "money_given_label", "change_input")]
 script = ExtResource("4_ka4yf")
 selected_items_label = NodePath("../../UI/WallItemUI/VBoxContainer/SelectedItemsLabel")
 result_label = NodePath("../../UI/RegisterUI/VBoxContainer/ResultLabel")
 customer_manager = NodePath("../CustomerManager")
+current_total_label = NodePath("../../UI/RegisterUI/VBoxContainer/CurrentTotalLabel")
+money_given_label = NodePath("../../UI/RegisterUI/VBoxContainer/MoneyGivenLabel")
+change_input = NodePath("../../UI/RegisterUI/VBoxContainer/ChangeInput")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("3_p7mdc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.779395, 0, 16.32983)
@@ -175,7 +226,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.779395, 0, 16.32983)
 environment = SubResource("Environment_p7mdc")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.09758289, 0.9952274, 0, -0.9952274, -0.09758289, 0, 4.0067754, 5.75905)
+transform = Transform3D(1, 0, 0, 0, -0.09758289, 0.9952274, 0, -0.9952274, -0.09758289, 0, 4.0067754, 4.68523)
+light_color = Color(0.4509804, 1, 1, 1)
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.09758289, 0.9952274, 0, -0.9952274, -0.09758289, 0, 4.0067754, 1.1181111)
+light_color = Color(0.4509804, 1, 1, 1)
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.09758289, 0.9952274, 0, -0.9952274, -0.09758289, 6.131364, 4.0067754, 5.75905)
+
+[node name="Customers" type="Node3D" parent="."]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Customers"]
+transform = Transform3D(-0.02961358, 0, -0.29853484, 0, 0.3, 0, 0.29853484, 0, -0.02961358, 2.6518764, 1.4735191, 4.288083)
+sprite_frames = SubResource("SpriteFrames_6ggm5")
+animation = &"customers"
+
+[node name="CounterItems" type="Node3D" parent="."]
+
+[node name="WhiskeyBottle" parent="CounterItems" node_paths=PackedStringArray("camera") instance=ExtResource("11_wqdg6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44, 1.5, 3.6326213)
+camera = NodePath("../../Camera3D")
+
+[node name="StoreBlockout" type="Node3D" parent="."]
+
+[node name="ScannerArea" type="Area3D" parent="StoreBlockout" node_paths=PackedStringArray("order_manager")]
+script = ExtResource("12_ugrqj")
+order_manager = NodePath("../../Managers/OrderManager")
+
+[node name="ScannerPanel" type="MeshInstance3D" parent="StoreBlockout/ScannerArea"]
+transform = Transform3D(0.35, 0, 0, 0, 0.2, 0, 0, 0, 0.65, 1.0568554, 1.4710041, 2.757709)
+mesh = SubResource("BoxMesh_6inot")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StoreBlockout/ScannerArea"]
+transform = Transform3D(0.45, 0, 0, 0, 0.2, 0, 0, 0, 0.7, 1.0873117, 1.5400728, 2.7403166)
+shape = SubResource("BoxShape3D_hckn7")

@@ -57,7 +57,7 @@ func go_to_station(station_name: String, instant: bool = false) -> void:
 		camera,
 		"global_rotation",
 		target_marker.global_rotation,
-		0.45
+		0.85
 	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 
 	tween.finished.connect(_on_camera_move_finished)

@@ -3,23 +3,40 @@ extends Node
 @export var selected_items_label: Label
 @export var result_label: Label
 @export var customer_manager: Node
+@export var current_total_label: Label
+@export var money_given_label: Label
+@export var change_input: LineEdit
 
 var current_order: Dictionary = {}
 var selected_wall_items: Dictionary = {}
+var selected_scanned_items: Dictionary = {}
 
+var item_prices: Dictionary = {
+	"reds": 8.50,
+	"blues": 8.25,
+	"holiday": 2.00,
+	"lucky_duck": 5.00,
+	"whiskey_bottle": 18.99
+}
 
 func set_current_order(order: Dictionary) -> void:
 	current_order = order
 	selected_wall_items.clear()
-	update_selected_items_label()	
-	result_label.text = "test"
-
+	selected_scanned_items.clear()
+	update_selected_items_label()
+	update_register_labels()
+	result_label.text = ""
+	change_input.text = ""
+	
 
 func clear_current_order() -> void:
 	current_order.clear()
 	selected_wall_items.clear()
+	selected_scanned_items.clear()
 	update_selected_items_label()
+	update_register_labels()
 	result_label.text = ""
+	change_input.text = ""
 
 
 func add_wall_item(item_id: String) -> void:
@@ -29,6 +46,8 @@ func add_wall_item(item_id: String) -> void:
 		selected_wall_items[item_id] = 1
 
 	update_selected_items_label()
+	update_register_labels()
+
 	print("Selected wall items:", selected_wall_items)
 
 
@@ -45,21 +64,41 @@ func update_selected_items_label() -> void:
 
 	selected_items_label.text = "Selected: " + ", ".join(parts)
 
-
 func checkout() -> void:
 	if current_order.is_empty():
 		result_label.text = "No active customer."
 		return
 
-	var expected_items: Dictionary = current_order.get("wall_items", {})
+	var expected_items := get_expected_all_items()
+	var selected_items := get_selected_all_items()
+	var items_correct := dictionaries_match(expected_items, selected_items)
+	
+	var typed_change_text := change_input.text.strip_edges()
 
-	if dictionaries_match(expected_items, selected_wall_items):
-		result_label.text = "Perfect sale! Customer is happy."
+	if typed_change_text == "":
+		result_label.text = "Enter the customer's change."
+		return
+
+	var player_change := float(typed_change_text)
+	var expected_change := get_expected_change()
+
+	var change_correct := is_equal_approx(player_change, expected_change)
+
+	if items_correct and change_correct:
+		result_label.text = "Perfect sale! Correct items and correct change."
 		await get_tree().create_timer(1.5).timeout
 		customer_manager.next_customer()
+	elif !items_correct and !change_correct:
+		result_label.text = build_wrong_order_message(expected_items, selected_items)
+		result_label.text += "\nExpected change: $%.2f" % expected_change
+	elif !items_correct:
+		result_label.text = build_wrong_order_message(expected_items, selected_items)
 	else:
-		result_label.text = build_wrong_order_message(expected_items, selected_wall_items)
-
+		result_label.text = "Wrong change!\nExpected: $%.2f\nYou entered: $%.2f" % [
+			expected_change,
+			player_change
+		]
+		
 func dictionaries_match(expected: Dictionary, actual: Dictionary) -> bool:
 	if expected.size() != actual.size():
 		return false
@@ -107,3 +146,81 @@ func format_item_name(item_id: String) -> String:
 			return "Lucky Duck"
 		_:
 			return item_id
+
+func calculate_total(items: Dictionary) -> float:
+	var total := 0.0
+
+	for item_id in items.keys():
+		var count: int = items[item_id]
+		var price: float = item_prices.get(item_id, 0.0)
+		total += price * count
+
+	return total
+
+
+func get_money_given() -> float:
+	return float(current_order.get("money_given", 0.0))
+
+
+func get_expected_change() -> float:
+	var expected_items := get_expected_all_items()
+	var total := calculate_total(expected_items)
+	var money_given := get_money_given()
+
+	return snapped(money_given - total, 0.01)
+
+
+func update_register_labels() -> void:
+	if current_order.is_empty():
+		current_total_label.text = "Total: $0.00"
+		money_given_label.text = "Customer paid: $0.00"
+		return
+
+	var selected_items := get_selected_all_items()
+	var total := calculate_total(selected_items)
+	var money_given := get_money_given()
+
+	current_total_label.text = "Total: $%.2f" % total
+	money_given_label.text = "Customer paid: $%.2f" % money_given
+
+func clear_selected_wall_items() -> void:
+	selected_wall_items.clear()
+	update_selected_items_label()
+	update_register_labels()
+	result_label.text = ""
+
+func add_scanned_item(item_id: String) -> void:
+	if selected_scanned_items.has(item_id):
+		selected_scanned_items[item_id] += 1
+	else:
+		selected_scanned_items[item_id] = 1
+
+	update_register_labels()
+
+	print("Scanned item:", item_id)
+	print("Scanned items:", selected_scanned_items)
+	
+func get_expected_all_items() -> Dictionary:
+	var combined_items: Dictionary = {}
+
+	merge_item_dictionary(combined_items, current_order.get("wall_items", {}))
+	merge_item_dictionary(combined_items, current_order.get("counter_items", {}))
+
+	return combined_items
+
+
+func get_selected_all_items() -> Dictionary:
+	var combined_items: Dictionary = {}
+
+	merge_item_dictionary(combined_items, selected_wall_items)
+	merge_item_dictionary(combined_items, selected_scanned_items)
+
+	return combined_items
+
+
+func merge_item_dictionary(target: Dictionary, source: Dictionary) -> void:
+	for item_id in source.keys():
+		if target.has(item_id):
+			target[item_id] += source[item_id]
+		else:
+			target[item_id] = source[item_id]
