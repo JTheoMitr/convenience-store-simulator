@@ -1,0 +1,127 @@
+[gd_scene load_steps=5 format=3 uid="uid://pf0ein572cyu"]
+
+[ext_resource type="Script" uid="uid://byt2xuix81f60" path="res://navigation_ui.gd" id="1_uxvq6"]
+[ext_resource type="Script" uid="uid://bshdoahlbaerl" path="res://station_manager.gd" id="2_p7mdc"]
+[ext_resource type="PackedScene" uid="uid://dmtb05ljv8xe2" path="res://models/store/6twelve-elbolillo.glb" id="3_p7mdc"]
+
+[sub_resource type="Environment" id="Environment_p7mdc"]
+background_mode = 1
+background_color = Color(0.3722513, 0.3722513, 0.3722512, 1)
+background_energy_multiplier = 0.75
+
+[node name="CStorePrototype" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 6)
+current = true
+
+[node name="StationMarkers" type="Node3D" parent="."]
+
+[node name="CounterMarker" type="Marker3D" parent="StationMarkers"]
+transform = Transform3D(-4.371139e-08, 0.17364816, -0.9848076, 0, 0.9848076, 0.17364816, 1, 7.590402e-09, -4.3047308e-08, 0.34438443, 2.0768147, 4.278654)
+
+[node name="RegisterMarker" type="Marker3D" parent="StationMarkers"]
+transform = Transform3D(-4.371139e-08, 0.49999994, -0.86602527, 0, 0.86602527, 0.49999994, 1, 2.1855692e-08, -3.785517e-08, 0.81753206, 1.9845679, 3.0973365)
+
+[node name="WallMarker" type="Marker3D" parent="StationMarkers"]
+transform = Transform3D(-4.371139e-08, -0.03489949, 0.9993908, 0, 0.9993908, 0.03489949, -1, 1.5255053e-09, -4.3684757e-08, 0, 2, 5.224516)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="NavigationUI" type="Control" parent="UI" node_paths=PackedStringArray("station_manager")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uxvq6")
+station_manager = NodePath("../../Managers/StationManager")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/NavigationUI"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="CounterButton" type="Button" parent="UI/NavigationUI/HBoxContainer"]
+layout_mode = 2
+text = "Counter"
+
+[node name="RegisterButton" type="Button" parent="UI/NavigationUI/HBoxContainer"]
+layout_mode = 2
+text = "Register"
+
+[node name="WallButton" type="Button" parent="UI/NavigationUI/HBoxContainer"]
+layout_mode = 2
+text = "Wall"
+
+[node name="CustomerDialoguePanel" type="PanelContainer" parent="UI"]
+offset_right = 102.0
+offset_bottom = 86.0
+
+[node name="MarginContainer" type="PanelContainer" parent="UI/CustomerDialoguePanel"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="CustomerLabel" type="Label" parent="UI/CustomerDialoguePanel/MarginContainer"]
+layout_mode = 2
+text = "Customer View"
+
+[node name="RegisterUI" type="PanelContainer" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer2" type="PanelContainer" parent="UI/RegisterUI"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="RegisterLabel" type="Label" parent="UI/RegisterUI/MarginContainer2"]
+layout_mode = 2
+text = "Register View"
+
+[node name="WallItemUI" type="PanelContainer" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer3" type="PanelContainer" parent="UI/WallItemUI"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="WallLabel" type="Label" parent="UI/WallItemUI/MarginContainer3"]
+layout_mode = 2
+text = "Wall
+ View"
+
+[node name="Managers" type="Node" parent="."]
+
+[node name="StationManager" type="Node" parent="Managers" node_paths=PackedStringArray("camera", "counter_marker", "register_marker", "wall_marker", "customer_dialogue_panel", "register_ui", "wall_item_ui")]
+script = ExtResource("2_p7mdc")
+camera = NodePath("../../Camera3D")
+counter_marker = NodePath("../../StationMarkers/CounterMarker")
+register_marker = NodePath("../../StationMarkers/RegisterMarker")
+wall_marker = NodePath("../../StationMarkers/WallMarker")
+customer_dialogue_panel = NodePath("../../UI/CustomerDialoguePanel")
+register_ui = NodePath("../../UI/RegisterUI")
+wall_item_ui = NodePath("../../UI/WallItemUI")
+
+[node name="CustomerManager" type="Node" parent="Managers"]
+
+[node name="OrderManager" type="Node" parent="Managers"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("3_p7mdc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.779395, 0, 16.32983)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_p7mdc")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.09758289, 0.9952274, 0, -0.9952274, -0.09758289, 0, 4.0067754, 5.75905)
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.09758289, 0.9952274, 0, -0.9952274, -0.09758289, 6.131364, 4.0067754, 5.75905)
