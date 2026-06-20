@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://pf0ein572cyu"]
+[gd_scene load_steps=30 format=3 uid="uid://pf0ein572cyu"]
 
 [ext_resource type="Script" uid="uid://byt2xuix81f60" path="res://navigation_ui.gd" id="1_uxvq6"]
 [ext_resource type="Script" uid="uid://cqlrtaadyc8ne" path="res://checkout_button.gd" id="2_fknbs"]
@@ -7,11 +7,77 @@
 [ext_resource type="Script" uid="uid://x8hxv077j6ue" path="res://customer_manager.gd" id="3_ktsie"]
 [ext_resource type="PackedScene" uid="uid://dmtb05ljv8xe2" path="res://models/store/6twelve-elbolillo.glb" id="3_p7mdc"]
 [ext_resource type="Script" uid="uid://qs3puiuwun67" path="res://clear_selection_button.gd" id="4_ctecg"]
+[ext_resource type="PackedScene" uid="uid://ke1p4u8cm1ph" path="res://wall_cards/wall_item_card.tscn" id="4_hckn7"]
 [ext_resource type="Script" uid="uid://cec6h4qgkhb4x" path="res://order_manager.gd" id="4_ka4yf"]
+[ext_resource type="Script" uid="uid://b7hrs6vkourj0" path="res://cursor_manager.gd" id="5_r0ov8"]
+[ext_resource type="Texture2D" uid="uid://cs55bs5au7j4n" path="res://cursor_sprites/hands_array_1.png" id="6_6inot"]
+[ext_resource type="Texture2D" uid="uid://tmojiea5sxtf" path="res://cursor_sprites/hands_array_resized.png" id="6_hckn7"]
 [ext_resource type="Texture2D" uid="uid://dnv77q35mp2cd" path="res://npc_sprites/construction_dude_1.png" id="8_yip5n"]
 [ext_resource type="Texture2D" uid="uid://dgtgdrxt5nrgi" path="res://npc_sprites/biker_dude_1.png" id="9_6ggm5"]
 [ext_resource type="PackedScene" uid="uid://dlrg8r506uodf" path="res://items/whiskey_bottle.tscn" id="11_wqdg6"]
 [ext_resource type="Script" uid="uid://cpfbilrsee2l7" path="res://scanner_area.gd" id="12_ugrqj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ykfa"]
+atlas = ExtResource("6_hckn7")
+region = Rect2(300, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xksli"]
+atlas = ExtResource("6_hckn7")
+region = Rect2(0, 600, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uceri"]
+atlas = ExtResource("6_hckn7")
+region = Rect2(300, 600, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7w5d"]
+atlas = ExtResource("6_hckn7")
+region = Rect2(0, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gibax"]
+atlas = ExtResource("6_hckn7")
+region = Rect2(0, 300, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dr5hb"]
+atlas = ExtResource("6_hckn7")
+region = Rect2(300, 300, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7ea5"]
+atlas = ExtResource("6_6inot")
+region = Rect2(470, 85, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dr5hb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ykfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xksli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uceri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7w5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gibax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dr5hb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7ea5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="Environment" id="Environment_p7mdc"]
 background_mode = 1
@@ -77,7 +143,8 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -31.0
+offset_top = -158.0
+offset_bottom = -127.0
 grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
@@ -182,6 +249,9 @@ script = ExtResource("2_fqa56")
 item_id = "lucky_duck"
 order_manager = NodePath("../../../../../Managers/OrderManager")
 
+[node name="WallItemCard" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" instance=ExtResource("4_hckn7")]
+layout_mode = 2
+
 [node name="SelectedItemsLabel" type="Label" parent="UI/WallItemUI/VBoxContainer"]
 layout_mode = 2
 text = "Selected: none"
@@ -191,6 +261,26 @@ layout_mode = 2
 text = "Clear Selection"
 script = ExtResource("4_ctecg")
 order_manager = NodePath("../../../../Managers/OrderManager")
+
+[node name="CursorManager" type="Control" parent="UI" node_paths=PackedStringArray("camera")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_r0ov8")
+camera = NodePath("../../Camera3D")
+
+[node name="CursorSprite" type="AnimatedSprite2D" parent="UI/CursorManager"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_dr5hb")
+
+[node name="HotspotMarker" type="ColorRect" parent="UI/CursorManager"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+color = Color(1, 0, 0.08235294, 0)
 
 [node name="Managers" type="Node" parent="."]
 
@@ -245,7 +335,7 @@ animation = &"customers"
 
 [node name="CounterItems" type="Node3D" parent="."]
 
-[node name="WhiskeyBottle" parent="CounterItems" node_paths=PackedStringArray("camera") instance=ExtResource("11_wqdg6")]
+[node name="WhiskeyBottle" parent="CounterItems" node_paths=PackedStringArray("camera") groups=["draggable_counter_item"] instance=ExtResource("11_wqdg6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44, 1.5, 3.6326213)
 camera = NodePath("../../Camera3D")
 

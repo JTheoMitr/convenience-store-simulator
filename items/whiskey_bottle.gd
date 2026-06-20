@@ -30,8 +30,14 @@ func _on_input_event(
 		if event.pressed:
 			is_dragging = true
 			drag_plane_y = global_position.y
+
+			if CursorManager.instance != null:
+				CursorManager.instance.set_dragging(true)
 		else:
 			is_dragging = false
+
+			if CursorManager.instance != null:
+				CursorManager.instance.set_dragging(false)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -41,6 +47,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and !event.pressed:
 			is_dragging = false
+
+			if CursorManager.instance != null:
+				CursorManager.instance.set_dragging(false)
 
 
 func _process(_delta: float) -> void:
@@ -60,6 +69,9 @@ func _process(_delta: float) -> void:
 		global_position.z = hit_position.z
 		
 func scan_item(order_manager: Node) -> void:
+	
+	if CursorManager.instance != null:
+		CursorManager.instance.set_dragging(false)
 	if has_been_scanned:
 		return
 
@@ -71,5 +83,5 @@ func scan_item(order_manager: Node) -> void:
 	queue_free()
 
 
-func _on_area_entered(area: Area3D) -> void:
+func _on_area_entered(_area: Area3D) -> void:
 	pass # Replace with function body.
