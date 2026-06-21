@@ -14,8 +14,8 @@ var selected_scanned_items: Dictionary = {}
 var item_prices: Dictionary = {
 	"reds": 8.50,
 	"blues": 8.25,
-	"holiday": 2.00,
-	"lucky_duck": 5.00,
+	"mega_money": 5.00,
+	"king_diamond": 10.00,
 	"whiskey_bottle": 18.99
 }
 
@@ -140,10 +140,10 @@ func format_item_name(item_id: String) -> String:
 			return "Reds"
 		"blues":
 			return "Blues"
-		"holiday":
-			return "Holiday"
-		"lucky_duck":
-			return "Lucky Duck"
+		"mega_money":
+			return "Mega Money"
+		"king_diamond":
+			return "King of Diamonds"
 		_:
 			return item_id
 

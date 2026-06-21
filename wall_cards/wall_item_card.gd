@@ -15,8 +15,8 @@ func _ready() -> void:
 	add_button.text = "Add"
 
 	item_sprite.animation = hover_animation
-	item_sprite.stop()
 	item_sprite.frame = 0
+	item_sprite.play(hover_animation)
 
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
@@ -24,13 +24,13 @@ func _ready() -> void:
 
 
 func _on_mouse_entered() -> void:
+	item_sprite.pause()
 	item_sprite.frame = 0
-	item_sprite.play(hover_animation)
 
 
 func _on_mouse_exited() -> void:
-	item_sprite.stop()
 	item_sprite.frame = 0
+	item_sprite.play(hover_animation)
 
 
 func _on_add_button_pressed() -> void:

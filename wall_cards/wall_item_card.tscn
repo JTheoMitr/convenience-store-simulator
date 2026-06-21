@@ -748,6 +748,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 1
 script = ExtResource("1_qbwoe")
+item_id = "reds"
+item_display_name = "Reds"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

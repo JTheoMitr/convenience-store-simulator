@@ -9,21 +9,21 @@ var current_customer_index: int = 0
 var customers: Array[Dictionary] = [
 	{
 		"name": "Customer 1",
-		"dialogue": "Can I get a pack of Reds and one Holiday scratcher?",
+		"dialogue": "Can I get a pack of Reds and a Mega Money?",
 		"sprite_frame": 0,
 		"money_given": 20.00,
 		"wall_items": {
 			"reds": 1,
-			"holiday": 1
+			"mega_money": 1
 		}
 	},
 	{
 		"name": "Customer 2",
-		"dialogue": "Can I get two Lucky Ducks and this whiskey bottle?",
+		"dialogue": "Give me two King D's and this whiskey bottle?",
 		"sprite_frame": 1,
 		"money_given": 50.00,
 		"wall_items": {
-			"lucky_duck": 2
+			"king_diamond": 2
 		},
 		"counter_items": {
 			"whiskey_bottle": 1
