@@ -83,3 +83,6 @@ func update_ui_for_station(station_name: String) -> void:
 
 func _on_camera_move_finished() -> void:
 	is_moving = false
+	
+func is_at_register() -> bool:
+	return current_station == "register"

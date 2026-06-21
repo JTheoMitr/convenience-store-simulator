@@ -749,7 +749,7 @@ offset_bottom = 40.0
 mouse_filter = 1
 script = ExtResource("1_aor72")
 item_id = "blues"
-item_display_name = "Blues"
+item_display_name = "Smokes - Blues"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

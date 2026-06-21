@@ -749,7 +749,7 @@ offset_bottom = 40.0
 mouse_filter = 1
 script = ExtResource("1_cfjnn")
 item_id = "reds"
-item_display_name = "Reds"
+item_display_name = "Smokes - Reds"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

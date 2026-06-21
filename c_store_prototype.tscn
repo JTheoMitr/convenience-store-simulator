@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://pf0ein572cyu"]
+[gd_scene load_steps=33 format=3 uid="uid://pf0ein572cyu"]
 
 [ext_resource type="Script" uid="uid://byt2xuix81f60" path="res://navigation_ui.gd" id="1_uxvq6"]
 [ext_resource type="Script" uid="uid://cqlrtaadyc8ne" path="res://checkout_button.gd" id="2_fknbs"]
@@ -108,6 +108,8 @@ material = SubResource("StandardMaterial3D_r0ov8")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hckn7"]
 size = Vector3(1, 0.8574219, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xksli"]
 
 [node name="CStorePrototype" type="Node3D"]
 
@@ -233,11 +235,13 @@ order_manager = NodePath("../../../../../Managers/OrderManager")
 layout_mode = 2
 order_manager = NodePath("../../../../../Managers/OrderManager")
 
-[node name="KingDiamond" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" instance=ExtResource("5_uceri")]
+[node name="KingDiamond" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" node_paths=PackedStringArray("order_manager") instance=ExtResource("5_uceri")]
 layout_mode = 2
+order_manager = NodePath("../../../../../Managers/OrderManager")
 
-[node name="MegaMoney" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" instance=ExtResource("6_a7w5d")]
+[node name="MegaMoney" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" node_paths=PackedStringArray("order_manager") instance=ExtResource("6_a7w5d")]
 layout_mode = 2
+order_manager = NodePath("../../../../../Managers/OrderManager")
 
 [node name="SelectedItemsLabel" type="Label" parent="UI/WallItemUI/VBoxContainer"]
 layout_mode = 2
@@ -322,8 +326,10 @@ animation = &"customers"
 
 [node name="CounterItems" type="Node3D" parent="."]
 
-[node name="WhiskeyBottle" parent="CounterItems" node_paths=PackedStringArray("camera") groups=["draggable_counter_item"] instance=ExtResource("11_wqdg6")]
+[node name="WhiskeyBottle" parent="CounterItems" node_paths=PackedStringArray("counter_drag_bounds", "station_manager", "camera") instance=ExtResource("11_wqdg6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44, 1.5, 3.6326213)
+counter_drag_bounds = NodePath("../../StoreBlockout/CounterDragBounds")
+station_manager = NodePath("../../Managers/StationManager")
 camera = NodePath("../../Camera3D")
 
 [node name="StoreBlockout" type="Node3D" parent="."]
@@ -339,3 +345,13 @@ mesh = SubResource("BoxMesh_6inot")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StoreBlockout/ScannerArea"]
 transform = Transform3D(0.45, 0, 0, 0, 0.2, 0, 0, 0, 0.7, 1.0873117, 1.5400728, 2.7403166)
 shape = SubResource("BoxShape3D_hckn7")
+
+[node name="CounterDragBounds" type="Area3D" parent="StoreBlockout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4618409, 1.3916732, 4.013616)
+input_ray_pickable = false
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StoreBlockout/CounterDragBounds"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0.003868103)
+shape = SubResource("BoxShape3D_xksli")

@@ -1683,7 +1683,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"spin",
-"speed": 35.0
+"speed": 50.0
 }]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbwoe"]

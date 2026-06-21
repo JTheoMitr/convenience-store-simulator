@@ -7,7 +7,7 @@
 radius = 0.11816406
 height = 0.48516846
 
-[node name="WhiskeyBottle" type="Area3D"]
+[node name="WhiskeyBottle" type="Area3D" groups=["draggable_counter_item"]]
 script = ExtResource("1_0qty8")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
