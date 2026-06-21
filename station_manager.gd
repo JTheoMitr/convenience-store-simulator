@@ -10,6 +10,8 @@ extends Node
 @export var register_ui: Control
 @export var wall_item_ui: Control
 
+@export var register_monitor: Control
+
 var current_station: String = "counter"
 var is_moving: bool = false
 
@@ -79,6 +81,7 @@ func update_ui_for_station(station_name: String) -> void:
 	customer_dialogue_panel.visible = station_name == "counter"
 	register_ui.visible = station_name == "register"
 	wall_item_ui.visible = station_name == "wall"
+	register_monitor.visible = station_name == "register"
 
 
 func _on_camera_move_finished() -> void:

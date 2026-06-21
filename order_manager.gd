@@ -7,9 +7,19 @@ extends Node
 @export var money_given_label: Label
 @export var change_input: LineEdit
 
+@export var register_monitor: Control
+
 var current_order: Dictionary = {}
 var selected_wall_items: Dictionary = {}
 var selected_scanned_items: Dictionary = {}
+
+var item_names: Dictionary = {
+	"reds": "Reds",
+	"blues": "Blues",
+	"mega_money": "Mega Money",
+	"king_diamond": "King of Diamonds",
+	"whiskey_bottle": "Whiskey Bottle"
+}
 
 var item_prices: Dictionary = {
 	"reds": 8.50,
@@ -182,6 +192,13 @@ func update_register_labels() -> void:
 
 	current_total_label.text = "Total: $%.2f" % total
 	money_given_label.text = "Customer paid: $%.2f" % money_given
+	
+	if register_monitor != null:
+		register_monitor.update_sale(
+			get_selected_all_items(),
+			item_prices,
+			item_names
+		)
 
 func clear_selected_wall_items() -> void:
 	selected_wall_items.clear()

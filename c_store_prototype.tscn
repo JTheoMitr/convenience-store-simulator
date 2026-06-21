@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://pf0ein572cyu"]
+[gd_scene load_steps=34 format=3 uid="uid://pf0ein572cyu"]
 
 [ext_resource type="Script" uid="uid://byt2xuix81f60" path="res://navigation_ui.gd" id="1_uxvq6"]
 [ext_resource type="Script" uid="uid://cqlrtaadyc8ne" path="res://checkout_button.gd" id="2_fknbs"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://tmojiea5sxtf" path="res://cursor_sprites/hands_array_resized.png" id="6_hckn7"]
 [ext_resource type="Texture2D" uid="uid://dnv77q35mp2cd" path="res://npc_sprites/construction_dude_1.png" id="8_yip5n"]
 [ext_resource type="Texture2D" uid="uid://dgtgdrxt5nrgi" path="res://npc_sprites/biker_dude_1.png" id="9_6ggm5"]
+[ext_resource type="PackedScene" uid="uid://d0ryj7owo2h5r" path="res://store_utilities/register_monitor.tscn" id="11_uceri"]
 [ext_resource type="PackedScene" uid="uid://dlrg8r506uodf" path="res://items/whiskey_bottle.tscn" id="11_wqdg6"]
 [ext_resource type="Script" uid="uid://cpfbilrsee2l7" path="res://scanner_area.gd" id="12_ugrqj"]
 
@@ -132,23 +133,29 @@ transform = Transform3D(-4.371139e-08, -0.03489949, 0.9993908, 0, 0.9993908, 0.0
 
 [node name="NavigationUI" type="Control" parent="UI" node_paths=PackedStringArray("station_manager")]
 layout_mode = 3
-anchors_preset = 15
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
+anchor_bottom = 0.5
+offset_top = -124.0
+offset_bottom = -124.0
+grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_uxvq6")
 station_manager = NodePath("../../Managers/StationManager")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/NavigationUI"]
+[node name="HBoxContainer" type="VBoxContainer" parent="UI/NavigationUI"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -200.0
 offset_top = -158.0
-offset_bottom = -127.0
+offset_right = -7.0
+offset_bottom = -57.0
 grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
@@ -273,9 +280,15 @@ offset_bottom = 40.0
 mouse_filter = 2
 color = Color(1, 0, 0.08235294, 0)
 
+[node name="RegisterMonitor" parent="UI" instance=ExtResource("11_uceri")]
+offset_left = 200.0
+offset_top = 125.0
+offset_right = 240.0
+offset_bottom = 165.0
+
 [node name="Managers" type="Node" parent="."]
 
-[node name="StationManager" type="Node" parent="Managers" node_paths=PackedStringArray("camera", "counter_marker", "register_marker", "wall_marker", "customer_dialogue_panel", "register_ui", "wall_item_ui")]
+[node name="StationManager" type="Node" parent="Managers" node_paths=PackedStringArray("camera", "counter_marker", "register_marker", "wall_marker", "customer_dialogue_panel", "register_ui", "wall_item_ui", "register_monitor")]
 script = ExtResource("2_p7mdc")
 camera = NodePath("../../Camera3D")
 counter_marker = NodePath("../../StationMarkers/CounterMarker")
@@ -284,6 +297,7 @@ wall_marker = NodePath("../../StationMarkers/WallMarker")
 customer_dialogue_panel = NodePath("../../UI/CustomerDialoguePanel")
 register_ui = NodePath("../../UI/RegisterUI")
 wall_item_ui = NodePath("../../UI/WallItemUI")
+register_monitor = NodePath("../../UI/RegisterMonitor")
 
 [node name="CustomerManager" type="Node" parent="Managers" node_paths=PackedStringArray("dialogue_label", "order_manager", "customer_sprite")]
 script = ExtResource("3_ktsie")
@@ -291,7 +305,7 @@ dialogue_label = NodePath("../../UI/CustomerDialoguePanel/MarginContainer/Dialog
 order_manager = NodePath("../OrderManager")
 customer_sprite = NodePath("../../Customers/AnimatedSprite3D")
 
-[node name="OrderManager" type="Node" parent="Managers" node_paths=PackedStringArray("selected_items_label", "result_label", "customer_manager", "current_total_label", "money_given_label", "change_input")]
+[node name="OrderManager" type="Node" parent="Managers" node_paths=PackedStringArray("selected_items_label", "result_label", "customer_manager", "current_total_label", "money_given_label", "change_input", "register_monitor")]
 script = ExtResource("4_ka4yf")
 selected_items_label = NodePath("../../UI/WallItemUI/VBoxContainer/SelectedItemsLabel")
 result_label = NodePath("../../UI/RegisterUI/VBoxContainer/ResultLabel")
@@ -299,6 +313,7 @@ customer_manager = NodePath("../CustomerManager")
 current_total_label = NodePath("../../UI/RegisterUI/VBoxContainer/CurrentTotalLabel")
 money_given_label = NodePath("../../UI/RegisterUI/VBoxContainer/MoneyGivenLabel")
 change_input = NodePath("../../UI/RegisterUI/VBoxContainer/ChangeInput")
+register_monitor = NodePath("../../UI/RegisterMonitor")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("3_p7mdc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.779395, 0, 16.32983)
