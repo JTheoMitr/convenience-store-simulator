@@ -5,12 +5,14 @@ extends Node
 @export var counter_marker: Marker3D
 @export var register_marker: Marker3D
 @export var wall_marker: Marker3D
+@export var pinpad_marker: Marker3D
 
 @export var customer_dialogue_panel: Control
 @export var register_ui: Control
 @export var wall_item_ui: Control
 
 @export var register_monitor: Control
+@export var pinpad_ui: Control
 
 var current_station: String = "counter"
 var is_moving: bool = false
@@ -73,6 +75,8 @@ func get_marker_for_station(station_name: String) -> Marker3D:
 			return register_marker
 		"wall":
 			return wall_marker
+		"pinpad":
+			return pinpad_marker
 		_:
 			return null
 
@@ -81,8 +85,10 @@ func update_ui_for_station(station_name: String) -> void:
 	customer_dialogue_panel.visible = station_name == "counter"
 	register_ui.visible = station_name == "register"
 	wall_item_ui.visible = station_name == "wall"
-	register_monitor.visible = station_name == "register"
+	if pinpad_ui != null:
+		pinpad_ui.visible = station_name == "pinpad"
 
+	register_monitor.visible = station_name == "register" or station_name == "pinpad"
 
 func _on_camera_move_finished() -> void:
 	is_moving = false

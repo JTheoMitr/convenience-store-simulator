@@ -1,4 +1,4 @@
-[gd_scene load_steps=423 format=3 uid="uid://d1abk2l4r7teo"]
+[gd_scene load_steps=424 format=3 uid="uid://d1abk2l4r7teo"]
 
 [ext_resource type="Script" uid="uid://lhf0wuxikyth" path="res://wall_cards/wall_item_card.gd" id="1_x52j0"]
 [ext_resource type="Texture2D" uid="uid://tiuw1x1ro0fy" path="res://items/scratchers/king_d_spin_anim/frame_000_delay-0.02s.png" id="2_in0ju"]
@@ -1698,8 +1698,16 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_in0ju"]
+bg_color = Color(0.41960785, 0.19607843, 0.59607846, 0.59607846)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9490196, 0.24313726, 0.93333334, 1)
+
 [node name="KingDiamond" type="PanelContainer"]
-custom_minimum_size = Vector2(190, 260)
+custom_minimum_size = Vector2(190, 200)
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 1
@@ -1721,7 +1729,7 @@ mouse_filter = 2
 
 [node name="ItemSprite" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer/PreviewArea"]
 position = Vector2(95, 88)
-scale = Vector2(0.35, 0.35)
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_0hut5")
 animation = &"spin"
 frame_progress = 0.53890026
@@ -1734,4 +1742,5 @@ horizontal_alignment = 1
 [node name="AddButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_qbwoe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_in0ju")
 text = "Add"

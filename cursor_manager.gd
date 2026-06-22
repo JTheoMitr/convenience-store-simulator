@@ -81,6 +81,13 @@ func update_cursor_state_from_mouse() -> void:
 			set_cursor_state(CursorState.OPEN_HAND)
 			return
 
+		if hovered_3d_object.is_in_group("clickable_3d"):
+			if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+				set_cursor_state(CursorState.FINGER_CLICKED)
+			else:
+				set_cursor_state(CursorState.FINGER_POINTED)
+			return
+
 		if hovered_3d_object.is_in_group("inspectable"):
 			set_cursor_state(CursorState.MAG_GLASS)
 			return

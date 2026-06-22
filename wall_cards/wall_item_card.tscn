@@ -1,4 +1,4 @@
-[gd_scene load_steps=184 format=3 uid="uid://ke1p4u8cm1ph"]
+[gd_scene load_steps=186 format=3 uid="uid://ke1p4u8cm1ph"]
 
 [ext_resource type="Script" uid="uid://lhf0wuxikyth" path="res://wall_cards/wall_item_card.gd" id="1_qbwoe"]
 [ext_resource type="Texture2D" uid="uid://cs0pi1giuhgr0" path="res://items/cigs/reds_lowpoly_spin_anim/frame_000_delay-0.03s.png" id="2_jqp8x"]
@@ -181,6 +181,12 @@
 [ext_resource type="Texture2D" uid="uid://d3et8oookhtbd" path="res://items/cigs/reds_lowpoly_spin_anim/frame_177_delay-0.03s.png" id="179_6byn2"]
 [ext_resource type="Texture2D" uid="uid://dalu3arbx575t" path="res://items/cigs/reds_lowpoly_spin_anim/frame_178_delay-0.04s.png" id="180_ryvxm"]
 [ext_resource type="Texture2D" uid="uid://dwxv8x2ss12mi" path="res://items/cigs/reds_lowpoly_spin_anim/frame_179_delay-0.03s.png" id="181_t6de8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqp8x"]
+bg_color = Color(0.098098494, 0.098098524, 0.09809851, 0.47058824)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_euxdx"]
+bg_color = Color(0.13725491, 0.33333334, 0.70980394, 0.6627451)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0hut5"]
 animations = [{
@@ -750,6 +756,8 @@ mouse_filter = 1
 script = ExtResource("1_qbwoe")
 item_id = "reds"
 item_display_name = "Reds"
+normal_panel_style = SubResource("StyleBoxFlat_jqp8x")
+hover_panel_style = SubResource("StyleBoxFlat_euxdx")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

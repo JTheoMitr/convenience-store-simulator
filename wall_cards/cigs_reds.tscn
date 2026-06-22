@@ -1,4 +1,4 @@
-[gd_scene load_steps=184 format=3 uid="uid://5pwlwkgtcv5m"]
+[gd_scene load_steps=185 format=3 uid="uid://5pwlwkgtcv5m"]
 
 [ext_resource type="Script" uid="uid://lhf0wuxikyth" path="res://wall_cards/wall_item_card.gd" id="1_cfjnn"]
 [ext_resource type="Texture2D" uid="uid://cs0pi1giuhgr0" path="res://items/cigs/reds_lowpoly_spin_anim/frame_000_delay-0.03s.png" id="2_fwvmj"]
@@ -742,10 +742,18 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cfjnn"]
+bg_color = Color(0.41960785, 0.19607843, 0.59607846, 0.59607846)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9490196, 0.24313726, 0.93333334, 1)
+
 [node name="Reds" type="PanelContainer"]
-custom_minimum_size = Vector2(190, 260)
-offset_right = 40.0
-offset_bottom = 40.0
+custom_minimum_size = Vector2(190, 100)
+offset_right = 190.0
+offset_bottom = 238.0
 mouse_filter = 1
 script = ExtResource("1_cfjnn")
 item_id = "reds"
@@ -778,4 +786,5 @@ horizontal_alignment = 1
 [node name="AddButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_qbwoe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cfjnn")
 text = "Add"

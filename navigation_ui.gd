@@ -26,3 +26,4 @@ func _on_register_pressed() -> void:
 func _on_wall_pressed() -> void:
 	AudioManager.play_ui_click()
 	station_manager.go_to_station("wall")
+	#station_manager.go_to_station("pinpad")

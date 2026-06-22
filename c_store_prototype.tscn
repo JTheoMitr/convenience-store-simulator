@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://pf0ein572cyu"]
+[gd_scene load_steps=50 format=3 uid="uid://pf0ein572cyu"]
 
 [ext_resource type="Script" uid="uid://byt2xuix81f60" path="res://navigation_ui.gd" id="1_uxvq6"]
 [ext_resource type="Script" uid="uid://cqlrtaadyc8ne" path="res://checkout_button.gd" id="2_fknbs"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dmtb05ljv8xe2" path="res://models/store/6twelve-elbolillo.glb" id="3_p7mdc"]
 [ext_resource type="PackedScene" uid="uid://5pwlwkgtcv5m" path="res://wall_cards/cigs_reds.tscn" id="4_1ykfa"]
 [ext_resource type="Script" uid="uid://qs3puiuwun67" path="res://clear_selection_button.gd" id="4_ctecg"]
+[ext_resource type="PackedScene" uid="uid://djx280bl0vqg0" path="res://store_utilities/pinpad_ui.tscn" id="4_gibax"]
 [ext_resource type="Script" uid="uid://cec6h4qgkhb4x" path="res://order_manager.gd" id="4_ka4yf"]
 [ext_resource type="Script" uid="uid://b7hrs6vkourj0" path="res://cursor_manager.gd" id="5_r0ov8"]
 [ext_resource type="PackedScene" uid="uid://d1abk2l4r7teo" path="res://wall_cards/scratcher_king_diamond.tscn" id="5_uceri"]
@@ -19,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://d0ryj7owo2h5r" path="res://store_utilities/register_monitor.tscn" id="11_uceri"]
 [ext_resource type="PackedScene" uid="uid://dlrg8r506uodf" path="res://items/whiskey_bottle.tscn" id="11_wqdg6"]
 [ext_resource type="Script" uid="uid://cpfbilrsee2l7" path="res://scanner_area.gd" id="12_ugrqj"]
+[ext_resource type="Script" uid="uid://b67l8agwov5im" path="res://pinpad_interaction.gd" id="20_a7w5d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uceri"]
 bg_color = Color(0.2, 0.3882353, 0.93333334, 0.5529412)
@@ -55,6 +57,50 @@ corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7ea5"]
+bg_color = Color(0.09803922, 0.09411765, 0.09019608, 0.5647059)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dr5hb"]
+bg_color = Color(0.4207762, 0.19600284, 0.5960653, 0.59607846)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9490196, 0.24313726, 0.93333334, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4fab"]
+bg_color = Color(0.09803922, 0.09411765, 0.09019608, 0.5647059)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjb3v"]
+bg_color = Color(0.41960785, 0.19607843, 0.59607846, 0.59607846)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9490196, 0.24313726, 0.93333334, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldu4o"]
+bg_color = Color(0.09803922, 0.09411765, 0.09019608, 0.5647059)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_snmny"]
+bg_color = Color(0.41960785, 0.19607843, 0.59607846, 0.59607846)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9490196, 0.24313726, 0.93333334, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ooxus"]
+bg_color = Color(0.09803922, 0.09411765, 0.09019608, 0.5647059)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cea3"]
+bg_color = Color(0.41960785, 0.19607843, 0.59607846, 0.59607846)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9490196, 0.24313726, 0.93333334, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ykfa"]
 atlas = ExtResource("6_hckn7")
@@ -148,6 +194,16 @@ size = Vector3(1, 0.8574219, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xksli"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_uceri"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7w5d"]
+transparency = 1
+albedo_color = Color(1, 0.41960785, 0.98039216, 0.63529414)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gibax"]
+material = SubResource("StandardMaterial3D_a7w5d")
+size = Vector3(0.3, 0.3, 0.2)
+
 [node name="CStorePrototype" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -165,6 +221,9 @@ transform = Transform3D(-4.371139e-08, 0.49999994, -0.86602527, 0, 0.86602527, 0
 [node name="WallMarker" type="Marker3D" parent="StationMarkers"]
 transform = Transform3D(-4.371139e-08, -0.03489949, 0.9993908, 0, 0.9993908, 0.03489949, -1, 1.5255053e-09, -4.3684757e-08, 0, 2, 5.224516)
 
+[node name="PinpadMarker" type="Marker3D" parent="StationMarkers"]
+transform = Transform3D(-4.371139e-08, 0.96592575, -0.25881904, 0, 0.25881904, 0.96592575, 1, 4.2221956e-08, -1.13133405e-08, 1.0880284, 1.7288979, 3.5062222)
+
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="NavigationUI" type="Control" parent="UI" node_paths=PackedStringArray("station_manager")]
@@ -181,6 +240,13 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_uxvq6")
 station_manager = NodePath("../../Managers/StationManager")
+
+[node name="Panel" type="Panel" parent="UI/NavigationUI"]
+layout_mode = 0
+offset_left = -200.0
+offset_top = -193.0
+offset_right = -7.0
+offset_bottom = -86.0
 
 [node name="HBoxContainer" type="VBoxContainer" parent="UI/NavigationUI"]
 layout_mode = 1
@@ -212,10 +278,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_gibax")
 text = "Wall"
 
 [node name="RegisterMonitor" parent="UI" instance=ExtResource("11_uceri")]
-offset_left = 190.0
-offset_top = 115.0
-offset_right = 230.0
-offset_bottom = 155.0
+offset_left = 150.0
+offset_top = 85.0
+offset_right = 190.0
+offset_bottom = 125.0
 
 [node name="CustomerDialoguePanel" type="PanelContainer" parent="UI"]
 offset_right = 102.0
@@ -230,8 +296,15 @@ layout_mode = 2
 text = "Customer View"
 
 [node name="RegisterUI" type="PanelContainer" parent="UI"]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -163.0
+offset_top = -174.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/RegisterUI"]
 layout_mode = 2
@@ -262,6 +335,10 @@ order_manager = NodePath("../../../../Managers/OrderManager")
 layout_mode = 2
 text = "Result"
 
+[node name="PinpadUI" parent="UI" node_paths=PackedStringArray("station_manager", "order_manager") instance=ExtResource("4_gibax")]
+station_manager = NodePath("../../Managers/StationManager")
+order_manager = NodePath("../../Managers/OrderManager")
+
 [node name="WallItemUI" type="PanelContainer" parent="UI"]
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -282,18 +359,26 @@ columns = 2
 [node name="Reds" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" node_paths=PackedStringArray("order_manager") instance=ExtResource("4_1ykfa")]
 layout_mode = 2
 order_manager = NodePath("../../../../../Managers/OrderManager")
+normal_panel_style = SubResource("StyleBoxFlat_w7ea5")
+hover_panel_style = SubResource("StyleBoxFlat_dr5hb")
 
 [node name="Blues" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" node_paths=PackedStringArray("order_manager") instance=ExtResource("5_xksli")]
 layout_mode = 2
 order_manager = NodePath("../../../../../Managers/OrderManager")
+normal_panel_style = SubResource("StyleBoxFlat_f4fab")
+hover_panel_style = SubResource("StyleBoxFlat_vjb3v")
 
 [node name="KingDiamond" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" node_paths=PackedStringArray("order_manager") instance=ExtResource("5_uceri")]
 layout_mode = 2
 order_manager = NodePath("../../../../../Managers/OrderManager")
+normal_panel_style = SubResource("StyleBoxFlat_ldu4o")
+hover_panel_style = SubResource("StyleBoxFlat_snmny")
 
 [node name="MegaMoney" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" node_paths=PackedStringArray("order_manager") instance=ExtResource("6_a7w5d")]
 layout_mode = 2
 order_manager = NodePath("../../../../../Managers/OrderManager")
+normal_panel_style = SubResource("StyleBoxFlat_ooxus")
+hover_panel_style = SubResource("StyleBoxFlat_2cea3")
 
 [node name="SelectedItemsLabel" type="Label" parent="UI/WallItemUI/VBoxContainer"]
 layout_mode = 2
@@ -327,16 +412,18 @@ color = Color(1, 0, 0.08235294, 0)
 
 [node name="Managers" type="Node" parent="."]
 
-[node name="StationManager" type="Node" parent="Managers" node_paths=PackedStringArray("camera", "counter_marker", "register_marker", "wall_marker", "customer_dialogue_panel", "register_ui", "wall_item_ui", "register_monitor")]
+[node name="StationManager" type="Node" parent="Managers" node_paths=PackedStringArray("camera", "counter_marker", "register_marker", "wall_marker", "pinpad_marker", "customer_dialogue_panel", "register_ui", "wall_item_ui", "register_monitor", "pinpad_ui")]
 script = ExtResource("2_p7mdc")
 camera = NodePath("../../Camera3D")
 counter_marker = NodePath("../../StationMarkers/CounterMarker")
 register_marker = NodePath("../../StationMarkers/RegisterMarker")
 wall_marker = NodePath("../../StationMarkers/WallMarker")
+pinpad_marker = NodePath("../../StationMarkers/PinpadMarker")
 customer_dialogue_panel = NodePath("../../UI/CustomerDialoguePanel")
 register_ui = NodePath("../../UI/RegisterUI")
 wall_item_ui = NodePath("../../UI/WallItemUI")
 register_monitor = NodePath("../../UI/RegisterMonitor")
+pinpad_ui = NodePath("../../UI/PinpadUI")
 
 [node name="CustomerManager" type="Node" parent="Managers" node_paths=PackedStringArray("dialogue_label", "order_manager", "customer_sprite")]
 script = ExtResource("3_ktsie")
@@ -380,11 +467,10 @@ animation = &"customers"
 
 [node name="CounterItems" type="Node3D" parent="."]
 
-[node name="WhiskeyBottle" parent="CounterItems" node_paths=PackedStringArray("counter_drag_bounds", "station_manager", "scanner_blocker", "camera") instance=ExtResource("11_wqdg6")]
+[node name="WhiskeyBottle" parent="CounterItems" node_paths=PackedStringArray("counter_drag_bounds", "station_manager", "camera") instance=ExtResource("11_wqdg6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44, 1.5, 3.6326213)
 counter_drag_bounds = NodePath("../../StoreBlockout/CounterDragBounds")
 station_manager = NodePath("../../Managers/StationManager")
-scanner_blocker = NodePath("")
 camera = NodePath("../../Camera3D")
 
 [node name="StoreBlockout" type="Node3D" parent="."]
@@ -410,3 +496,18 @@ monitorable = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StoreBlockout/CounterDragBounds"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0.003868103)
 shape = SubResource("BoxShape3D_xksli")
+
+[node name="PinpadInteraction" type="Area3D" parent="StoreBlockout" node_paths=PackedStringArray("station_manager")]
+monitoring = false
+monitorable = false
+script = ExtResource("20_a7w5d")
+station_manager = NodePath("../../Managers/StationManager")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StoreBlockout/PinpadInteraction"]
+transform = Transform3D(0.35, 0, 0, 0, 0.3, 0, 0, 0, 0.25, 1.1566213, 1.19697, 3.4829793)
+shape = SubResource("BoxShape3D_uceri")
+
+[node name="HoverGlow" type="MeshInstance3D" parent="StoreBlockout/PinpadInteraction"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1672951, 1.1884987, 3.4481437)
+visible = false
+mesh = SubResource("BoxMesh_gibax")

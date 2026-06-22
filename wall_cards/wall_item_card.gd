@@ -5,12 +5,16 @@ extends PanelContainer
 @export var order_manager: Node
 @export var hover_animation: StringName = &"spin"
 
+@export var normal_panel_style: StyleBoxFlat
+@export var hover_panel_style: StyleBoxFlat
+
 @onready var item_sprite: AnimatedSprite2D = $MarginContainer/VBoxContainer/PreviewArea/ItemSprite
 @onready var item_name_label: Label = $MarginContainer/VBoxContainer/ItemNameLabel
 @onready var add_button: Button = $MarginContainer/VBoxContainer/AddButton
 
 
 func _ready() -> void:
+	add_theme_stylebox_override("panel", normal_panel_style)
 	item_name_label.text = item_display_name
 	add_button.text = "Add"
 
@@ -25,11 +29,13 @@ func _ready() -> void:
 
 func _on_mouse_entered() -> void:
 	AudioManager.play_ui_select()
+	add_theme_stylebox_override("panel", hover_panel_style)
 	item_sprite.pause()
 	item_sprite.frame = 0
 
 
 func _on_mouse_exited() -> void:
+	add_theme_stylebox_override("panel", normal_panel_style)
 	item_sprite.frame = 0
 	item_sprite.play(hover_animation)
 

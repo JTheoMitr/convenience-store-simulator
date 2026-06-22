@@ -12,6 +12,7 @@ extends Node
 var current_order: Dictionary = {}
 var selected_wall_items: Dictionary = {}
 var selected_scanned_items: Dictionary = {}
+var gas_amount: float = 0.0
 
 var item_names: Dictionary = {
 	"reds": "Reds",
@@ -33,20 +34,26 @@ func set_current_order(order: Dictionary) -> void:
 	current_order = order
 	selected_wall_items.clear()
 	selected_scanned_items.clear()
+	gas_amount = 0.0
+	
 	update_selected_items_label()
 	update_register_labels()
 	result_label.text = ""
 	change_input.text = ""
+	
 	
 
 func clear_current_order() -> void:
 	current_order.clear()
 	selected_wall_items.clear()
 	selected_scanned_items.clear()
+	gas_amount = 0.0
+	
 	update_selected_items_label()
 	update_register_labels()
 	result_label.text = ""
 	change_input.text = ""
+	
 
 
 func add_wall_item(item_id: String) -> void:
@@ -187,18 +194,34 @@ func update_register_labels() -> void:
 		return
 
 	var selected_items := get_selected_all_items()
-	var total := calculate_total(selected_items)
+	var total := calculate_total(selected_items) + gas_amount
 	var money_given := get_money_given()
+	
 
 	current_total_label.text = "Total: $%.2f" % total
 	money_given_label.text = "Customer paid: $%.2f" % money_given
-	
+	var display_prices := item_prices.duplicate()
+	var display_names := item_names.duplicate()
+
 	if register_monitor != null:
-		register_monitor.update_sale(
-			get_selected_all_items(),
-			item_prices,
-			item_names
-		)
+		if gas_amount > 0.0:
+			register_monitor.update_sale(
+				get_selected_items_for_display(),
+				display_prices,
+				display_names
+			)
+		else:
+			register_monitor.update_sale(
+				get_selected_all_items(),
+				item_prices,
+				item_names
+			)
+	#if register_monitor != null:
+		#register_monitor.update_sale(
+			#get_selected_all_items(),
+			#item_prices,
+			#item_names
+		#)
 
 func clear_selected_wall_items() -> void:
 	selected_wall_items.clear()
@@ -241,3 +264,17 @@ func merge_item_dictionary(target: Dictionary, source: Dictionary) -> void:
 			target[item_id] += source[item_id]
 		else:
 			target[item_id] = source[item_id]
+			
+			
+func add_gas_amount(amount: float) -> void:
+	gas_amount = amount
+	update_selected_items_label()
+	update_register_labels()
+	
+func get_selected_items_for_display() -> Dictionary:
+	var display_items := get_selected_all_items()
+
+	if gas_amount > 0.0:
+		display_items["gas"] = 1
+
+	return display_items
