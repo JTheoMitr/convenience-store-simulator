@@ -24,6 +24,7 @@ func _ready() -> void:
 
 
 func _on_mouse_entered() -> void:
+	AudioManager.play_ui_select()
 	item_sprite.pause()
 	item_sprite.frame = 0
 
@@ -37,5 +38,6 @@ func _on_add_button_pressed() -> void:
 	if order_manager == null:
 		push_warning("WallItemCard has no OrderManager assigned.")
 		return
-
+	
+	AudioManager.play_ui_click()
 	order_manager.add_wall_item(item_id)

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bfqnsw6u7xftc"
+path="res://.godot/imported/TEST_Effect Video Signal Lost Sine Tone Beep Short 01_ESM_VCS.wav-ff49c27226939e0b015f056c4e809c1a.sample"
+
+[deps]
+
+source_file="res://sfx/beeps/TEST_Effect Video Signal Lost Sine Tone Beep Short 01_ESM_VCS.wav"
+dest_files=["res://.godot/imported/TEST_Effect Video Signal Lost Sine Tone Beep Short 01_ESM_VCS.wav-ff49c27226939e0b015f056c4e809c1a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

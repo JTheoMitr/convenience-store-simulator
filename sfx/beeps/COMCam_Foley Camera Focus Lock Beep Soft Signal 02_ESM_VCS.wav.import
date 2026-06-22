@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dftemr6jjsn5v"
+path="res://.godot/imported/COMCam_Foley Camera Focus Lock Beep Soft Signal 02_ESM_VCS.wav-b000bb70ea14b867b9afa92d99c37654.sample"
+
+[deps]
+
+source_file="res://sfx/beeps/COMCam_Foley Camera Focus Lock Beep Soft Signal 02_ESM_VCS.wav"
+dest_files=["res://.godot/imported/COMCam_Foley Camera Focus Lock Beep Soft Signal 02_ESM_VCS.wav-b000bb70ea14b867b9afa92d99c37654.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

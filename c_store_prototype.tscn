@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://pf0ein572cyu"]
+[gd_scene load_steps=37 format=3 uid="uid://pf0ein572cyu"]
 
 [ext_resource type="Script" uid="uid://byt2xuix81f60" path="res://navigation_ui.gd" id="1_uxvq6"]
 [ext_resource type="Script" uid="uid://cqlrtaadyc8ne" path="res://checkout_button.gd" id="2_fknbs"]
@@ -19,6 +19,42 @@
 [ext_resource type="PackedScene" uid="uid://d0ryj7owo2h5r" path="res://store_utilities/register_monitor.tscn" id="11_uceri"]
 [ext_resource type="PackedScene" uid="uid://dlrg8r506uodf" path="res://items/whiskey_bottle.tscn" id="11_wqdg6"]
 [ext_resource type="Script" uid="uid://cpfbilrsee2l7" path="res://scanner_area.gd" id="12_ugrqj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uceri"]
+bg_color = Color(0.2, 0.3882353, 0.93333334, 0.5529412)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.27058825, 0.5647059, 0.9843137, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7w5d"]
+bg_color = Color(0.2, 0.3882353, 0.93333334, 0.5529412)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.27058825, 0.5647059, 0.9843137, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gibax"]
+bg_color = Color(0.2, 0.3882353, 0.93333334, 0.5529412)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.27058825, 0.5647059, 0.9843137, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ykfa"]
 atlas = ExtResource("6_hckn7")
@@ -153,24 +189,33 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -200.0
-offset_top = -158.0
+offset_top = -190.0
 offset_right = -7.0
-offset_bottom = -57.0
+offset_bottom = -89.0
 grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
 
 [node name="CounterButton" type="Button" parent="UI/NavigationUI/HBoxContainer"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_uceri")
 text = "Counter"
 
 [node name="RegisterButton" type="Button" parent="UI/NavigationUI/HBoxContainer"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_a7w5d")
 text = "Register"
 
 [node name="WallButton" type="Button" parent="UI/NavigationUI/HBoxContainer"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_gibax")
 text = "Wall"
+
+[node name="RegisterMonitor" parent="UI" instance=ExtResource("11_uceri")]
+offset_left = 190.0
+offset_top = 115.0
+offset_right = 230.0
+offset_bottom = 155.0
 
 [node name="CustomerDialoguePanel" type="PanelContainer" parent="UI"]
 offset_right = 102.0
@@ -280,12 +325,6 @@ offset_bottom = 40.0
 mouse_filter = 2
 color = Color(1, 0, 0.08235294, 0)
 
-[node name="RegisterMonitor" parent="UI" instance=ExtResource("11_uceri")]
-offset_left = 200.0
-offset_top = 125.0
-offset_right = 240.0
-offset_bottom = 165.0
-
 [node name="Managers" type="Node" parent="."]
 
 [node name="StationManager" type="Node" parent="Managers" node_paths=PackedStringArray("camera", "counter_marker", "register_marker", "wall_marker", "customer_dialogue_panel", "register_ui", "wall_item_ui", "register_monitor")]
@@ -354,11 +393,11 @@ script = ExtResource("12_ugrqj")
 order_manager = NodePath("../../Managers/OrderManager")
 
 [node name="ScannerPanel" type="MeshInstance3D" parent="StoreBlockout/ScannerArea"]
-transform = Transform3D(0.35, 0, 0, 0, 0.2, 0, 0, 0, 0.65, 1.0568554, 1.4710041, 2.757709)
+transform = Transform3D(0.35, 0, 0, 0, 0.2, 0, 0, 0, 0.65, 1.0568554, 1.3931578, 2.8092434)
 mesh = SubResource("BoxMesh_6inot")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StoreBlockout/ScannerArea"]
-transform = Transform3D(0.45, 0, 0, 0, 0.2, 0, 0, 0, 0.7, 1.0873117, 1.5400728, 2.7403166)
+transform = Transform3D(0.45, 0, 0, 0, 0.2, 0, 0, 0, 0.7, 1.0873117, 1.5400728, 2.5568001)
 shape = SubResource("BoxShape3D_hckn7")
 
 [node name="CounterDragBounds" type="Area3D" parent="StoreBlockout"]

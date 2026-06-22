@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c5860rtivoeat"
+path="res://.godot/imported/MECHClik_UI Button Click Nailclipper Snip Short Bright 03_ESM_ASMR.wav-014a2b383c66484090bdbe557f8ba5d8.sample"
+
+[deps]
+
+source_file="res://sfx/button_clicks/MECHClik_UI Button Click Nailclipper Snip Short Bright 03_ESM_ASMR.wav"
+dest_files=["res://.godot/imported/MECHClik_UI Button Click Nailclipper Snip Short Bright 03_ESM_ASMR.wav-014a2b383c66484090bdbe557f8ba5d8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

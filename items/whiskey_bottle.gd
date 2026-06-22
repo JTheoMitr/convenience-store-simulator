@@ -85,6 +85,7 @@ func scan_item(order_manager: Node) -> void:
 	is_dragging = false
 
 	order_manager.add_scanned_item(item_id)
+	AudioManager.play_scan()
 
 	queue_free()
 

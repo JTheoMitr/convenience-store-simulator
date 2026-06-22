@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b7pgsp0mss5h3"
+path="res://.godot/imported/CLOTHMvmt_Cloth Fabric Canvas Bag Handling Plastic Items 01_ESM_ASMR.wav-a910fb8643c689e5b641ad3b16d5c634.sample"
+
+[deps]
+
+source_file="res://sfx/plastic_bag/CLOTHMvmt_Cloth Fabric Canvas Bag Handling Plastic Items 01_ESM_ASMR.wav"
+dest_files=["res://.godot/imported/CLOTHMvmt_Cloth Fabric Canvas Bag Handling Plastic Items 01_ESM_ASMR.wav-a910fb8643c689e5b641ad3b16d5c634.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

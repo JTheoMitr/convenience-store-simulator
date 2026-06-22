@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cncntet2bvqqm"
+path="res://.godot/imported/UIAlert_Alert Designed Notification Synth Neutral Beep 01_ESM_HALG.wav-c238851ed419e9f9d9aec36abfb9a6ee.sample"
+
+[deps]
+
+source_file="res://sfx/beeps/UIAlert_Alert Designed Notification Synth Neutral Beep 01_ESM_HALG.wav"
+dest_files=["res://.godot/imported/UIAlert_Alert Designed Notification Synth Neutral Beep 01_ESM_HALG.wav-c238851ed419e9f9d9aec36abfb9a6ee.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -14,12 +14,15 @@ func _ready() -> void:
 
 
 func _on_counter_pressed() -> void:
+	AudioManager.play_ui_click()
 	station_manager.go_to_station("counter")
 
 
 func _on_register_pressed() -> void:
+	AudioManager.play_ui_click()
 	station_manager.go_to_station("register")
 
 
 func _on_wall_pressed() -> void:
+	AudioManager.play_ui_click()
 	station_manager.go_to_station("wall")
