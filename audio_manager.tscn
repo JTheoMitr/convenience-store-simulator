@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://x7wfr4ohmro2"]
+[gd_scene load_steps=9 format=3 uid="uid://x7wfr4ohmro2"]
 
 [ext_resource type="Script" uid="uid://8bm6l83lcasg" path="res://audio_manager.gd" id="1_jisk1"]
 [ext_resource type="AudioStream" uid="uid://cw1wda4a7nem" path="res://sfx/button_clicks/SFX_Sound Effect_Button_Click-01.wav" id="2_l2k84"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bfqnsw6u7xftc" path="res://sfx/beeps/TEST_Effect Video Signal Lost Sine Tone Beep Short 01_ESM_VCS.wav" id="3_l55mp"]
 [ext_resource type="AudioStream" uid="uid://cncntet2bvqqm" path="res://sfx/beeps/UIAlert_Alert Designed Notification Synth Neutral Beep 01_ESM_HALG.wav" id="4_v0gdi"]
 [ext_resource type="AudioStream" uid="uid://b61gikgmqjpfh" path="res://sfx/cash_register/SFX_Foley_Register_Open_Crunch_Clap.wav" id="5_7fh0q"]
+[ext_resource type="AudioStream" uid="uid://1gphrbg87cl" path="res://sfx/bottle/GAP Percussion_Cola Bottle.wav" id="5_v0gdi"]
 [ext_resource type="AudioStream" uid="uid://b7pgsp0mss5h3" path="res://sfx/plastic_bag/CLOTHMvmt_Cloth Fabric Canvas Bag Handling Plastic Items 01_ESM_ASMR.wav" id="6_op7ad"]
 
 [node name="AudioManager" type="Node"]
@@ -13,6 +14,7 @@ script = ExtResource("1_jisk1")
 ui_click_sound = ExtResource("2_l55mp")
 ui_select_sound = ExtResource("3_l55mp")
 scan_sound = ExtResource("4_v0gdi")
+bottle_grab_sound = ExtResource("5_v0gdi")
 
 [node name="UIButtonPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_l2k84")
@@ -26,7 +28,7 @@ pitch_scale = 1.2
 
 [node name="ScannerPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_v0gdi")
-volume_db = -5.0
+volume_db = -12.0
 
 [node name="RegisterPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_7fh0q")
@@ -37,3 +39,7 @@ stream = ExtResource("5_7fh0q")
 stream = ExtResource("6_op7ad")
 
 [node name="ErrorPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="BottleGrab" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_v0gdi")
+volume_db = -10.0

@@ -3,17 +3,22 @@ extends Area3D
 @export var item_id: String = "whiskey_bottle"
 @export var item_display_name: String = "Whiskey Bottle"
 @export var item_price: float = 18.99
+
 @export var counter_drag_bounds: Area3D
 @export var station_manager: Node
-
 @export var camera: Camera3D
+
+# How far above the counter the bottle floats while being dragged.
+@export var drag_height_offset: float = 0.2
 
 var is_dragging: bool = false
 var has_been_scanned: bool = false
 var drag_plane_y: float = 1.0
+var resting_y: float = 0.0
 
 
 func _ready() -> void:
+	resting_y = global_position.y
 	input_event.connect(_on_input_event)
 
 
@@ -25,24 +30,24 @@ func _on_input_event(
 	_shape_idx: int
 ) -> void:
 	print("Whiskey input event:", event)
-	
+
 	if station_manager == null or !station_manager.is_at_register():
 		return
+
 	if has_been_scanned:
 		return
 
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
+			AudioManager.play_bottle_grab()
+
 			is_dragging = true
-			drag_plane_y = global_position.y
+			drag_plane_y = resting_y + drag_height_offset
 
 			if CursorManager.instance != null:
 				CursorManager.instance.set_dragging(true)
 		else:
-			is_dragging = false
-
-			if CursorManager.instance != null:
-				CursorManager.instance.set_dragging(false)
+			stop_dragging()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -51,38 +56,46 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and !event.pressed:
-			is_dragging = false
+			stop_dragging()
 
-			if CursorManager.instance != null:
-				CursorManager.instance.set_dragging(false)
+
+func stop_dragging() -> void:
+	is_dragging = false
+	global_position.y = resting_y
+
+	if CursorManager.instance != null:
+		CursorManager.instance.set_dragging(false)
 
 
 func _process(_delta: float) -> void:
 	if !is_dragging or camera == null:
 		return
 
-	var mouse_position := get_viewport().get_mouse_position()
+	var mouse_position: Vector2 = get_viewport().get_mouse_position()
 
-	var ray_origin := camera.project_ray_origin(mouse_position)
-	var ray_direction := camera.project_ray_normal(mouse_position)
+	var ray_origin: Vector3 = camera.project_ray_origin(mouse_position)
+	var ray_direction: Vector3 = camera.project_ray_normal(mouse_position)
 
 	var drag_plane := Plane(Vector3.UP, drag_plane_y)
-	var hit_position = drag_plane.intersects_ray(ray_origin, ray_direction)
+	var hit_position: Variant = drag_plane.intersects_ray(ray_origin, ray_direction)
 
-	if hit_position != null:
-		var clamped_position := clamp_to_counter_bounds(hit_position)
+	if hit_position is Vector3:
+		var clamped_position: Vector3 = clamp_to_counter_bounds(hit_position)
+
 		global_position.x = clamped_position.x
+		global_position.y = drag_plane_y
 		global_position.z = clamped_position.z
-		
+
+
 func scan_item(order_manager: Node) -> void:
-	
-	if CursorManager.instance != null:
-		CursorManager.instance.set_dragging(false)
 	if has_been_scanned:
 		return
 
 	has_been_scanned = true
 	is_dragging = false
+
+	if CursorManager.instance != null:
+		CursorManager.instance.set_dragging(false)
 
 	order_manager.add_scanned_item(item_id)
 	AudioManager.play_scan()
@@ -90,9 +103,6 @@ func scan_item(order_manager: Node) -> void:
 	queue_free()
 
 
-func _on_area_entered(_area: Area3D) -> void:
-	pass # Replace with function body.
-	
 func clamp_to_counter_bounds(world_position: Vector3) -> Vector3:
 	if counter_drag_bounds == null:
 		return world_position
@@ -107,13 +117,11 @@ func clamp_to_counter_bounds(world_position: Vector3) -> Vector3:
 	if box_shape == null:
 		return world_position
 
-	# Use the CollisionShape3D itself, not the Area3D parent,
-	# so its position, scale, and rotation are respected.
-	var local_position := shape_node.to_local(world_position)
-	var half_size := box_shape.size * 0.5
+	# Use the CollisionShape3D itself so its transform is respected.
+	var local_position: Vector3 = shape_node.to_local(world_position)
+	var half_size: Vector3 = box_shape.size * 0.5
 
-	# Temporarily keep this at 0 while dialing in the usable area.
-	var item_margin := 0.0
+	var item_margin: float = 0.0
 
 	half_size.x -= item_margin
 	half_size.z -= item_margin

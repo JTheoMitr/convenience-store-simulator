@@ -380,10 +380,11 @@ animation = &"customers"
 
 [node name="CounterItems" type="Node3D" parent="."]
 
-[node name="WhiskeyBottle" parent="CounterItems" node_paths=PackedStringArray("counter_drag_bounds", "station_manager", "camera") instance=ExtResource("11_wqdg6")]
+[node name="WhiskeyBottle" parent="CounterItems" node_paths=PackedStringArray("counter_drag_bounds", "station_manager", "scanner_blocker", "camera") instance=ExtResource("11_wqdg6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44, 1.5, 3.6326213)
 counter_drag_bounds = NodePath("../../StoreBlockout/CounterDragBounds")
 station_manager = NodePath("../../Managers/StationManager")
+scanner_blocker = NodePath("")
 camera = NodePath("../../Camera3D")
 
 [node name="StoreBlockout" type="Node3D" parent="."]
