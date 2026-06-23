@@ -69,17 +69,20 @@ func add_wall_item(item_id: String) -> void:
 
 
 func update_selected_items_label() -> void:
-	if selected_wall_items.is_empty():
-		selected_items_label.text = "Selected: none"
-		return
-
+	var selected_items: Dictionary = get_selected_all_items()
 	var parts: Array[String] = []
 
-	for item_id in selected_wall_items.keys():
-		var count: int = selected_wall_items[item_id]
+	for item_id in selected_items.keys():
+		var count: int = selected_items[item_id]
 		parts.append("%s x%d" % [format_item_name(item_id), count])
 
-	selected_items_label.text = "Selected: " + ", ".join(parts)
+	if gas_amount > 0.0:
+		parts.append("Gas $%.2f" % gas_amount)
+
+	if parts.is_empty():
+		selected_items_label.text = "Selected: none"
+	else:
+		selected_items_label.text = "Selected: " + ", ".join(parts)
 
 func checkout() -> void:
 	if current_order.is_empty():
@@ -89,7 +92,7 @@ func checkout() -> void:
 	var expected_items := get_expected_all_items()
 	var selected_items := get_selected_all_items()
 	var items_correct := dictionaries_match(expected_items, selected_items)
-	
+	var gas_correct: bool = is_gas_correct()
 	var typed_change_text := change_input.text.strip_edges()
 
 	if typed_change_text == "":
@@ -101,15 +104,29 @@ func checkout() -> void:
 
 	var change_correct := is_equal_approx(player_change, expected_change)
 
-	if items_correct and change_correct:
-		result_label.text = "Perfect sale! Correct items and correct change."
+	if items_correct and gas_correct and change_correct:
+		result_label.text = "Perfect sale! Correct items, gas, and change."
 		await get_tree().create_timer(1.5).timeout
 		customer_manager.next_customer()
-	elif !items_correct and !change_correct:
-		result_label.text = build_wrong_order_message(expected_items, selected_items)
-		result_label.text += "\nExpected change: $%.2f" % expected_change
+
 	elif !items_correct:
 		result_label.text = build_wrong_order_message(expected_items, selected_items)
+
+		if !gas_correct:
+			result_label.text += "\nExpected gas: $%.2f" % get_expected_gas_amount()
+			result_label.text += "\nYou entered: $%.2f" % gas_amount
+
+		if !change_correct:
+			result_label.text += "\nExpected change: $%.2f" % expected_change
+
+	elif !gas_correct:
+		result_label.text = "Wrong gas amount!"
+		result_label.text += "\nExpected: $%.2f" % get_expected_gas_amount()
+		result_label.text += "\nYou entered: $%.2f" % gas_amount
+
+		if !change_correct:
+			result_label.text += "\nExpected change: $%.2f" % expected_change
+
 	else:
 		result_label.text = "Wrong change!\nExpected: $%.2f\nYou entered: $%.2f" % [
 			expected_change,
@@ -178,13 +195,21 @@ func calculate_total(items: Dictionary) -> float:
 func get_money_given() -> float:
 	return float(current_order.get("money_given", 0.0))
 
+func get_expected_gas_amount() -> float:
+	return float(current_order.get("gas_amount", 0.0))
 
+
+func is_gas_correct() -> bool:
+	return is_equal_approx(gas_amount, get_expected_gas_amount())
+	
+	
 func get_expected_change() -> float:
-	var expected_items := get_expected_all_items()
-	var total := calculate_total(expected_items)
-	var money_given := get_money_given()
+	var expected_items: Dictionary = get_expected_all_items()
+	var item_total: float = calculate_total(expected_items)
+	var expected_gas: float = get_expected_gas_amount()
+	var money_given: float = get_money_given()
 
-	return snapped(money_given - total, 0.01)
+	return snapped(money_given - item_total - expected_gas, 0.01)
 
 
 func update_register_labels() -> void:
@@ -205,6 +230,9 @@ func update_register_labels() -> void:
 
 	if register_monitor != null:
 		if gas_amount > 0.0:
+			display_prices["gas"] = gas_amount
+			display_names["gas"] = "Gas"
+
 			register_monitor.update_sale(
 				get_selected_items_for_display(),
 				display_prices,

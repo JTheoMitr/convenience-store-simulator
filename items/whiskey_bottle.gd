@@ -3,6 +3,7 @@ extends Area3D
 @export var item_id: String = "whiskey_bottle"
 @export var item_display_name: String = "Whiskey Bottle"
 @export var item_price: float = 18.99
+@export var computer_drag_blocker: Area3D
 
 @export var counter_drag_bounds: Area3D
 @export var station_manager: Node
@@ -81,6 +82,7 @@ func _process(_delta: float) -> void:
 
 	if hit_position is Vector3:
 		var clamped_position: Vector3 = clamp_to_counter_bounds(hit_position)
+		clamped_position = avoid_computer_blocker(clamped_position)
 
 		global_position.x = clamped_position.x
 		global_position.y = drag_plane_y
@@ -128,5 +130,49 @@ func clamp_to_counter_bounds(world_position: Vector3) -> Vector3:
 
 	local_position.x = clampf(local_position.x, -half_size.x, half_size.x)
 	local_position.z = clampf(local_position.z, -half_size.z, half_size.z)
+
+	return shape_node.to_global(local_position)
+	
+func avoid_computer_blocker(world_position: Vector3) -> Vector3:
+	if computer_drag_blocker == null:
+		return world_position
+
+	var shape_node := computer_drag_blocker.get_node_or_null("CollisionShape3D") as CollisionShape3D
+
+	if shape_node == null:
+		return world_position
+
+	var box_shape := shape_node.shape as BoxShape3D
+
+	if box_shape == null:
+		return world_position
+
+	var local_position: Vector3 = shape_node.to_local(world_position)
+	var half_size: Vector3 = box_shape.size * 0.5
+
+	# Slightly expand the blocked zone so the bottle does not visually clip in.
+	var padding: float = 0.08
+	half_size.x += padding
+	half_size.z += padding
+
+	var inside_x: bool = absf(local_position.x) < half_size.x
+	var inside_z: bool = absf(local_position.z) < half_size.z
+
+	if !inside_x or !inside_z:
+		return world_position
+
+	var distance_x: float = half_size.x - absf(local_position.x)
+	var distance_z: float = half_size.z - absf(local_position.z)
+
+	if distance_x < distance_z:
+		if local_position.x < 0.0:
+			local_position.x = -half_size.x
+		else:
+			local_position.x = half_size.x
+	else:
+		if local_position.z < 0.0:
+			local_position.z = -half_size.z
+		else:
+			local_position.z = half_size.z
 
 	return shape_node.to_global(local_position)

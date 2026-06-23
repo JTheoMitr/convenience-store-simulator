@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://pf0ein572cyu"]
+[gd_scene load_steps=52 format=3 uid="uid://pf0ein572cyu"]
 
 [ext_resource type="Script" uid="uid://byt2xuix81f60" path="res://navigation_ui.gd" id="1_uxvq6"]
 [ext_resource type="Script" uid="uid://cqlrtaadyc8ne" path="res://checkout_button.gd" id="2_fknbs"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://d0ryj7owo2h5r" path="res://store_utilities/register_monitor.tscn" id="11_uceri"]
 [ext_resource type="PackedScene" uid="uid://dlrg8r506uodf" path="res://items/whiskey_bottle.tscn" id="11_wqdg6"]
 [ext_resource type="Script" uid="uid://cpfbilrsee2l7" path="res://scanner_area.gd" id="12_ugrqj"]
+[ext_resource type="Texture2D" uid="uid://c6r4ss0e7bs1h" path="res://npc_sprites/suit_man_1.png" id="19_w7ea5"]
 [ext_resource type="Script" uid="uid://b67l8agwov5im" path="res://pinpad_interaction.gd" id="20_a7w5d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uceri"]
@@ -177,6 +178,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("9_6ggm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_w7ea5")
 }],
 "loop": false,
 "name": &"customers",
@@ -202,7 +206,9 @@ albedo_color = Color(1, 0.41960785, 0.98039216, 0.63529414)
 
 [sub_resource type="BoxMesh" id="BoxMesh_gibax"]
 material = SubResource("StandardMaterial3D_a7w5d")
-size = Vector3(0.3, 0.3, 0.2)
+size = Vector3(0.28, 0.3, 0.18)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gibax"]
 
 [node name="CStorePrototype" type="Node3D"]
 
@@ -222,7 +228,7 @@ transform = Transform3D(-4.371139e-08, 0.49999994, -0.86602527, 0, 0.86602527, 0
 transform = Transform3D(-4.371139e-08, -0.03489949, 0.9993908, 0, 0.9993908, 0.03489949, -1, 1.5255053e-09, -4.3684757e-08, 0, 2, 5.224516)
 
 [node name="PinpadMarker" type="Marker3D" parent="StationMarkers"]
-transform = Transform3D(-4.371139e-08, 0.96592575, -0.25881904, 0, 0.25881904, 0.96592575, 1, 4.2221956e-08, -1.13133405e-08, 1.0880284, 1.7288979, 3.5062222)
+transform = Transform3D(-4.371139e-08, 0.96592575, -0.25881904, 0, 0.25881904, 0.96592575, 1, 4.2221956e-08, -1.13133405e-08, 1.088, 1.605, 3.4)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -467,8 +473,9 @@ animation = &"customers"
 
 [node name="CounterItems" type="Node3D" parent="."]
 
-[node name="WhiskeyBottle" parent="CounterItems" node_paths=PackedStringArray("counter_drag_bounds", "station_manager", "camera") instance=ExtResource("11_wqdg6")]
+[node name="WhiskeyBottle" parent="CounterItems" node_paths=PackedStringArray("computer_drag_blocker", "counter_drag_bounds", "station_manager", "camera") instance=ExtResource("11_wqdg6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44, 1.5, 3.6326213)
+computer_drag_blocker = NodePath("../../StoreBlockout/ComputerDragBlocker")
 counter_drag_bounds = NodePath("../../StoreBlockout/CounterDragBounds")
 station_manager = NodePath("../../Managers/StationManager")
 camera = NodePath("../../Camera3D")
@@ -489,12 +496,14 @@ shape = SubResource("BoxShape3D_hckn7")
 
 [node name="CounterDragBounds" type="Area3D" parent="StoreBlockout"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4618409, 1.3916732, 4.013616)
+collision_layer = 0
+collision_mask = 0
 input_ray_pickable = false
 monitoring = false
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StoreBlockout/CounterDragBounds"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0.003868103)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, -0.09116864, -0.64230156)
 shape = SubResource("BoxShape3D_xksli")
 
 [node name="PinpadInteraction" type="Area3D" parent="StoreBlockout" node_paths=PackedStringArray("station_manager")]
@@ -508,6 +517,16 @@ transform = Transform3D(0.35, 0, 0, 0, 0.3, 0, 0, 0, 0.25, 1.1566213, 1.19697, 3
 shape = SubResource("BoxShape3D_uceri")
 
 [node name="HoverGlow" type="MeshInstance3D" parent="StoreBlockout/PinpadInteraction"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1672951, 1.1884987, 3.4481437)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1759317, 1.1884987, 3.464518)
 mesh = SubResource("BoxMesh_gibax")
+
+[node name="ComputerDragBlocker" type="Area3D" parent="StoreBlockout"]
+collision_layer = 0
+collision_mask = 0
+input_ray_pickable = false
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StoreBlockout/ComputerDragBlocker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7448883, 1.5224888, 2.8388193)
+shape = SubResource("BoxShape3D_gibax")

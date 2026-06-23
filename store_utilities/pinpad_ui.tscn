@@ -1,6 +1,96 @@
-[gd_scene load_steps=2 format=3 uid="uid://djx280bl0vqg0"]
+[gd_scene load_steps=32 format=3 uid="uid://djx280bl0vqg0"]
 
 [ext_resource type="Script" uid="uid://03n2163r3jgt" path="res://store_utilities/pinpad_ui.gd" id="1_vst06"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vst06"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbh1i"]
+bg_color = Color(0.026667902, 0.5717009, 0.8804531, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5emd"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r575t"]
+bg_color = Color(0.02745098, 0.57254905, 0.88235295, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1mcec"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3h6t2"]
+bg_color = Color(0.02745098, 0.57254905, 0.88235295, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bk7er"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pqd5"]
+bg_color = Color(0.02745098, 0.57254905, 0.88235295, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ana1j"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nhbq"]
+bg_color = Color(0.02745098, 0.57254905, 0.88235295, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dvt4a"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o0jef"]
+bg_color = Color(0.02745098, 0.57254905, 0.88235295, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dl3sv"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5c4q7"]
+bg_color = Color(0.02745098, 0.57254905, 0.88235295, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvfnj"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kg5v8"]
+bg_color = Color(0.02745098, 0.57254905, 0.88235295, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qsuyo"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kuypt"]
+bg_color = Color(0.02745098, 0.57254905, 0.88235295, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b7gg2"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nh4cj"]
+bg_color = Color(0.02745098, 0.57254905, 0.88235295, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ik16"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eg2kd"]
+bg_color = Color(0.02745098, 0.57254905, 0.88235295, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vh7oe"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6uf83"]
+bg_color = Color(0.02745098, 0.57254905, 0.88235295, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4vqw"]
+bg_color = Color(0.9764706, 0.007843138, 0.34509805, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ead3v"]
+bg_color = Color(0.02745098, 0.57254905, 0.88235295, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gpxai"]
+bg_color = Color(1, 0.91764706, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2o4g4"]
+bg_color = Color(0.02745098, 0.57254905, 0.88235295, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wi2uq"]
+bg_color = Color(0, 0.65882355, 0.105882354, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vl0y"]
+bg_color = Color(0.02745098, 0.57254905, 0.88235295, 1)
 
 [node name="PinpadUI" type="Control"]
 layout_mode = 3
@@ -19,10 +109,13 @@ script = ExtResource("1_vst06")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -6.0
+offset_top = -101.0
+offset_right = 252.0
+offset_bottom = 190.0
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+self_modulate = Color(0, 0, 0, 0)
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
@@ -30,6 +123,7 @@ layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 23
 
 [node name="LeftSide" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -42,69 +136,114 @@ text = "Enter Gas Total:"
 layout_mode = 2
 text = "$0.00"
 
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/LeftSide"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
 [node name="NumberGrid" type="GridContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/LeftSide"]
 layout_mode = 2
 columns = 3
 
 [node name="OneButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/LeftSide/NumberGrid"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_vst06")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jbh1i")
 text = "1"
 
 [node name="TwoButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/LeftSide/NumberGrid"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_h5emd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r575t")
 text = "2"
 
 [node name="ThreeButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/LeftSide/NumberGrid"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_1mcec")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3h6t2")
 text = "3"
 
 [node name="FourButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/LeftSide/NumberGrid"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_bk7er")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4pqd5")
 text = "4"
 
 [node name="FiveButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/LeftSide/NumberGrid"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ana1j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2nhbq")
 text = "5"
 
 [node name="SixButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/LeftSide/NumberGrid"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_dvt4a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_o0jef")
 text = "6"
 
 [node name="SevenButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/LeftSide/NumberGrid"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_dl3sv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5c4q7")
 text = "7"
 
 [node name="EightButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/LeftSide/NumberGrid"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_tvfnj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kg5v8")
 text = "8"
 
 [node name="NineButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/LeftSide/NumberGrid"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qsuyo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kuypt")
 text = "9"
 
 [node name="StarButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/LeftSide/NumberGrid"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_b7gg2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nh4cj")
 text = "*"
 
 [node name="ZeroButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/LeftSide/NumberGrid"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ik16")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eg2kd")
 text = "0"
 
 [node name="DecimalButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/LeftSide/NumberGrid"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_vh7oe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6uf83")
 text = "."
 
 [node name="ActionColumn" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
+alignment = 2
 
 [node name="CancelButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/ActionColumn"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-text = "CANCEL"
+theme_override_styles/normal = SubResource("StyleBoxFlat_t4vqw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ead3v")
+text = "XX"
 
 [node name="BackspaceButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/ActionColumn"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_gpxai")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2o4g4")
 text = "<-"
 
 [node name="SubmitButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/ActionColumn"]
+custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
-text = "ENTER"
+theme_override_styles/normal = SubResource("StyleBoxFlat_wi2uq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4vl0y")
+text = "->"

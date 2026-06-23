@@ -8,14 +8,16 @@ var current_customer_index: int = 0
 
 var customers: Array[Dictionary] = [
 	{
-		"name": "Customer 1",
-		"dialogue": "Can I get a pack of Reds and a Mega Money?",
-		"sprite_frame": 0,
-		"money_given": 20.00,
-		"wall_items": {
-			"reds": 1,
-			"mega_money": 1
-		}
+	"name": "Customer 1",
+	"dialogue": "Can I get a pack of Reds and a Mega Money?",
+	"sprite_frame": 0,
+	"money_given": 20.00,
+	"wall_items": {
+		"reds": 1,
+		"mega_money": 1
+	},
+	"counter_items": {},
+	"gas_amount": 0.0
 	},
 	{
 		"name": "Customer 2",
@@ -27,7 +29,19 @@ var customers: Array[Dictionary] = [
 		},
 		"counter_items": {
 			"whiskey_bottle": 1
-		}
+		},
+		"gas_amount": 0.0
+	},
+	{
+	"name": "Customer 3",
+	"dialogue": "Can I get a pack of Reds and fifteen dollars on gas?",
+	"sprite_frame": 2,
+	"money_given": 30.00,
+	"wall_items": {
+		"reds": 1
+	},
+	"counter_items": {},
+	"gas_amount": 15.00
 	}
 ]
 
