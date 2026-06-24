@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://pf0ein572cyu"]
+[gd_scene load_steps=60 format=3 uid="uid://pf0ein572cyu"]
 
 [ext_resource type="Script" uid="uid://byt2xuix81f60" path="res://navigation_ui.gd" id="1_uxvq6"]
 [ext_resource type="Script" uid="uid://cqlrtaadyc8ne" path="res://checkout_button.gd" id="2_fknbs"]
@@ -14,9 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://c7awgfog3h1fr" path="res://wall_cards/cigs_blues.tscn" id="5_xksli"]
 [ext_resource type="Texture2D" uid="uid://cs55bs5au7j4n" path="res://cursor_sprites/hands_array_1.png" id="6_6inot"]
 [ext_resource type="PackedScene" uid="uid://sc87jmlpko3u" path="res://wall_cards/scratcher_mega_money.tscn" id="6_a7w5d"]
+[ext_resource type="PackedScene" uid="uid://v6wnbshdrivi" path="res://wall_cards/cigs_chapmans.tscn" id="6_dr5hb"]
 [ext_resource type="Texture2D" uid="uid://tmojiea5sxtf" path="res://cursor_sprites/hands_array_resized.png" id="6_hckn7"]
 [ext_resource type="Texture2D" uid="uid://dnv77q35mp2cd" path="res://npc_sprites/construction_dude_1.png" id="8_yip5n"]
 [ext_resource type="Texture2D" uid="uid://dgtgdrxt5nrgi" path="res://npc_sprites/biker_dude_1.png" id="9_6ggm5"]
+[ext_resource type="PackedScene" uid="uid://dj2ow2q87817b" path="res://wall_cards/scratcher_cash_fever.tscn" id="9_f4fab"]
 [ext_resource type="PackedScene" uid="uid://d0ryj7owo2h5r" path="res://store_utilities/register_monitor.tscn" id="11_uceri"]
 [ext_resource type="PackedScene" uid="uid://dlrg8r506uodf" path="res://items/whiskey_bottle.tscn" id="11_wqdg6"]
 [ext_resource type="Script" uid="uid://cpfbilrsee2l7" path="res://scanner_area.gd" id="12_ugrqj"]
@@ -210,6 +212,30 @@ size = Vector3(0.28, 0.3, 0.18)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gibax"]
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_w7ea5"]
+size = Vector2(0.6, 0.4)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_w7ea5"]
+viewport_path = NodePath("StoreBlockout/RegisterScreen3D/ScreenMesh/RegisterMonitorViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dr5hb"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_w7ea5")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dr5hb"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_f4fab"]
+viewport_path = NodePath("StoreBlockout/PinpadScreen3D/PinpadViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjb3v"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+vertex_color_is_srgb = true
+albedo_texture = SubResource("ViewportTexture_f4fab")
+albedo_texture_force_srgb = true
+
 [node name="CStorePrototype" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -228,7 +254,7 @@ transform = Transform3D(-4.371139e-08, 0.49999994, -0.86602527, 0, 0.86602527, 0
 transform = Transform3D(-4.371139e-08, -0.03489949, 0.9993908, 0, 0.9993908, 0.03489949, -1, 1.5255053e-09, -4.3684757e-08, 0, 2, 5.224516)
 
 [node name="PinpadMarker" type="Marker3D" parent="StationMarkers"]
-transform = Transform3D(-4.371139e-08, 0.96592575, -0.25881904, 0, 0.25881904, 0.96592575, 1, 4.2221956e-08, -1.13133405e-08, 1.088, 1.605, 3.4)
+transform = Transform3D(-4.297526e-08, 0.9969583, -0.07793711, 7.988273e-09, 0.07793711, 0.9969583, 1, 4.2221956e-08, -1.13133405e-08, 1.1674443, 1.5491178, 3.4532325)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -283,11 +309,14 @@ layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_gibax")
 text = "Wall"
 
-[node name="RegisterMonitor" parent="UI" instance=ExtResource("11_uceri")]
-offset_left = 150.0
-offset_top = 85.0
-offset_right = 190.0
-offset_bottom = 125.0
+[node name="PinpadUI" parent="UI" node_paths=PackedStringArray("station_manager", "order_manager") instance=ExtResource("4_gibax")]
+offset_left = -161.0
+offset_top = -114.0
+offset_right = -161.0
+offset_bottom = -114.0
+scale = Vector2(1.5, 1.5)
+station_manager = NodePath("../../Managers/StationManager")
+order_manager = NodePath("../../Managers/OrderManager")
 
 [node name="CustomerDialoguePanel" type="PanelContainer" parent="UI"]
 offset_right = 102.0
@@ -341,10 +370,6 @@ order_manager = NodePath("../../../../Managers/OrderManager")
 layout_mode = 2
 text = "Result"
 
-[node name="PinpadUI" parent="UI" node_paths=PackedStringArray("station_manager", "order_manager") instance=ExtResource("4_gibax")]
-station_manager = NodePath("../../Managers/StationManager")
-order_manager = NodePath("../../Managers/OrderManager")
-
 [node name="WallItemUI" type="PanelContainer" parent="UI"]
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -360,7 +385,7 @@ text = "Cigs n' Scratchers:"
 
 [node name="WallItemGrid" type="GridContainer" parent="UI/WallItemUI/VBoxContainer"]
 layout_mode = 2
-columns = 2
+columns = 3
 
 [node name="Reds" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" node_paths=PackedStringArray("order_manager") instance=ExtResource("4_1ykfa")]
 layout_mode = 2
@@ -374,6 +399,12 @@ order_manager = NodePath("../../../../../Managers/OrderManager")
 normal_panel_style = SubResource("StyleBoxFlat_f4fab")
 hover_panel_style = SubResource("StyleBoxFlat_vjb3v")
 
+[node name="Chapmans" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" node_paths=PackedStringArray("order_manager") instance=ExtResource("6_dr5hb")]
+layout_mode = 2
+order_manager = NodePath("../../../../../Managers/OrderManager")
+normal_panel_style = SubResource("StyleBoxFlat_w7ea5")
+hover_panel_style = SubResource("StyleBoxFlat_dr5hb")
+
 [node name="KingDiamond" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" node_paths=PackedStringArray("order_manager") instance=ExtResource("5_uceri")]
 layout_mode = 2
 order_manager = NodePath("../../../../../Managers/OrderManager")
@@ -381,6 +412,12 @@ normal_panel_style = SubResource("StyleBoxFlat_ldu4o")
 hover_panel_style = SubResource("StyleBoxFlat_snmny")
 
 [node name="MegaMoney" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" node_paths=PackedStringArray("order_manager") instance=ExtResource("6_a7w5d")]
+layout_mode = 2
+order_manager = NodePath("../../../../../Managers/OrderManager")
+normal_panel_style = SubResource("StyleBoxFlat_ooxus")
+hover_panel_style = SubResource("StyleBoxFlat_2cea3")
+
+[node name="CashFever" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" node_paths=PackedStringArray("order_manager") instance=ExtResource("9_f4fab")]
 layout_mode = 2
 order_manager = NodePath("../../../../../Managers/OrderManager")
 normal_panel_style = SubResource("StyleBoxFlat_ooxus")
@@ -428,7 +465,7 @@ pinpad_marker = NodePath("../../StationMarkers/PinpadMarker")
 customer_dialogue_panel = NodePath("../../UI/CustomerDialoguePanel")
 register_ui = NodePath("../../UI/RegisterUI")
 wall_item_ui = NodePath("../../UI/WallItemUI")
-register_monitor = NodePath("../../UI/RegisterMonitor")
+register_monitor = NodePath("../../StoreBlockout/RegisterScreen3D/ScreenMesh/RegisterMonitorViewport/RegisterMonitor")
 pinpad_ui = NodePath("../../UI/PinpadUI")
 
 [node name="CustomerManager" type="Node" parent="Managers" node_paths=PackedStringArray("dialogue_label", "order_manager", "customer_sprite")]
@@ -445,7 +482,7 @@ customer_manager = NodePath("../CustomerManager")
 current_total_label = NodePath("../../UI/RegisterUI/VBoxContainer/CurrentTotalLabel")
 money_given_label = NodePath("../../UI/RegisterUI/VBoxContainer/MoneyGivenLabel")
 change_input = NodePath("../../UI/RegisterUI/VBoxContainer/ChangeInput")
-register_monitor = NodePath("../../UI/RegisterMonitor")
+register_monitor = NodePath("../../StoreBlockout/RegisterScreen3D/ScreenMesh/RegisterMonitorViewport/RegisterMonitor")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("3_p7mdc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.779395, 0, 16.32983)
@@ -530,3 +567,26 @@ monitorable = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StoreBlockout/ComputerDragBlocker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7448883, 1.5224888, 2.8388193)
 shape = SubResource("BoxShape3D_gibax")
+
+[node name="RegisterScreen3D" type="Node3D" parent="StoreBlockout"]
+
+[node name="ScreenMesh" type="MeshInstance3D" parent="StoreBlockout/RegisterScreen3D"]
+transform = Transform3D(0.12214938, -0.9527234, -0.2782046, 0.016528342, 0.28221726, -0.9592081, 0.99237436, 0.11256847, 0.0502196, 1.3192679, 1.882132, 2.7457967)
+mesh = SubResource("PlaneMesh_w7ea5")
+surface_material_override/0 = SubResource("StandardMaterial3D_dr5hb")
+
+[node name="RegisterMonitorViewport" type="SubViewport" parent="StoreBlockout/RegisterScreen3D/ScreenMesh"]
+
+[node name="RegisterMonitor" parent="StoreBlockout/RegisterScreen3D/ScreenMesh/RegisterMonitorViewport" instance=ExtResource("11_uceri")]
+
+[node name="PinpadScreen3D" type="Node3D" parent="StoreBlockout"]
+transform = Transform3D(0.024591502, 0, -0.349135, 0, 0.35, 0, 0.349135, 0, 0.024591502, 1.0337498, 1.1412569, 3.7349586)
+
+[node name="ScreenMesh" type="MeshInstance3D" parent="StoreBlockout/PinpadScreen3D"]
+transform = Transform3D(1, 0, 7.450581e-09, 0, 1, 0, -7.450581e-09, 0, 1, -0.23324203, 0.71100473, -0.27646232)
+mesh = SubResource("PlaneMesh_dr5hb")
+surface_material_override/0 = SubResource("StandardMaterial3D_vjb3v")
+
+[node name="PinpadViewport" type="SubViewport" parent="StoreBlockout/PinpadScreen3D"]
+process_mode = 3
+transparent_bg = true

@@ -780,7 +780,7 @@ frame_progress = 0.53890026
 
 [node name="ItemNameLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Karl Burrow Reds"
+text = "Turtle Blues"
 horizontal_alignment = 1
 
 [node name="AddButton" type="Button" parent="MarginContainer/VBoxContainer"]

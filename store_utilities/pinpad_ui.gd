@@ -3,7 +3,7 @@ extends Control
 @export var station_manager: Node
 @export var order_manager: Node
 
-@onready var amount_label: Label = $CenterContainer/PanelContainer/MarginContainer/HBoxContainer/LeftSide/AmountLabel
+@onready var amount_label: Label = $AmountLabel
 
 @onready var one_button: Button = $CenterContainer/PanelContainer/MarginContainer/HBoxContainer/LeftSide/NumberGrid/OneButton
 @onready var two_button: Button = $CenterContainer/PanelContainer/MarginContainer/HBoxContainer/LeftSide/NumberGrid/TwoButton
