@@ -38,11 +38,12 @@ func go_to_station(station_name: String, instant: bool = false) -> void:
 		return
 
 	current_station = station_name
-	update_ui_for_station(station_name)
+	hide_station_ui()
 
 	if instant:
 		camera.global_position = target_marker.global_position
 		camera.global_rotation = target_marker.global_rotation
+		update_ui_for_station(station_name)
 		return
 
 	is_moving = true
@@ -64,7 +65,7 @@ func go_to_station(station_name: String, instant: bool = false) -> void:
 		0.85
 	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 
-	tween.finished.connect(_on_camera_move_finished)
+	tween.finished.connect(_on_camera_move_finished.bind(station_name))
 
 
 func get_marker_for_station(station_name: String) -> Marker3D:
@@ -87,11 +88,24 @@ func update_ui_for_station(station_name: String) -> void:
 	wall_item_ui.visible = station_name == "wall"
 	if pinpad_ui != null:
 		pinpad_ui.visible = station_name == "pinpad"
-
+	#await get_tree().create_timer(1.5).timeout
 	#register_monitor.visible = station_name == "register" or station_name == "pinpad"
 
-func _on_camera_move_finished() -> void:
+func _on_camera_move_finished(station_name: String) -> void:
+	var rot := camera.global_rotation_degrees
+	rot.y = wrapf(rot.y, -180.0, 180.0)
+	camera.global_rotation_degrees = rot
+
+	update_ui_for_station(station_name)
 	is_moving = false
 	
 func is_at_register() -> bool:
 	return current_station == "register"
+	
+func hide_station_ui() -> void:
+	customer_dialogue_panel.visible = false
+	register_ui.visible = false
+	wall_item_ui.visible = false
+
+	if pinpad_ui != null:
+		pinpad_ui.visible = false
