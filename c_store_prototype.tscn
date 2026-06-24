@@ -468,11 +468,20 @@ wall_item_ui = NodePath("../../UI/WallItemUI")
 register_monitor = NodePath("../../StoreBlockout/RegisterScreen3D/ScreenMesh/RegisterMonitorViewport/RegisterMonitor")
 pinpad_ui = NodePath("../../UI/PinpadUI")
 
-[node name="CustomerManager" type="Node" parent="Managers" node_paths=PackedStringArray("dialogue_label", "order_manager", "customer_sprite")]
+[node name="CustomerManager" type="Node" parent="Managers" node_paths=PackedStringArray("dialogue_label", "order_manager", "customer_sprite", "counter_items_parent", "spawn_point_1", "spawn_point_2", "spawn_point_3", "camera", "station_manager", "counter_drag_bounds", "computer_drag_blocker")]
 script = ExtResource("3_ktsie")
 dialogue_label = NodePath("../../UI/CustomerDialoguePanel/MarginContainer/DialogueLabel")
 order_manager = NodePath("../OrderManager")
 customer_sprite = NodePath("../../Customers/AnimatedSprite3D")
+counter_items_parent = NodePath("../../CounterItems")
+whiskey_bottle_scene = ExtResource("11_wqdg6")
+spawn_point_1 = NodePath("../../CounterItemSpawnPoints/SpawnPoint1")
+spawn_point_2 = NodePath("../../CounterItemSpawnPoints/SpawnPoint2")
+spawn_point_3 = NodePath("../../CounterItemSpawnPoints/SpawnPoint3")
+camera = NodePath("../../Camera3D")
+station_manager = NodePath("../StationManager")
+counter_drag_bounds = NodePath("../../StoreBlockout/CounterDragBounds")
+computer_drag_blocker = NodePath("../../StoreBlockout/ComputerDragBlocker")
 
 [node name="OrderManager" type="Node" parent="Managers" node_paths=PackedStringArray("selected_items_label", "result_label", "customer_manager", "current_total_label", "money_given_label", "change_input", "register_monitor")]
 script = ExtResource("4_ka4yf")
@@ -508,14 +517,18 @@ transform = Transform3D(-0.02961358, 0, -0.29853484, 0, 0.3, 0, 0.29853484, 0, -
 sprite_frames = SubResource("SpriteFrames_6ggm5")
 animation = &"customers"
 
-[node name="CounterItems" type="Node3D" parent="."]
+[node name="CounterItemSpawnPoints" type="Node3D" parent="."]
 
-[node name="WhiskeyBottle" parent="CounterItems" node_paths=PackedStringArray("computer_drag_blocker", "counter_drag_bounds", "station_manager", "camera") instance=ExtResource("11_wqdg6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44, 1.5, 3.6326213)
-computer_drag_blocker = NodePath("../../StoreBlockout/ComputerDragBlocker")
-counter_drag_bounds = NodePath("../../StoreBlockout/CounterDragBounds")
-station_manager = NodePath("../../Managers/StationManager")
-camera = NodePath("../../Camera3D")
+[node name="SpawnPoint1" type="Marker3D" parent="CounterItemSpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44, 1.5, 3.633)
+
+[node name="SpawnPoint2" type="Marker3D" parent="CounterItemSpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44, 1.5, 4.0955324)
+
+[node name="SpawnPoint3" type="Marker3D" parent="CounterItemSpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7320321, 1.5, 3.9595275)
+
+[node name="CounterItems" type="Node3D" parent="."]
 
 [node name="StoreBlockout" type="Node3D" parent="."]
 

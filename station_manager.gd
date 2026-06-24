@@ -88,7 +88,7 @@ func update_ui_for_station(station_name: String) -> void:
 	if pinpad_ui != null:
 		pinpad_ui.visible = station_name == "pinpad"
 
-	register_monitor.visible = station_name == "register" or station_name == "pinpad"
+	#register_monitor.visible = station_name == "register" or station_name == "pinpad"
 
 func _on_camera_move_finished() -> void:
 	is_moving = false
