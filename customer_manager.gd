@@ -2,7 +2,9 @@ extends Node
 
 @export var dialogue_label: Label
 @export var order_manager: Node
-@export var customer_sprite: AnimatedSprite3D
+@export var customers_parent: Node3D
+@export var customer_scene: PackedScene
+@export var customer_spot: Marker3D
 
 @export var counter_items_parent: Node3D
 @export var whiskey_bottle_scene: PackedScene
@@ -16,6 +18,8 @@ extends Node
 @export var station_manager: Node
 @export var counter_drag_bounds: Area3D
 @export var computer_drag_blocker: Area3D
+
+var current_customer_instance: Node3D
 
 var current_customer_index: int = 0
 
@@ -81,25 +85,20 @@ func _ready() -> void:
 func load_customer(index: int) -> void:
 	if index >= customers.size():
 		dialogue_label.text = "No more customers for now."
-		customer_sprite.visible = false
+		clear_current_customer()
 		order_manager.clear_current_order()
+		clear_counter_items()
 		return
 
-	var customer := customers[index]
+	var customer: Dictionary = customers[index]
 
-	customer_sprite.visible = true
-	customer_sprite.animation = "customers"
-	customer_sprite.stop()
-	customer_sprite.frame = customer.get("sprite_frame", 0)
+	spawn_customer(customer)
 
 	dialogue_label.text = customer["dialogue"]
 	order_manager.set_current_order(customer)
-	
 	update_counter_items(customer)
 
 	print("Loaded customer:", customer["name"])
-	print("Sprite frame:", customer_sprite.frame)
-
 
 func next_customer() -> void:
 	current_customer_index += 1
@@ -180,3 +179,37 @@ func spawn_counter_item(item_id: String, spawn_point: Marker3D) -> void:
 	else:
 		item_instance.global_position = spawn_point.global_position
 		item_instance.global_rotation = spawn_point.global_rotation
+		
+func spawn_customer(customer_data: Dictionary) -> void:
+	clear_current_customer()
+
+	if customer_scene == null:
+		push_warning("CustomerManager has no Customer Scene assigned.")
+		return
+
+	if customers_parent == null:
+		push_warning("CustomerManager has no Customers Parent assigned.")
+		return
+
+	if customer_spot == null:
+		push_warning("CustomerManager has no Customer Spot assigned.")
+		return
+
+	current_customer_instance = customer_scene.instantiate() as Node3D
+
+	if current_customer_instance == null:
+		push_warning("Customer scene root must be a Node3D.")
+		return
+
+	customers_parent.add_child(current_customer_instance)
+
+	current_customer_instance.global_position = customer_spot.global_position
+	current_customer_instance.global_rotation = customer_spot.global_rotation
+
+	if current_customer_instance.has_method("setup"):
+		current_customer_instance.setup(customer_data)
+		
+func clear_current_customer() -> void:
+	if current_customer_instance != null:
+		current_customer_instance.queue_free()
+		current_customer_instance = null

@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://pf0ein572cyu"]
+[gd_scene load_steps=71 format=3 uid="uid://pf0ein572cyu"]
 
 [ext_resource type="Script" uid="uid://byt2xuix81f60" path="res://navigation_ui.gd" id="1_uxvq6"]
 [ext_resource type="Script" uid="uid://cqlrtaadyc8ne" path="res://checkout_button.gd" id="2_fknbs"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://d0ryj7owo2h5r" path="res://store_utilities/register_monitor.tscn" id="11_uceri"]
 [ext_resource type="PackedScene" uid="uid://dlrg8r506uodf" path="res://items/whiskey_bottle.tscn" id="11_wqdg6"]
 [ext_resource type="Script" uid="uid://cpfbilrsee2l7" path="res://scanner_area.gd" id="12_ugrqj"]
+[ext_resource type="PackedScene" uid="uid://d1boh0o40hu13" path="res://customers/customer.tscn" id="18_ert6a"]
 [ext_resource type="PackedScene" uid="uid://ci2l2hksfayrs" path="res://items/croky_chips.tscn" id="19_ooxus"]
 [ext_resource type="Texture2D" uid="uid://c6r4ss0e7bs1h" path="res://npc_sprites/suit_man_1.png" id="19_w7ea5"]
 [ext_resource type="PackedScene" uid="uid://da846o56kvanr" path="res://items/genshin_energy.tscn" id="20_2cea3"]
@@ -515,11 +516,13 @@ wall_item_ui = NodePath("../../UI/WallItemUI")
 register_monitor = NodePath("../../StoreBlockout/RegisterScreen3D/ScreenMesh/RegisterMonitorViewport/RegisterMonitor")
 pinpad_ui = NodePath("../../UI/PinpadUI")
 
-[node name="CustomerManager" type="Node" parent="Managers" node_paths=PackedStringArray("dialogue_label", "order_manager", "customer_sprite", "counter_items_parent", "spawn_point_1", "spawn_point_2", "spawn_point_3", "camera", "station_manager", "counter_drag_bounds", "computer_drag_blocker")]
+[node name="CustomerManager" type="Node" parent="Managers" node_paths=PackedStringArray("dialogue_label", "order_manager", "customers_parent", "customer_spot", "counter_items_parent", "spawn_point_1", "spawn_point_2", "spawn_point_3", "camera", "station_manager", "counter_drag_bounds", "computer_drag_blocker")]
 script = ExtResource("3_ktsie")
 dialogue_label = NodePath("../../UI/CustomerDialoguePanel/MarginContainer/DialogueLabel")
 order_manager = NodePath("../OrderManager")
-customer_sprite = NodePath("../../Customers/AnimatedSprite3D")
+customers_parent = NodePath("../../Customers")
+customer_scene = ExtResource("18_ert6a")
+customer_spot = NodePath("../../Customers/CustomerSpot")
 counter_items_parent = NodePath("../../CounterItems")
 whiskey_bottle_scene = ExtResource("11_wqdg6")
 croky_chips_scene = ExtResource("19_ooxus")
@@ -563,8 +566,12 @@ transform = Transform3D(1, 0, 0, 0, -0.09758289, 0.9952274, 0, -0.9952274, -0.09
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Customers"]
 transform = Transform3D(-0.02961358, 0, -0.29853484, 0, 0.3, 0, 0.29853484, 0, -0.02961358, 2.6518764, 1.4735191, 4.288083)
+visible = false
 sprite_frames = SubResource("SpriteFrames_6ggm5")
 animation = &"customers"
+
+[node name="CustomerSpot" type="Marker3D" parent="Customers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.652, 1.474, 4.288)
 
 [node name="CounterItemSpawnPoints" type="Node3D" parent="."]
 

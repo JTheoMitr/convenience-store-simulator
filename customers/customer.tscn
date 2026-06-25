@@ -1,0 +1,52 @@
+[gd_scene load_steps=11 format=3 uid="uid://d1boh0o40hu13"]
+
+[ext_resource type="Texture2D" uid="uid://dnv77q35mp2cd" path="res://npc_sprites/construction_dude_1.png" id="1_lx1bh"]
+[ext_resource type="Script" uid="uid://ffo3g4uhcqwk" path="res://customers/customer.gd" id="1_ogp8g"]
+[ext_resource type="Texture2D" uid="uid://dgtgdrxt5nrgi" path="res://npc_sprites/biker_dude_1.png" id="2_ogp8g"]
+[ext_resource type="Texture2D" uid="uid://c6r4ss0e7bs1h" path="res://npc_sprites/suit_man_1.png" id="3_lei6y"]
+[ext_resource type="Texture2D" uid="uid://cofvqi052e116" path="res://npc_sprites/npc (2).png" id="4_kleir"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7o3fg"]
+atlas = ExtResource("1_lx1bh")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu4oc"]
+atlas = ExtResource("2_ogp8g")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8s47"]
+atlas = ExtResource("3_lei6y")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7r8i"]
+atlas = ExtResource("4_kleir")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t1cii"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7o3fg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wu4oc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8s47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7r8i")
+}],
+"loop": false,
+"name": &"customers",
+"speed": 5.0
+}]
+
+[node name="Customer" type="Node3D"]
+script = ExtResource("1_ogp8g")
+
+[node name="CustomerSprite" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_t1cii")
+animation = &"customers"
