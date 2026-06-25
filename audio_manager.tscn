@@ -14,6 +14,7 @@ script = ExtResource("1_jisk1")
 ui_click_sound = ExtResource("2_l55mp")
 ui_select_sound = ExtResource("3_l55mp")
 scan_sound = ExtResource("4_v0gdi")
+pinpad_sound = ExtResource("4_v0gdi")
 bottle_grab_sound = ExtResource("5_v0gdi")
 
 [node name="UIButtonPlayer" type="AudioStreamPlayer" parent="."]
@@ -34,6 +35,9 @@ volume_db = -12.0
 stream = ExtResource("5_7fh0q")
 
 [node name="PinpadPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_v0gdi")
+volume_db = -9.0
+pitch_scale = 1.9
 
 [node name="BagRustlePlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_op7ad")

@@ -23,7 +23,8 @@ var item_names: Dictionary = {
 	"king_diamond": "King of Diamonds",
 	"cash_fever": "Cash Fever",
 	"jackpot": "Jackpot",
-	"whiskey_bottle": "Whiskey Bottle"
+	"whiskey_bottle": "Whiskey Bottle",
+	"croky_chips": "Croky Chips"
 }
 
 var item_prices: Dictionary = {
@@ -35,7 +36,8 @@ var item_prices: Dictionary = {
 	"king_diamond": 10.00,
 	"cash_fever": 8.00,
 	"jackpot": 7.50,
-	"whiskey_bottle": 18.99
+	"whiskey_bottle": 18.99,
+	"croky_chips": 2.99
 }
 
 func set_current_order(order: Dictionary) -> void:
@@ -194,6 +196,10 @@ func format_item_name(item_id: String) -> String:
 			return "Cash Fever"
 		"jackpot":
 			return "Jackpot"
+		"whiskey_bottle":
+			return "Whiskey Bottle"
+		"croky_chips":
+			return "Croky Chips"
 		_:
 			return item_id
 
