@@ -18,9 +18,11 @@ var item_names: Dictionary = {
 	"reds": "Reds",
 	"blues": "Blues",
 	"chapmans": "Chapmans",
+	"manchesters": "Manchesters",
 	"mega_money": "Mega Money",
 	"king_diamond": "King of Diamonds",
 	"cash_fever": "Cash Fever",
+	"jackpot": "Jackpot",
 	"whiskey_bottle": "Whiskey Bottle"
 }
 
@@ -28,9 +30,11 @@ var item_prices: Dictionary = {
 	"reds": 8.50,
 	"blues": 8.25,
 	"chapmans": 8.75,
+	"manchesters": 8.75,
 	"mega_money": 5.00,
 	"king_diamond": 10.00,
 	"cash_fever": 8.00,
+	"jackpot": 7.50,
 	"whiskey_bottle": 18.99
 }
 
@@ -180,12 +184,16 @@ func format_item_name(item_id: String) -> String:
 			return "Blues"
 		"chapmans":
 			return "Chapmans"
+		"manchesters":
+			return "Manchesters"
 		"mega_money":
 			return "Mega Money"
 		"king_diamond":
 			return "King of Diamonds"
 		"cash_fever":
 			return "Cash Fever"
+		"jackpot":
+			return "Jackpot"
 		_:
 			return item_id
 

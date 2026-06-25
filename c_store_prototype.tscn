@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://pf0ein572cyu"]
+[gd_scene load_steps=62 format=3 uid="uid://pf0ein572cyu"]
 
 [ext_resource type="Script" uid="uid://byt2xuix81f60" path="res://navigation_ui.gd" id="1_uxvq6"]
 [ext_resource type="Script" uid="uid://cqlrtaadyc8ne" path="res://checkout_button.gd" id="2_fknbs"]
@@ -16,9 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://sc87jmlpko3u" path="res://wall_cards/scratcher_mega_money.tscn" id="6_a7w5d"]
 [ext_resource type="PackedScene" uid="uid://v6wnbshdrivi" path="res://wall_cards/cigs_chapmans.tscn" id="6_dr5hb"]
 [ext_resource type="Texture2D" uid="uid://tmojiea5sxtf" path="res://cursor_sprites/hands_array_resized.png" id="6_hckn7"]
+[ext_resource type="PackedScene" uid="uid://d4ersnccn3skj" path="res://wall_cards/cigs_manchesters.tscn" id="7_ldu4o"]
 [ext_resource type="Texture2D" uid="uid://dnv77q35mp2cd" path="res://npc_sprites/construction_dude_1.png" id="8_yip5n"]
 [ext_resource type="Texture2D" uid="uid://dgtgdrxt5nrgi" path="res://npc_sprites/biker_dude_1.png" id="9_6ggm5"]
 [ext_resource type="PackedScene" uid="uid://dj2ow2q87817b" path="res://wall_cards/scratcher_cash_fever.tscn" id="9_f4fab"]
+[ext_resource type="PackedScene" uid="uid://bj5kmxct5pinc" path="res://wall_cards/scratcher_jackpot.tscn" id="11_snmny"]
 [ext_resource type="PackedScene" uid="uid://d0ryj7owo2h5r" path="res://store_utilities/register_monitor.tscn" id="11_uceri"]
 [ext_resource type="PackedScene" uid="uid://dlrg8r506uodf" path="res://items/whiskey_bottle.tscn" id="11_wqdg6"]
 [ext_resource type="Script" uid="uid://cpfbilrsee2l7" path="res://scanner_area.gd" id="12_ugrqj"]
@@ -83,6 +85,9 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.9490196, 0.24313726, 0.93333334, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ooxus"]
+bg_color = Color(0.09803922, 0.09411765, 0.09019608, 0.5647059)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldu4o"]
 bg_color = Color(0.09803922, 0.09411765, 0.09019608, 0.5647059)
 
@@ -93,9 +98,6 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.9490196, 0.24313726, 0.93333334, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ooxus"]
-bg_color = Color(0.09803922, 0.09411765, 0.09019608, 0.5647059)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cea3"]
 bg_color = Color(0.41960785, 0.19607843, 0.59607846, 0.59607846)
@@ -388,7 +390,7 @@ text = "Cigs n' Scratchers:"
 
 [node name="WallItemGrid" type="GridContainer" parent="UI/WallItemUI/VBoxContainer"]
 layout_mode = 2
-columns = 3
+columns = 4
 
 [node name="Reds" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" node_paths=PackedStringArray("order_manager") instance=ExtResource("4_1ykfa")]
 layout_mode = 2
@@ -408,6 +410,12 @@ order_manager = NodePath("../../../../../Managers/OrderManager")
 normal_panel_style = SubResource("StyleBoxFlat_w7ea5")
 hover_panel_style = SubResource("StyleBoxFlat_dr5hb")
 
+[node name="Manchesters" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" node_paths=PackedStringArray("order_manager") instance=ExtResource("7_ldu4o")]
+layout_mode = 2
+order_manager = NodePath("../../../../../Managers/OrderManager")
+normal_panel_style = SubResource("StyleBoxFlat_ooxus")
+hover_panel_style = SubResource("StyleBoxFlat_dr5hb")
+
 [node name="KingDiamond" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" node_paths=PackedStringArray("order_manager") instance=ExtResource("5_uceri")]
 layout_mode = 2
 order_manager = NodePath("../../../../../Managers/OrderManager")
@@ -425,6 +433,12 @@ layout_mode = 2
 order_manager = NodePath("../../../../../Managers/OrderManager")
 normal_panel_style = SubResource("StyleBoxFlat_ooxus")
 hover_panel_style = SubResource("StyleBoxFlat_2cea3")
+
+[node name="Jackpot" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" node_paths=PackedStringArray("order_manager") instance=ExtResource("11_snmny")]
+layout_mode = 2
+order_manager = NodePath("../../../../../Managers/OrderManager")
+normal_panel_style = SubResource("StyleBoxFlat_ooxus")
+hover_panel_style = SubResource("StyleBoxFlat_dr5hb")
 
 [node name="SelectedItemsLabel" type="Label" parent="UI/WallItemUI/VBoxContainer"]
 layout_mode = 2
