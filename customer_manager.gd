@@ -6,6 +6,7 @@ extends Node
 
 @export var counter_items_parent: Node3D
 @export var whiskey_bottle_scene: PackedScene
+@export var croky_chips_scene: PackedScene
 @export var spawn_point_1: Marker3D
 @export var spawn_point_2: Marker3D
 @export var spawn_point_3: Marker3D
@@ -32,7 +33,7 @@ var customers: Array[Dictionary] = [
 	},
 	{
 		"name": "Customer 2",
-		"dialogue": "Give me two King D's and this whiskey bottle?",
+		"dialogue": "Give me two King D's and this whiskey bottle.",
 		"sprite_frame": 1,
 		"money_given": 50.00,
 		"wall_items": {
@@ -53,6 +54,19 @@ var customers: Array[Dictionary] = [
 	},
 	"counter_items": {},
 	"gas_amount": 15.00
+	},
+	{
+	"name": "Customer 4",
+	"dialogue": "I'll get these and a pack of Chapmans... and twenty on the pump.",
+	"sprite_frame": 3,
+	"money_given": 35.00,
+	"wall_items": {
+		"chapmans": 1
+	},
+	"counter_items": {
+		"croky_chips": 1
+	},
+	"gas_amount": 20.00
 	}
 ]
 
@@ -129,6 +143,8 @@ func spawn_counter_item(item_id: String, spawn_point: Marker3D) -> void:
 	match item_id:
 		"whiskey_bottle":
 			item_scene = whiskey_bottle_scene
+		"croky_chips":
+			item_scene = croky_chips_scene
 		_:
 			push_warning("No counter item scene registered for: " + item_id)
 			return

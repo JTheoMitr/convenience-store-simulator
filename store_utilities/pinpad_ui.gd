@@ -75,7 +75,7 @@ func _on_backspace_pressed() -> void:
 
 
 func _on_cancel_pressed() -> void:
-	AudioManager.play_ui_click()
+	AudioManager.play_pinpad()
 	clear_amount()
 
 	if station_manager != null:
@@ -91,7 +91,7 @@ func _on_submit_pressed() -> void:
 	if gas_total <= 0.0:
 		return
 
-	AudioManager.play_ui_click()
+	AudioManager.play_pinpad()
 
 	if order_manager != null:
 		order_manager.add_gas_amount(gas_total)

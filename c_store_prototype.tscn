@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://pf0ein572cyu"]
+[gd_scene load_steps=64 format=3 uid="uid://pf0ein572cyu"]
 
 [ext_resource type="Script" uid="uid://byt2xuix81f60" path="res://navigation_ui.gd" id="1_uxvq6"]
 [ext_resource type="Script" uid="uid://cqlrtaadyc8ne" path="res://checkout_button.gd" id="2_fknbs"]
@@ -24,8 +24,10 @@
 [ext_resource type="PackedScene" uid="uid://d0ryj7owo2h5r" path="res://store_utilities/register_monitor.tscn" id="11_uceri"]
 [ext_resource type="PackedScene" uid="uid://dlrg8r506uodf" path="res://items/whiskey_bottle.tscn" id="11_wqdg6"]
 [ext_resource type="Script" uid="uid://cpfbilrsee2l7" path="res://scanner_area.gd" id="12_ugrqj"]
+[ext_resource type="PackedScene" uid="uid://ci2l2hksfayrs" path="res://items/croky_chips.tscn" id="19_ooxus"]
 [ext_resource type="Texture2D" uid="uid://c6r4ss0e7bs1h" path="res://npc_sprites/suit_man_1.png" id="19_w7ea5"]
 [ext_resource type="Script" uid="uid://b67l8agwov5im" path="res://pinpad_interaction.gd" id="20_a7w5d"]
+[ext_resource type="Texture2D" uid="uid://cofvqi052e116" path="res://npc_sprites/npc (2).png" id="24_snmny"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uceri"]
 bg_color = Color(0.2, 0.3882353, 0.93333334, 0.5529412)
@@ -185,6 +187,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("19_w7ea5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_snmny")
 }],
 "loop": false,
 "name": &"customers",
@@ -492,6 +497,7 @@ order_manager = NodePath("../OrderManager")
 customer_sprite = NodePath("../../Customers/AnimatedSprite3D")
 counter_items_parent = NodePath("../../CounterItems")
 whiskey_bottle_scene = ExtResource("11_wqdg6")
+croky_chips_scene = ExtResource("19_ooxus")
 spawn_point_1 = NodePath("../../CounterItemSpawnPoints/SpawnPoint1")
 spawn_point_2 = NodePath("../../CounterItemSpawnPoints/SpawnPoint2")
 spawn_point_3 = NodePath("../../CounterItemSpawnPoints/SpawnPoint3")

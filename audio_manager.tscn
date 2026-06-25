@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://x7wfr4ohmro2"]
 
 [ext_resource type="Script" uid="uid://8bm6l83lcasg" path="res://audio_manager.gd" id="1_jisk1"]
-[ext_resource type="AudioStream" uid="uid://cw1wda4a7nem" path="res://sfx/button_clicks/SFX_Sound Effect_Button_Click-01.wav" id="2_l2k84"]
 [ext_resource type="AudioStream" uid="uid://c5860rtivoeat" path="res://sfx/button_clicks/MECHClik_UI Button Click Nailclipper Snip Short Bright 03_ESM_ASMR.wav" id="2_l55mp"]
 [ext_resource type="AudioStream" uid="uid://bfqnsw6u7xftc" path="res://sfx/beeps/TEST_Effect Video Signal Lost Sine Tone Beep Short 01_ESM_VCS.wav" id="3_l55mp"]
 [ext_resource type="AudioStream" uid="uid://cncntet2bvqqm" path="res://sfx/beeps/UIAlert_Alert Designed Notification Synth Neutral Beep 01_ESM_HALG.wav" id="4_v0gdi"]
 [ext_resource type="AudioStream" uid="uid://b61gikgmqjpfh" path="res://sfx/cash_register/SFX_Foley_Register_Open_Crunch_Clap.wav" id="5_7fh0q"]
 [ext_resource type="AudioStream" uid="uid://1gphrbg87cl" path="res://sfx/bottle/GAP Percussion_Cola Bottle.wav" id="5_v0gdi"]
 [ext_resource type="AudioStream" uid="uid://b7pgsp0mss5h3" path="res://sfx/plastic_bag/CLOTHMvmt_Cloth Fabric Canvas Bag Handling Plastic Items 01_ESM_ASMR.wav" id="6_op7ad"]
+[ext_resource type="AudioStream" uid="uid://d1qucb4exq6h7" path="res://sfx/plastic_bag/plastic_bag_chips_rustle.mp3" id="9_7fh0q"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_jisk1")
@@ -16,15 +16,16 @@ ui_select_sound = ExtResource("3_l55mp")
 scan_sound = ExtResource("4_v0gdi")
 pinpad_sound = ExtResource("4_v0gdi")
 bottle_grab_sound = ExtResource("5_v0gdi")
+chips_grab_sound = ExtResource("9_7fh0q")
 
 [node name="UIButtonPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_l2k84")
+stream = ExtResource("2_l55mp")
 volume_db = -2.0
 pitch_scale = 0.35
 
 [node name="UISelectPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_l55mp")
-volume_db = -23.0
+volume_db = -15.0
 pitch_scale = 1.2
 
 [node name="ScannerPlayer" type="AudioStreamPlayer" parent="."]
@@ -47,3 +48,6 @@ stream = ExtResource("6_op7ad")
 [node name="BottleGrab" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_v0gdi")
 volume_db = -10.0
+
+[node name="ChipsGrab" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_7fh0q")
