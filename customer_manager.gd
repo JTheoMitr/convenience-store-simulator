@@ -7,6 +7,7 @@ extends Node
 @export var counter_items_parent: Node3D
 @export var whiskey_bottle_scene: PackedScene
 @export var croky_chips_scene: PackedScene
+@export var genshin_energy_scene: PackedScene
 @export var spawn_point_1: Marker3D
 @export var spawn_point_2: Marker3D
 @export var spawn_point_3: Marker3D
@@ -40,7 +41,9 @@ var customers: Array[Dictionary] = [
 			"king_diamond": 2
 		},
 		"counter_items": {
-			"whiskey_bottle": 1
+			"whiskey_bottle": 1,
+			"croky_chips": 1,
+			"genshin_energy": 1
 		},
 		"gas_amount": 0.0
 	},
@@ -145,6 +148,8 @@ func spawn_counter_item(item_id: String, spawn_point: Marker3D) -> void:
 			item_scene = whiskey_bottle_scene
 		"croky_chips":
 			item_scene = croky_chips_scene
+		"genshin_energy":
+			item_scene = genshin_energy_scene
 		_:
 			push_warning("No counter item scene registered for: " + item_id)
 			return

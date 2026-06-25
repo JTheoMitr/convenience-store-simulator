@@ -1,8 +1,8 @@
 extends Area3D
 
-@export var item_id: String = "croky_chips"
-@export var item_display_name: String = "Croky Chips"
-@export var item_price: float = 2.99
+@export var item_id: String = "genshin_energy"
+@export var item_display_name: String = "Genshin Energy"
+@export var item_price: float = 1.99
 @export var computer_drag_blocker: Area3D
 
 @export var counter_drag_bounds: Area3D
@@ -30,7 +30,7 @@ func _on_input_event(
 	_normal: Vector3,
 	_shape_idx: int
 ) -> void:
-	print("Croky Chips input event:", event)
+	print("Genshin Energy input event:", event)
 
 	if station_manager == null or !station_manager.is_at_register():
 		return
@@ -40,7 +40,7 @@ func _on_input_event(
 
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
-			AudioManager.play_chips_grab()
+			AudioManager.play_bottle_grab()
 
 			is_dragging = true
 			drag_plane_y = resting_y + drag_height_offset

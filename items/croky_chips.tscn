@@ -1,22 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://ci2l2hksfayrs"]
 
 [ext_resource type="Script" uid="uid://c2y55txjeqgkn" path="res://items/croky_chips.gd" id="1_8of8p"]
-[ext_resource type="Texture2D" uid="uid://joaxhdj8ega" path="res://item_sprites/croky_chips.png" id="2_8of8p"]
+[ext_resource type="Texture2D" uid="uid://cdlydltihuh2s" path="res://item_sprites/croky_chips_500.png" id="2_8of8p"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0qty8"]
-radius = 0.11816406
-height = 0.3322296
+radius = 0.080078125
+height = 0.23208046
 
 [node name="CrokyChips" type="Area3D" groups=["draggable_counter_item"]]
 script = ExtResource("1_8of8p")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.23, 0, 0, 0, 0.23, 0, 0, 0, 0.23, 0, 0, 0)
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, 0, 0, 0)
 billboard = 1
 texture = ExtResource("2_8of8p")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.021965027, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02389431, 0)
 shape = SubResource("CapsuleShape3D_0qty8")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://pf0ein572cyu"]
+[gd_scene load_steps=70 format=3 uid="uid://pf0ein572cyu"]
 
 [ext_resource type="Script" uid="uid://byt2xuix81f60" path="res://navigation_ui.gd" id="1_uxvq6"]
 [ext_resource type="Script" uid="uid://cqlrtaadyc8ne" path="res://checkout_button.gd" id="2_fknbs"]
@@ -26,8 +26,11 @@
 [ext_resource type="Script" uid="uid://cpfbilrsee2l7" path="res://scanner_area.gd" id="12_ugrqj"]
 [ext_resource type="PackedScene" uid="uid://ci2l2hksfayrs" path="res://items/croky_chips.tscn" id="19_ooxus"]
 [ext_resource type="Texture2D" uid="uid://c6r4ss0e7bs1h" path="res://npc_sprites/suit_man_1.png" id="19_w7ea5"]
+[ext_resource type="PackedScene" uid="uid://da846o56kvanr" path="res://items/genshin_energy.tscn" id="20_2cea3"]
 [ext_resource type="Script" uid="uid://b67l8agwov5im" path="res://pinpad_interaction.gd" id="20_a7w5d"]
 [ext_resource type="Texture2D" uid="uid://cofvqi052e116" path="res://npc_sprites/npc (2).png" id="24_snmny"]
+[ext_resource type="Texture2D" uid="uid://dj5do3c03bugt" path="res://store_utilities/scanner_arrow_1.png" id="30_r3oaa"]
+[ext_resource type="Texture2D" uid="uid://b5jdxf0kymn7c" path="res://store_utilities/scanner_arrow_2.png" id="31_ekuo6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uceri"]
 bg_color = Color(0.2, 0.3882353, 0.93333334, 0.5529412)
@@ -242,6 +245,28 @@ shading_mode = 0
 vertex_color_is_srgb = true
 albedo_texture = SubResource("ViewportTexture_f4fab")
 albedo_texture_force_srgb = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekuo6"]
+atlas = ExtResource("30_r3oaa")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ert6a"]
+atlas = ExtResource("31_ekuo6")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ert6a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekuo6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ert6a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="CStorePrototype" type="Node3D"]
 
@@ -498,6 +523,7 @@ customer_sprite = NodePath("../../Customers/AnimatedSprite3D")
 counter_items_parent = NodePath("../../CounterItems")
 whiskey_bottle_scene = ExtResource("11_wqdg6")
 croky_chips_scene = ExtResource("19_ooxus")
+genshin_energy_scene = ExtResource("20_2cea3")
 spawn_point_1 = NodePath("../../CounterItemSpawnPoints/SpawnPoint1")
 spawn_point_2 = NodePath("../../CounterItemSpawnPoints/SpawnPoint2")
 spawn_point_3 = NodePath("../../CounterItemSpawnPoints/SpawnPoint3")
@@ -555,9 +581,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7320321, 1.5, 3.9595275)
 
 [node name="StoreBlockout" type="Node3D" parent="."]
 
-[node name="ScannerArea" type="Area3D" parent="StoreBlockout" node_paths=PackedStringArray("order_manager")]
+[node name="ScannerArea" type="Area3D" parent="StoreBlockout" node_paths=PackedStringArray("order_manager", "scanner_arrows")]
 script = ExtResource("12_ugrqj")
 order_manager = NodePath("../../Managers/OrderManager")
+scanner_arrows = NodePath("../ScanArrows")
 
 [node name="ScannerPanel" type="MeshInstance3D" parent="StoreBlockout/ScannerArea"]
 transform = Transform3D(0.35, 0, 0, 0, 0.2, 0, 0, 0, 0.65, 1.0568554, 1.3931578, 2.8092434)
@@ -626,3 +653,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_vjb3v")
 [node name="PinpadViewport" type="SubViewport" parent="StoreBlockout/PinpadScreen3D"]
 process_mode = 3
 transparent_bg = true
+
+[node name="ScanArrows" type="AnimatedSprite3D" parent="StoreBlockout"]
+transform = Transform3D(0.00021965103, -0.1199515, 0.0034041924, 0.0021435078, 0.0034075775, 0.11993247, -0.11998066, -0.00015871946, 0.0021488774, 1.0769401, 1.4989383, 2.8107123)
+sprite_frames = SubResource("SpriteFrames_ert6a")
