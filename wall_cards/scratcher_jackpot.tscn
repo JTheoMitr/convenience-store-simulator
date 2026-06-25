@@ -1,537 +1,429 @@
 [gd_scene load_steps=424 format=3 uid="uid://bj5kmxct5pinc"]
 
 [ext_resource type="Script" uid="uid://lhf0wuxikyth" path="res://wall_cards/wall_item_card.gd" id="1_ep7hc"]
-[ext_resource type="Texture2D" uid="uid://c7yr4pj558pt4" path="res://items/scratchers/jackpot_spin_anim/frame_000_delay-0.02s.png" id="2_kg6xf"]
-[ext_resource type="Texture2D" uid="uid://bpdqa2fug8dy1" path="res://items/scratchers/jackpot_spin_anim/frame_001_delay-0.02s.png" id="3_bvygo"]
-[ext_resource type="Texture2D" uid="uid://dg0noux72cv1m" path="res://items/scratchers/jackpot_spin_anim/frame_002_delay-0.02s.png" id="4_iv58n"]
-[ext_resource type="Texture2D" uid="uid://cmo00tahb7mpq" path="res://items/scratchers/jackpot_spin_anim/frame_003_delay-0.02s.png" id="5_hwcfk"]
-[ext_resource type="Texture2D" uid="uid://cf8d0mwhq2s7m" path="res://items/scratchers/jackpot_spin_anim/frame_004_delay-0.02s.png" id="6_0376o"]
-[ext_resource type="Texture2D" uid="uid://bivirx80phyo" path="res://items/scratchers/jackpot_spin_anim/frame_005_delay-0.02s.png" id="7_yar2m"]
-[ext_resource type="Texture2D" uid="uid://bf0qpxbbrnjij" path="res://items/scratchers/jackpot_spin_anim/frame_006_delay-0.02s.png" id="8_fe7h1"]
-[ext_resource type="Texture2D" uid="uid://c4xijamtxda26" path="res://items/scratchers/jackpot_spin_anim/frame_007_delay-0.02s.png" id="9_gquir"]
-[ext_resource type="Texture2D" uid="uid://dvgnvfc4qo31y" path="res://items/scratchers/jackpot_spin_anim/frame_008_delay-0.02s.png" id="10_bkex1"]
-[ext_resource type="Texture2D" uid="uid://xrhpl1nq383a" path="res://items/scratchers/jackpot_spin_anim/frame_009_delay-0.02s.png" id="11_hsni6"]
-[ext_resource type="Texture2D" uid="uid://cxboo0vsukts4" path="res://items/scratchers/jackpot_spin_anim/frame_010_delay-0.02s.png" id="12_obgue"]
-[ext_resource type="Texture2D" uid="uid://usfgeklg5nsy" path="res://items/scratchers/jackpot_spin_anim/frame_011_delay-0.02s.png" id="13_2gdk7"]
-[ext_resource type="Texture2D" uid="uid://ceessr2t5v2re" path="res://items/scratchers/jackpot_spin_anim/frame_012_delay-0.02s.png" id="14_jk5cp"]
-[ext_resource type="Texture2D" uid="uid://d4eitbjldtmpq" path="res://items/scratchers/jackpot_spin_anim/frame_013_delay-0.02s.png" id="15_evc0n"]
-[ext_resource type="Texture2D" uid="uid://c2yri3why57px" path="res://items/scratchers/jackpot_spin_anim/frame_014_delay-0.02s.png" id="16_yi6df"]
-[ext_resource type="Texture2D" uid="uid://beb7c0bn1odxv" path="res://items/scratchers/jackpot_spin_anim/frame_015_delay-0.02s.png" id="17_eee2x"]
-[ext_resource type="Texture2D" uid="uid://cyg6pc78pqdp5" path="res://items/scratchers/jackpot_spin_anim/frame_016_delay-0.02s.png" id="18_5qpsf"]
-[ext_resource type="Texture2D" uid="uid://pgs4iviu5fqq" path="res://items/scratchers/jackpot_spin_anim/frame_017_delay-0.02s.png" id="19_a88lk"]
-[ext_resource type="Texture2D" uid="uid://dfvlrixnq6kgd" path="res://items/scratchers/jackpot_spin_anim/frame_018_delay-0.02s.png" id="20_op3cr"]
-[ext_resource type="Texture2D" uid="uid://vjm0w2nu66wr" path="res://items/scratchers/jackpot_spin_anim/frame_019_delay-0.02s.png" id="21_qvl55"]
-[ext_resource type="Texture2D" uid="uid://s1ieh8ysdcwj" path="res://items/scratchers/jackpot_spin_anim/frame_020_delay-0.02s.png" id="22_x5046"]
-[ext_resource type="Texture2D" uid="uid://csj3qawn18383" path="res://items/scratchers/jackpot_spin_anim/frame_021_delay-0.02s.png" id="23_s3x0d"]
-[ext_resource type="Texture2D" uid="uid://dkde23lvdpb8m" path="res://items/scratchers/jackpot_spin_anim/frame_022_delay-0.02s.png" id="24_7xxwc"]
-[ext_resource type="Texture2D" uid="uid://dnba6hq21ye7g" path="res://items/scratchers/jackpot_spin_anim/frame_023_delay-0.02s.png" id="25_vu66y"]
-[ext_resource type="Texture2D" uid="uid://dcwpa5k22ji82" path="res://items/scratchers/jackpot_spin_anim/frame_024_delay-0.02s.png" id="26_oggrx"]
-[ext_resource type="Texture2D" uid="uid://b8h5fb33825cf" path="res://items/scratchers/jackpot_spin_anim/frame_025_delay-0.02s.png" id="27_scbui"]
-[ext_resource type="Texture2D" uid="uid://wgb2vx47vpp7" path="res://items/scratchers/jackpot_spin_anim/frame_026_delay-0.02s.png" id="28_6tyxl"]
-[ext_resource type="Texture2D" uid="uid://hj42wutnv8ho" path="res://items/scratchers/jackpot_spin_anim/frame_027_delay-0.02s.png" id="29_2dodj"]
-[ext_resource type="Texture2D" uid="uid://c4quynvrt6gdq" path="res://items/scratchers/jackpot_spin_anim/frame_028_delay-0.02s.png" id="30_o8i1t"]
-[ext_resource type="Texture2D" uid="uid://t3y3bho6njmp" path="res://items/scratchers/jackpot_spin_anim/frame_029_delay-0.02s.png" id="31_5715f"]
-[ext_resource type="Texture2D" uid="uid://s3qtvsghgrx8" path="res://items/scratchers/jackpot_spin_anim/frame_030_delay-0.02s.png" id="32_bkfgt"]
-[ext_resource type="Texture2D" uid="uid://bk0f16631obul" path="res://items/scratchers/jackpot_spin_anim/frame_031_delay-0.02s.png" id="33_amg56"]
-[ext_resource type="Texture2D" uid="uid://cowbhi64whwgl" path="res://items/scratchers/jackpot_spin_anim/frame_032_delay-0.02s.png" id="34_omcbl"]
-[ext_resource type="Texture2D" uid="uid://dsrbxbostqrf" path="res://items/scratchers/jackpot_spin_anim/frame_033_delay-0.02s.png" id="35_xg45i"]
-[ext_resource type="Texture2D" uid="uid://dq5tft2mfdag0" path="res://items/scratchers/jackpot_spin_anim/frame_034_delay-0.02s.png" id="36_k46w0"]
-[ext_resource type="Texture2D" uid="uid://ca7wb2tlklrir" path="res://items/scratchers/jackpot_spin_anim/frame_035_delay-0.02s.png" id="37_sekgk"]
-[ext_resource type="Texture2D" uid="uid://dqumbkwcqse6a" path="res://items/scratchers/jackpot_spin_anim/frame_036_delay-0.02s.png" id="38_oijoq"]
-[ext_resource type="Texture2D" uid="uid://l8j5k1op6wjj" path="res://items/scratchers/jackpot_spin_anim/frame_037_delay-0.02s.png" id="39_wheyw"]
-[ext_resource type="Texture2D" uid="uid://dwcdy74e48hjf" path="res://items/scratchers/jackpot_spin_anim/frame_038_delay-0.02s.png" id="40_hxt7y"]
-[ext_resource type="Texture2D" uid="uid://cwip6uonapmw2" path="res://items/scratchers/jackpot_spin_anim/frame_039_delay-0.02s.png" id="41_q6uhb"]
-[ext_resource type="Texture2D" uid="uid://b5dx44hq5h884" path="res://items/scratchers/jackpot_spin_anim/frame_040_delay-0.02s.png" id="42_aug4k"]
-[ext_resource type="Texture2D" uid="uid://bw8xouleetbvw" path="res://items/scratchers/jackpot_spin_anim/frame_041_delay-0.02s.png" id="43_ch0wv"]
-[ext_resource type="Texture2D" uid="uid://efkahbjp25vv" path="res://items/scratchers/jackpot_spin_anim/frame_042_delay-0.02s.png" id="44_edal1"]
-[ext_resource type="Texture2D" uid="uid://b41rs2p1v6g7" path="res://items/scratchers/jackpot_spin_anim/frame_043_delay-0.02s.png" id="45_u2y0e"]
-[ext_resource type="Texture2D" uid="uid://0s4l5ddph3t6" path="res://items/scratchers/jackpot_spin_anim/frame_044_delay-0.02s.png" id="46_vnd7d"]
-[ext_resource type="Texture2D" uid="uid://hsymq8uynxon" path="res://items/scratchers/jackpot_spin_anim/frame_045_delay-0.02s.png" id="47_3ru47"]
-[ext_resource type="Texture2D" uid="uid://cu11bxftdt2re" path="res://items/scratchers/jackpot_spin_anim/frame_046_delay-0.02s.png" id="48_86hhb"]
-[ext_resource type="Texture2D" uid="uid://du6iegv5cftee" path="res://items/scratchers/jackpot_spin_anim/frame_047_delay-0.02s.png" id="49_oq55s"]
-[ext_resource type="Texture2D" uid="uid://dd48rthtxmmfm" path="res://items/scratchers/jackpot_spin_anim/frame_048_delay-0.02s.png" id="50_f4sdp"]
-[ext_resource type="Texture2D" uid="uid://dva5ttmlrwjp2" path="res://items/scratchers/jackpot_spin_anim/frame_049_delay-0.02s.png" id="51_8me7y"]
-[ext_resource type="Texture2D" uid="uid://ca7wry7btpmu0" path="res://items/scratchers/jackpot_spin_anim/frame_050_delay-0.02s.png" id="52_j0m45"]
-[ext_resource type="Texture2D" uid="uid://ctx2jrrxs1opv" path="res://items/scratchers/jackpot_spin_anim/frame_051_delay-0.02s.png" id="53_yb5xm"]
-[ext_resource type="Texture2D" uid="uid://deot8kyojh8ul" path="res://items/scratchers/jackpot_spin_anim/frame_052_delay-0.02s.png" id="54_u2f7q"]
-[ext_resource type="Texture2D" uid="uid://dgh3hxypf1n4f" path="res://items/scratchers/jackpot_spin_anim/frame_053_delay-0.02s.png" id="55_5atjv"]
-[ext_resource type="Texture2D" uid="uid://caem0ioyoxo4x" path="res://items/scratchers/jackpot_spin_anim/frame_054_delay-0.02s.png" id="56_0snic"]
-[ext_resource type="Texture2D" uid="uid://2uw5bhlnme7j" path="res://items/scratchers/jackpot_spin_anim/frame_055_delay-0.02s.png" id="57_32k3y"]
-[ext_resource type="Texture2D" uid="uid://bqhawy78yyet6" path="res://items/scratchers/jackpot_spin_anim/frame_056_delay-0.02s.png" id="58_lmwd0"]
-[ext_resource type="Texture2D" uid="uid://dsfdxbcq370d" path="res://items/scratchers/jackpot_spin_anim/frame_057_delay-0.02s.png" id="59_o74lj"]
-[ext_resource type="Texture2D" uid="uid://c5hkqslf04b04" path="res://items/scratchers/jackpot_spin_anim/frame_058_delay-0.02s.png" id="60_w3ncc"]
-[ext_resource type="Texture2D" uid="uid://bm1gtwp6ke824" path="res://items/scratchers/jackpot_spin_anim/frame_059_delay-0.02s.png" id="61_etdup"]
-[ext_resource type="Texture2D" uid="uid://ccfawsfalr3kd" path="res://items/scratchers/jackpot_spin_anim/frame_060_delay-0.02s.png" id="62_a1p0t"]
-[ext_resource type="Texture2D" uid="uid://btqi3tlsifayf" path="res://items/scratchers/jackpot_spin_anim/frame_061_delay-0.02s.png" id="63_ov1eq"]
-[ext_resource type="Texture2D" uid="uid://bm23aiakg4ua4" path="res://items/scratchers/jackpot_spin_anim/frame_062_delay-0.02s.png" id="64_4b0iv"]
-[ext_resource type="Texture2D" uid="uid://c3n6feirwy550" path="res://items/scratchers/jackpot_spin_anim/frame_063_delay-0.02s.png" id="65_jydfx"]
-[ext_resource type="Texture2D" uid="uid://7g4qqgw10kbn" path="res://items/scratchers/jackpot_spin_anim/frame_064_delay-0.02s.png" id="66_2lcbf"]
-[ext_resource type="Texture2D" uid="uid://ccs43nmiaexxd" path="res://items/scratchers/jackpot_spin_anim/frame_065_delay-0.02s.png" id="67_fahwl"]
-[ext_resource type="Texture2D" uid="uid://crt68q0b2popk" path="res://items/scratchers/jackpot_spin_anim/frame_066_delay-0.02s.png" id="68_037gq"]
-[ext_resource type="Texture2D" uid="uid://b36u3y47syenx" path="res://items/scratchers/jackpot_spin_anim/frame_067_delay-0.02s.png" id="69_nd3vt"]
-[ext_resource type="Texture2D" uid="uid://bhgr6so5jau2a" path="res://items/scratchers/jackpot_spin_anim/frame_068_delay-0.02s.png" id="70_vu3ut"]
-[ext_resource type="Texture2D" uid="uid://d4jsfjs7ykurt" path="res://items/scratchers/jackpot_spin_anim/frame_069_delay-0.02s.png" id="71_7gy1b"]
-[ext_resource type="Texture2D" uid="uid://c0wykouo7kq22" path="res://items/scratchers/jackpot_spin_anim/frame_070_delay-0.02s.png" id="72_mpgvx"]
-[ext_resource type="Texture2D" uid="uid://dwtcqic4hxvcs" path="res://items/scratchers/jackpot_spin_anim/frame_071_delay-0.02s.png" id="73_orfb3"]
-[ext_resource type="Texture2D" uid="uid://ceba2olcm7wey" path="res://items/scratchers/jackpot_spin_anim/frame_072_delay-0.02s.png" id="74_grpfx"]
-[ext_resource type="Texture2D" uid="uid://bq3tw65p8s6md" path="res://items/scratchers/jackpot_spin_anim/frame_073_delay-0.02s.png" id="75_3xh1t"]
-[ext_resource type="Texture2D" uid="uid://d0xc8uumbd3nu" path="res://items/scratchers/jackpot_spin_anim/frame_074_delay-0.02s.png" id="76_f5lgc"]
-[ext_resource type="Texture2D" uid="uid://bvhbjos0stjnx" path="res://items/scratchers/jackpot_spin_anim/frame_075_delay-0.02s.png" id="77_a11m5"]
-[ext_resource type="Texture2D" uid="uid://cjb40uw7pvqjv" path="res://items/scratchers/jackpot_spin_anim/frame_076_delay-0.02s.png" id="78_vqca1"]
-[ext_resource type="Texture2D" uid="uid://ip2brf8kwjb3" path="res://items/scratchers/jackpot_spin_anim/frame_077_delay-0.02s.png" id="79_er8y6"]
-[ext_resource type="Texture2D" uid="uid://llsbevuf10gj" path="res://items/scratchers/jackpot_spin_anim/frame_078_delay-0.02s.png" id="80_7l15l"]
-[ext_resource type="Texture2D" uid="uid://c8vbnfbd015wc" path="res://items/scratchers/jackpot_spin_anim/frame_079_delay-0.02s.png" id="81_8msbp"]
-[ext_resource type="Texture2D" uid="uid://cqnlf3lmvhegm" path="res://items/scratchers/jackpot_spin_anim/frame_080_delay-0.02s.png" id="82_4g1rx"]
-[ext_resource type="Texture2D" uid="uid://cqx5ydjd7hr8n" path="res://items/scratchers/jackpot_spin_anim/frame_081_delay-0.02s.png" id="83_mvciu"]
-[ext_resource type="Texture2D" uid="uid://br1j354irthwh" path="res://items/scratchers/jackpot_spin_anim/frame_082_delay-0.02s.png" id="84_hynyv"]
-[ext_resource type="Texture2D" uid="uid://6tarrqke2ypg" path="res://items/scratchers/jackpot_spin_anim/frame_083_delay-0.02s.png" id="85_l5c0b"]
-[ext_resource type="Texture2D" uid="uid://c318b78go153e" path="res://items/scratchers/jackpot_spin_anim/frame_084_delay-0.02s.png" id="86_k33dx"]
-[ext_resource type="Texture2D" uid="uid://ufpt4ix72wi6" path="res://items/scratchers/jackpot_spin_anim/frame_085_delay-0.02s.png" id="87_0hja0"]
-[ext_resource type="Texture2D" uid="uid://c44iq45nsuhg7" path="res://items/scratchers/jackpot_spin_anim/frame_086_delay-0.02s.png" id="88_ij1gh"]
-[ext_resource type="Texture2D" uid="uid://bsk0cn68rtf2j" path="res://items/scratchers/jackpot_spin_anim/frame_087_delay-0.02s.png" id="89_tdqwm"]
-[ext_resource type="Texture2D" uid="uid://m1lkqj21pe6a" path="res://items/scratchers/jackpot_spin_anim/frame_088_delay-0.02s.png" id="90_86oaa"]
-[ext_resource type="Texture2D" uid="uid://c8b5br5f4yhfx" path="res://items/scratchers/jackpot_spin_anim/frame_089_delay-0.02s.png" id="91_in78o"]
-[ext_resource type="Texture2D" uid="uid://dnjt6a2aboh10" path="res://items/scratchers/jackpot_spin_anim/frame_090_delay-0.02s.png" id="92_gx1xf"]
-[ext_resource type="Texture2D" uid="uid://c4fhveeqix4ll" path="res://items/scratchers/jackpot_spin_anim/frame_091_delay-0.02s.png" id="93_q5486"]
-[ext_resource type="Texture2D" uid="uid://b0100sf24c7g" path="res://items/scratchers/jackpot_spin_anim/frame_092_delay-0.02s.png" id="94_djvgp"]
-[ext_resource type="Texture2D" uid="uid://bh45o1ygm65t8" path="res://items/scratchers/jackpot_spin_anim/frame_093_delay-0.02s.png" id="95_ci21u"]
-[ext_resource type="Texture2D" uid="uid://cx6vdruncc4l0" path="res://items/scratchers/jackpot_spin_anim/frame_094_delay-0.02s.png" id="96_dr1ey"]
-[ext_resource type="Texture2D" uid="uid://s3fm17vwh7ft" path="res://items/scratchers/jackpot_spin_anim/frame_095_delay-0.02s.png" id="97_2yu57"]
-[ext_resource type="Texture2D" uid="uid://bna3efbh1yom5" path="res://items/scratchers/jackpot_spin_anim/frame_096_delay-0.02s.png" id="98_bbg7a"]
-[ext_resource type="Texture2D" uid="uid://ck3foilvs36io" path="res://items/scratchers/jackpot_spin_anim/frame_097_delay-0.02s.png" id="99_vbvr5"]
-[ext_resource type="Texture2D" uid="uid://ca76bl5evqw1t" path="res://items/scratchers/jackpot_spin_anim/frame_098_delay-0.02s.png" id="100_c12qg"]
-[ext_resource type="Texture2D" uid="uid://kh84tcpqpyf6" path="res://items/scratchers/jackpot_spin_anim/frame_099_delay-0.02s.png" id="101_ja58s"]
-[ext_resource type="Texture2D" uid="uid://b46oxjv40uyvv" path="res://items/scratchers/jackpot_spin_anim/frame_100_delay-0.02s.png" id="102_l5gpx"]
-[ext_resource type="Texture2D" uid="uid://b762nmdfm6q6u" path="res://items/scratchers/jackpot_spin_anim/frame_101_delay-0.02s.png" id="103_8gn8r"]
-[ext_resource type="Texture2D" uid="uid://c506c626w8grv" path="res://items/scratchers/jackpot_spin_anim/frame_102_delay-0.02s.png" id="104_1bre6"]
-[ext_resource type="Texture2D" uid="uid://h2y48w2nw3o8" path="res://items/scratchers/jackpot_spin_anim/frame_103_delay-0.02s.png" id="105_tv8tq"]
-[ext_resource type="Texture2D" uid="uid://bvbcmpbsrl44u" path="res://items/scratchers/jackpot_spin_anim/frame_104_delay-0.02s.png" id="106_gspsn"]
-[ext_resource type="Texture2D" uid="uid://b8uht1o1y3tir" path="res://items/scratchers/jackpot_spin_anim/frame_105_delay-0.02s.png" id="107_ei67j"]
-[ext_resource type="Texture2D" uid="uid://b70q23kgmqu0f" path="res://items/scratchers/jackpot_spin_anim/frame_106_delay-0.02s.png" id="108_wka30"]
-[ext_resource type="Texture2D" uid="uid://d4ee6kdtvg2cc" path="res://items/scratchers/jackpot_spin_anim/frame_107_delay-0.02s.png" id="109_7xkoy"]
-[ext_resource type="Texture2D" uid="uid://o78mf4gjllf2" path="res://items/scratchers/jackpot_spin_anim/frame_108_delay-0.02s.png" id="110_gwla7"]
-[ext_resource type="Texture2D" uid="uid://d3a41w6s8m0b5" path="res://items/scratchers/jackpot_spin_anim/frame_109_delay-0.02s.png" id="111_0fmsy"]
-[ext_resource type="Texture2D" uid="uid://21dsm1myla2j" path="res://items/scratchers/jackpot_spin_anim/frame_110_delay-0.02s.png" id="112_fbwqy"]
-[ext_resource type="Texture2D" uid="uid://dsaplob1l7jv8" path="res://items/scratchers/jackpot_spin_anim/frame_111_delay-0.02s.png" id="113_nt5ly"]
-[ext_resource type="Texture2D" uid="uid://chcoxcend1v1m" path="res://items/scratchers/jackpot_spin_anim/frame_112_delay-0.02s.png" id="114_wn5le"]
-[ext_resource type="Texture2D" uid="uid://bdynqjpgi2tfy" path="res://items/scratchers/jackpot_spin_anim/frame_113_delay-0.02s.png" id="115_ai65r"]
-[ext_resource type="Texture2D" uid="uid://ct2gjx3bqvui3" path="res://items/scratchers/jackpot_spin_anim/frame_114_delay-0.02s.png" id="116_5yaq4"]
-[ext_resource type="Texture2D" uid="uid://di0x2l3bwp4re" path="res://items/scratchers/jackpot_spin_anim/frame_115_delay-0.02s.png" id="117_3diph"]
-[ext_resource type="Texture2D" uid="uid://bdeqxx0wy5rmv" path="res://items/scratchers/jackpot_spin_anim/frame_116_delay-0.02s.png" id="118_ldtah"]
-[ext_resource type="Texture2D" uid="uid://bto4b6aksdwxn" path="res://items/scratchers/jackpot_spin_anim/frame_117_delay-0.02s.png" id="119_un7tr"]
-[ext_resource type="Texture2D" uid="uid://c3serex33j0sl" path="res://items/scratchers/jackpot_spin_anim/frame_118_delay-0.02s.png" id="120_hb6jj"]
-[ext_resource type="Texture2D" uid="uid://byrbev03phveb" path="res://items/scratchers/jackpot_spin_anim/frame_119_delay-0.02s.png" id="121_v2x6j"]
-[ext_resource type="Texture2D" uid="uid://d0h4w7g162wdn" path="res://items/scratchers/jackpot_spin_anim/frame_120_delay-0.02s.png" id="122_cnubl"]
-[ext_resource type="Texture2D" uid="uid://bda30n7xfollf" path="res://items/scratchers/jackpot_spin_anim/frame_121_delay-0.02s.png" id="123_7h574"]
-[ext_resource type="Texture2D" uid="uid://rswmpfe78o0v" path="res://items/scratchers/jackpot_spin_anim/frame_122_delay-0.02s.png" id="124_dbuov"]
-[ext_resource type="Texture2D" uid="uid://cnkho2qqx0ch2" path="res://items/scratchers/jackpot_spin_anim/frame_123_delay-0.02s.png" id="125_abq34"]
-[ext_resource type="Texture2D" uid="uid://m8vhlramhdn3" path="res://items/scratchers/jackpot_spin_anim/frame_124_delay-0.02s.png" id="126_xc84t"]
-[ext_resource type="Texture2D" uid="uid://cjlu1m2cw5jpk" path="res://items/scratchers/jackpot_spin_anim/frame_125_delay-0.02s.png" id="127_uia1i"]
-[ext_resource type="Texture2D" uid="uid://4q2m185e5d8t" path="res://items/scratchers/jackpot_spin_anim/frame_126_delay-0.02s.png" id="128_qw1ry"]
-[ext_resource type="Texture2D" uid="uid://cxodnm264yrqw" path="res://items/scratchers/jackpot_spin_anim/frame_127_delay-0.02s.png" id="129_3catx"]
-[ext_resource type="Texture2D" uid="uid://4oy2otyvoa62" path="res://items/scratchers/jackpot_spin_anim/frame_128_delay-0.02s.png" id="130_7t4ha"]
-[ext_resource type="Texture2D" uid="uid://dftssp5yvls2h" path="res://items/scratchers/jackpot_spin_anim/frame_129_delay-0.02s.png" id="131_xupf8"]
-[ext_resource type="Texture2D" uid="uid://beei6xwp57esh" path="res://items/scratchers/jackpot_spin_anim/frame_130_delay-0.02s.png" id="132_nyisn"]
-[ext_resource type="Texture2D" uid="uid://bfdiyn4t0l542" path="res://items/scratchers/jackpot_spin_anim/frame_131_delay-0.02s.png" id="133_c8pc6"]
-[ext_resource type="Texture2D" uid="uid://c3mtdamf0d3o1" path="res://items/scratchers/jackpot_spin_anim/frame_132_delay-0.02s.png" id="134_djxka"]
-[ext_resource type="Texture2D" uid="uid://c5ip232r3j6ar" path="res://items/scratchers/jackpot_spin_anim/frame_133_delay-0.02s.png" id="135_xr38y"]
-[ext_resource type="Texture2D" uid="uid://djmfjkw517nj7" path="res://items/scratchers/jackpot_spin_anim/frame_134_delay-0.02s.png" id="136_peheo"]
-[ext_resource type="Texture2D" uid="uid://chhjcq5aa77e7" path="res://items/scratchers/jackpot_spin_anim/frame_135_delay-0.02s.png" id="137_cpxvj"]
-[ext_resource type="Texture2D" uid="uid://cysep64aag64t" path="res://items/scratchers/jackpot_spin_anim/frame_136_delay-0.02s.png" id="138_22gvw"]
-[ext_resource type="Texture2D" uid="uid://dylqcdrhggeyu" path="res://items/scratchers/jackpot_spin_anim/frame_137_delay-0.02s.png" id="139_flqow"]
-[ext_resource type="Texture2D" uid="uid://dlg5p5w8hfc3a" path="res://items/scratchers/jackpot_spin_anim/frame_138_delay-0.02s.png" id="140_kmy8h"]
-[ext_resource type="Texture2D" uid="uid://r58cbwsahnqc" path="res://items/scratchers/jackpot_spin_anim/frame_139_delay-0.02s.png" id="141_1scgp"]
-[ext_resource type="Texture2D" uid="uid://c2pogwt1paw6v" path="res://items/scratchers/jackpot_spin_anim/frame_140_delay-0.02s.png" id="142_13dda"]
-[ext_resource type="Texture2D" uid="uid://es2dbtpocjki" path="res://items/scratchers/jackpot_spin_anim/frame_141_delay-0.02s.png" id="143_pipb3"]
-[ext_resource type="Texture2D" uid="uid://bhga4688ovco" path="res://items/scratchers/jackpot_spin_anim/frame_142_delay-0.02s.png" id="144_8ejic"]
-[ext_resource type="Texture2D" uid="uid://b8t5qbeb02d2v" path="res://items/scratchers/jackpot_spin_anim/frame_143_delay-0.02s.png" id="145_5u8ac"]
-[ext_resource type="Texture2D" uid="uid://chb8osyxesxkk" path="res://items/scratchers/jackpot_spin_anim/frame_144_delay-0.02s.png" id="146_5qbjx"]
-[ext_resource type="Texture2D" uid="uid://bcmjslaq3ngvh" path="res://items/scratchers/jackpot_spin_anim/frame_145_delay-0.02s.png" id="147_2hov8"]
-[ext_resource type="Texture2D" uid="uid://dg6wgn0fgl7vy" path="res://items/scratchers/jackpot_spin_anim/frame_146_delay-0.02s.png" id="148_ihkhh"]
-[ext_resource type="Texture2D" uid="uid://d1vjoskgsvscs" path="res://items/scratchers/jackpot_spin_anim/frame_147_delay-0.02s.png" id="149_2sdtb"]
-[ext_resource type="Texture2D" uid="uid://ui4di6y6sgys" path="res://items/scratchers/jackpot_spin_anim/frame_148_delay-0.02s.png" id="150_adb18"]
-[ext_resource type="Texture2D" uid="uid://b8i72p6w6veu8" path="res://items/scratchers/jackpot_spin_anim/frame_149_delay-0.02s.png" id="151_l10pk"]
-[ext_resource type="Texture2D" uid="uid://c0opdmg5kq74m" path="res://items/scratchers/jackpot_spin_anim/frame_150_delay-0.02s.png" id="152_1k6nn"]
-[ext_resource type="Texture2D" uid="uid://c3xgnxe5niw6q" path="res://items/scratchers/jackpot_spin_anim/frame_151_delay-0.02s.png" id="153_41e7u"]
-[ext_resource type="Texture2D" uid="uid://kk7os54ia27e" path="res://items/scratchers/jackpot_spin_anim/frame_152_delay-0.02s.png" id="154_08sno"]
-[ext_resource type="Texture2D" uid="uid://ctkudaepk0xbo" path="res://items/scratchers/jackpot_spin_anim/frame_153_delay-0.02s.png" id="155_4tmc7"]
-[ext_resource type="Texture2D" uid="uid://bxk8gk14loymv" path="res://items/scratchers/jackpot_spin_anim/frame_154_delay-0.02s.png" id="156_2uxw5"]
-[ext_resource type="Texture2D" uid="uid://cua3h7001lgui" path="res://items/scratchers/jackpot_spin_anim/frame_155_delay-0.02s.png" id="157_cnfh5"]
-[ext_resource type="Texture2D" uid="uid://bctakiru3hnmw" path="res://items/scratchers/jackpot_spin_anim/frame_156_delay-0.02s.png" id="158_rr0ua"]
-[ext_resource type="Texture2D" uid="uid://bluqyakmsc22q" path="res://items/scratchers/jackpot_spin_anim/frame_157_delay-0.02s.png" id="159_dwd1i"]
-[ext_resource type="Texture2D" uid="uid://db3kq0gdfqxcv" path="res://items/scratchers/jackpot_spin_anim/frame_158_delay-0.02s.png" id="160_63thj"]
-[ext_resource type="Texture2D" uid="uid://7oqc2mbudnqc" path="res://items/scratchers/jackpot_spin_anim/frame_159_delay-0.02s.png" id="161_or77j"]
-[ext_resource type="Texture2D" uid="uid://di6pfgxtutno3" path="res://items/scratchers/jackpot_spin_anim/frame_160_delay-0.02s.png" id="162_6ltod"]
-[ext_resource type="Texture2D" uid="uid://b2150q7ptpr8t" path="res://items/scratchers/jackpot_spin_anim/frame_161_delay-0.02s.png" id="163_kww17"]
-[ext_resource type="Texture2D" uid="uid://dl40i21uebaix" path="res://items/scratchers/jackpot_spin_anim/frame_162_delay-0.02s.png" id="164_ekack"]
-[ext_resource type="Texture2D" uid="uid://gj4njery7rlm" path="res://items/scratchers/jackpot_spin_anim/frame_163_delay-0.02s.png" id="165_yin1h"]
-[ext_resource type="Texture2D" uid="uid://bkrkocxkikoo1" path="res://items/scratchers/jackpot_spin_anim/frame_164_delay-0.02s.png" id="166_gmedv"]
-[ext_resource type="Texture2D" uid="uid://cstlc3wdu5pp8" path="res://items/scratchers/jackpot_spin_anim/frame_165_delay-0.02s.png" id="167_kxgiv"]
-[ext_resource type="Texture2D" uid="uid://b2bd26lqn6b7" path="res://items/scratchers/jackpot_spin_anim/frame_166_delay-0.02s.png" id="168_rdiej"]
-[ext_resource type="Texture2D" uid="uid://cvxjdssng8c5o" path="res://items/scratchers/jackpot_spin_anim/frame_167_delay-0.02s.png" id="169_8fch4"]
-[ext_resource type="Texture2D" uid="uid://buc6a2vw68x8w" path="res://items/scratchers/jackpot_spin_anim/frame_168_delay-0.02s.png" id="170_sw6nr"]
-[ext_resource type="Texture2D" uid="uid://ce2qgyondw7yl" path="res://items/scratchers/jackpot_spin_anim/frame_169_delay-0.02s.png" id="171_alspg"]
-[ext_resource type="Texture2D" uid="uid://bqertddun55hy" path="res://items/scratchers/jackpot_spin_anim/frame_170_delay-0.02s.png" id="172_fbdh5"]
-[ext_resource type="Texture2D" uid="uid://c0phlkb41hjp5" path="res://items/scratchers/jackpot_spin_anim/frame_171_delay-0.02s.png" id="173_1c5r8"]
-[ext_resource type="Texture2D" uid="uid://fyeu7852ihtc" path="res://items/scratchers/jackpot_spin_anim/frame_172_delay-0.02s.png" id="174_a6mhw"]
-[ext_resource type="Texture2D" uid="uid://ctwfm78l31l83" path="res://items/scratchers/jackpot_spin_anim/frame_173_delay-0.02s.png" id="175_rmjpa"]
-[ext_resource type="Texture2D" uid="uid://jvlx0ihw7xpg" path="res://items/scratchers/jackpot_spin_anim/frame_174_delay-0.02s.png" id="176_eo7s0"]
-[ext_resource type="Texture2D" uid="uid://btg8tss3hxi5y" path="res://items/scratchers/jackpot_spin_anim/frame_175_delay-0.02s.png" id="177_exwli"]
-[ext_resource type="Texture2D" uid="uid://khlc2jcryoqs" path="res://items/scratchers/jackpot_spin_anim/frame_176_delay-0.02s.png" id="178_m0je3"]
-[ext_resource type="Texture2D" uid="uid://b8p2n044v0j1d" path="res://items/scratchers/jackpot_spin_anim/frame_177_delay-0.02s.png" id="179_l5k8q"]
-[ext_resource type="Texture2D" uid="uid://bvrlumjs64a2j" path="res://items/scratchers/jackpot_spin_anim/frame_178_delay-0.02s.png" id="180_j54nr"]
-[ext_resource type="Texture2D" uid="uid://vkmk3fnkxqnp" path="res://items/scratchers/jackpot_spin_anim/frame_179_delay-0.02s.png" id="181_kwbpm"]
-[ext_resource type="Texture2D" uid="uid://bmmgjqljrb1lk" path="res://items/scratchers/jackpot_spin_anim/frame_180_delay-0.02s.png" id="182_ew2o5"]
-[ext_resource type="Texture2D" uid="uid://mx8pkmf2sj45" path="res://items/scratchers/jackpot_spin_anim/frame_181_delay-0.02s.png" id="183_haxa6"]
-[ext_resource type="Texture2D" uid="uid://ciuhovkwfw488" path="res://items/scratchers/jackpot_spin_anim/frame_182_delay-0.02s.png" id="184_lvilr"]
-[ext_resource type="Texture2D" uid="uid://h2qgee4pa236" path="res://items/scratchers/jackpot_spin_anim/frame_183_delay-0.02s.png" id="185_iof2f"]
-[ext_resource type="Texture2D" uid="uid://c7pv7sivetba2" path="res://items/scratchers/jackpot_spin_anim/frame_184_delay-0.02s.png" id="186_dlyte"]
-[ext_resource type="Texture2D" uid="uid://dlnnuh5wi5hww" path="res://items/scratchers/jackpot_spin_anim/frame_185_delay-0.02s.png" id="187_od2mx"]
-[ext_resource type="Texture2D" uid="uid://bmlclui1su7um" path="res://items/scratchers/jackpot_spin_anim/frame_186_delay-0.02s.png" id="188_vcnsk"]
-[ext_resource type="Texture2D" uid="uid://drlk30ymc78u6" path="res://items/scratchers/jackpot_spin_anim/frame_187_delay-0.02s.png" id="189_vptuh"]
-[ext_resource type="Texture2D" uid="uid://ctt2n337f54a" path="res://items/scratchers/jackpot_spin_anim/frame_188_delay-0.02s.png" id="190_ae7k6"]
-[ext_resource type="Texture2D" uid="uid://ci50ornvod550" path="res://items/scratchers/jackpot_spin_anim/frame_189_delay-0.02s.png" id="191_nnnyn"]
-[ext_resource type="Texture2D" uid="uid://cn5bmb13f8tqc" path="res://items/scratchers/jackpot_spin_anim/frame_190_delay-0.02s.png" id="192_bg1tb"]
-[ext_resource type="Texture2D" uid="uid://bbs5hkb4m14f6" path="res://items/scratchers/jackpot_spin_anim/frame_191_delay-0.02s.png" id="193_hq7t6"]
-[ext_resource type="Texture2D" uid="uid://djuj6dxro3xdl" path="res://items/scratchers/jackpot_spin_anim/frame_192_delay-0.02s.png" id="194_lhp3q"]
-[ext_resource type="Texture2D" uid="uid://dy06qrr1iyvyj" path="res://items/scratchers/jackpot_spin_anim/frame_193_delay-0.02s.png" id="195_p58wg"]
-[ext_resource type="Texture2D" uid="uid://b1m5tep5a7p3a" path="res://items/scratchers/jackpot_spin_anim/frame_194_delay-0.02s.png" id="196_hpg1t"]
-[ext_resource type="Texture2D" uid="uid://cb2ewah2vbjni" path="res://items/scratchers/jackpot_spin_anim/frame_195_delay-0.02s.png" id="197_ifuud"]
-[ext_resource type="Texture2D" uid="uid://bqo37tdty08gn" path="res://items/scratchers/jackpot_spin_anim/frame_196_delay-0.02s.png" id="198_fx1wj"]
-[ext_resource type="Texture2D" uid="uid://5d5pf11kg20e" path="res://items/scratchers/jackpot_spin_anim/frame_197_delay-0.02s.png" id="199_nc37c"]
-[ext_resource type="Texture2D" uid="uid://dprvvgdgdx75r" path="res://items/scratchers/jackpot_spin_anim/frame_198_delay-0.02s.png" id="200_23vwm"]
-[ext_resource type="Texture2D" uid="uid://bl3q8v067hhaf" path="res://items/scratchers/jackpot_spin_anim/frame_199_delay-0.02s.png" id="201_w8fhx"]
-[ext_resource type="Texture2D" uid="uid://biup0tbule6nj" path="res://items/scratchers/jackpot_spin_anim/frame_200_delay-0.02s.png" id="202_lu8ae"]
-[ext_resource type="Texture2D" uid="uid://npv6wkxr7uyw" path="res://items/scratchers/jackpot_spin_anim/frame_201_delay-0.02s.png" id="203_hr53m"]
-[ext_resource type="Texture2D" uid="uid://b757tesq4wg88" path="res://items/scratchers/jackpot_spin_anim/frame_202_delay-0.02s.png" id="204_a7qpx"]
-[ext_resource type="Texture2D" uid="uid://dab0kyankverc" path="res://items/scratchers/jackpot_spin_anim/frame_203_delay-0.02s.png" id="205_k6nbb"]
-[ext_resource type="Texture2D" uid="uid://btueixhhistbe" path="res://items/scratchers/jackpot_spin_anim/frame_204_delay-0.02s.png" id="206_h7hqh"]
-[ext_resource type="Texture2D" uid="uid://bm138bgjaaflx" path="res://items/scratchers/jackpot_spin_anim/frame_205_delay-0.02s.png" id="207_vou4m"]
-[ext_resource type="Texture2D" uid="uid://bm07pyhe0ckgt" path="res://items/scratchers/jackpot_spin_anim/frame_206_delay-0.02s.png" id="208_kwksp"]
-[ext_resource type="Texture2D" uid="uid://du16n6b8jeopr" path="res://items/scratchers/jackpot_spin_anim/frame_207_delay-0.02s.png" id="209_742gs"]
-[ext_resource type="Texture2D" uid="uid://onugrlm1ey4u" path="res://items/scratchers/jackpot_spin_anim/frame_208_delay-0.02s.png" id="210_jkp1l"]
-[ext_resource type="Texture2D" uid="uid://c2bbvf7wcshxb" path="res://items/scratchers/jackpot_spin_anim/frame_209_delay-0.02s.png" id="211_6bew7"]
-[ext_resource type="Texture2D" uid="uid://bf2sb5uh451j2" path="res://items/scratchers/jackpot_spin_anim/frame_210_delay-0.02s.png" id="212_i3cjj"]
-[ext_resource type="Texture2D" uid="uid://bemhka1lb61a2" path="res://items/scratchers/jackpot_spin_anim/frame_211_delay-0.02s.png" id="213_mihuk"]
-[ext_resource type="Texture2D" uid="uid://hnt54egxihui" path="res://items/scratchers/jackpot_spin_anim/frame_212_delay-0.02s.png" id="214_yowr4"]
-[ext_resource type="Texture2D" uid="uid://cifq5t40s1e1g" path="res://items/scratchers/jackpot_spin_anim/frame_213_delay-0.02s.png" id="215_1eoni"]
-[ext_resource type="Texture2D" uid="uid://hxp8ytl8kgpj" path="res://items/scratchers/jackpot_spin_anim/frame_214_delay-0.02s.png" id="216_xkwt8"]
-[ext_resource type="Texture2D" uid="uid://dxg5ybnu5jtje" path="res://items/scratchers/jackpot_spin_anim/frame_215_delay-0.02s.png" id="217_wiih0"]
-[ext_resource type="Texture2D" uid="uid://7q446bl0uo6e" path="res://items/scratchers/jackpot_spin_anim/frame_216_delay-0.02s.png" id="218_y0u53"]
-[ext_resource type="Texture2D" uid="uid://1viy42v6il8i" path="res://items/scratchers/jackpot_spin_anim/frame_217_delay-0.02s.png" id="219_6sytf"]
-[ext_resource type="Texture2D" uid="uid://de2eqkphsjk0y" path="res://items/scratchers/jackpot_spin_anim/frame_218_delay-0.02s.png" id="220_dx4d8"]
-[ext_resource type="Texture2D" uid="uid://bl6dbmxlaoo7h" path="res://items/scratchers/jackpot_spin_anim/frame_219_delay-0.02s.png" id="221_rtr7t"]
-[ext_resource type="Texture2D" uid="uid://c2y5y4mr2m7xc" path="res://items/scratchers/jackpot_spin_anim/frame_220_delay-0.02s.png" id="222_dr5e6"]
-[ext_resource type="Texture2D" uid="uid://cukfgg0p1jj6x" path="res://items/scratchers/jackpot_spin_anim/frame_221_delay-0.02s.png" id="223_cd81m"]
-[ext_resource type="Texture2D" uid="uid://bgeaqttw2mnaw" path="res://items/scratchers/jackpot_spin_anim/frame_222_delay-0.02s.png" id="224_2kake"]
-[ext_resource type="Texture2D" uid="uid://k73mkonsx58w" path="res://items/scratchers/jackpot_spin_anim/frame_223_delay-0.02s.png" id="225_5s6i6"]
-[ext_resource type="Texture2D" uid="uid://c4nb1ryu4l3gw" path="res://items/scratchers/jackpot_spin_anim/frame_224_delay-0.02s.png" id="226_utbte"]
-[ext_resource type="Texture2D" uid="uid://cyisy00injbcv" path="res://items/scratchers/jackpot_spin_anim/frame_225_delay-0.02s.png" id="227_cvme1"]
-[ext_resource type="Texture2D" uid="uid://bqyi0tmrw1inc" path="res://items/scratchers/jackpot_spin_anim/frame_226_delay-0.02s.png" id="228_jqpvc"]
-[ext_resource type="Texture2D" uid="uid://coi8lkhq02q5t" path="res://items/scratchers/jackpot_spin_anim/frame_227_delay-0.02s.png" id="229_35xnu"]
-[ext_resource type="Texture2D" uid="uid://bangitf5vt1kj" path="res://items/scratchers/jackpot_spin_anim/frame_228_delay-0.02s.png" id="230_ix3n5"]
-[ext_resource type="Texture2D" uid="uid://dnmente8nuw6t" path="res://items/scratchers/jackpot_spin_anim/frame_229_delay-0.02s.png" id="231_jw1t2"]
-[ext_resource type="Texture2D" uid="uid://oqp04pjcsodx" path="res://items/scratchers/jackpot_spin_anim/frame_230_delay-0.02s.png" id="232_lnvl5"]
-[ext_resource type="Texture2D" uid="uid://k3lwkg5oq0x3" path="res://items/scratchers/jackpot_spin_anim/frame_231_delay-0.02s.png" id="233_2y1ao"]
-[ext_resource type="Texture2D" uid="uid://cb8sth7dsfyt1" path="res://items/scratchers/jackpot_spin_anim/frame_232_delay-0.02s.png" id="234_exj3b"]
-[ext_resource type="Texture2D" uid="uid://btc1dbbktth66" path="res://items/scratchers/jackpot_spin_anim/frame_233_delay-0.02s.png" id="235_tt86k"]
-[ext_resource type="Texture2D" uid="uid://dpmcluaqgyb0x" path="res://items/scratchers/jackpot_spin_anim/frame_234_delay-0.02s.png" id="236_gwkys"]
-[ext_resource type="Texture2D" uid="uid://batn0gbc04qf1" path="res://items/scratchers/jackpot_spin_anim/frame_235_delay-0.02s.png" id="237_pkdp4"]
-[ext_resource type="Texture2D" uid="uid://ceryb0gbyipkx" path="res://items/scratchers/jackpot_spin_anim/frame_236_delay-0.02s.png" id="238_rtrlx"]
-[ext_resource type="Texture2D" uid="uid://qge5hrlgqfst" path="res://items/scratchers/jackpot_spin_anim/frame_237_delay-0.02s.png" id="239_hry8q"]
-[ext_resource type="Texture2D" uid="uid://b4of2s6vx7l46" path="res://items/scratchers/jackpot_spin_anim/frame_238_delay-0.02s.png" id="240_pgd7k"]
-[ext_resource type="Texture2D" uid="uid://bnpj40vb60j3w" path="res://items/scratchers/jackpot_spin_anim/frame_239_delay-0.02s.png" id="241_6ws0p"]
-[ext_resource type="Texture2D" uid="uid://c3pewgbwpxbdm" path="res://items/scratchers/jackpot_spin_anim/frame_240_delay-0.02s.png" id="242_yppf1"]
-[ext_resource type="Texture2D" uid="uid://bfaihhktv0naw" path="res://items/scratchers/jackpot_spin_anim/frame_241_delay-0.02s.png" id="243_wniep"]
-[ext_resource type="Texture2D" uid="uid://be4ou1j6850hl" path="res://items/scratchers/jackpot_spin_anim/frame_242_delay-0.02s.png" id="244_r2dhl"]
-[ext_resource type="Texture2D" uid="uid://t2cg2ndyvy8" path="res://items/scratchers/jackpot_spin_anim/frame_243_delay-0.02s.png" id="245_4j540"]
-[ext_resource type="Texture2D" uid="uid://d27nj1khjnd5c" path="res://items/scratchers/jackpot_spin_anim/frame_244_delay-0.02s.png" id="246_us5eo"]
-[ext_resource type="Texture2D" uid="uid://bchufwakky3x2" path="res://items/scratchers/jackpot_spin_anim/frame_245_delay-0.02s.png" id="247_rltbc"]
-[ext_resource type="Texture2D" uid="uid://cu71eh6qba0g4" path="res://items/scratchers/jackpot_spin_anim/frame_246_delay-0.02s.png" id="248_df6rd"]
-[ext_resource type="Texture2D" uid="uid://dbwn8t25rosii" path="res://items/scratchers/jackpot_spin_anim/frame_247_delay-0.02s.png" id="249_tqt0y"]
-[ext_resource type="Texture2D" uid="uid://cv7ngwpqjdjax" path="res://items/scratchers/jackpot_spin_anim/frame_248_delay-0.02s.png" id="250_vdli7"]
-[ext_resource type="Texture2D" uid="uid://c7rke2byhssyw" path="res://items/scratchers/jackpot_spin_anim/frame_249_delay-0.02s.png" id="251_657mm"]
-[ext_resource type="Texture2D" uid="uid://cjotkl4xwb6xh" path="res://items/scratchers/jackpot_spin_anim/frame_250_delay-0.02s.png" id="252_nij82"]
-[ext_resource type="Texture2D" uid="uid://x7bn75d7jkqh" path="res://items/scratchers/jackpot_spin_anim/frame_251_delay-0.02s.png" id="253_wx83n"]
-[ext_resource type="Texture2D" uid="uid://q5qj8xd2psn7" path="res://items/scratchers/jackpot_spin_anim/frame_252_delay-0.02s.png" id="254_q1kon"]
-[ext_resource type="Texture2D" uid="uid://llwsywtac7p1" path="res://items/scratchers/jackpot_spin_anim/frame_253_delay-0.02s.png" id="255_p8mvb"]
-[ext_resource type="Texture2D" uid="uid://d2cg04a3ikyj6" path="res://items/scratchers/jackpot_spin_anim/frame_254_delay-0.02s.png" id="256_41wkt"]
-[ext_resource type="Texture2D" uid="uid://t1oncwswgx86" path="res://items/scratchers/jackpot_spin_anim/frame_255_delay-0.02s.png" id="257_w1ytt"]
-[ext_resource type="Texture2D" uid="uid://dk3aha46hrgao" path="res://items/scratchers/jackpot_spin_anim/frame_256_delay-0.02s.png" id="258_ovyau"]
-[ext_resource type="Texture2D" uid="uid://cxhql4eog00nx" path="res://items/scratchers/jackpot_spin_anim/frame_257_delay-0.02s.png" id="259_vyj7v"]
-[ext_resource type="Texture2D" uid="uid://chc8w7hx57p1m" path="res://items/scratchers/jackpot_spin_anim/frame_258_delay-0.02s.png" id="260_m2ib5"]
-[ext_resource type="Texture2D" uid="uid://cgqt6s5msgpsj" path="res://items/scratchers/jackpot_spin_anim/frame_259_delay-0.02s.png" id="261_p0cdo"]
-[ext_resource type="Texture2D" uid="uid://i4gjb3vep6xs" path="res://items/scratchers/jackpot_spin_anim/frame_260_delay-0.02s.png" id="262_mlp5m"]
-[ext_resource type="Texture2D" uid="uid://dc17vruo76kkp" path="res://items/scratchers/jackpot_spin_anim/frame_261_delay-0.02s.png" id="263_ivef7"]
-[ext_resource type="Texture2D" uid="uid://dilwa2ybvghxk" path="res://items/scratchers/jackpot_spin_anim/frame_262_delay-0.02s.png" id="264_38hf5"]
-[ext_resource type="Texture2D" uid="uid://65io01x6n0dw" path="res://items/scratchers/jackpot_spin_anim/frame_263_delay-0.02s.png" id="265_2wy53"]
-[ext_resource type="Texture2D" uid="uid://co3df48d00vy8" path="res://items/scratchers/jackpot_spin_anim/frame_264_delay-0.02s.png" id="266_ju313"]
-[ext_resource type="Texture2D" uid="uid://dtu2o4d6tovbh" path="res://items/scratchers/jackpot_spin_anim/frame_265_delay-0.02s.png" id="267_l45nb"]
-[ext_resource type="Texture2D" uid="uid://dqejlynlfwu38" path="res://items/scratchers/jackpot_spin_anim/frame_266_delay-0.02s.png" id="268_uacj3"]
-[ext_resource type="Texture2D" uid="uid://bolt2a1akhr3m" path="res://items/scratchers/jackpot_spin_anim/frame_267_delay-0.02s.png" id="269_s5rse"]
-[ext_resource type="Texture2D" uid="uid://bftbehv27o0rm" path="res://items/scratchers/jackpot_spin_anim/frame_268_delay-0.02s.png" id="270_qontu"]
-[ext_resource type="Texture2D" uid="uid://cbcgufkcrtobl" path="res://items/scratchers/jackpot_spin_anim/frame_269_delay-0.02s.png" id="271_x3bya"]
-[ext_resource type="Texture2D" uid="uid://dh343v4hj0t0l" path="res://items/scratchers/jackpot_spin_anim/frame_270_delay-0.02s.png" id="272_wa3ol"]
-[ext_resource type="Texture2D" uid="uid://6ckx62qh1l6s" path="res://items/scratchers/jackpot_spin_anim/frame_271_delay-0.02s.png" id="273_wurs3"]
-[ext_resource type="Texture2D" uid="uid://bnsqjtg6vtj5s" path="res://items/scratchers/jackpot_spin_anim/frame_272_delay-0.02s.png" id="274_i0m0r"]
-[ext_resource type="Texture2D" uid="uid://cvslbw3pi57ws" path="res://items/scratchers/jackpot_spin_anim/frame_273_delay-0.02s.png" id="275_7g1x4"]
-[ext_resource type="Texture2D" uid="uid://cpc5yqdeoyvnn" path="res://items/scratchers/jackpot_spin_anim/frame_274_delay-0.02s.png" id="276_y3rpb"]
-[ext_resource type="Texture2D" uid="uid://bbkkdp2pbex04" path="res://items/scratchers/jackpot_spin_anim/frame_275_delay-0.02s.png" id="277_bg7by"]
-[ext_resource type="Texture2D" uid="uid://bjvn125532nh6" path="res://items/scratchers/jackpot_spin_anim/frame_276_delay-0.02s.png" id="278_np6o5"]
-[ext_resource type="Texture2D" uid="uid://bbstmpeycgrl0" path="res://items/scratchers/jackpot_spin_anim/frame_277_delay-0.02s.png" id="279_c3628"]
-[ext_resource type="Texture2D" uid="uid://bc77k34je543m" path="res://items/scratchers/jackpot_spin_anim/frame_278_delay-0.02s.png" id="280_f5nhd"]
-[ext_resource type="Texture2D" uid="uid://lfj56uo0mu4c" path="res://items/scratchers/jackpot_spin_anim/frame_279_delay-0.02s.png" id="281_i6he1"]
-[ext_resource type="Texture2D" uid="uid://dvor38prihnbk" path="res://items/scratchers/jackpot_spin_anim/frame_280_delay-0.02s.png" id="282_4so5l"]
-[ext_resource type="Texture2D" uid="uid://rknjn7lmrjwb" path="res://items/scratchers/jackpot_spin_anim/frame_281_delay-0.02s.png" id="283_3jpds"]
-[ext_resource type="Texture2D" uid="uid://bngjd1vm6x5c8" path="res://items/scratchers/jackpot_spin_anim/frame_282_delay-0.02s.png" id="284_liy3v"]
-[ext_resource type="Texture2D" uid="uid://d2jvlbkefqau4" path="res://items/scratchers/jackpot_spin_anim/frame_283_delay-0.02s.png" id="285_neuhv"]
-[ext_resource type="Texture2D" uid="uid://d05ioiugi06ep" path="res://items/scratchers/jackpot_spin_anim/frame_284_delay-0.02s.png" id="286_1guo1"]
-[ext_resource type="Texture2D" uid="uid://dd5cov0yem0dh" path="res://items/scratchers/jackpot_spin_anim/frame_285_delay-0.02s.png" id="287_0c00v"]
-[ext_resource type="Texture2D" uid="uid://db0fwrekdqcj" path="res://items/scratchers/jackpot_spin_anim/frame_286_delay-0.02s.png" id="288_yt20j"]
-[ext_resource type="Texture2D" uid="uid://b045tlcytcbku" path="res://items/scratchers/jackpot_spin_anim/frame_287_delay-0.02s.png" id="289_jqm8r"]
-[ext_resource type="Texture2D" uid="uid://5by4wsl3bj1" path="res://items/scratchers/jackpot_spin_anim/frame_288_delay-0.02s.png" id="290_4tdfc"]
-[ext_resource type="Texture2D" uid="uid://dtd18un8vlupd" path="res://items/scratchers/jackpot_spin_anim/frame_289_delay-0.02s.png" id="291_yut4w"]
-[ext_resource type="Texture2D" uid="uid://7m6yabego1p7" path="res://items/scratchers/jackpot_spin_anim/frame_290_delay-0.02s.png" id="292_jqj6o"]
-[ext_resource type="Texture2D" uid="uid://yk8g2rdj1t6e" path="res://items/scratchers/jackpot_spin_anim/frame_291_delay-0.02s.png" id="293_lgmv0"]
-[ext_resource type="Texture2D" uid="uid://dl0bekhpdgvtx" path="res://items/scratchers/jackpot_spin_anim/frame_292_delay-0.02s.png" id="294_1o025"]
-[ext_resource type="Texture2D" uid="uid://bi7gy8301wim8" path="res://items/scratchers/jackpot_spin_anim/frame_293_delay-0.02s.png" id="295_lx748"]
-[ext_resource type="Texture2D" uid="uid://byen1af2jamht" path="res://items/scratchers/jackpot_spin_anim/frame_294_delay-0.02s.png" id="296_mi086"]
-[ext_resource type="Texture2D" uid="uid://crnhbwt2iaj1" path="res://items/scratchers/jackpot_spin_anim/frame_295_delay-0.02s.png" id="297_t10j4"]
-[ext_resource type="Texture2D" uid="uid://dc0uox661jkc7" path="res://items/scratchers/jackpot_spin_anim/frame_296_delay-0.02s.png" id="298_fwja4"]
-[ext_resource type="Texture2D" uid="uid://bpd23qt2j2dnt" path="res://items/scratchers/jackpot_spin_anim/frame_297_delay-0.02s.png" id="299_2570s"]
-[ext_resource type="Texture2D" uid="uid://b4bh4s7uny5d0" path="res://items/scratchers/jackpot_spin_anim/frame_298_delay-0.02s.png" id="300_0h5br"]
-[ext_resource type="Texture2D" uid="uid://bdioq1yv6ioju" path="res://items/scratchers/jackpot_spin_anim/frame_299_delay-0.02s.png" id="301_2tjke"]
-[ext_resource type="Texture2D" uid="uid://c8a0fkm03jg6e" path="res://items/scratchers/jackpot_spin_anim/frame_300_delay-0.02s.png" id="302_ukybx"]
-[ext_resource type="Texture2D" uid="uid://hfpy56yxbi3q" path="res://items/scratchers/jackpot_spin_anim/frame_301_delay-0.02s.png" id="303_1ljwg"]
-[ext_resource type="Texture2D" uid="uid://twxsg3hqkhqc" path="res://items/scratchers/jackpot_spin_anim/frame_302_delay-0.02s.png" id="304_icb41"]
-[ext_resource type="Texture2D" uid="uid://crq7mkedvrowm" path="res://items/scratchers/jackpot_spin_anim/frame_303_delay-0.02s.png" id="305_8putq"]
-[ext_resource type="Texture2D" uid="uid://mwfu4lmsa0yr" path="res://items/scratchers/jackpot_spin_anim/frame_304_delay-0.02s.png" id="306_0ithj"]
-[ext_resource type="Texture2D" uid="uid://qfgje0yxvkvc" path="res://items/scratchers/jackpot_spin_anim/frame_305_delay-0.02s.png" id="307_pf04w"]
-[ext_resource type="Texture2D" uid="uid://bojiscpgnlqkr" path="res://items/scratchers/jackpot_spin_anim/frame_306_delay-0.02s.png" id="308_v4i3n"]
-[ext_resource type="Texture2D" uid="uid://bfysi20ur1gkw" path="res://items/scratchers/jackpot_spin_anim/frame_307_delay-0.02s.png" id="309_a25kj"]
-[ext_resource type="Texture2D" uid="uid://d1w1nqpeedgh8" path="res://items/scratchers/jackpot_spin_anim/frame_308_delay-0.02s.png" id="310_h2kw4"]
-[ext_resource type="Texture2D" uid="uid://ceyxqrucifhbv" path="res://items/scratchers/jackpot_spin_anim/frame_309_delay-0.02s.png" id="311_ou1e2"]
-[ext_resource type="Texture2D" uid="uid://jrs2fqu5tn07" path="res://items/scratchers/jackpot_spin_anim/frame_310_delay-0.02s.png" id="312_n3oha"]
-[ext_resource type="Texture2D" uid="uid://jvxx6nf18awe" path="res://items/scratchers/jackpot_spin_anim/frame_311_delay-0.02s.png" id="313_lo7dr"]
-[ext_resource type="Texture2D" uid="uid://b7xks0joq3jtq" path="res://items/scratchers/jackpot_spin_anim/frame_312_delay-0.02s.png" id="314_6c1x4"]
-[ext_resource type="Texture2D" uid="uid://dj2iixoqxe4fo" path="res://items/scratchers/jackpot_spin_anim/frame_313_delay-0.02s.png" id="315_vqfs6"]
-[ext_resource type="Texture2D" uid="uid://wgc1wsxdaor1" path="res://items/scratchers/jackpot_spin_anim/frame_314_delay-0.02s.png" id="316_x0j2i"]
-[ext_resource type="Texture2D" uid="uid://c3ehrnlpxsv34" path="res://items/scratchers/jackpot_spin_anim/frame_315_delay-0.02s.png" id="317_g3blw"]
-[ext_resource type="Texture2D" uid="uid://buffnl02j7stb" path="res://items/scratchers/jackpot_spin_anim/frame_316_delay-0.02s.png" id="318_ssvgh"]
-[ext_resource type="Texture2D" uid="uid://cbdh1ky51he1s" path="res://items/scratchers/jackpot_spin_anim/frame_317_delay-0.02s.png" id="319_2wydq"]
-[ext_resource type="Texture2D" uid="uid://50wmxbvuyojw" path="res://items/scratchers/jackpot_spin_anim/frame_318_delay-0.02s.png" id="320_vna3b"]
-[ext_resource type="Texture2D" uid="uid://dsbee6wduiw0b" path="res://items/scratchers/jackpot_spin_anim/frame_319_delay-0.02s.png" id="321_37pcg"]
-[ext_resource type="Texture2D" uid="uid://b2rm0d1xcmxpc" path="res://items/scratchers/jackpot_spin_anim/frame_320_delay-0.02s.png" id="322_y6pad"]
-[ext_resource type="Texture2D" uid="uid://b2emhry030gsi" path="res://items/scratchers/jackpot_spin_anim/frame_321_delay-0.02s.png" id="323_h7w8n"]
-[ext_resource type="Texture2D" uid="uid://dcokpwph4yq36" path="res://items/scratchers/jackpot_spin_anim/frame_322_delay-0.02s.png" id="324_lm4dp"]
-[ext_resource type="Texture2D" uid="uid://by36gfrx1lmxo" path="res://items/scratchers/jackpot_spin_anim/frame_323_delay-0.02s.png" id="325_utime"]
-[ext_resource type="Texture2D" uid="uid://0wesni4fyjyi" path="res://items/scratchers/jackpot_spin_anim/frame_324_delay-0.02s.png" id="326_vqnxd"]
-[ext_resource type="Texture2D" uid="uid://c2q4qr3lbcjc7" path="res://items/scratchers/jackpot_spin_anim/frame_325_delay-0.02s.png" id="327_m5r0v"]
-[ext_resource type="Texture2D" uid="uid://16l8g80mvyf0" path="res://items/scratchers/jackpot_spin_anim/frame_326_delay-0.02s.png" id="328_10opv"]
-[ext_resource type="Texture2D" uid="uid://b1mqrd0ud5586" path="res://items/scratchers/jackpot_spin_anim/frame_327_delay-0.02s.png" id="329_le4ui"]
-[ext_resource type="Texture2D" uid="uid://wr6t6u3o688n" path="res://items/scratchers/jackpot_spin_anim/frame_328_delay-0.02s.png" id="330_tt6gx"]
-[ext_resource type="Texture2D" uid="uid://bjy7dt4qym0y3" path="res://items/scratchers/jackpot_spin_anim/frame_329_delay-0.02s.png" id="331_aqrxb"]
-[ext_resource type="Texture2D" uid="uid://dmb8r8dr03agb" path="res://items/scratchers/jackpot_spin_anim/frame_330_delay-0.02s.png" id="332_e0fxr"]
-[ext_resource type="Texture2D" uid="uid://dxgnb5ts4e1au" path="res://items/scratchers/jackpot_spin_anim/frame_331_delay-0.02s.png" id="333_nbyw0"]
-[ext_resource type="Texture2D" uid="uid://dqnqrn5het0wn" path="res://items/scratchers/jackpot_spin_anim/frame_332_delay-0.02s.png" id="334_fsqvi"]
-[ext_resource type="Texture2D" uid="uid://byhpf4enowlbn" path="res://items/scratchers/jackpot_spin_anim/frame_333_delay-0.02s.png" id="335_vsi28"]
-[ext_resource type="Texture2D" uid="uid://d8rlkk736bny" path="res://items/scratchers/jackpot_spin_anim/frame_334_delay-0.02s.png" id="336_1pjq0"]
-[ext_resource type="Texture2D" uid="uid://beat26qm48gxn" path="res://items/scratchers/jackpot_spin_anim/frame_335_delay-0.02s.png" id="337_xipll"]
-[ext_resource type="Texture2D" uid="uid://orsknpqvlkia" path="res://items/scratchers/jackpot_spin_anim/frame_336_delay-0.02s.png" id="338_562r6"]
-[ext_resource type="Texture2D" uid="uid://buqx401iitxjx" path="res://items/scratchers/jackpot_spin_anim/frame_337_delay-0.02s.png" id="339_l5vfy"]
-[ext_resource type="Texture2D" uid="uid://wrnkyf4nnxhk" path="res://items/scratchers/jackpot_spin_anim/frame_338_delay-0.02s.png" id="340_jdq05"]
-[ext_resource type="Texture2D" uid="uid://ek4wh2lv33ie" path="res://items/scratchers/jackpot_spin_anim/frame_339_delay-0.02s.png" id="341_qs086"]
-[ext_resource type="Texture2D" uid="uid://dvqrca2ym1yvv" path="res://items/scratchers/jackpot_spin_anim/frame_340_delay-0.02s.png" id="342_t0u00"]
-[ext_resource type="Texture2D" uid="uid://8wl3lyycnaf6" path="res://items/scratchers/jackpot_spin_anim/frame_341_delay-0.02s.png" id="343_jx0yc"]
-[ext_resource type="Texture2D" uid="uid://xr18tsrkash5" path="res://items/scratchers/jackpot_spin_anim/frame_342_delay-0.02s.png" id="344_1u25q"]
-[ext_resource type="Texture2D" uid="uid://bk3u5g7l4uxva" path="res://items/scratchers/jackpot_spin_anim/frame_343_delay-0.02s.png" id="345_r6n3i"]
-[ext_resource type="Texture2D" uid="uid://brwjka6sutl82" path="res://items/scratchers/jackpot_spin_anim/frame_344_delay-0.02s.png" id="346_2msyg"]
-[ext_resource type="Texture2D" uid="uid://b3e77r8op8e2f" path="res://items/scratchers/jackpot_spin_anim/frame_345_delay-0.02s.png" id="347_nxaj0"]
-[ext_resource type="Texture2D" uid="uid://ds3wg8ss1gia2" path="res://items/scratchers/jackpot_spin_anim/frame_346_delay-0.02s.png" id="348_wl6r2"]
-[ext_resource type="Texture2D" uid="uid://cubn3yn7ep3yt" path="res://items/scratchers/jackpot_spin_anim/frame_347_delay-0.02s.png" id="349_vpilk"]
-[ext_resource type="Texture2D" uid="uid://jalgk81pm8g3" path="res://items/scratchers/jackpot_spin_anim/frame_348_delay-0.02s.png" id="350_cx8qn"]
-[ext_resource type="Texture2D" uid="uid://dpc1hlx0hjw0h" path="res://items/scratchers/jackpot_spin_anim/frame_349_delay-0.02s.png" id="351_cdeds"]
-[ext_resource type="Texture2D" uid="uid://diogiypulg8rk" path="res://items/scratchers/jackpot_spin_anim/frame_350_delay-0.02s.png" id="352_6t4xq"]
-[ext_resource type="Texture2D" uid="uid://de4n4sdxhahn" path="res://items/scratchers/jackpot_spin_anim/frame_351_delay-0.02s.png" id="353_78b6b"]
-[ext_resource type="Texture2D" uid="uid://cc0jd1w3jjags" path="res://items/scratchers/jackpot_spin_anim/frame_352_delay-0.02s.png" id="354_roguf"]
-[ext_resource type="Texture2D" uid="uid://plsel6fshy80" path="res://items/scratchers/jackpot_spin_anim/frame_353_delay-0.02s.png" id="355_jxs8e"]
-[ext_resource type="Texture2D" uid="uid://c5n4pnif8fryu" path="res://items/scratchers/jackpot_spin_anim/frame_354_delay-0.02s.png" id="356_pdvdr"]
-[ext_resource type="Texture2D" uid="uid://bon0smt2n82g7" path="res://items/scratchers/jackpot_spin_anim/frame_355_delay-0.02s.png" id="357_xdyon"]
-[ext_resource type="Texture2D" uid="uid://tqxflj3ul4rm" path="res://items/scratchers/jackpot_spin_anim/frame_356_delay-0.02s.png" id="358_xdiuh"]
-[ext_resource type="Texture2D" uid="uid://cosogxj0i7r0i" path="res://items/scratchers/jackpot_spin_anim/frame_357_delay-0.02s.png" id="359_cr43u"]
-[ext_resource type="Texture2D" uid="uid://q52haybtwua" path="res://items/scratchers/jackpot_spin_anim/frame_358_delay-0.02s.png" id="360_714dv"]
-[ext_resource type="Texture2D" uid="uid://c02sscn3p2u5x" path="res://items/scratchers/jackpot_spin_anim/frame_359_delay-0.02s.png" id="361_k2war"]
-[ext_resource type="Texture2D" uid="uid://8qjygni6a7ca" path="res://items/scratchers/jackpot_spin_anim/frame_360_delay-0.02s.png" id="362_gy224"]
-[ext_resource type="Texture2D" uid="uid://bd038syt5v2y" path="res://items/scratchers/jackpot_spin_anim/frame_361_delay-0.02s.png" id="363_symbe"]
-[ext_resource type="Texture2D" uid="uid://dlanq6ntisonn" path="res://items/scratchers/jackpot_spin_anim/frame_362_delay-0.02s.png" id="364_juc5a"]
-[ext_resource type="Texture2D" uid="uid://j64fw7cnb7ka" path="res://items/scratchers/jackpot_spin_anim/frame_363_delay-0.02s.png" id="365_1nefi"]
-[ext_resource type="Texture2D" uid="uid://d53yj6murok2" path="res://items/scratchers/jackpot_spin_anim/frame_364_delay-0.02s.png" id="366_bbbjx"]
-[ext_resource type="Texture2D" uid="uid://t5142qiom1pa" path="res://items/scratchers/jackpot_spin_anim/frame_365_delay-0.02s.png" id="367_jsw8l"]
-[ext_resource type="Texture2D" uid="uid://ceo76cw636m8w" path="res://items/scratchers/jackpot_spin_anim/frame_366_delay-0.02s.png" id="368_uabll"]
-[ext_resource type="Texture2D" uid="uid://0xu3ljumhlv7" path="res://items/scratchers/jackpot_spin_anim/frame_367_delay-0.02s.png" id="369_3dpqs"]
-[ext_resource type="Texture2D" uid="uid://n16x0agy8gcs" path="res://items/scratchers/jackpot_spin_anim/frame_368_delay-0.02s.png" id="370_rh7f7"]
-[ext_resource type="Texture2D" uid="uid://kgg282b0cvng" path="res://items/scratchers/jackpot_spin_anim/frame_369_delay-0.02s.png" id="371_52iym"]
-[ext_resource type="Texture2D" uid="uid://bpk06yenbdy1u" path="res://items/scratchers/jackpot_spin_anim/frame_370_delay-0.02s.png" id="372_kwjbl"]
-[ext_resource type="Texture2D" uid="uid://b6beam5gi0lgt" path="res://items/scratchers/jackpot_spin_anim/frame_371_delay-0.02s.png" id="373_nuefc"]
-[ext_resource type="Texture2D" uid="uid://c8hbtq7jn217i" path="res://items/scratchers/jackpot_spin_anim/frame_372_delay-0.02s.png" id="374_tf5u2"]
-[ext_resource type="Texture2D" uid="uid://dubf3bm3wcwwa" path="res://items/scratchers/jackpot_spin_anim/frame_373_delay-0.02s.png" id="375_pjqdf"]
-[ext_resource type="Texture2D" uid="uid://2k4ha4e5oq43" path="res://items/scratchers/jackpot_spin_anim/frame_374_delay-0.02s.png" id="376_gp1rt"]
-[ext_resource type="Texture2D" uid="uid://t7w8nqe3wkvl" path="res://items/scratchers/jackpot_spin_anim/frame_375_delay-0.02s.png" id="377_w7px2"]
-[ext_resource type="Texture2D" uid="uid://dq1cdegrktums" path="res://items/scratchers/jackpot_spin_anim/frame_376_delay-0.02s.png" id="378_sabtv"]
-[ext_resource type="Texture2D" uid="uid://cg57vmdm68ebk" path="res://items/scratchers/jackpot_spin_anim/frame_377_delay-0.02s.png" id="379_cyac7"]
-[ext_resource type="Texture2D" uid="uid://cn4itctjgrga4" path="res://items/scratchers/jackpot_spin_anim/frame_378_delay-0.02s.png" id="380_nxg3l"]
-[ext_resource type="Texture2D" uid="uid://dx8sxehxjte4v" path="res://items/scratchers/jackpot_spin_anim/frame_379_delay-0.02s.png" id="381_knrj7"]
-[ext_resource type="Texture2D" uid="uid://4hk51773nbjp" path="res://items/scratchers/jackpot_spin_anim/frame_380_delay-0.02s.png" id="382_kyc7b"]
-[ext_resource type="Texture2D" uid="uid://gd0qk7wlfd7b" path="res://items/scratchers/jackpot_spin_anim/frame_381_delay-0.02s.png" id="383_2vw7h"]
-[ext_resource type="Texture2D" uid="uid://vxke1kp5l7ak" path="res://items/scratchers/jackpot_spin_anim/frame_382_delay-0.02s.png" id="384_kx3s6"]
-[ext_resource type="Texture2D" uid="uid://bt6mk43aogedl" path="res://items/scratchers/jackpot_spin_anim/frame_383_delay-0.02s.png" id="385_l6t82"]
-[ext_resource type="Texture2D" uid="uid://2ncsduprw1sj" path="res://items/scratchers/jackpot_spin_anim/frame_384_delay-0.02s.png" id="386_kb5cp"]
-[ext_resource type="Texture2D" uid="uid://6bt1xjh4kljm" path="res://items/scratchers/jackpot_spin_anim/frame_385_delay-0.02s.png" id="387_hj1w4"]
-[ext_resource type="Texture2D" uid="uid://m22jv2qks83q" path="res://items/scratchers/jackpot_spin_anim/frame_386_delay-0.02s.png" id="388_olgvc"]
-[ext_resource type="Texture2D" uid="uid://c3l1pog6u52yw" path="res://items/scratchers/jackpot_spin_anim/frame_387_delay-0.02s.png" id="389_h53fm"]
-[ext_resource type="Texture2D" uid="uid://dtsf68ka8ya4o" path="res://items/scratchers/jackpot_spin_anim/frame_388_delay-0.02s.png" id="390_rsp1b"]
-[ext_resource type="Texture2D" uid="uid://vtsck0gt88ho" path="res://items/scratchers/jackpot_spin_anim/frame_389_delay-0.02s.png" id="391_f8thl"]
-[ext_resource type="Texture2D" uid="uid://d1yvmsp84ith1" path="res://items/scratchers/jackpot_spin_anim/frame_390_delay-0.02s.png" id="392_2vtpc"]
-[ext_resource type="Texture2D" uid="uid://bg1olmrsraib1" path="res://items/scratchers/jackpot_spin_anim/frame_391_delay-0.02s.png" id="393_u1wet"]
-[ext_resource type="Texture2D" uid="uid://b683bpnl155lv" path="res://items/scratchers/jackpot_spin_anim/frame_392_delay-0.02s.png" id="394_erlpb"]
-[ext_resource type="Texture2D" uid="uid://drlk7rttleu1d" path="res://items/scratchers/jackpot_spin_anim/frame_393_delay-0.02s.png" id="395_ifbcb"]
-[ext_resource type="Texture2D" uid="uid://tqj52yqfs150" path="res://items/scratchers/jackpot_spin_anim/frame_394_delay-0.02s.png" id="396_ilh2u"]
-[ext_resource type="Texture2D" uid="uid://ewvm34qpjnbr" path="res://items/scratchers/jackpot_spin_anim/frame_395_delay-0.02s.png" id="397_5kmfi"]
-[ext_resource type="Texture2D" uid="uid://brheqlu26mx3t" path="res://items/scratchers/jackpot_spin_anim/frame_396_delay-0.02s.png" id="398_3cl0c"]
-[ext_resource type="Texture2D" uid="uid://ba4y8igas5b64" path="res://items/scratchers/jackpot_spin_anim/frame_397_delay-0.02s.png" id="399_hiy3w"]
-[ext_resource type="Texture2D" uid="uid://bm7issr0mgaer" path="res://items/scratchers/jackpot_spin_anim/frame_398_delay-0.02s.png" id="400_rvd1c"]
-[ext_resource type="Texture2D" uid="uid://b25sekj6qf250" path="res://items/scratchers/jackpot_spin_anim/frame_399_delay-0.02s.png" id="401_lkevr"]
-[ext_resource type="Texture2D" uid="uid://daldrs55wxbl5" path="res://items/scratchers/jackpot_spin_anim/frame_400_delay-0.02s.png" id="402_crscv"]
-[ext_resource type="Texture2D" uid="uid://cyyf53oyw53xu" path="res://items/scratchers/jackpot_spin_anim/frame_401_delay-0.02s.png" id="403_euiav"]
-[ext_resource type="Texture2D" uid="uid://dfs5cxb7n0ieq" path="res://items/scratchers/jackpot_spin_anim/frame_402_delay-0.02s.png" id="404_p0meu"]
-[ext_resource type="Texture2D" uid="uid://bsxmf7xx4dakp" path="res://items/scratchers/jackpot_spin_anim/frame_403_delay-0.02s.png" id="405_85vwk"]
-[ext_resource type="Texture2D" uid="uid://7mpsatll16mx" path="res://items/scratchers/jackpot_spin_anim/frame_404_delay-0.02s.png" id="406_pqx27"]
-[ext_resource type="Texture2D" uid="uid://4gbrjiikkg0b" path="res://items/scratchers/jackpot_spin_anim/frame_405_delay-0.02s.png" id="407_rllsb"]
-[ext_resource type="Texture2D" uid="uid://dls2d5mhidykk" path="res://items/scratchers/jackpot_spin_anim/frame_406_delay-0.02s.png" id="408_6bfk6"]
-[ext_resource type="Texture2D" uid="uid://c4kcfod8brhne" path="res://items/scratchers/jackpot_spin_anim/frame_407_delay-0.02s.png" id="409_crcf4"]
-[ext_resource type="Texture2D" uid="uid://b6sgqokhtmmx4" path="res://items/scratchers/jackpot_spin_anim/frame_408_delay-0.02s.png" id="410_h6upy"]
-[ext_resource type="Texture2D" uid="uid://cvcafdp263gky" path="res://items/scratchers/jackpot_spin_anim/frame_409_delay-0.02s.png" id="411_k8t16"]
-[ext_resource type="Texture2D" uid="uid://c32ai4l6tktc4" path="res://items/scratchers/jackpot_spin_anim/frame_410_delay-0.02s.png" id="412_ygpw7"]
-[ext_resource type="Texture2D" uid="uid://cxt5maq0xkkvf" path="res://items/scratchers/jackpot_spin_anim/frame_411_delay-0.02s.png" id="413_7loyv"]
-[ext_resource type="Texture2D" uid="uid://xf4mmj1tpv1v" path="res://items/scratchers/jackpot_spin_anim/frame_412_delay-0.02s.png" id="414_6r5sk"]
-[ext_resource type="Texture2D" uid="uid://cf57grhy2jnqv" path="res://items/scratchers/jackpot_spin_anim/frame_413_delay-0.02s.png" id="415_0jl0d"]
-[ext_resource type="Texture2D" uid="uid://ddln8h6aiyooq" path="res://items/scratchers/jackpot_spin_anim/frame_414_delay-0.02s.png" id="416_bbtbw"]
-[ext_resource type="Texture2D" uid="uid://3tp0ophm8wnx" path="res://items/scratchers/jackpot_spin_anim/frame_415_delay-0.02s.png" id="417_h2o33"]
-[ext_resource type="Texture2D" uid="uid://llwi0wi3lbpk" path="res://items/scratchers/jackpot_spin_anim/frame_416_delay-0.02s.png" id="418_fj5aw"]
-[ext_resource type="Texture2D" uid="uid://b0gobr5qgl4l3" path="res://items/scratchers/jackpot_spin_anim/frame_417_delay-0.02s.png" id="419_xq8g3"]
-[ext_resource type="Texture2D" uid="uid://bf6wpckjc4j3a" path="res://items/scratchers/jackpot_spin_anim/frame_418_delay-0.02s.png" id="420_rhux1"]
+[ext_resource type="Texture2D" uid="uid://dy2d3xbgfe28o" path="res://items/scratchers/jackpot_spin_anim_new/frame_000_delay-0.02s.png" id="2_kg6xf"]
+[ext_resource type="Texture2D" uid="uid://dm8mwg5wpbbuy" path="res://items/scratchers/jackpot_spin_anim_new/frame_001_delay-0.02s.png" id="3_bvygo"]
+[ext_resource type="Texture2D" uid="uid://cgolf7wdmrd1o" path="res://items/scratchers/jackpot_spin_anim_new/frame_002_delay-0.02s.png" id="4_iv58n"]
+[ext_resource type="Texture2D" uid="uid://c8dwegyrg6ajh" path="res://items/scratchers/jackpot_spin_anim_new/frame_003_delay-0.02s.png" id="5_hwcfk"]
+[ext_resource type="Texture2D" uid="uid://dwldleu7ejb60" path="res://items/scratchers/jackpot_spin_anim_new/frame_004_delay-0.02s.png" id="6_0376o"]
+[ext_resource type="Texture2D" uid="uid://7o8d10gsgg60" path="res://items/scratchers/jackpot_spin_anim_new/frame_005_delay-0.02s.png" id="7_yar2m"]
+[ext_resource type="Texture2D" uid="uid://byy3h0bnbvfyv" path="res://items/scratchers/jackpot_spin_anim_new/frame_006_delay-0.02s.png" id="8_fe7h1"]
+[ext_resource type="Texture2D" uid="uid://blfxhq3x6de47" path="res://items/scratchers/jackpot_spin_anim_new/frame_007_delay-0.02s.png" id="9_gquir"]
+[ext_resource type="Texture2D" uid="uid://7cbrxme8etu0" path="res://items/scratchers/jackpot_spin_anim_new/frame_008_delay-0.02s.png" id="10_bkex1"]
+[ext_resource type="Texture2D" uid="uid://c7ku24ky3smn3" path="res://items/scratchers/jackpot_spin_anim_new/frame_009_delay-0.02s.png" id="11_hsni6"]
+[ext_resource type="Texture2D" uid="uid://dor4ktoavkuuv" path="res://items/scratchers/jackpot_spin_anim_new/frame_010_delay-0.02s.png" id="12_obgue"]
+[ext_resource type="Texture2D" uid="uid://dddfjfs3o5ijg" path="res://items/scratchers/jackpot_spin_anim_new/frame_011_delay-0.02s.png" id="13_2gdk7"]
+[ext_resource type="Texture2D" uid="uid://blatyk3ght6yv" path="res://items/scratchers/jackpot_spin_anim_new/frame_012_delay-0.02s.png" id="14_jk5cp"]
+[ext_resource type="Texture2D" uid="uid://i0afdixphaxr" path="res://items/scratchers/jackpot_spin_anim_new/frame_013_delay-0.02s.png" id="15_evc0n"]
+[ext_resource type="Texture2D" uid="uid://m6v1ybykbqtd" path="res://items/scratchers/jackpot_spin_anim_new/frame_014_delay-0.02s.png" id="16_yi6df"]
+[ext_resource type="Texture2D" uid="uid://dlpdwfuqm72d0" path="res://items/scratchers/jackpot_spin_anim_new/frame_015_delay-0.02s.png" id="17_eee2x"]
+[ext_resource type="Texture2D" uid="uid://ov5s4nsta3sn" path="res://items/scratchers/jackpot_spin_anim_new/frame_016_delay-0.02s.png" id="18_5qpsf"]
+[ext_resource type="Texture2D" uid="uid://c3r5ratsl2027" path="res://items/scratchers/jackpot_spin_anim_new/frame_017_delay-0.02s.png" id="19_a88lk"]
+[ext_resource type="Texture2D" uid="uid://n1hr1ta5r28" path="res://items/scratchers/jackpot_spin_anim_new/frame_018_delay-0.02s.png" id="20_op3cr"]
+[ext_resource type="Texture2D" uid="uid://dt626shegrtus" path="res://items/scratchers/jackpot_spin_anim_new/frame_019_delay-0.02s.png" id="21_qvl55"]
+[ext_resource type="Texture2D" uid="uid://b5dxgkknbhjlc" path="res://items/scratchers/jackpot_spin_anim_new/frame_020_delay-0.02s.png" id="22_x5046"]
+[ext_resource type="Texture2D" uid="uid://b85i2y0ixd2by" path="res://items/scratchers/jackpot_spin_anim_new/frame_021_delay-0.02s.png" id="23_s3x0d"]
+[ext_resource type="Texture2D" uid="uid://cjqc200bhtxf" path="res://items/scratchers/jackpot_spin_anim_new/frame_022_delay-0.02s.png" id="24_7xxwc"]
+[ext_resource type="Texture2D" uid="uid://cokedk6a3hqaf" path="res://items/scratchers/jackpot_spin_anim_new/frame_023_delay-0.02s.png" id="25_vu66y"]
+[ext_resource type="Texture2D" uid="uid://dn0dxcp1bhabk" path="res://items/scratchers/jackpot_spin_anim_new/frame_024_delay-0.02s.png" id="26_oggrx"]
+[ext_resource type="Texture2D" uid="uid://dns0vmo555bt4" path="res://items/scratchers/jackpot_spin_anim_new/frame_025_delay-0.02s.png" id="27_scbui"]
+[ext_resource type="Texture2D" uid="uid://cp7ec1csmujag" path="res://items/scratchers/jackpot_spin_anim_new/frame_026_delay-0.02s.png" id="28_6tyxl"]
+[ext_resource type="Texture2D" uid="uid://bmno86o7r7k8g" path="res://items/scratchers/jackpot_spin_anim_new/frame_027_delay-0.02s.png" id="29_2dodj"]
+[ext_resource type="Texture2D" uid="uid://dx8glifa5yj50" path="res://items/scratchers/jackpot_spin_anim_new/frame_028_delay-0.02s.png" id="30_o8i1t"]
+[ext_resource type="Texture2D" uid="uid://3uum8ltaiw8k" path="res://items/scratchers/jackpot_spin_anim_new/frame_029_delay-0.02s.png" id="31_5715f"]
+[ext_resource type="Texture2D" uid="uid://rfamkx5ytaqo" path="res://items/scratchers/jackpot_spin_anim_new/frame_030_delay-0.02s.png" id="32_bkfgt"]
+[ext_resource type="Texture2D" uid="uid://euyysjuow8kb" path="res://items/scratchers/jackpot_spin_anim_new/frame_031_delay-0.02s.png" id="33_amg56"]
+[ext_resource type="Texture2D" uid="uid://tv4st78ukm7e" path="res://items/scratchers/jackpot_spin_anim_new/frame_032_delay-0.02s.png" id="34_omcbl"]
+[ext_resource type="Texture2D" uid="uid://bkbiexr2sviie" path="res://items/scratchers/jackpot_spin_anim_new/frame_033_delay-0.02s.png" id="35_xg45i"]
+[ext_resource type="Texture2D" uid="uid://cudh3c5b8oi5e" path="res://items/scratchers/jackpot_spin_anim_new/frame_034_delay-0.02s.png" id="36_k46w0"]
+[ext_resource type="Texture2D" uid="uid://hkor07upidvv" path="res://items/scratchers/jackpot_spin_anim_new/frame_035_delay-0.02s.png" id="37_sekgk"]
+[ext_resource type="Texture2D" uid="uid://0f0udvgmwfc1" path="res://items/scratchers/jackpot_spin_anim_new/frame_036_delay-0.02s.png" id="38_oijoq"]
+[ext_resource type="Texture2D" uid="uid://drlvqchjskd3u" path="res://items/scratchers/jackpot_spin_anim_new/frame_037_delay-0.02s.png" id="39_wheyw"]
+[ext_resource type="Texture2D" uid="uid://rfyc68qo7rrp" path="res://items/scratchers/jackpot_spin_anim_new/frame_038_delay-0.02s.png" id="40_hxt7y"]
+[ext_resource type="Texture2D" uid="uid://bukmc8e8lc010" path="res://items/scratchers/jackpot_spin_anim_new/frame_039_delay-0.02s.png" id="41_q6uhb"]
+[ext_resource type="Texture2D" uid="uid://d05tbrbmpamdj" path="res://items/scratchers/jackpot_spin_anim_new/frame_040_delay-0.02s.png" id="42_aug4k"]
+[ext_resource type="Texture2D" uid="uid://q7x1cdsppe6k" path="res://items/scratchers/jackpot_spin_anim_new/frame_041_delay-0.02s.png" id="43_ch0wv"]
+[ext_resource type="Texture2D" uid="uid://fvmjsaxvjhlr" path="res://items/scratchers/jackpot_spin_anim_new/frame_042_delay-0.02s.png" id="44_edal1"]
+[ext_resource type="Texture2D" uid="uid://c0ck1kep6h768" path="res://items/scratchers/jackpot_spin_anim_new/frame_043_delay-0.02s.png" id="45_u2y0e"]
+[ext_resource type="Texture2D" uid="uid://gps8hld2htke" path="res://items/scratchers/jackpot_spin_anim_new/frame_044_delay-0.02s.png" id="46_vnd7d"]
+[ext_resource type="Texture2D" uid="uid://cttw882lpckii" path="res://items/scratchers/jackpot_spin_anim_new/frame_045_delay-0.02s.png" id="47_3ru47"]
+[ext_resource type="Texture2D" uid="uid://b23qibvyjyu82" path="res://items/scratchers/jackpot_spin_anim_new/frame_046_delay-0.02s.png" id="48_86hhb"]
+[ext_resource type="Texture2D" uid="uid://qmrxa7gt7c1i" path="res://items/scratchers/jackpot_spin_anim_new/frame_047_delay-0.02s.png" id="49_oq55s"]
+[ext_resource type="Texture2D" uid="uid://2w2vapbpppln" path="res://items/scratchers/jackpot_spin_anim_new/frame_048_delay-0.02s.png" id="50_f4sdp"]
+[ext_resource type="Texture2D" uid="uid://cesax4gfkpv1" path="res://items/scratchers/jackpot_spin_anim_new/frame_049_delay-0.02s.png" id="51_8me7y"]
+[ext_resource type="Texture2D" uid="uid://bfck2qq18qyof" path="res://items/scratchers/jackpot_spin_anim_new/frame_050_delay-0.02s.png" id="52_j0m45"]
+[ext_resource type="Texture2D" uid="uid://oakrca6o1pnu" path="res://items/scratchers/jackpot_spin_anim_new/frame_051_delay-0.02s.png" id="53_yb5xm"]
+[ext_resource type="Texture2D" uid="uid://ckf2gri4j3dsr" path="res://items/scratchers/jackpot_spin_anim_new/frame_052_delay-0.02s.png" id="54_u2f7q"]
+[ext_resource type="Texture2D" uid="uid://oxeog4r3pa3y" path="res://items/scratchers/jackpot_spin_anim_new/frame_053_delay-0.02s.png" id="55_5atjv"]
+[ext_resource type="Texture2D" uid="uid://bh5vtvm0k0nqs" path="res://items/scratchers/jackpot_spin_anim_new/frame_054_delay-0.02s.png" id="56_0snic"]
+[ext_resource type="Texture2D" uid="uid://co5fnhurhfnvd" path="res://items/scratchers/jackpot_spin_anim_new/frame_055_delay-0.02s.png" id="57_32k3y"]
+[ext_resource type="Texture2D" uid="uid://crbi3emxtk0e8" path="res://items/scratchers/jackpot_spin_anim_new/frame_056_delay-0.02s.png" id="58_lmwd0"]
+[ext_resource type="Texture2D" uid="uid://bblx200jixmjo" path="res://items/scratchers/jackpot_spin_anim_new/frame_057_delay-0.02s.png" id="59_o74lj"]
+[ext_resource type="Texture2D" uid="uid://b45bu4fmbbjld" path="res://items/scratchers/jackpot_spin_anim_new/frame_058_delay-0.02s.png" id="60_w3ncc"]
+[ext_resource type="Texture2D" uid="uid://dc8jixx5ad5m8" path="res://items/scratchers/jackpot_spin_anim_new/frame_059_delay-0.02s.png" id="61_etdup"]
+[ext_resource type="Texture2D" uid="uid://d1fy4ccho8y10" path="res://items/scratchers/jackpot_spin_anim_new/frame_060_delay-0.02s.png" id="62_a1p0t"]
+[ext_resource type="Texture2D" uid="uid://cju8htupqvh0u" path="res://items/scratchers/jackpot_spin_anim_new/frame_061_delay-0.02s.png" id="63_ov1eq"]
+[ext_resource type="Texture2D" uid="uid://fip6gkj43oxg" path="res://items/scratchers/jackpot_spin_anim_new/frame_062_delay-0.02s.png" id="64_4b0iv"]
+[ext_resource type="Texture2D" uid="uid://c8a7hbbwjdsnm" path="res://items/scratchers/jackpot_spin_anim_new/frame_063_delay-0.02s.png" id="65_jydfx"]
+[ext_resource type="Texture2D" uid="uid://q8ylg2xf08wh" path="res://items/scratchers/jackpot_spin_anim_new/frame_064_delay-0.02s.png" id="66_2lcbf"]
+[ext_resource type="Texture2D" uid="uid://cny18kqqtiqcq" path="res://items/scratchers/jackpot_spin_anim_new/frame_065_delay-0.02s.png" id="67_fahwl"]
+[ext_resource type="Texture2D" uid="uid://cujdcwdlr48pb" path="res://items/scratchers/jackpot_spin_anim_new/frame_066_delay-0.02s.png" id="68_037gq"]
+[ext_resource type="Texture2D" uid="uid://b3016wvv3dqb3" path="res://items/scratchers/jackpot_spin_anim_new/frame_067_delay-0.02s.png" id="69_nd3vt"]
+[ext_resource type="Texture2D" uid="uid://c6saoswj8fgjt" path="res://items/scratchers/jackpot_spin_anim_new/frame_068_delay-0.02s.png" id="70_vu3ut"]
+[ext_resource type="Texture2D" uid="uid://ra38n3efeuiw" path="res://items/scratchers/jackpot_spin_anim_new/frame_069_delay-0.02s.png" id="71_7gy1b"]
+[ext_resource type="Texture2D" uid="uid://5wt2vvnkvu83" path="res://items/scratchers/jackpot_spin_anim_new/frame_070_delay-0.02s.png" id="72_mpgvx"]
+[ext_resource type="Texture2D" uid="uid://d2mw1i06cnoat" path="res://items/scratchers/jackpot_spin_anim_new/frame_071_delay-0.02s.png" id="73_orfb3"]
+[ext_resource type="Texture2D" uid="uid://cmmrmab4tg1m4" path="res://items/scratchers/jackpot_spin_anim_new/frame_072_delay-0.02s.png" id="74_grpfx"]
+[ext_resource type="Texture2D" uid="uid://bctyysgncg4wd" path="res://items/scratchers/jackpot_spin_anim_new/frame_073_delay-0.02s.png" id="75_3xh1t"]
+[ext_resource type="Texture2D" uid="uid://cj3iyy25pqi5e" path="res://items/scratchers/jackpot_spin_anim_new/frame_074_delay-0.02s.png" id="76_f5lgc"]
+[ext_resource type="Texture2D" uid="uid://c2ebjxobjwcjh" path="res://items/scratchers/jackpot_spin_anim_new/frame_075_delay-0.02s.png" id="77_a11m5"]
+[ext_resource type="Texture2D" uid="uid://csqwtc0yfunpi" path="res://items/scratchers/jackpot_spin_anim_new/frame_076_delay-0.02s.png" id="78_vqca1"]
+[ext_resource type="Texture2D" uid="uid://cdolnep1qngn8" path="res://items/scratchers/jackpot_spin_anim_new/frame_077_delay-0.02s.png" id="79_er8y6"]
+[ext_resource type="Texture2D" uid="uid://dermxkwy7iq6" path="res://items/scratchers/jackpot_spin_anim_new/frame_078_delay-0.02s.png" id="80_7l15l"]
+[ext_resource type="Texture2D" uid="uid://dxusti61dtrc0" path="res://items/scratchers/jackpot_spin_anim_new/frame_079_delay-0.02s.png" id="81_8msbp"]
+[ext_resource type="Texture2D" uid="uid://cmmibqt7ihljr" path="res://items/scratchers/jackpot_spin_anim_new/frame_080_delay-0.02s.png" id="82_4g1rx"]
+[ext_resource type="Texture2D" uid="uid://v5jawop2u5x5" path="res://items/scratchers/jackpot_spin_anim_new/frame_081_delay-0.02s.png" id="83_mvciu"]
+[ext_resource type="Texture2D" uid="uid://cgg8ipmxvsmq4" path="res://items/scratchers/jackpot_spin_anim_new/frame_082_delay-0.02s.png" id="84_hynyv"]
+[ext_resource type="Texture2D" uid="uid://70wm1e03hrom" path="res://items/scratchers/jackpot_spin_anim_new/frame_083_delay-0.02s.png" id="85_l5c0b"]
+[ext_resource type="Texture2D" uid="uid://bf22ynwox0jbw" path="res://items/scratchers/jackpot_spin_anim_new/frame_084_delay-0.02s.png" id="86_k33dx"]
+[ext_resource type="Texture2D" uid="uid://c64c54f18m2li" path="res://items/scratchers/jackpot_spin_anim_new/frame_085_delay-0.02s.png" id="87_0hja0"]
+[ext_resource type="Texture2D" uid="uid://brs3paxn24pw1" path="res://items/scratchers/jackpot_spin_anim_new/frame_086_delay-0.02s.png" id="88_ij1gh"]
+[ext_resource type="Texture2D" uid="uid://bltp6nfkplmsr" path="res://items/scratchers/jackpot_spin_anim_new/frame_087_delay-0.02s.png" id="89_tdqwm"]
+[ext_resource type="Texture2D" uid="uid://dfi1wemuq1yt1" path="res://items/scratchers/jackpot_spin_anim_new/frame_088_delay-0.02s.png" id="90_86oaa"]
+[ext_resource type="Texture2D" uid="uid://e3vuakp5gf52" path="res://items/scratchers/jackpot_spin_anim_new/frame_089_delay-0.02s.png" id="91_in78o"]
+[ext_resource type="Texture2D" uid="uid://fs5wwu5cnvl7" path="res://items/scratchers/jackpot_spin_anim_new/frame_090_delay-0.02s.png" id="92_gx1xf"]
+[ext_resource type="Texture2D" uid="uid://cvfncji1sxtb5" path="res://items/scratchers/jackpot_spin_anim_new/frame_091_delay-0.02s.png" id="93_q5486"]
+[ext_resource type="Texture2D" uid="uid://cv50bsoir2pf" path="res://items/scratchers/jackpot_spin_anim_new/frame_092_delay-0.02s.png" id="94_djvgp"]
+[ext_resource type="Texture2D" uid="uid://ci43v0jg8iwp3" path="res://items/scratchers/jackpot_spin_anim_new/frame_093_delay-0.02s.png" id="95_ci21u"]
+[ext_resource type="Texture2D" uid="uid://dph44vw7nn7sf" path="res://items/scratchers/jackpot_spin_anim_new/frame_094_delay-0.02s.png" id="96_dr1ey"]
+[ext_resource type="Texture2D" uid="uid://8njohrekm5m8" path="res://items/scratchers/jackpot_spin_anim_new/frame_095_delay-0.02s.png" id="97_2yu57"]
+[ext_resource type="Texture2D" uid="uid://r2bkt7km1ykg" path="res://items/scratchers/jackpot_spin_anim_new/frame_096_delay-0.02s.png" id="98_bbg7a"]
+[ext_resource type="Texture2D" uid="uid://e1f6545bcbes" path="res://items/scratchers/jackpot_spin_anim_new/frame_097_delay-0.02s.png" id="99_vbvr5"]
+[ext_resource type="Texture2D" uid="uid://dusyjsvy11qgi" path="res://items/scratchers/jackpot_spin_anim_new/frame_098_delay-0.02s.png" id="100_c12qg"]
+[ext_resource type="Texture2D" uid="uid://dlgdwf87y1mp2" path="res://items/scratchers/jackpot_spin_anim_new/frame_099_delay-0.02s.png" id="101_ja58s"]
+[ext_resource type="Texture2D" uid="uid://dglbuooy1i3sq" path="res://items/scratchers/jackpot_spin_anim_new/frame_100_delay-0.02s.png" id="102_l5gpx"]
+[ext_resource type="Texture2D" uid="uid://bonox3dul56tl" path="res://items/scratchers/jackpot_spin_anim_new/frame_101_delay-0.02s.png" id="103_8gn8r"]
+[ext_resource type="Texture2D" uid="uid://c1888kingugry" path="res://items/scratchers/jackpot_spin_anim_new/frame_102_delay-0.02s.png" id="104_1bre6"]
+[ext_resource type="Texture2D" uid="uid://cwr8lvdr6nf3l" path="res://items/scratchers/jackpot_spin_anim_new/frame_103_delay-0.02s.png" id="105_tv8tq"]
+[ext_resource type="Texture2D" uid="uid://cervjcoi7t7m5" path="res://items/scratchers/jackpot_spin_anim_new/frame_104_delay-0.02s.png" id="106_gspsn"]
+[ext_resource type="Texture2D" uid="uid://cvv2l0hrk7smg" path="res://items/scratchers/jackpot_spin_anim_new/frame_105_delay-0.02s.png" id="107_ei67j"]
+[ext_resource type="Texture2D" uid="uid://cmyd7trbv0onr" path="res://items/scratchers/jackpot_spin_anim_new/frame_106_delay-0.02s.png" id="108_wka30"]
+[ext_resource type="Texture2D" uid="uid://d0vighdloin3f" path="res://items/scratchers/jackpot_spin_anim_new/frame_107_delay-0.02s.png" id="109_7xkoy"]
+[ext_resource type="Texture2D" uid="uid://ba6gr07l22nqs" path="res://items/scratchers/jackpot_spin_anim_new/frame_108_delay-0.02s.png" id="110_gwla7"]
+[ext_resource type="Texture2D" uid="uid://bj8ru0du0edue" path="res://items/scratchers/jackpot_spin_anim_new/frame_109_delay-0.02s.png" id="111_0fmsy"]
+[ext_resource type="Texture2D" uid="uid://cmvfrvdfx7brw" path="res://items/scratchers/jackpot_spin_anim_new/frame_110_delay-0.02s.png" id="112_fbwqy"]
+[ext_resource type="Texture2D" uid="uid://bqw1gtmwmfa2n" path="res://items/scratchers/jackpot_spin_anim_new/frame_111_delay-0.02s.png" id="113_nt5ly"]
+[ext_resource type="Texture2D" uid="uid://dv6dey2yla6pv" path="res://items/scratchers/jackpot_spin_anim_new/frame_112_delay-0.02s.png" id="114_wn5le"]
+[ext_resource type="Texture2D" uid="uid://c186yq2uklv81" path="res://items/scratchers/jackpot_spin_anim_new/frame_113_delay-0.02s.png" id="115_ai65r"]
+[ext_resource type="Texture2D" uid="uid://b6lequyf54ao6" path="res://items/scratchers/jackpot_spin_anim_new/frame_114_delay-0.02s.png" id="116_5yaq4"]
+[ext_resource type="Texture2D" uid="uid://3p76i7dhh67k" path="res://items/scratchers/jackpot_spin_anim_new/frame_115_delay-0.02s.png" id="117_3diph"]
+[ext_resource type="Texture2D" uid="uid://dsm00ksmxkbf6" path="res://items/scratchers/jackpot_spin_anim_new/frame_116_delay-0.02s.png" id="118_ldtah"]
+[ext_resource type="Texture2D" uid="uid://bkeivvcvok1vc" path="res://items/scratchers/jackpot_spin_anim_new/frame_117_delay-0.02s.png" id="119_un7tr"]
+[ext_resource type="Texture2D" uid="uid://c0piajoujqt07" path="res://items/scratchers/jackpot_spin_anim_new/frame_118_delay-0.02s.png" id="120_hb6jj"]
+[ext_resource type="Texture2D" uid="uid://disrct3cog05f" path="res://items/scratchers/jackpot_spin_anim_new/frame_119_delay-0.02s.png" id="121_v2x6j"]
+[ext_resource type="Texture2D" uid="uid://dqnho3q6pur46" path="res://items/scratchers/jackpot_spin_anim_new/frame_120_delay-0.02s.png" id="122_cnubl"]
+[ext_resource type="Texture2D" uid="uid://dun7eqdnt24c4" path="res://items/scratchers/jackpot_spin_anim_new/frame_121_delay-0.02s.png" id="123_7h574"]
+[ext_resource type="Texture2D" uid="uid://dl0wsk61xgw5j" path="res://items/scratchers/jackpot_spin_anim_new/frame_122_delay-0.02s.png" id="124_dbuov"]
+[ext_resource type="Texture2D" uid="uid://hod1afnjva6m" path="res://items/scratchers/jackpot_spin_anim_new/frame_123_delay-0.02s.png" id="125_abq34"]
+[ext_resource type="Texture2D" uid="uid://fdne6wrbce04" path="res://items/scratchers/jackpot_spin_anim_new/frame_124_delay-0.02s.png" id="126_xc84t"]
+[ext_resource type="Texture2D" uid="uid://cf5wl2jyafrup" path="res://items/scratchers/jackpot_spin_anim_new/frame_125_delay-0.02s.png" id="127_uia1i"]
+[ext_resource type="Texture2D" uid="uid://c4syoymg57rq8" path="res://items/scratchers/jackpot_spin_anim_new/frame_126_delay-0.02s.png" id="128_qw1ry"]
+[ext_resource type="Texture2D" uid="uid://dnbcu8n8x4j1n" path="res://items/scratchers/jackpot_spin_anim_new/frame_127_delay-0.02s.png" id="129_3catx"]
+[ext_resource type="Texture2D" uid="uid://bj7t47uhlanov" path="res://items/scratchers/jackpot_spin_anim_new/frame_128_delay-0.02s.png" id="130_7t4ha"]
+[ext_resource type="Texture2D" uid="uid://b2rr0f7o33t2i" path="res://items/scratchers/jackpot_spin_anim_new/frame_129_delay-0.02s.png" id="131_xupf8"]
+[ext_resource type="Texture2D" uid="uid://j6e3xw7i58r3" path="res://items/scratchers/jackpot_spin_anim_new/frame_130_delay-0.02s.png" id="132_nyisn"]
+[ext_resource type="Texture2D" uid="uid://bwv335vwei6jd" path="res://items/scratchers/jackpot_spin_anim_new/frame_131_delay-0.02s.png" id="133_c8pc6"]
+[ext_resource type="Texture2D" uid="uid://dnsjtahep7w72" path="res://items/scratchers/jackpot_spin_anim_new/frame_132_delay-0.02s.png" id="134_djxka"]
+[ext_resource type="Texture2D" uid="uid://cqmphtn7cbcg8" path="res://items/scratchers/jackpot_spin_anim_new/frame_133_delay-0.02s.png" id="135_xr38y"]
+[ext_resource type="Texture2D" uid="uid://cl2ffm4fqtpxj" path="res://items/scratchers/jackpot_spin_anim_new/frame_134_delay-0.02s.png" id="136_peheo"]
+[ext_resource type="Texture2D" uid="uid://65n1ibkko46x" path="res://items/scratchers/jackpot_spin_anim_new/frame_135_delay-0.02s.png" id="137_cpxvj"]
+[ext_resource type="Texture2D" uid="uid://ctwtpw4og5su6" path="res://items/scratchers/jackpot_spin_anim_new/frame_136_delay-0.02s.png" id="138_22gvw"]
+[ext_resource type="Texture2D" uid="uid://danhcgb2ktp06" path="res://items/scratchers/jackpot_spin_anim_new/frame_137_delay-0.02s.png" id="139_flqow"]
+[ext_resource type="Texture2D" uid="uid://b05c6ae1idrw" path="res://items/scratchers/jackpot_spin_anim_new/frame_138_delay-0.02s.png" id="140_kmy8h"]
+[ext_resource type="Texture2D" uid="uid://b2tru16f2rf1g" path="res://items/scratchers/jackpot_spin_anim_new/frame_139_delay-0.02s.png" id="141_1scgp"]
+[ext_resource type="Texture2D" uid="uid://rmbw2wxo304t" path="res://items/scratchers/jackpot_spin_anim_new/frame_140_delay-0.02s.png" id="142_13dda"]
+[ext_resource type="Texture2D" uid="uid://b2bgs248t3r3g" path="res://items/scratchers/jackpot_spin_anim_new/frame_141_delay-0.02s.png" id="143_pipb3"]
+[ext_resource type="Texture2D" uid="uid://dnng6lbrrjthc" path="res://items/scratchers/jackpot_spin_anim_new/frame_142_delay-0.02s.png" id="144_8ejic"]
+[ext_resource type="Texture2D" uid="uid://cm6yj74snsgm0" path="res://items/scratchers/jackpot_spin_anim_new/frame_143_delay-0.02s.png" id="145_5u8ac"]
+[ext_resource type="Texture2D" uid="uid://bu5nhrv4fyqi2" path="res://items/scratchers/jackpot_spin_anim_new/frame_144_delay-0.02s.png" id="146_5qbjx"]
+[ext_resource type="Texture2D" uid="uid://dyam2t1jvbr8j" path="res://items/scratchers/jackpot_spin_anim_new/frame_145_delay-0.02s.png" id="147_2hov8"]
+[ext_resource type="Texture2D" uid="uid://d1t1c28ku0b2h" path="res://items/scratchers/jackpot_spin_anim_new/frame_146_delay-0.02s.png" id="148_ihkhh"]
+[ext_resource type="Texture2D" uid="uid://bpca4qssstq6a" path="res://items/scratchers/jackpot_spin_anim_new/frame_147_delay-0.02s.png" id="149_2sdtb"]
+[ext_resource type="Texture2D" uid="uid://qmkyjmltqav0" path="res://items/scratchers/jackpot_spin_anim_new/frame_148_delay-0.02s.png" id="150_adb18"]
+[ext_resource type="Texture2D" uid="uid://llaxvvcsd7hf" path="res://items/scratchers/jackpot_spin_anim_new/frame_149_delay-0.02s.png" id="151_l10pk"]
+[ext_resource type="Texture2D" uid="uid://vkcsctpee2a5" path="res://items/scratchers/jackpot_spin_anim_new/frame_150_delay-0.02s.png" id="152_1k6nn"]
+[ext_resource type="Texture2D" uid="uid://rerso2wnn8ie" path="res://items/scratchers/jackpot_spin_anim_new/frame_151_delay-0.02s.png" id="153_41e7u"]
+[ext_resource type="Texture2D" uid="uid://cgpgv08fp24i5" path="res://items/scratchers/jackpot_spin_anim_new/frame_152_delay-0.02s.png" id="154_08sno"]
+[ext_resource type="Texture2D" uid="uid://cqw18k4o2sxir" path="res://items/scratchers/jackpot_spin_anim_new/frame_153_delay-0.02s.png" id="155_4tmc7"]
+[ext_resource type="Texture2D" uid="uid://bovyk4on2ve2b" path="res://items/scratchers/jackpot_spin_anim_new/frame_154_delay-0.02s.png" id="156_2uxw5"]
+[ext_resource type="Texture2D" uid="uid://c4fjnb6cwkq5m" path="res://items/scratchers/jackpot_spin_anim_new/frame_155_delay-0.02s.png" id="157_cnfh5"]
+[ext_resource type="Texture2D" uid="uid://codrgwiihhyr7" path="res://items/scratchers/jackpot_spin_anim_new/frame_156_delay-0.02s.png" id="158_rr0ua"]
+[ext_resource type="Texture2D" uid="uid://borshqw87gbap" path="res://items/scratchers/jackpot_spin_anim_new/frame_157_delay-0.02s.png" id="159_dwd1i"]
+[ext_resource type="Texture2D" uid="uid://36pucuuowbjb" path="res://items/scratchers/jackpot_spin_anim_new/frame_158_delay-0.02s.png" id="160_63thj"]
+[ext_resource type="Texture2D" uid="uid://bqqn1wxjnx3x1" path="res://items/scratchers/jackpot_spin_anim_new/frame_159_delay-0.02s.png" id="161_or77j"]
+[ext_resource type="Texture2D" uid="uid://bvgu28duobiq" path="res://items/scratchers/jackpot_spin_anim_new/frame_160_delay-0.02s.png" id="162_6ltod"]
+[ext_resource type="Texture2D" uid="uid://cjuww6v6sysrk" path="res://items/scratchers/jackpot_spin_anim_new/frame_161_delay-0.02s.png" id="163_kww17"]
+[ext_resource type="Texture2D" uid="uid://bmbo5nnj4x8n6" path="res://items/scratchers/jackpot_spin_anim_new/frame_162_delay-0.02s.png" id="164_ekack"]
+[ext_resource type="Texture2D" uid="uid://cnj7utwooifto" path="res://items/scratchers/jackpot_spin_anim_new/frame_163_delay-0.02s.png" id="165_yin1h"]
+[ext_resource type="Texture2D" uid="uid://bcaqcopeo10la" path="res://items/scratchers/jackpot_spin_anim_new/frame_164_delay-0.02s.png" id="166_gmedv"]
+[ext_resource type="Texture2D" uid="uid://cwa227ie3tr6r" path="res://items/scratchers/jackpot_spin_anim_new/frame_165_delay-0.02s.png" id="167_kxgiv"]
+[ext_resource type="Texture2D" uid="uid://k2jna0ijtyyt" path="res://items/scratchers/jackpot_spin_anim_new/frame_166_delay-0.02s.png" id="168_rdiej"]
+[ext_resource type="Texture2D" uid="uid://bbgrd7lvqu1u0" path="res://items/scratchers/jackpot_spin_anim_new/frame_167_delay-0.02s.png" id="169_8fch4"]
+[ext_resource type="Texture2D" uid="uid://cejnumsxb1nwm" path="res://items/scratchers/jackpot_spin_anim_new/frame_168_delay-0.02s.png" id="170_sw6nr"]
+[ext_resource type="Texture2D" uid="uid://bakux8rcsejgf" path="res://items/scratchers/jackpot_spin_anim_new/frame_169_delay-0.02s.png" id="171_alspg"]
+[ext_resource type="Texture2D" uid="uid://crr8wfgb767mi" path="res://items/scratchers/jackpot_spin_anim_new/frame_170_delay-0.02s.png" id="172_fbdh5"]
+[ext_resource type="Texture2D" uid="uid://ch1da2735064v" path="res://items/scratchers/jackpot_spin_anim_new/frame_171_delay-0.02s.png" id="173_1c5r8"]
+[ext_resource type="Texture2D" uid="uid://c8xggwp688p6n" path="res://items/scratchers/jackpot_spin_anim_new/frame_172_delay-0.02s.png" id="174_a6mhw"]
+[ext_resource type="Texture2D" uid="uid://dtxb4ahfrk2xf" path="res://items/scratchers/jackpot_spin_anim_new/frame_173_delay-0.02s.png" id="175_rmjpa"]
+[ext_resource type="Texture2D" uid="uid://cr0rh6q5kdltl" path="res://items/scratchers/jackpot_spin_anim_new/frame_174_delay-0.02s.png" id="176_eo7s0"]
+[ext_resource type="Texture2D" uid="uid://bru3se7u8qtry" path="res://items/scratchers/jackpot_spin_anim_new/frame_175_delay-0.02s.png" id="177_exwli"]
+[ext_resource type="Texture2D" uid="uid://bggl8smyllfmv" path="res://items/scratchers/jackpot_spin_anim_new/frame_176_delay-0.02s.png" id="178_m0je3"]
+[ext_resource type="Texture2D" uid="uid://wabi7pawwbua" path="res://items/scratchers/jackpot_spin_anim_new/frame_177_delay-0.02s.png" id="179_l5k8q"]
+[ext_resource type="Texture2D" uid="uid://r4f5uwedqn53" path="res://items/scratchers/jackpot_spin_anim_new/frame_178_delay-0.02s.png" id="180_j54nr"]
+[ext_resource type="Texture2D" uid="uid://bolphpifr5c06" path="res://items/scratchers/jackpot_spin_anim_new/frame_179_delay-0.02s.png" id="181_kwbpm"]
+[ext_resource type="Texture2D" uid="uid://bgt4v4uo88xdd" path="res://items/scratchers/jackpot_spin_anim_new/frame_180_delay-0.02s.png" id="182_ew2o5"]
+[ext_resource type="Texture2D" uid="uid://bykf63yet53j7" path="res://items/scratchers/jackpot_spin_anim_new/frame_181_delay-0.02s.png" id="183_haxa6"]
+[ext_resource type="Texture2D" uid="uid://bq8s7t4jm5dpn" path="res://items/scratchers/jackpot_spin_anim_new/frame_182_delay-0.02s.png" id="184_lvilr"]
+[ext_resource type="Texture2D" uid="uid://d24m2rr142ugj" path="res://items/scratchers/jackpot_spin_anim_new/frame_183_delay-0.02s.png" id="185_iof2f"]
+[ext_resource type="Texture2D" uid="uid://bb0oid1lgyh3p" path="res://items/scratchers/jackpot_spin_anim_new/frame_184_delay-0.02s.png" id="186_dlyte"]
+[ext_resource type="Texture2D" uid="uid://c77vuqaqjnd2a" path="res://items/scratchers/jackpot_spin_anim_new/frame_185_delay-0.02s.png" id="187_od2mx"]
+[ext_resource type="Texture2D" uid="uid://gxi1o5sum6x" path="res://items/scratchers/jackpot_spin_anim_new/frame_186_delay-0.02s.png" id="188_vcnsk"]
+[ext_resource type="Texture2D" uid="uid://d1xchyrtkidd0" path="res://items/scratchers/jackpot_spin_anim_new/frame_187_delay-0.02s.png" id="189_vptuh"]
+[ext_resource type="Texture2D" uid="uid://dh6eud6ftx7su" path="res://items/scratchers/jackpot_spin_anim_new/frame_188_delay-0.02s.png" id="190_ae7k6"]
+[ext_resource type="Texture2D" uid="uid://dy4vhq2wsbdkq" path="res://items/scratchers/jackpot_spin_anim_new/frame_189_delay-0.02s.png" id="191_nnnyn"]
+[ext_resource type="Texture2D" uid="uid://bhev8g2t41enk" path="res://items/scratchers/jackpot_spin_anim_new/frame_190_delay-0.02s.png" id="192_bg1tb"]
+[ext_resource type="Texture2D" uid="uid://byyinr2we5pj2" path="res://items/scratchers/jackpot_spin_anim_new/frame_191_delay-0.02s.png" id="193_hq7t6"]
+[ext_resource type="Texture2D" uid="uid://b02xluf7y6ypi" path="res://items/scratchers/jackpot_spin_anim_new/frame_192_delay-0.02s.png" id="194_lhp3q"]
+[ext_resource type="Texture2D" uid="uid://dosjx8b74mde7" path="res://items/scratchers/jackpot_spin_anim_new/frame_193_delay-0.02s.png" id="195_p58wg"]
+[ext_resource type="Texture2D" uid="uid://b84ou6xklrotl" path="res://items/scratchers/jackpot_spin_anim_new/frame_194_delay-0.02s.png" id="196_hpg1t"]
+[ext_resource type="Texture2D" uid="uid://cybqlpisoabjk" path="res://items/scratchers/jackpot_spin_anim_new/frame_195_delay-0.02s.png" id="197_ifuud"]
+[ext_resource type="Texture2D" uid="uid://dfw2p2kcathbp" path="res://items/scratchers/jackpot_spin_anim_new/frame_196_delay-0.02s.png" id="198_fx1wj"]
+[ext_resource type="Texture2D" uid="uid://hj0y4mp53btn" path="res://items/scratchers/jackpot_spin_anim_new/frame_197_delay-0.02s.png" id="199_nc37c"]
+[ext_resource type="Texture2D" uid="uid://c8lhq14fg52yg" path="res://items/scratchers/jackpot_spin_anim_new/frame_198_delay-0.02s.png" id="200_23vwm"]
+[ext_resource type="Texture2D" uid="uid://cxp3tmgndm46f" path="res://items/scratchers/jackpot_spin_anim_new/frame_199_delay-0.02s.png" id="201_w8fhx"]
+[ext_resource type="Texture2D" uid="uid://dl3hxe2nxrndn" path="res://items/scratchers/jackpot_spin_anim_new/frame_200_delay-0.02s.png" id="202_lu8ae"]
+[ext_resource type="Texture2D" uid="uid://clqji0b42nsd0" path="res://items/scratchers/jackpot_spin_anim_new/frame_201_delay-0.02s.png" id="203_hr53m"]
+[ext_resource type="Texture2D" uid="uid://c0qa87i4e2s8j" path="res://items/scratchers/jackpot_spin_anim_new/frame_202_delay-0.02s.png" id="204_a7qpx"]
+[ext_resource type="Texture2D" uid="uid://cmausblqxa6xy" path="res://items/scratchers/jackpot_spin_anim_new/frame_203_delay-0.02s.png" id="205_k6nbb"]
+[ext_resource type="Texture2D" uid="uid://bpns3hnoekbsp" path="res://items/scratchers/jackpot_spin_anim_new/frame_204_delay-0.02s.png" id="206_h7hqh"]
+[ext_resource type="Texture2D" uid="uid://1whun8o5leey" path="res://items/scratchers/jackpot_spin_anim_new/frame_205_delay-0.02s.png" id="207_vou4m"]
+[ext_resource type="Texture2D" uid="uid://cij7ybyinl086" path="res://items/scratchers/jackpot_spin_anim_new/frame_206_delay-0.02s.png" id="208_kwksp"]
+[ext_resource type="Texture2D" uid="uid://ci6p7y6tw1k67" path="res://items/scratchers/jackpot_spin_anim_new/frame_207_delay-0.02s.png" id="209_742gs"]
+[ext_resource type="Texture2D" uid="uid://coyi2b82eyy4i" path="res://items/scratchers/jackpot_spin_anim_new/frame_208_delay-0.02s.png" id="210_jkp1l"]
+[ext_resource type="Texture2D" uid="uid://bd5v5v8j5vxia" path="res://items/scratchers/jackpot_spin_anim_new/frame_209_delay-0.02s.png" id="211_6bew7"]
+[ext_resource type="Texture2D" uid="uid://b53k0tb523ol0" path="res://items/scratchers/jackpot_spin_anim_new/frame_210_delay-0.02s.png" id="212_i3cjj"]
+[ext_resource type="Texture2D" uid="uid://jfejat60kdk8" path="res://items/scratchers/jackpot_spin_anim_new/frame_211_delay-0.02s.png" id="213_mihuk"]
+[ext_resource type="Texture2D" uid="uid://btgjh6kwhn2ak" path="res://items/scratchers/jackpot_spin_anim_new/frame_212_delay-0.02s.png" id="214_yowr4"]
+[ext_resource type="Texture2D" uid="uid://br8ie721ehkcr" path="res://items/scratchers/jackpot_spin_anim_new/frame_213_delay-0.02s.png" id="215_1eoni"]
+[ext_resource type="Texture2D" uid="uid://dbtvf7g6hr80j" path="res://items/scratchers/jackpot_spin_anim_new/frame_214_delay-0.02s.png" id="216_xkwt8"]
+[ext_resource type="Texture2D" uid="uid://dl7vhk0vn1leb" path="res://items/scratchers/jackpot_spin_anim_new/frame_215_delay-0.02s.png" id="217_wiih0"]
+[ext_resource type="Texture2D" uid="uid://dpi6hrhf7kxgn" path="res://items/scratchers/jackpot_spin_anim_new/frame_216_delay-0.02s.png" id="218_y0u53"]
+[ext_resource type="Texture2D" uid="uid://n4jjcux2n7kc" path="res://items/scratchers/jackpot_spin_anim_new/frame_217_delay-0.02s.png" id="219_6sytf"]
+[ext_resource type="Texture2D" uid="uid://b2qp4dlpow5cl" path="res://items/scratchers/jackpot_spin_anim_new/frame_218_delay-0.02s.png" id="220_dx4d8"]
+[ext_resource type="Texture2D" uid="uid://ctkulty8p73mg" path="res://items/scratchers/jackpot_spin_anim_new/frame_219_delay-0.02s.png" id="221_rtr7t"]
+[ext_resource type="Texture2D" uid="uid://c2m05q8axe8aa" path="res://items/scratchers/jackpot_spin_anim_new/frame_220_delay-0.02s.png" id="222_dr5e6"]
+[ext_resource type="Texture2D" uid="uid://bshqrtiywfrw7" path="res://items/scratchers/jackpot_spin_anim_new/frame_221_delay-0.02s.png" id="223_cd81m"]
+[ext_resource type="Texture2D" uid="uid://vgmdv6h4qto4" path="res://items/scratchers/jackpot_spin_anim_new/frame_222_delay-0.02s.png" id="224_2kake"]
+[ext_resource type="Texture2D" uid="uid://lm1xmhuk7y8p" path="res://items/scratchers/jackpot_spin_anim_new/frame_223_delay-0.02s.png" id="225_5s6i6"]
+[ext_resource type="Texture2D" uid="uid://ck5guxen5ooyf" path="res://items/scratchers/jackpot_spin_anim_new/frame_224_delay-0.02s.png" id="226_utbte"]
+[ext_resource type="Texture2D" uid="uid://d0ftfqnwhc7mh" path="res://items/scratchers/jackpot_spin_anim_new/frame_225_delay-0.02s.png" id="227_cvme1"]
+[ext_resource type="Texture2D" uid="uid://dkp2ao3emq4xd" path="res://items/scratchers/jackpot_spin_anim_new/frame_226_delay-0.02s.png" id="228_jqpvc"]
+[ext_resource type="Texture2D" uid="uid://c6t6pob2mrvsv" path="res://items/scratchers/jackpot_spin_anim_new/frame_227_delay-0.02s.png" id="229_35xnu"]
+[ext_resource type="Texture2D" uid="uid://t7b84auvyc6e" path="res://items/scratchers/jackpot_spin_anim_new/frame_228_delay-0.02s.png" id="230_ix3n5"]
+[ext_resource type="Texture2D" uid="uid://5pywxwnew8xl" path="res://items/scratchers/jackpot_spin_anim_new/frame_229_delay-0.02s.png" id="231_jw1t2"]
+[ext_resource type="Texture2D" uid="uid://dw86odknna3hg" path="res://items/scratchers/jackpot_spin_anim_new/frame_230_delay-0.02s.png" id="232_lnvl5"]
+[ext_resource type="Texture2D" uid="uid://b8e35haew4rno" path="res://items/scratchers/jackpot_spin_anim_new/frame_231_delay-0.02s.png" id="233_2y1ao"]
+[ext_resource type="Texture2D" uid="uid://c5cyv464xuc3j" path="res://items/scratchers/jackpot_spin_anim_new/frame_232_delay-0.02s.png" id="234_exj3b"]
+[ext_resource type="Texture2D" uid="uid://dvs1wxqqcv4ek" path="res://items/scratchers/jackpot_spin_anim_new/frame_233_delay-0.02s.png" id="235_tt86k"]
+[ext_resource type="Texture2D" uid="uid://clcq52sje7tmd" path="res://items/scratchers/jackpot_spin_anim_new/frame_234_delay-0.02s.png" id="236_gwkys"]
+[ext_resource type="Texture2D" uid="uid://ba8hsnrpcoimi" path="res://items/scratchers/jackpot_spin_anim_new/frame_235_delay-0.02s.png" id="237_pkdp4"]
+[ext_resource type="Texture2D" uid="uid://dctuolyuggrg8" path="res://items/scratchers/jackpot_spin_anim_new/frame_236_delay-0.02s.png" id="238_rtrlx"]
+[ext_resource type="Texture2D" uid="uid://b6q501v4c71rg" path="res://items/scratchers/jackpot_spin_anim_new/frame_237_delay-0.02s.png" id="239_hry8q"]
+[ext_resource type="Texture2D" uid="uid://c6lue1jyr820f" path="res://items/scratchers/jackpot_spin_anim_new/frame_238_delay-0.02s.png" id="240_pgd7k"]
+[ext_resource type="Texture2D" uid="uid://br4eoj87552a5" path="res://items/scratchers/jackpot_spin_anim_new/frame_239_delay-0.02s.png" id="241_6ws0p"]
+[ext_resource type="Texture2D" uid="uid://dr5bvqmqbbbky" path="res://items/scratchers/jackpot_spin_anim_new/frame_240_delay-0.02s.png" id="242_yppf1"]
+[ext_resource type="Texture2D" uid="uid://bpllivyl15d20" path="res://items/scratchers/jackpot_spin_anim_new/frame_241_delay-0.02s.png" id="243_wniep"]
+[ext_resource type="Texture2D" uid="uid://bsmodoqyajml1" path="res://items/scratchers/jackpot_spin_anim_new/frame_242_delay-0.02s.png" id="244_r2dhl"]
+[ext_resource type="Texture2D" uid="uid://k2coh2ovqsx" path="res://items/scratchers/jackpot_spin_anim_new/frame_243_delay-0.02s.png" id="245_4j540"]
+[ext_resource type="Texture2D" uid="uid://bvfi2eo5e7q75" path="res://items/scratchers/jackpot_spin_anim_new/frame_244_delay-0.02s.png" id="246_us5eo"]
+[ext_resource type="Texture2D" uid="uid://pj0w2b8s8sc2" path="res://items/scratchers/jackpot_spin_anim_new/frame_245_delay-0.02s.png" id="247_rltbc"]
+[ext_resource type="Texture2D" uid="uid://dfgr2c5wsqhcv" path="res://items/scratchers/jackpot_spin_anim_new/frame_246_delay-0.02s.png" id="248_df6rd"]
+[ext_resource type="Texture2D" uid="uid://wiw0vm1i7od2" path="res://items/scratchers/jackpot_spin_anim_new/frame_247_delay-0.02s.png" id="249_tqt0y"]
+[ext_resource type="Texture2D" uid="uid://dp4or6hrg55jx" path="res://items/scratchers/jackpot_spin_anim_new/frame_248_delay-0.02s.png" id="250_vdli7"]
+[ext_resource type="Texture2D" uid="uid://dsgcncsuuhi6j" path="res://items/scratchers/jackpot_spin_anim_new/frame_249_delay-0.02s.png" id="251_657mm"]
+[ext_resource type="Texture2D" uid="uid://loke47rj8bf4" path="res://items/scratchers/jackpot_spin_anim_new/frame_250_delay-0.02s.png" id="252_nij82"]
+[ext_resource type="Texture2D" uid="uid://bt1av12po4e8p" path="res://items/scratchers/jackpot_spin_anim_new/frame_251_delay-0.02s.png" id="253_wx83n"]
+[ext_resource type="Texture2D" uid="uid://bvxqb52qmkqhg" path="res://items/scratchers/jackpot_spin_anim_new/frame_252_delay-0.02s.png" id="254_q1kon"]
+[ext_resource type="Texture2D" uid="uid://bwh57otnm3xop" path="res://items/scratchers/jackpot_spin_anim_new/frame_253_delay-0.02s.png" id="255_p8mvb"]
+[ext_resource type="Texture2D" uid="uid://y018f2ytje35" path="res://items/scratchers/jackpot_spin_anim_new/frame_254_delay-0.02s.png" id="256_41wkt"]
+[ext_resource type="Texture2D" uid="uid://28wavxo8w26f" path="res://items/scratchers/jackpot_spin_anim_new/frame_255_delay-0.02s.png" id="257_w1ytt"]
+[ext_resource type="Texture2D" uid="uid://bijmolqfwpnrw" path="res://items/scratchers/jackpot_spin_anim_new/frame_256_delay-0.02s.png" id="258_ovyau"]
+[ext_resource type="Texture2D" uid="uid://cfnq4s4lag5l7" path="res://items/scratchers/jackpot_spin_anim_new/frame_257_delay-0.02s.png" id="259_vyj7v"]
+[ext_resource type="Texture2D" uid="uid://bp7vgv3mtloo7" path="res://items/scratchers/jackpot_spin_anim_new/frame_258_delay-0.02s.png" id="260_m2ib5"]
+[ext_resource type="Texture2D" uid="uid://bwly0eyxsq640" path="res://items/scratchers/jackpot_spin_anim_new/frame_259_delay-0.02s.png" id="261_p0cdo"]
+[ext_resource type="Texture2D" uid="uid://b65nci4bun67s" path="res://items/scratchers/jackpot_spin_anim_new/frame_260_delay-0.02s.png" id="262_mlp5m"]
+[ext_resource type="Texture2D" uid="uid://c3aua2ah2gl3g" path="res://items/scratchers/jackpot_spin_anim_new/frame_261_delay-0.02s.png" id="263_ivef7"]
+[ext_resource type="Texture2D" uid="uid://car13s504r87c" path="res://items/scratchers/jackpot_spin_anim_new/frame_262_delay-0.02s.png" id="264_38hf5"]
+[ext_resource type="Texture2D" uid="uid://c1svuyxyywxme" path="res://items/scratchers/jackpot_spin_anim_new/frame_263_delay-0.02s.png" id="265_2wy53"]
+[ext_resource type="Texture2D" uid="uid://wvm6vaev1lhn" path="res://items/scratchers/jackpot_spin_anim_new/frame_264_delay-0.02s.png" id="266_ju313"]
+[ext_resource type="Texture2D" uid="uid://byavti27npr8s" path="res://items/scratchers/jackpot_spin_anim_new/frame_265_delay-0.02s.png" id="267_l45nb"]
+[ext_resource type="Texture2D" uid="uid://blefh4ayjpuvr" path="res://items/scratchers/jackpot_spin_anim_new/frame_266_delay-0.02s.png" id="268_uacj3"]
+[ext_resource type="Texture2D" uid="uid://bg0m3yaho3eyv" path="res://items/scratchers/jackpot_spin_anim_new/frame_267_delay-0.02s.png" id="269_s5rse"]
+[ext_resource type="Texture2D" uid="uid://ddtb7a58jdbps" path="res://items/scratchers/jackpot_spin_anim_new/frame_268_delay-0.02s.png" id="270_qontu"]
+[ext_resource type="Texture2D" uid="uid://c31il56eep6m8" path="res://items/scratchers/jackpot_spin_anim_new/frame_269_delay-0.02s.png" id="271_x3bya"]
+[ext_resource type="Texture2D" uid="uid://c1owguf7p0aby" path="res://items/scratchers/jackpot_spin_anim_new/frame_270_delay-0.02s.png" id="272_wa3ol"]
+[ext_resource type="Texture2D" uid="uid://c80sxavgacj03" path="res://items/scratchers/jackpot_spin_anim_new/frame_271_delay-0.02s.png" id="273_wurs3"]
+[ext_resource type="Texture2D" uid="uid://b1ytukffw6qxu" path="res://items/scratchers/jackpot_spin_anim_new/frame_272_delay-0.02s.png" id="274_i0m0r"]
+[ext_resource type="Texture2D" uid="uid://c3rgihu531xxi" path="res://items/scratchers/jackpot_spin_anim_new/frame_273_delay-0.02s.png" id="275_7g1x4"]
+[ext_resource type="Texture2D" uid="uid://fensrxlcopnl" path="res://items/scratchers/jackpot_spin_anim_new/frame_274_delay-0.02s.png" id="276_y3rpb"]
+[ext_resource type="Texture2D" uid="uid://cx86psdusjuuw" path="res://items/scratchers/jackpot_spin_anim_new/frame_275_delay-0.02s.png" id="277_bg7by"]
+[ext_resource type="Texture2D" uid="uid://dx6qmxmikuf6h" path="res://items/scratchers/jackpot_spin_anim_new/frame_276_delay-0.02s.png" id="278_np6o5"]
+[ext_resource type="Texture2D" uid="uid://dqvogrgew8u8b" path="res://items/scratchers/jackpot_spin_anim_new/frame_277_delay-0.02s.png" id="279_c3628"]
+[ext_resource type="Texture2D" uid="uid://cauafvm8a74ux" path="res://items/scratchers/jackpot_spin_anim_new/frame_278_delay-0.02s.png" id="280_f5nhd"]
+[ext_resource type="Texture2D" uid="uid://glpt6bx45epy" path="res://items/scratchers/jackpot_spin_anim_new/frame_279_delay-0.02s.png" id="281_i6he1"]
+[ext_resource type="Texture2D" uid="uid://c3tnvya3pv006" path="res://items/scratchers/jackpot_spin_anim_new/frame_280_delay-0.02s.png" id="282_4so5l"]
+[ext_resource type="Texture2D" uid="uid://cxkifobdacdre" path="res://items/scratchers/jackpot_spin_anim_new/frame_281_delay-0.02s.png" id="283_3jpds"]
+[ext_resource type="Texture2D" uid="uid://di7lw68qi0biu" path="res://items/scratchers/jackpot_spin_anim_new/frame_282_delay-0.02s.png" id="284_liy3v"]
+[ext_resource type="Texture2D" uid="uid://bekv5qgdy435j" path="res://items/scratchers/jackpot_spin_anim_new/frame_283_delay-0.02s.png" id="285_neuhv"]
+[ext_resource type="Texture2D" uid="uid://diitfjfsm86f4" path="res://items/scratchers/jackpot_spin_anim_new/frame_284_delay-0.02s.png" id="286_1guo1"]
+[ext_resource type="Texture2D" uid="uid://ddopkjovb3upy" path="res://items/scratchers/jackpot_spin_anim_new/frame_285_delay-0.02s.png" id="287_0c00v"]
+[ext_resource type="Texture2D" uid="uid://scdtl5u20nch" path="res://items/scratchers/jackpot_spin_anim_new/frame_286_delay-0.02s.png" id="288_yt20j"]
+[ext_resource type="Texture2D" uid="uid://cnuv1ukn6bj66" path="res://items/scratchers/jackpot_spin_anim_new/frame_287_delay-0.02s.png" id="289_jqm8r"]
+[ext_resource type="Texture2D" uid="uid://cfw7u74tgr1n2" path="res://items/scratchers/jackpot_spin_anim_new/frame_288_delay-0.02s.png" id="290_4tdfc"]
+[ext_resource type="Texture2D" uid="uid://dntq30k4336f4" path="res://items/scratchers/jackpot_spin_anim_new/frame_289_delay-0.02s.png" id="291_yut4w"]
+[ext_resource type="Texture2D" uid="uid://cexg761hjf6bp" path="res://items/scratchers/jackpot_spin_anim_new/frame_290_delay-0.02s.png" id="292_jqj6o"]
+[ext_resource type="Texture2D" uid="uid://dbssm6kjhtw41" path="res://items/scratchers/jackpot_spin_anim_new/frame_291_delay-0.02s.png" id="293_lgmv0"]
+[ext_resource type="Texture2D" uid="uid://bj831v7yscaf7" path="res://items/scratchers/jackpot_spin_anim_new/frame_292_delay-0.02s.png" id="294_1o025"]
+[ext_resource type="Texture2D" uid="uid://b6g4njynq4xgi" path="res://items/scratchers/jackpot_spin_anim_new/frame_293_delay-0.02s.png" id="295_lx748"]
+[ext_resource type="Texture2D" uid="uid://bigokaveksg3" path="res://items/scratchers/jackpot_spin_anim_new/frame_294_delay-0.02s.png" id="296_mi086"]
+[ext_resource type="Texture2D" uid="uid://b04mb405gggkq" path="res://items/scratchers/jackpot_spin_anim_new/frame_295_delay-0.02s.png" id="297_t10j4"]
+[ext_resource type="Texture2D" uid="uid://c0jq7wjyschsp" path="res://items/scratchers/jackpot_spin_anim_new/frame_296_delay-0.02s.png" id="298_fwja4"]
+[ext_resource type="Texture2D" uid="uid://bjv64dk2b1ybp" path="res://items/scratchers/jackpot_spin_anim_new/frame_297_delay-0.02s.png" id="299_2570s"]
+[ext_resource type="Texture2D" uid="uid://burp7neprdvhb" path="res://items/scratchers/jackpot_spin_anim_new/frame_298_delay-0.02s.png" id="300_0h5br"]
+[ext_resource type="Texture2D" uid="uid://kajswxkbpjgl" path="res://items/scratchers/jackpot_spin_anim_new/frame_299_delay-0.02s.png" id="301_2tjke"]
+[ext_resource type="Texture2D" uid="uid://unoy01uojju8" path="res://items/scratchers/jackpot_spin_anim_new/frame_300_delay-0.02s.png" id="302_ukybx"]
+[ext_resource type="Texture2D" uid="uid://5cc718ofw1tq" path="res://items/scratchers/jackpot_spin_anim_new/frame_301_delay-0.02s.png" id="303_1ljwg"]
+[ext_resource type="Texture2D" uid="uid://cqbidxy0nk7ct" path="res://items/scratchers/jackpot_spin_anim_new/frame_302_delay-0.02s.png" id="304_icb41"]
+[ext_resource type="Texture2D" uid="uid://vjsbtiws8fck" path="res://items/scratchers/jackpot_spin_anim_new/frame_303_delay-0.02s.png" id="305_8putq"]
+[ext_resource type="Texture2D" uid="uid://c4pfinwk6aa37" path="res://items/scratchers/jackpot_spin_anim_new/frame_304_delay-0.02s.png" id="306_0ithj"]
+[ext_resource type="Texture2D" uid="uid://jugw52ssvadq" path="res://items/scratchers/jackpot_spin_anim_new/frame_305_delay-0.02s.png" id="307_pf04w"]
+[ext_resource type="Texture2D" uid="uid://qvicyaop0u4p" path="res://items/scratchers/jackpot_spin_anim_new/frame_306_delay-0.02s.png" id="308_v4i3n"]
+[ext_resource type="Texture2D" uid="uid://c7u3w5y5cn6f5" path="res://items/scratchers/jackpot_spin_anim_new/frame_307_delay-0.02s.png" id="309_a25kj"]
+[ext_resource type="Texture2D" uid="uid://cih0ri5tieq3q" path="res://items/scratchers/jackpot_spin_anim_new/frame_308_delay-0.02s.png" id="310_h2kw4"]
+[ext_resource type="Texture2D" uid="uid://7obix222n0eu" path="res://items/scratchers/jackpot_spin_anim_new/frame_309_delay-0.02s.png" id="311_ou1e2"]
+[ext_resource type="Texture2D" uid="uid://digp56qqoi6ds" path="res://items/scratchers/jackpot_spin_anim_new/frame_310_delay-0.02s.png" id="312_n3oha"]
+[ext_resource type="Texture2D" uid="uid://c1ayv4uy1ukop" path="res://items/scratchers/jackpot_spin_anim_new/frame_311_delay-0.02s.png" id="313_lo7dr"]
+[ext_resource type="Texture2D" uid="uid://temowyi80ybr" path="res://items/scratchers/jackpot_spin_anim_new/frame_312_delay-0.02s.png" id="314_6c1x4"]
+[ext_resource type="Texture2D" uid="uid://b6c3ko3756n5y" path="res://items/scratchers/jackpot_spin_anim_new/frame_313_delay-0.02s.png" id="315_vqfs6"]
+[ext_resource type="Texture2D" uid="uid://bkb74bjrxex0t" path="res://items/scratchers/jackpot_spin_anim_new/frame_314_delay-0.02s.png" id="316_x0j2i"]
+[ext_resource type="Texture2D" uid="uid://dkoveo62qdemy" path="res://items/scratchers/jackpot_spin_anim_new/frame_315_delay-0.02s.png" id="317_g3blw"]
+[ext_resource type="Texture2D" uid="uid://cyd0xqm1eosmh" path="res://items/scratchers/jackpot_spin_anim_new/frame_316_delay-0.02s.png" id="318_ssvgh"]
+[ext_resource type="Texture2D" uid="uid://1hah3vbmigoy" path="res://items/scratchers/jackpot_spin_anim_new/frame_317_delay-0.02s.png" id="319_2wydq"]
+[ext_resource type="Texture2D" uid="uid://25yd1wwt8qgs" path="res://items/scratchers/jackpot_spin_anim_new/frame_318_delay-0.02s.png" id="320_vna3b"]
+[ext_resource type="Texture2D" uid="uid://bqjdm7eumfy2l" path="res://items/scratchers/jackpot_spin_anim_new/frame_319_delay-0.02s.png" id="321_37pcg"]
+[ext_resource type="Texture2D" uid="uid://svwv1vc8th3o" path="res://items/scratchers/jackpot_spin_anim_new/frame_320_delay-0.02s.png" id="322_y6pad"]
+[ext_resource type="Texture2D" uid="uid://cv8js1j4iyxm4" path="res://items/scratchers/jackpot_spin_anim_new/frame_321_delay-0.02s.png" id="323_h7w8n"]
+[ext_resource type="Texture2D" uid="uid://ca3ekhvguty2i" path="res://items/scratchers/jackpot_spin_anim_new/frame_322_delay-0.02s.png" id="324_lm4dp"]
+[ext_resource type="Texture2D" uid="uid://bqb3e8dlo30r0" path="res://items/scratchers/jackpot_spin_anim_new/frame_323_delay-0.02s.png" id="325_utime"]
+[ext_resource type="Texture2D" uid="uid://cbc2bo2v7ypaw" path="res://items/scratchers/jackpot_spin_anim_new/frame_324_delay-0.02s.png" id="326_vqnxd"]
+[ext_resource type="Texture2D" uid="uid://uvc4f20mbf6m" path="res://items/scratchers/jackpot_spin_anim_new/frame_325_delay-0.02s.png" id="327_m5r0v"]
+[ext_resource type="Texture2D" uid="uid://48qdqrdaxvwf" path="res://items/scratchers/jackpot_spin_anim_new/frame_326_delay-0.02s.png" id="328_10opv"]
+[ext_resource type="Texture2D" uid="uid://btskw3l4bg7i3" path="res://items/scratchers/jackpot_spin_anim_new/frame_327_delay-0.02s.png" id="329_le4ui"]
+[ext_resource type="Texture2D" uid="uid://cstq0ljjy7173" path="res://items/scratchers/jackpot_spin_anim_new/frame_328_delay-0.02s.png" id="330_tt6gx"]
+[ext_resource type="Texture2D" uid="uid://d2sw1uqk3k4xx" path="res://items/scratchers/jackpot_spin_anim_new/frame_329_delay-0.02s.png" id="331_aqrxb"]
+[ext_resource type="Texture2D" uid="uid://ccqa1eufiaprp" path="res://items/scratchers/jackpot_spin_anim_new/frame_330_delay-0.02s.png" id="332_e0fxr"]
+[ext_resource type="Texture2D" uid="uid://bbpmh5rv55eoi" path="res://items/scratchers/jackpot_spin_anim_new/frame_331_delay-0.02s.png" id="333_nbyw0"]
+[ext_resource type="Texture2D" uid="uid://dlenaccvjxdth" path="res://items/scratchers/jackpot_spin_anim_new/frame_332_delay-0.02s.png" id="334_fsqvi"]
+[ext_resource type="Texture2D" uid="uid://h2wdtif77t4u" path="res://items/scratchers/jackpot_spin_anim_new/frame_333_delay-0.02s.png" id="335_vsi28"]
+[ext_resource type="Texture2D" uid="uid://bsq0bn5rfraw8" path="res://items/scratchers/jackpot_spin_anim_new/frame_334_delay-0.02s.png" id="336_1pjq0"]
+[ext_resource type="Texture2D" uid="uid://cvdcu0wsj684m" path="res://items/scratchers/jackpot_spin_anim_new/frame_335_delay-0.02s.png" id="337_xipll"]
+[ext_resource type="Texture2D" uid="uid://b66ebgbr5nwim" path="res://items/scratchers/jackpot_spin_anim_new/frame_336_delay-0.02s.png" id="338_562r6"]
+[ext_resource type="Texture2D" uid="uid://s7gapsgvftie" path="res://items/scratchers/jackpot_spin_anim_new/frame_337_delay-0.02s.png" id="339_l5vfy"]
+[ext_resource type="Texture2D" uid="uid://ruev3j2fnwc5" path="res://items/scratchers/jackpot_spin_anim_new/frame_338_delay-0.02s.png" id="340_jdq05"]
+[ext_resource type="Texture2D" uid="uid://dm13433xkkv2c" path="res://items/scratchers/jackpot_spin_anim_new/frame_339_delay-0.02s.png" id="341_qs086"]
+[ext_resource type="Texture2D" uid="uid://doj858qsmk4kv" path="res://items/scratchers/jackpot_spin_anim_new/frame_340_delay-0.02s.png" id="342_t0u00"]
+[ext_resource type="Texture2D" uid="uid://cj1f8mxwfdd0o" path="res://items/scratchers/jackpot_spin_anim_new/frame_341_delay-0.02s.png" id="343_jx0yc"]
+[ext_resource type="Texture2D" uid="uid://2fj0xwwuvjoj" path="res://items/scratchers/jackpot_spin_anim_new/frame_342_delay-0.02s.png" id="344_1u25q"]
+[ext_resource type="Texture2D" uid="uid://dl5xkyncmwqca" path="res://items/scratchers/jackpot_spin_anim_new/frame_343_delay-0.02s.png" id="345_r6n3i"]
+[ext_resource type="Texture2D" uid="uid://r7gptqt30rb4" path="res://items/scratchers/jackpot_spin_anim_new/frame_344_delay-0.02s.png" id="346_2msyg"]
+[ext_resource type="Texture2D" uid="uid://c5m7c0nuk03rv" path="res://items/scratchers/jackpot_spin_anim_new/frame_345_delay-0.02s.png" id="347_nxaj0"]
+[ext_resource type="Texture2D" uid="uid://bjipecunhpybh" path="res://items/scratchers/jackpot_spin_anim_new/frame_346_delay-0.02s.png" id="348_wl6r2"]
+[ext_resource type="Texture2D" uid="uid://bnmwrcw8tv102" path="res://items/scratchers/jackpot_spin_anim_new/frame_347_delay-0.02s.png" id="349_vpilk"]
+[ext_resource type="Texture2D" uid="uid://g2n5dx5yl8nq" path="res://items/scratchers/jackpot_spin_anim_new/frame_348_delay-0.02s.png" id="350_cx8qn"]
+[ext_resource type="Texture2D" uid="uid://c18nejvaky1rb" path="res://items/scratchers/jackpot_spin_anim_new/frame_349_delay-0.02s.png" id="351_cdeds"]
+[ext_resource type="Texture2D" uid="uid://bj25m2g61jlm8" path="res://items/scratchers/jackpot_spin_anim_new/frame_350_delay-0.02s.png" id="352_6t4xq"]
+[ext_resource type="Texture2D" uid="uid://ck5p0xjanprm2" path="res://items/scratchers/jackpot_spin_anim_new/frame_351_delay-0.02s.png" id="353_78b6b"]
+[ext_resource type="Texture2D" uid="uid://dvw1m8nmi6dds" path="res://items/scratchers/jackpot_spin_anim_new/frame_352_delay-0.02s.png" id="354_roguf"]
+[ext_resource type="Texture2D" uid="uid://cedswg40u7pki" path="res://items/scratchers/jackpot_spin_anim_new/frame_353_delay-0.02s.png" id="355_jxs8e"]
+[ext_resource type="Texture2D" uid="uid://cupmv0883f7th" path="res://items/scratchers/jackpot_spin_anim_new/frame_354_delay-0.02s.png" id="356_pdvdr"]
+[ext_resource type="Texture2D" uid="uid://rystjmcvirk6" path="res://items/scratchers/jackpot_spin_anim_new/frame_355_delay-0.02s.png" id="357_xdyon"]
+[ext_resource type="Texture2D" uid="uid://gri15vfpnl70" path="res://items/scratchers/jackpot_spin_anim_new/frame_356_delay-0.02s.png" id="358_xdiuh"]
+[ext_resource type="Texture2D" uid="uid://c4ekr45o26h5q" path="res://items/scratchers/jackpot_spin_anim_new/frame_357_delay-0.02s.png" id="359_cr43u"]
+[ext_resource type="Texture2D" uid="uid://cb87qj23oy587" path="res://items/scratchers/jackpot_spin_anim_new/frame_358_delay-0.02s.png" id="360_714dv"]
+[ext_resource type="Texture2D" uid="uid://co2rh7li3my5o" path="res://items/scratchers/jackpot_spin_anim_new/frame_359_delay-0.02s.png" id="361_k2war"]
+[ext_resource type="Texture2D" uid="uid://cw1glv11oy4sw" path="res://items/scratchers/jackpot_spin_anim_new/frame_360_delay-0.02s.png" id="362_gy224"]
+[ext_resource type="Texture2D" uid="uid://bl66u2mwdnvdc" path="res://items/scratchers/jackpot_spin_anim_new/frame_361_delay-0.02s.png" id="363_symbe"]
+[ext_resource type="Texture2D" uid="uid://cdhi5mtb204ov" path="res://items/scratchers/jackpot_spin_anim_new/frame_362_delay-0.02s.png" id="364_juc5a"]
+[ext_resource type="Texture2D" uid="uid://c6dec28qr4e1c" path="res://items/scratchers/jackpot_spin_anim_new/frame_363_delay-0.02s.png" id="365_1nefi"]
+[ext_resource type="Texture2D" uid="uid://dtihcwqgogtth" path="res://items/scratchers/jackpot_spin_anim_new/frame_364_delay-0.02s.png" id="366_bbbjx"]
+[ext_resource type="Texture2D" uid="uid://cph8n3ov3i2jd" path="res://items/scratchers/jackpot_spin_anim_new/frame_365_delay-0.02s.png" id="367_jsw8l"]
+[ext_resource type="Texture2D" uid="uid://dr1t7hu74gd1y" path="res://items/scratchers/jackpot_spin_anim_new/frame_366_delay-0.02s.png" id="368_uabll"]
+[ext_resource type="Texture2D" uid="uid://hnlrl2qo3tgl" path="res://items/scratchers/jackpot_spin_anim_new/frame_367_delay-0.02s.png" id="369_3dpqs"]
+[ext_resource type="Texture2D" uid="uid://baj68dwvfvvta" path="res://items/scratchers/jackpot_spin_anim_new/frame_368_delay-0.02s.png" id="370_rh7f7"]
+[ext_resource type="Texture2D" uid="uid://dc5r7pm2l4j6a" path="res://items/scratchers/jackpot_spin_anim_new/frame_369_delay-0.02s.png" id="371_52iym"]
+[ext_resource type="Texture2D" uid="uid://bddj0v1vgtscw" path="res://items/scratchers/jackpot_spin_anim_new/frame_370_delay-0.02s.png" id="372_kwjbl"]
+[ext_resource type="Texture2D" uid="uid://o7uoxlxwqe8f" path="res://items/scratchers/jackpot_spin_anim_new/frame_371_delay-0.02s.png" id="373_nuefc"]
+[ext_resource type="Texture2D" uid="uid://ciexobee8g0vo" path="res://items/scratchers/jackpot_spin_anim_new/frame_372_delay-0.02s.png" id="374_tf5u2"]
+[ext_resource type="Texture2D" uid="uid://fpqdbuyw6g5v" path="res://items/scratchers/jackpot_spin_anim_new/frame_373_delay-0.02s.png" id="375_pjqdf"]
+[ext_resource type="Texture2D" uid="uid://bfbw41h76h6rp" path="res://items/scratchers/jackpot_spin_anim_new/frame_374_delay-0.02s.png" id="376_gp1rt"]
+[ext_resource type="Texture2D" uid="uid://ekfo8h0wma8v" path="res://items/scratchers/jackpot_spin_anim_new/frame_375_delay-0.02s.png" id="377_w7px2"]
+[ext_resource type="Texture2D" uid="uid://c0nca6b34b4v6" path="res://items/scratchers/jackpot_spin_anim_new/frame_376_delay-0.02s.png" id="378_sabtv"]
+[ext_resource type="Texture2D" uid="uid://capwfjkw26pov" path="res://items/scratchers/jackpot_spin_anim_new/frame_377_delay-0.02s.png" id="379_cyac7"]
+[ext_resource type="Texture2D" uid="uid://lkjeo0a3yalc" path="res://items/scratchers/jackpot_spin_anim_new/frame_378_delay-0.02s.png" id="380_nxg3l"]
+[ext_resource type="Texture2D" uid="uid://bhhfjv4mf73jn" path="res://items/scratchers/jackpot_spin_anim_new/frame_379_delay-0.02s.png" id="381_knrj7"]
+[ext_resource type="Texture2D" uid="uid://blgcl2cgk5t5f" path="res://items/scratchers/jackpot_spin_anim_new/frame_380_delay-0.02s.png" id="382_kyc7b"]
+[ext_resource type="Texture2D" uid="uid://b33c6w8isreq" path="res://items/scratchers/jackpot_spin_anim_new/frame_381_delay-0.02s.png" id="383_2vw7h"]
+[ext_resource type="Texture2D" uid="uid://cy82h0rp2cyw" path="res://items/scratchers/jackpot_spin_anim_new/frame_382_delay-0.02s.png" id="384_kx3s6"]
+[ext_resource type="Texture2D" uid="uid://c13tabceb4g8x" path="res://items/scratchers/jackpot_spin_anim_new/frame_383_delay-0.02s.png" id="385_l6t82"]
+[ext_resource type="Texture2D" uid="uid://dl3pnh2uhgep1" path="res://items/scratchers/jackpot_spin_anim_new/frame_384_delay-0.02s.png" id="386_kb5cp"]
+[ext_resource type="Texture2D" uid="uid://cfaxebr1u7j4x" path="res://items/scratchers/jackpot_spin_anim_new/frame_385_delay-0.02s.png" id="387_hj1w4"]
+[ext_resource type="Texture2D" uid="uid://dpdcaj0j28om0" path="res://items/scratchers/jackpot_spin_anim_new/frame_386_delay-0.02s.png" id="388_olgvc"]
+[ext_resource type="Texture2D" uid="uid://b264bnmjn8cb6" path="res://items/scratchers/jackpot_spin_anim_new/frame_387_delay-0.02s.png" id="389_h53fm"]
+[ext_resource type="Texture2D" uid="uid://cgpu14cf7q8ys" path="res://items/scratchers/jackpot_spin_anim_new/frame_388_delay-0.02s.png" id="390_rsp1b"]
+[ext_resource type="Texture2D" uid="uid://ck7pjgxrftljv" path="res://items/scratchers/jackpot_spin_anim_new/frame_389_delay-0.02s.png" id="391_f8thl"]
+[ext_resource type="Texture2D" uid="uid://ddgu72u58n2p7" path="res://items/scratchers/jackpot_spin_anim_new/frame_390_delay-0.02s.png" id="392_2vtpc"]
+[ext_resource type="Texture2D" uid="uid://bksesbtdv07ub" path="res://items/scratchers/jackpot_spin_anim_new/frame_391_delay-0.02s.png" id="393_u1wet"]
+[ext_resource type="Texture2D" uid="uid://dmfhrkbpshl55" path="res://items/scratchers/jackpot_spin_anim_new/frame_392_delay-0.02s.png" id="394_erlpb"]
+[ext_resource type="Texture2D" uid="uid://c4h6hgqtjkyjy" path="res://items/scratchers/jackpot_spin_anim_new/frame_393_delay-0.02s.png" id="395_ifbcb"]
+[ext_resource type="Texture2D" uid="uid://beh136smfufe3" path="res://items/scratchers/jackpot_spin_anim_new/frame_394_delay-0.02s.png" id="396_ilh2u"]
+[ext_resource type="Texture2D" uid="uid://bsfkejydt4p8g" path="res://items/scratchers/jackpot_spin_anim_new/frame_395_delay-0.02s.png" id="397_5kmfi"]
+[ext_resource type="Texture2D" uid="uid://ue7i7vbyi01j" path="res://items/scratchers/jackpot_spin_anim_new/frame_396_delay-0.02s.png" id="398_3cl0c"]
+[ext_resource type="Texture2D" uid="uid://deic5xnh51wbo" path="res://items/scratchers/jackpot_spin_anim_new/frame_397_delay-0.02s.png" id="399_hiy3w"]
+[ext_resource type="Texture2D" uid="uid://cilowkkipba3d" path="res://items/scratchers/jackpot_spin_anim_new/frame_398_delay-0.02s.png" id="400_rvd1c"]
+[ext_resource type="Texture2D" uid="uid://cyeqbhguon3fw" path="res://items/scratchers/jackpot_spin_anim_new/frame_399_delay-0.02s.png" id="401_lkevr"]
+[ext_resource type="Texture2D" uid="uid://c82qjk6snlg2s" path="res://items/scratchers/jackpot_spin_anim_new/frame_400_delay-0.02s.png" id="402_crscv"]
+[ext_resource type="Texture2D" uid="uid://ct0ive7iwapw7" path="res://items/scratchers/jackpot_spin_anim_new/frame_401_delay-0.02s.png" id="403_euiav"]
+[ext_resource type="Texture2D" uid="uid://c78g844apog1t" path="res://items/scratchers/jackpot_spin_anim_new/frame_402_delay-0.02s.png" id="404_p0meu"]
+[ext_resource type="Texture2D" uid="uid://du4eto4jtfyv6" path="res://items/scratchers/jackpot_spin_anim_new/frame_403_delay-0.02s.png" id="405_85vwk"]
+[ext_resource type="Texture2D" uid="uid://bkdqobxpltkuh" path="res://items/scratchers/jackpot_spin_anim_new/frame_404_delay-0.02s.png" id="406_pqx27"]
+[ext_resource type="Texture2D" uid="uid://k74w72xk0dr2" path="res://items/scratchers/jackpot_spin_anim_new/frame_405_delay-0.02s.png" id="407_rllsb"]
+[ext_resource type="Texture2D" uid="uid://ctbjapb3h1uk8" path="res://items/scratchers/jackpot_spin_anim_new/frame_406_delay-0.02s.png" id="408_6bfk6"]
+[ext_resource type="Texture2D" uid="uid://62ligx3v4mmt" path="res://items/scratchers/jackpot_spin_anim_new/frame_407_delay-0.02s.png" id="409_crcf4"]
+[ext_resource type="Texture2D" uid="uid://dr7xix4mk7vgp" path="res://items/scratchers/jackpot_spin_anim_new/frame_408_delay-0.02s.png" id="410_h6upy"]
+[ext_resource type="Texture2D" uid="uid://chpcjtg6pu8xy" path="res://items/scratchers/jackpot_spin_anim_new/frame_409_delay-0.02s.png" id="411_k8t16"]
+[ext_resource type="Texture2D" uid="uid://cwkc2np45hx6q" path="res://items/scratchers/jackpot_spin_anim_new/frame_410_delay-0.02s.png" id="412_ygpw7"]
+[ext_resource type="Texture2D" uid="uid://q8au7vt6kxg2" path="res://items/scratchers/jackpot_spin_anim_new/frame_411_delay-0.02s.png" id="413_7loyv"]
+[ext_resource type="Texture2D" uid="uid://d0es0mryf5ui3" path="res://items/scratchers/jackpot_spin_anim_new/frame_412_delay-0.02s.png" id="414_6r5sk"]
+[ext_resource type="Texture2D" uid="uid://cn16cll4c8bpn" path="res://items/scratchers/jackpot_spin_anim_new/frame_413_delay-0.02s.png" id="415_0jl0d"]
+[ext_resource type="Texture2D" uid="uid://b2xbu4wg2gu0y" path="res://items/scratchers/jackpot_spin_anim_new/frame_414_delay-0.02s.png" id="416_bbtbw"]
+[ext_resource type="Texture2D" uid="uid://d13aosxnvnweb" path="res://items/scratchers/jackpot_spin_anim_new/frame_415_delay-0.02s.png" id="417_h2o33"]
+[ext_resource type="Texture2D" uid="uid://h75ex0jvq4dx" path="res://items/scratchers/jackpot_spin_anim_new/frame_416_delay-0.02s.png" id="418_fj5aw"]
+[ext_resource type="Texture2D" uid="uid://bycrcqerobd38" path="res://items/scratchers/jackpot_spin_anim_new/frame_417_delay-0.02s.png" id="419_xq8g3"]
+[ext_resource type="Texture2D" uid="uid://cdyqkw6ysqabt" path="res://items/scratchers/jackpot_spin_anim_new/frame_418_delay-0.02s.png" id="420_rhux1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0hut5"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_kg6xf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_bvygo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_iv58n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_hwcfk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_0376o")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_yar2m")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_fe7h1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_gquir")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_bkex1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_hsni6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_obgue")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_2gdk7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_jk5cp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_evc0n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_yi6df")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_eee2x")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_5qpsf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_a88lk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_op3cr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_qvl55")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_x5046")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_s3x0d")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_7xxwc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_vu66y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_oggrx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_scbui")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_6tyxl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_2dodj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_o8i1t")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_5715f")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_bkfgt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_amg56")
-}, {
-"duration": 1.0,
-"texture": ExtResource("34_omcbl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_xg45i")
-}, {
-"duration": 1.0,
-"texture": ExtResource("36_k46w0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("37_sekgk")
-}, {
 "duration": 1.0,
 "texture": ExtResource("38_oijoq")
 }, {
@@ -1680,6 +1572,114 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("420_rhux1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kg6xf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bvygo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iv58n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hwcfk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0376o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yar2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fe7h1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gquir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bkex1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_hsni6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_obgue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2gdk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_jk5cp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_evc0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_yi6df")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_eee2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_5qpsf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_a88lk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_op3cr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_qvl55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_x5046")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_s3x0d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_7xxwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_vu66y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_oggrx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_scbui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_6tyxl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_2dodj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_o8i1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_5715f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_bkfgt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_amg56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_omcbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_xg45i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_k46w0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_sekgk")
 }],
 "loop": true,
 "name": &"spin",
