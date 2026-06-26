@@ -2,6 +2,8 @@ extends Node
 
 @export var camera: Camera3D
 
+@export var navigation_ui: Control
+
 @export var counter_marker: Marker3D
 @export var register_marker: Marker3D
 @export var wall_marker: Marker3D
@@ -40,6 +42,10 @@ func go_to_station(station_name: String, instant: bool = false) -> void:
 		return
 
 	current_station = station_name
+	
+	if navigation_ui != null:
+		navigation_ui.update_active_station(station_name)
+	
 	hide_station_ui()
 
 	if instant:

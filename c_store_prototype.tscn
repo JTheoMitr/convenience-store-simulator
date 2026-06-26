@@ -629,9 +629,10 @@ color = Color(1, 0, 0.08235294, 0)
 
 [node name="Managers" type="Node" parent="."]
 
-[node name="StationManager" type="Node" parent="Managers" node_paths=PackedStringArray("camera", "counter_marker", "register_marker", "wall_marker", "pinpad_marker", "pinpad_placeholder", "customer_dialogue_panel", "register_ui", "wall_item_ui", "register_monitor", "pinpad_ui")]
+[node name="StationManager" type="Node" parent="Managers" node_paths=PackedStringArray("camera", "navigation_ui", "counter_marker", "register_marker", "wall_marker", "pinpad_marker", "pinpad_placeholder", "customer_dialogue_panel", "register_ui", "wall_item_ui", "register_monitor", "pinpad_ui")]
 script = ExtResource("2_p7mdc")
 camera = NodePath("../../Camera3D")
+navigation_ui = NodePath("../../UI/NavigationUI")
 counter_marker = NodePath("../../StationMarkers/CounterMarker")
 register_marker = NodePath("../../StationMarkers/RegisterMarker")
 wall_marker = NodePath("../../StationMarkers/WallMarker")

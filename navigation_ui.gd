@@ -27,3 +27,9 @@ func _on_wall_pressed() -> void:
 	AudioManager.play_ui_click()
 	station_manager.go_to_station("wall")
 	#station_manager.go_to_station("pinpad")
+
+func update_active_station(station_name: String) -> void:
+	counter_button.disabled = station_name == "counter"
+	register_button.disabled = station_name == "register"
+	wall_button.disabled = station_name == "wall"
+	#pinpad_button.disabled = station_name == "pinpad"
