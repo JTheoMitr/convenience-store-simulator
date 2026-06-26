@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://mjigkhvivkin"]
+[gd_scene load_steps=13 format=3 uid="uid://mjigkhvivkin"]
 
 [ext_resource type="PackedScene" uid="uid://dmtb05ljv8xe2" path="res://models/store/6twelve-elbolillo.glb" id="1_ak2if"]
 [ext_resource type="Script" uid="uid://cpl38vdn1wsqc" path="res://title_screen.gd" id="1_ig5kc"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bjvoc8h4s5ojb" path="res://exterior_sprites/red_pixel_rear_car.png" id="5_hafda"]
 [ext_resource type="Script" uid="uid://b3igmmxprpu0i" path="res://cigarette_light.gd" id="5_jqemp"]
 [ext_resource type="FontFile" uid="uid://b2w1ob5cucx3n" path="res://fonts/Revoinex.ttf" id="5_tpml5"]
+[ext_resource type="Script" uid="uid://boodmng78kuv4" path="res://title_cursor.gd" id="7_8vmu4"]
+[ext_resource type="Texture2D" uid="uid://blxek0ggbxfuk" path="res://cursor_sprites/holo-cursor-1.png" id="8_xfn3p"]
 
 [sub_resource type="Environment" id="Environment_05l2w"]
 background_mode = 2
@@ -17,10 +19,10 @@ tonemap_mode = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqemp"]
 bg_color = Color(0.40130746, 0.100334354, 0.54813206, 0.64705884)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
 border_color = Color(0.23921569, 0.8, 0.8, 1)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
@@ -79,39 +81,38 @@ grow_vertical = 2
 
 [node name="TitleLabel" type="Label" parent="CanvasLayer/UIRoot"]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -68.5
-offset_top = -58.0
-offset_right = 68.5
-offset_bottom = -35.0
-grow_horizontal = 2
+offset_left = -660.0
+offset_top = -118.0
+offset_bottom = -24.0
+grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.89843816, 0.2865041, 0.8286153, 1)
 theme_override_fonts/font = ExtResource("5_tpml5")
-theme_override_font_sizes/font_size = 61
+theme_override_font_sizes/font_size = 90
 text = "BODEGA RUNNER"
 horizontal_alignment = 1
 
 [node name="MainMenu" type="VBoxContainer" parent="CanvasLayer/UIRoot"]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -33.5
-offset_right = 69.0
-offset_bottom = 33.5
-grow_vertical = 2
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -156.0
+offset_right = 160.0
+grow_vertical = 0
 
 [node name="ClockInButton" type="Button" parent="CanvasLayer/UIRoot/MainMenu"]
-custom_minimum_size = Vector2(120, 0)
+custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.30980393, 0.78431374, 0.8745098, 1)
 theme_override_colors/font_hover_color = Color(0.8980392, 0.28627452, 0.827451, 1)
 theme_override_fonts/font = ExtResource("5_tpml5")
+theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = SubResource("StyleBoxFlat_jqemp")
 theme_override_styles/hover = SubResource("StyleBoxFlat_tpml5")
 text = "Clock In"
@@ -122,6 +123,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.30980393, 0.78431374, 0.8745098, 1)
 theme_override_colors/font_hover_color = Color(0.8980392, 0.28627452, 0.827451, 1)
 theme_override_fonts/font = ExtResource("5_tpml5")
+theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = SubResource("StyleBoxFlat_jqemp")
 theme_override_styles/hover = SubResource("StyleBoxFlat_tpml5")
 text = "Continue"
@@ -132,6 +134,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.30980393, 0.78431374, 0.8745098, 1)
 theme_override_colors/font_hover_color = Color(0.8980392, 0.28627452, 0.827451, 1)
 theme_override_fonts/font = ExtResource("5_tpml5")
+theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = SubResource("StyleBoxFlat_jqemp")
 theme_override_styles/hover = SubResource("StyleBoxFlat_tpml5")
 text = "Options"
@@ -142,9 +145,21 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.30980393, 0.78431374, 0.8745098, 1)
 theme_override_colors/font_hover_color = Color(0.8980392, 0.28627452, 0.827451, 1)
 theme_override_fonts/font = ExtResource("5_tpml5")
+theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = SubResource("StyleBoxFlat_jqemp")
 theme_override_styles/hover = SubResource("StyleBoxFlat_tpml5")
 text = "Credits"
+
+[node name="TitleCursor" type="Control" parent="CanvasLayer/UIRoot"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_8vmu4")
+cursor_offset = Vector2(25, 20)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/UIRoot/TitleCursor"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_xfn3p")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.20562351, 0, 0.9786312, 0, 1, 0, -0.9786312, 0, 0.20562351, -7.32379, 0.35815048, -0.4346906)
