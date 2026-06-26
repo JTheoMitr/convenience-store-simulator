@@ -1,14 +1,16 @@
-[gd_scene load_steps=80 format=3 uid="uid://pf0ein572cyu"]
+[gd_scene load_steps=81 format=3 uid="uid://pf0ein572cyu"]
 
 [ext_resource type="Script" uid="uid://byt2xuix81f60" path="res://navigation_ui.gd" id="1_uxvq6"]
 [ext_resource type="Script" uid="uid://cqlrtaadyc8ne" path="res://checkout_button.gd" id="2_fknbs"]
 [ext_resource type="Script" uid="uid://bshdoahlbaerl" path="res://station_manager.gd" id="2_p7mdc"]
+[ext_resource type="Script" uid="uid://b2jd04j2e5hy6" path="res://daily_sales_ui.gd" id="3_d77sd"]
 [ext_resource type="Script" uid="uid://x8hxv077j6ue" path="res://customer_manager.gd" id="3_ktsie"]
 [ext_resource type="PackedScene" uid="uid://dmtb05ljv8xe2" path="res://models/store/6twelve-elbolillo.glb" id="3_p7mdc"]
 [ext_resource type="PackedScene" uid="uid://5pwlwkgtcv5m" path="res://wall_cards/cigs_reds.tscn" id="4_1ykfa"]
 [ext_resource type="Script" uid="uid://qs3puiuwun67" path="res://clear_selection_button.gd" id="4_ctecg"]
 [ext_resource type="PackedScene" uid="uid://djx280bl0vqg0" path="res://store_utilities/pinpad_ui.tscn" id="4_gibax"]
 [ext_resource type="Script" uid="uid://cec6h4qgkhb4x" path="res://order_manager.gd" id="4_ka4yf"]
+[ext_resource type="FontFile" uid="uid://b2w1ob5cucx3n" path="res://fonts/Revoinex.ttf" id="5_7hopq"]
 [ext_resource type="Script" uid="uid://b7hrs6vkourj0" path="res://cursor_manager.gd" id="5_r0ov8"]
 [ext_resource type="PackedScene" uid="uid://d1abk2l4r7teo" path="res://wall_cards/scratcher_king_diamond.tscn" id="5_uceri"]
 [ext_resource type="PackedScene" uid="uid://c7awgfog3h1fr" path="res://wall_cards/cigs_blues.tscn" id="5_xksli"]
@@ -17,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://v6wnbshdrivi" path="res://wall_cards/cigs_chapmans.tscn" id="6_dr5hb"]
 [ext_resource type="Texture2D" uid="uid://tmojiea5sxtf" path="res://cursor_sprites/hands_array_resized.png" id="6_hckn7"]
 [ext_resource type="PackedScene" uid="uid://d4ersnccn3skj" path="res://wall_cards/cigs_manchesters.tscn" id="7_ldu4o"]
+[ext_resource type="FontFile" uid="uid://rbddi6ta856m" path="res://fonts/SDGlitch_Demo.ttf" id="7_oyyba"]
 [ext_resource type="Texture2D" uid="uid://dnv77q35mp2cd" path="res://npc_sprites/construction_dude_1.png" id="8_yip5n"]
 [ext_resource type="Texture2D" uid="uid://dgtgdrxt5nrgi" path="res://npc_sprites/biker_dude_1.png" id="9_6ggm5"]
 [ext_resource type="PackedScene" uid="uid://dj2ow2q87817b" path="res://wall_cards/scratcher_cash_fever.tscn" id="9_f4fab"]
@@ -39,9 +42,30 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d77sd"]
 bg_color = Color(0.4392157, 0.18431373, 0.87058824, 0.44705883)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.84030014, 0.53673214, 0.96918136, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_edbqs"]
+bg_color = Color(0.14611176, 0.390201, 0.22203797, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.14901961, 0.8, 0.18431373, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aic0c"]
-bg_color = Color(0.23122075, 0.03017928, 0.4500106, 1)
+bg_color = Color(0.23137255, 0.03137255, 0.4509804, 0.4117647)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -53,7 +77,7 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uceri"]
-bg_color = Color(0.2, 0.3882353, 0.93333334, 0.5529412)
+bg_color = Color(0.2, 0.3882353, 0.93333334, 0.80784315)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -65,37 +89,28 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aul8u"]
-bg_color = Color(0.14078265, 0.53287613, 0.6343566, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7w5d"]
-bg_color = Color(0.2, 0.3882353, 0.93333334, 0.5529412)
+bg_color = Color(0.105145626, 0.4856665, 0.52998906, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.27058825, 0.5647059, 0.9843137, 1)
+border_color = Color(0.3019608, 0.7176471, 0.8, 1)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hopq"]
-bg_color = Color(0.14117648, 0.53333336, 0.63529414, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gibax"]
-bg_color = Color(0.2, 0.3882353, 0.93333334, 0.5529412)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bj4mb"]
+bg_color = Color(0, 0, 0, 0.6784314)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.27058825, 0.5647059, 0.9843137, 1)
+border_color = Color(0.68928534, 0.6892854, 0.68928504, 1)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oyyba"]
-bg_color = Color(0.14117648, 0.53333336, 0.63529414, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7ea5"]
 bg_color = Color(0.09803922, 0.09411765, 0.09019608, 0.5647059)
@@ -331,6 +346,7 @@ script = ExtResource("16_68fdf")
 day_manager = NodePath("../../Managers/DayManager")
 
 [node name="PanelContainer" type="PanelContainer" parent="UI/ShiftClockUI"]
+custom_minimum_size = Vector2(180, 0)
 layout_mode = 1
 offset_right = 144.0
 offset_bottom = 38.0
@@ -341,10 +357,40 @@ layout_mode = 2
 
 [node name="TimeLabel" type="Label" parent="UI/ShiftClockUI/PanelContainer/MarginContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.67058825, 0.74509805, 1, 1)
+theme_override_colors/font_color = Color(0.7476301, 0.80663556, 0.9999985, 1)
 theme_override_fonts/font = ExtResource("17_aic0c")
-theme_override_font_sizes/font_size = 23
+theme_override_font_sizes/font_size = 25
 text = "Day 1: 9:00 AM"
+horizontal_alignment = 1
+
+[node name="DailySalesUI" type="Control" parent="UI" node_paths=PackedStringArray("day_manager")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_d77sd")
+day_manager = NodePath("../../Managers/DayManager")
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/DailySalesUI"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 1
+offset_top = 40.0
+offset_right = 144.0
+offset_bottom = 78.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_edbqs")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/DailySalesUI/PanelContainer"]
+layout_mode = 2
+
+[node name="SalesLabel" type="Label" parent="UI/DailySalesUI/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4193582, 0.95132214, 0.6730776, 1)
+theme_override_fonts/font = ExtResource("17_aic0c")
+theme_override_font_sizes/font_size = 25
+text = "TODAY: $0.00"
 horizontal_alignment = 1
 
 [node name="NavigationUI" type="Control" parent="UI" node_paths=PackedStringArray("station_manager")]
@@ -364,8 +410,9 @@ station_manager = NodePath("../../Managers/StationManager")
 
 [node name="Panel" type="Panel" parent="UI/NavigationUI"]
 layout_mode = 0
-offset_right = 144.9231
-offset_bottom = 100.69231
+offset_top = 6.0
+offset_right = 144.923
+offset_bottom = 96.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_aic0c")
 
 [node name="HBoxContainer" type="VBoxContainer" parent="UI/NavigationUI"]
@@ -383,21 +430,24 @@ alignment = 1
 
 [node name="CounterButton" type="Button" parent="UI/NavigationUI/HBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_7hopq")
 theme_override_styles/normal = SubResource("StyleBoxFlat_uceri")
 theme_override_styles/hover = SubResource("StyleBoxFlat_aul8u")
 text = "Counter"
 
 [node name="RegisterButton" type="Button" parent="UI/NavigationUI/HBoxContainer"]
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_a7w5d")
-theme_override_styles/hover = SubResource("StyleBoxFlat_7hopq")
+theme_override_fonts/font = ExtResource("5_7hopq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uceri")
+theme_override_styles/hover = SubResource("StyleBoxFlat_aul8u")
 text = "Register"
 
 [node name="WallButton" type="Button" parent="UI/NavigationUI/HBoxContainer"]
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_gibax")
-theme_override_styles/hover = SubResource("StyleBoxFlat_oyyba")
-text = "Wall"
+theme_override_fonts/font = ExtResource("5_7hopq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uceri")
+theme_override_styles/hover = SubResource("StyleBoxFlat_aul8u")
+text = "Back Wall"
 
 [node name="PinpadUI" parent="UI" node_paths=PackedStringArray("station_manager", "order_manager") instance=ExtResource("4_gibax")]
 visible = false
@@ -421,6 +471,7 @@ offset_right = 115.5
 offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bj4mb")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/CustomerDialoguePanel"]
 custom_minimum_size = Vector2(200, 25)
@@ -433,6 +484,7 @@ theme_override_constants/margin_right = 10
 [node name="DialogueLabel" type="Label" parent="UI/CustomerDialoguePanel/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("7_oyyba")
 theme_override_font_sizes/font_size = 29
 text = "Customer View"
 horizontal_alignment = 1

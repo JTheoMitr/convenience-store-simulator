@@ -61,10 +61,10 @@ light_energy = 0.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12072599, 0, 2.277995)
 
 [node name="CashierSmoker" parent="." instance=ExtResource("2_ig5kc")]
-transform = Transform3D(-0.012989618, 0, 0.00051944464, 0, 0.012999999, 0, -0.00051944464, 0, -0.012989618, -9.654453, 0.063587666, -4.0496597)
+transform = Transform3D(-0.012989618, 0, 0.00051944464, 0, 0.012999999, 0, -0.00051944464, 0, -0.012989618, -10.896271, 0.063587666, -4.0496597)
 
 [node name="CigaretteLight" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.319286, 1.8056219, -3.4341533)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3206625, 1.8056219, -3.4341533)
 light_color = Color(1, 0.49019608, 0.3647059, 1)
 light_energy = 0.5
 script = ExtResource("5_jqemp")
@@ -86,8 +86,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -660.0
+offset_left = -672.0
 offset_top = -118.0
+offset_right = -12.0
 offset_bottom = -24.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -102,8 +103,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -156.0
-offset_right = 160.0
+offset_left = 16.0
+offset_top = -168.0
+offset_right = 176.0
+offset_bottom = -12.0
 grow_vertical = 0
 
 [node name="ClockInButton" type="Button" parent="CanvasLayer/UIRoot/MainMenu"]
