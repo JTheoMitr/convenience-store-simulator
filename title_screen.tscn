@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://mjigkhvivkin"]
+[gd_scene load_steps=11 format=3 uid="uid://mjigkhvivkin"]
 
 [ext_resource type="PackedScene" uid="uid://dmtb05ljv8xe2" path="res://models/store/6twelve-elbolillo.glb" id="1_ak2if"]
 [ext_resource type="Script" uid="uid://cpl38vdn1wsqc" path="res://title_screen.gd" id="1_ig5kc"]
 [ext_resource type="PackedScene" uid="uid://pf0ein572cyu" path="res://c_store_prototype.tscn" id="2_05l2w"]
 [ext_resource type="PackedScene" uid="uid://bt8p44l30wfqs" path="res://models/smoking_man_downloadable.glb" id="2_ig5kc"]
 [ext_resource type="Texture2D" uid="uid://bjvoc8h4s5ojb" path="res://exterior_sprites/red_pixel_rear_car.png" id="5_hafda"]
+[ext_resource type="Script" uid="uid://b3igmmxprpu0i" path="res://cigarette_light.gd" id="5_jqemp"]
+[ext_resource type="FontFile" uid="uid://b2w1ob5cucx3n" path="res://fonts/Revoinex.ttf" id="5_tpml5"]
 
 [sub_resource type="Environment" id="Environment_05l2w"]
 background_mode = 2
@@ -13,13 +15,37 @@ ambient_light_sky_contribution = 0.0
 ambient_light_energy = 0.6
 tonemap_mode = 3
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqemp"]
+bg_color = Color(0.40130746, 0.100334354, 0.54813206, 0.64705884)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.23921569, 0.8, 0.8, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpml5"]
+bg_color = Color(0.46166945, 0.45839185, 0.8359807, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.13333334, 0.8, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
 [node name="TitleScreen" type="Node3D" node_paths=PackedStringArray("clock_in_button")]
 script = ExtResource("1_ig5kc")
 clock_in_button = NodePath("CanvasLayer/UIRoot/MainMenu/ClockInButton")
 gameplay_scene = ExtResource("2_05l2w")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.6187512, 0, 0.7855871, 0, 1, 0, -0.7855871, 0, 0.6187512, -2.2167645, 0.51818943, 0.29152)
+transform = Transform3D(0.6187512, 0, 0.7855871, 0, 1, 0, -0.7855871, 0, 0.6187512, -3.8880649, 0.51818943, -0.028685689)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_05l2w")
@@ -35,10 +61,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12072599, 0, 2.277995)
 [node name="CashierSmoker" parent="." instance=ExtResource("2_ig5kc")]
 transform = Transform3D(-0.012989618, 0, 0.00051944464, 0, 0.012999999, 0, -0.00051944464, 0, -0.012989618, -9.654453, 0.063587666, -4.0496597)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -9.319286, 1.8056219, -3.4341533)
+[node name="CigaretteLight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.319286, 1.8056219, -3.4341533)
 light_color = Color(1, 0.49019608, 0.3647059, 1)
 light_energy = 0.5
+script = ExtResource("5_jqemp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -63,6 +90,8 @@ offset_right = 68.5
 offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(0.89843816, 0.2865041, 0.8286153, 1)
+theme_override_fonts/font = ExtResource("5_tpml5")
 theme_override_font_sizes/font_size = 61
 text = "BODEGA RUNNER"
 horizontal_alignment = 1
@@ -78,21 +107,43 @@ offset_bottom = 33.5
 grow_vertical = 2
 
 [node name="ClockInButton" type="Button" parent="CanvasLayer/UIRoot/MainMenu"]
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.30980393, 0.78431374, 0.8745098, 1)
+theme_override_colors/font_hover_color = Color(0.8980392, 0.28627452, 0.827451, 1)
+theme_override_fonts/font = ExtResource("5_tpml5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jqemp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tpml5")
 text = "Clock In"
 
-[node name="ContinueShiftButton" type="Button" parent="CanvasLayer/UIRoot/MainMenu"]
+[node name="ContinueShift" type="Button" parent="CanvasLayer/UIRoot/MainMenu"]
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-disabled = true
-text = "Continue Shift"
+theme_override_colors/font_color = Color(0.30980393, 0.78431374, 0.8745098, 1)
+theme_override_colors/font_hover_color = Color(0.8980392, 0.28627452, 0.827451, 1)
+theme_override_fonts/font = ExtResource("5_tpml5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jqemp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tpml5")
+text = "Continue"
 
-[node name="OptionsButton" type="Button" parent="CanvasLayer/UIRoot/MainMenu"]
+[node name="Options" type="Button" parent="CanvasLayer/UIRoot/MainMenu"]
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-disabled = true
+theme_override_colors/font_color = Color(0.30980393, 0.78431374, 0.8745098, 1)
+theme_override_colors/font_hover_color = Color(0.8980392, 0.28627452, 0.827451, 1)
+theme_override_fonts/font = ExtResource("5_tpml5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jqemp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tpml5")
 text = "Options"
 
-[node name="CreditsButton" type="Button" parent="CanvasLayer/UIRoot/MainMenu"]
+[node name="Credits" type="Button" parent="CanvasLayer/UIRoot/MainMenu"]
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.30980393, 0.78431374, 0.8745098, 1)
+theme_override_colors/font_hover_color = Color(0.8980392, 0.28627452, 0.827451, 1)
+theme_override_fonts/font = ExtResource("5_tpml5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jqemp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tpml5")
 text = "Credits"
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
