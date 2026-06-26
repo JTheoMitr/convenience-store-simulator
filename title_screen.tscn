@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=3 uid="uid://mjigkhvivkin"]
+
+[ext_resource type="PackedScene" uid="uid://dmtb05ljv8xe2" path="res://models/store/6twelve-elbolillo.glb" id="1_ak2if"]
+[ext_resource type="Script" uid="uid://cpl38vdn1wsqc" path="res://title_screen.gd" id="1_ig5kc"]
+[ext_resource type="PackedScene" uid="uid://pf0ein572cyu" path="res://c_store_prototype.tscn" id="2_05l2w"]
+[ext_resource type="PackedScene" uid="uid://bt8p44l30wfqs" path="res://models/smoking_man_downloadable.glb" id="2_ig5kc"]
+[ext_resource type="Texture2D" uid="uid://bjvoc8h4s5ojb" path="res://exterior_sprites/red_pixel_rear_car.png" id="5_hafda"]
+
+[sub_resource type="Environment" id="Environment_05l2w"]
+background_mode = 2
+ambient_light_color = Color(0.43816063, 0.18782592, 0.69277984, 1)
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.6
+tonemap_mode = 3
+
+[node name="TitleScreen" type="Node3D" node_paths=PackedStringArray("clock_in_button")]
+script = ExtResource("1_ig5kc")
+clock_in_button = NodePath("CanvasLayer/UIRoot/MainMenu/ClockInButton")
+gameplay_scene = ExtResource("2_05l2w")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.6187512, 0, 0.7855871, 0, 1, 0, -0.7855871, 0, 0.6187512, -2.2167645, 0.51818943, 0.29152)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_05l2w")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.7913408, -5.8959486e-08, 0.6113753, 0.1494472, 0.9696633, 0.19343886, -0.59282815, 0.24444439, -0.7673342, -19.749928, 25.33969, 0)
+light_color = Color(0.9291961, 0.74821573, 0.79448044, 1)
+light_energy = 0.5
+
+[node name="StoreExterior" parent="." instance=ExtResource("1_ak2if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12072599, 0, 2.277995)
+
+[node name="CashierSmoker" parent="." instance=ExtResource("2_ig5kc")]
+transform = Transform3D(-0.012989618, 0, 0.00051944464, 0, 0.012999999, 0, -0.00051944464, 0, -0.012989618, -9.654453, 0.063587666, -4.0496597)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -9.319286, 1.8056219, -3.4341533)
+light_color = Color(1, 0.49019608, 0.3647059, 1)
+light_energy = 0.5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UIRoot" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/UIRoot"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -68.5
+offset_top = -58.0
+offset_right = 68.5
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 61
+text = "BODEGA RUNNER"
+horizontal_alignment = 1
+
+[node name="MainMenu" type="VBoxContainer" parent="CanvasLayer/UIRoot"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -33.5
+offset_right = 69.0
+offset_bottom = 33.5
+grow_vertical = 2
+
+[node name="ClockInButton" type="Button" parent="CanvasLayer/UIRoot/MainMenu"]
+layout_mode = 2
+text = "Clock In"
+
+[node name="ContinueShiftButton" type="Button" parent="CanvasLayer/UIRoot/MainMenu"]
+layout_mode = 2
+disabled = true
+text = "Continue Shift"
+
+[node name="OptionsButton" type="Button" parent="CanvasLayer/UIRoot/MainMenu"]
+layout_mode = 2
+disabled = true
+text = "Options"
+
+[node name="CreditsButton" type="Button" parent="CanvasLayer/UIRoot/MainMenu"]
+layout_mode = 2
+text = "Credits"
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.20562351, 0, 0.9786312, 0, 1, 0, -0.9786312, 0, 0.20562351, -7.32379, 0.35815048, -0.4346906)
+texture = ExtResource("5_hafda")
