@@ -6,6 +6,7 @@ extends Node
 @export var current_total_label: Label
 @export var money_given_label: Label
 @export var change_input: LineEdit
+@export var day_manager: Node
 
 @export var register_monitor: Control
 
@@ -118,6 +119,8 @@ func checkout() -> void:
 
 	if items_correct and gas_correct and change_correct:
 		result_label.text = "Perfect sale! Correct items, gas, and change."
+		if day_manager != null:
+			day_manager.record_sale(calculate_total(get_selected_all_items()) + gas_amount)
 		await get_tree().create_timer(1.5).timeout
 		customer_manager.next_customer()
 

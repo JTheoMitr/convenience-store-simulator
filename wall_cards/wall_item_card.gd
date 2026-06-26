@@ -10,13 +10,11 @@ extends PanelContainer
 
 @onready var item_sprite: AnimatedSprite2D = $MarginContainer/VBoxContainer/PreviewArea/ItemSprite
 @onready var item_name_label: Label = $MarginContainer/VBoxContainer/ItemNameLabel
-@onready var add_button: Button = $MarginContainer/VBoxContainer/AddButton
 
 
 func _ready() -> void:
 	add_theme_stylebox_override("panel", normal_panel_style)
 	item_name_label.text = item_display_name
-	add_button.text = "Add"
 
 	item_sprite.animation = hover_animation
 	item_sprite.frame = 0
@@ -24,7 +22,10 @@ func _ready() -> void:
 
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
-	add_button.pressed.connect(_on_add_button_pressed)
+	
+	mouse_filter = Control.MOUSE_FILTER_STOP
+	gui_input.connect(_on_gui_input)
+	add_to_group("clickable_ui")
 
 
 func _on_mouse_entered() -> void:
@@ -39,8 +40,14 @@ func _on_mouse_exited() -> void:
 	item_sprite.frame = 0
 	item_sprite.play(hover_animation)
 
-
-func _on_add_button_pressed() -> void:
+	
+func _on_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			add_item()
+			accept_event()
+			
+func add_item() -> void:
 	if order_manager == null:
 		push_warning("WallItemCard has no OrderManager assigned.")
 		return

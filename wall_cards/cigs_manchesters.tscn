@@ -1,4 +1,4 @@
-[gd_scene load_steps=156 format=3 uid="uid://d4ersnccn3skj"]
+[gd_scene load_steps=154 format=3 uid="uid://d4ersnccn3skj"]
 
 [ext_resource type="Script" uid="uid://lhf0wuxikyth" path="res://wall_cards/wall_item_card.gd" id="1_pycuv"]
 [ext_resource type="Texture2D" uid="uid://dq0n27u4ejxg3" path="res://items/cigs/manchester_spin_anim/frame_000_delay-0.03s.png" id="2_eq5c3"]
@@ -614,28 +614,8 @@ animations = [{
 "speed": 35.0
 }]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbwoe"]
-bg_color = Color(0.14117648, 0.3254902, 0.7921569, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.34117648, 0.8, 0.77254903, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aor72"]
-bg_color = Color(0.41960785, 0.19607843, 0.59607846, 0.59607846)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.9490196, 0.24313726, 0.93333334, 1)
-
 [node name="Manchesters" type="PanelContainer"]
-custom_minimum_size = Vector2(190, 100)
+custom_minimum_size = Vector2(190, 200)
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 1
@@ -666,9 +646,3 @@ frame_progress = 0.53890026
 layout_mode = 2
 text = "Manchesters"
 horizontal_alignment = 1
-
-[node name="AddButton" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_qbwoe")
-theme_override_styles/hover = SubResource("StyleBoxFlat_aor72")
-text = "Add"

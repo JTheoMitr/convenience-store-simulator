@@ -3,6 +3,11 @@ extends Node
 signal time_changed(formatted_time: String)
 signal shift_ended()
 
+signal daily_sales_changed(total_sales: float)
+
+var daily_sales_total: float = 0.0
+var completed_sales_count: int = 0
+
 @export var opening_hour: int = 9
 @export var closing_hour: int = 20
 
@@ -42,7 +47,7 @@ func emit_current_time() -> void:
 func get_formatted_time() -> String:
 	var total_minutes: int = int(current_minutes)
 
-	var hour_24: int = total_minutes / 60
+	var hour_24: int = floori(total_minutes / 60.0)
 	var minute: int = total_minutes % 60
 
 	var suffix: String = "AM"
@@ -73,5 +78,28 @@ func start_new_shift() -> void:
 	current_minutes = opening_hour * 60
 	shift_is_active = true
 
+	reset_daily_sales()
+
 	print("Starting Day ", current_day)
 	emit_current_time()
+
+
+func record_sale(sale_total: float) -> void:
+	if sale_total <= 0.0:
+		return
+
+	daily_sales_total = snappedf(daily_sales_total + sale_total, 0.01)
+	completed_sales_count += 1
+
+	print("Sale recorded: $%.2f | Daily total: $%.2f" % [
+		sale_total,
+		daily_sales_total
+	])
+
+	daily_sales_changed.emit(daily_sales_total)
+
+
+func reset_daily_sales() -> void:
+	daily_sales_total = 0.0
+	completed_sales_count = 0
+	daily_sales_changed.emit(daily_sales_total)

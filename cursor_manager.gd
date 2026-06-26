@@ -58,15 +58,15 @@ func _process(_delta: float) -> void:
 
 
 func update_cursor_state_from_mouse() -> void:
-	# Dragging always wins. The player should keep seeing the closed hand
+		# Dragging always wins. The player should keep seeing the closed hand
 	# even if the bottle passes over a UI panel or scanner.
 	if dragging_item:
 		set_cursor_state(CursorState.CLOSED_HAND)
 		return
 
-	var hovered_button := get_hovered_button()
+	var hovered_clickable := get_hovered_clickable_control()
 
-	if hovered_button != null:
+	if hovered_clickable != null:
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			set_cursor_state(CursorState.FINGER_CLICKED)
 		else:
@@ -151,3 +151,14 @@ func set_cursor_state(new_state: CursorState) -> void:
 			cursor_sprite.frame = 4
 		CursorState.MAG_GLASS:
 			cursor_sprite.frame = 5
+			
+func get_hovered_clickable_control() -> Control:
+	var control := get_viewport().gui_get_hovered_control() as Control
+
+	while control != null:
+		if control is Button or control.is_in_group("clickable_ui"):
+			return control
+
+		control = control.get_parent() as Control
+
+	return null
