@@ -3,6 +3,7 @@ extends Area3D
 @export var station_manager: Node
 
 @onready var hover_glow: MeshInstance3D = $HoverGlow
+@onready var pinpad_overlay: Sprite3D = $PinPadOverlay
 
 var is_hovered: bool = false
 
@@ -47,4 +48,5 @@ func _on_input_event(
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			hover_glow.visible = false
 			AudioManager.play_ui_click()
+
 			station_manager.go_to_station("pinpad")

@@ -7,6 +7,8 @@ extends Node
 @export var wall_marker: Marker3D
 @export var pinpad_marker: Marker3D
 
+@export var pinpad_placeholder: Sprite3D
+
 @export var customer_dialogue_panel: Control
 @export var register_ui: Control
 @export var wall_item_ui: Control
@@ -90,7 +92,8 @@ func update_ui_for_station(station_name: String) -> void:
 		pinpad_ui.visible = station_name == "pinpad"
 	#await get_tree().create_timer(1.5).timeout
 	#register_monitor.visible = station_name == "register" or station_name == "pinpad"
-
+	if pinpad_placeholder != null:
+		pinpad_placeholder.visible = station_name != "pinpad"
 func _on_camera_move_finished(station_name: String) -> void:
 	var rot := camera.global_rotation_degrees
 	rot.y = wrapf(rot.y, -180.0, 180.0)
