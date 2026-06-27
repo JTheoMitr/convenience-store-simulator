@@ -7,6 +7,7 @@ extends Node
 @export var money_given_label: Label
 @export var change_input: LineEdit
 @export var day_manager: Node
+@export var sale_result_popup: Control
 
 @export var register_monitor: Control
 
@@ -118,11 +119,29 @@ func checkout() -> void:
 	var change_correct := is_equal_approx(player_change, expected_change)
 
 	if items_correct and gas_correct and change_correct:
-		result_label.text = "Perfect sale! Correct items, gas, and change."
+		var completed_sale_total: float = calculate_total(get_selected_all_items()) + gas_amount
+
 		if day_manager != null:
-			day_manager.record_sale(calculate_total(get_selected_all_items()) + gas_amount)
+			day_manager.record_sale(completed_sale_total)
+
+		var ending_mood: float = 100.0
+
+		if customer_manager != null:
+			ending_mood = customer_manager.stop_customer_mood()
+
+		if sale_result_popup != null:
+			sale_result_popup.show_sale_completed(
+				completed_sale_total,
+				ending_mood,
+				50
+			)
+
+		result_label.text = "Perfect sale! Correct items, gas, and change."
+
 		await get_tree().create_timer(1.5).timeout
-		customer_manager.next_customer()
+
+		if customer_manager != null:
+			customer_manager.next_customer()
 
 	elif !items_correct:
 		result_label.text = build_wrong_order_message(expected_items, selected_items)

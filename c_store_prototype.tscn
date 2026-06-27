@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://pf0ein572cyu"]
+[gd_scene load_steps=91 format=3 uid="uid://pf0ein572cyu"]
 
 [ext_resource type="Script" uid="uid://byt2xuix81f60" path="res://navigation_ui.gd" id="1_uxvq6"]
 [ext_resource type="Script" uid="uid://cqlrtaadyc8ne" path="res://checkout_button.gd" id="2_fknbs"]
@@ -34,7 +34,10 @@
 [ext_resource type="Texture2D" uid="uid://c6r4ss0e7bs1h" path="res://npc_sprites/suit_man_1.png" id="19_w7ea5"]
 [ext_resource type="PackedScene" uid="uid://da846o56kvanr" path="res://items/genshin_energy.tscn" id="20_2cea3"]
 [ext_resource type="Script" uid="uid://b67l8agwov5im" path="res://pinpad_interaction.gd" id="20_a7w5d"]
+[ext_resource type="Script" uid="uid://dww7pbfaf0fiy" path="res://customer_mood_ui.gd" id="21_bj4mb"]
+[ext_resource type="Texture2D" uid="uid://bid6cgo3v8x1m" path="res://ui/Smiley_Emotions.png" id="22_fcwjt"]
 [ext_resource type="Script" uid="uid://cly4xgh4wn0n8" path="res://day_manager.gd" id="23_1gxxx"]
+[ext_resource type="Script" uid="uid://712omx18uaq4" path="res://sales_result_popup.gd" id="23_gs1vr"]
 [ext_resource type="Texture2D" uid="uid://cofvqi052e116" path="res://npc_sprites/npc (2).png" id="24_snmny"]
 [ext_resource type="Texture2D" uid="uid://blvih2hw1x1y3" path="res://store_utilities/pinpad_ui_stand_in.png" id="29_mgsg2"]
 [ext_resource type="Texture2D" uid="uid://dj5do3c03bugt" path="res://store_utilities/scanner_arrow_1.png" id="30_r3oaa"]
@@ -155,6 +158,61 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.9490196, 0.24313726, 0.93333334, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd1hi"]
+atlas = ExtResource("22_fcwjt")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hacdq"]
+atlas = ExtResource("22_fcwjt")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d56kj"]
+atlas = ExtResource("22_fcwjt")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0k685"]
+atlas = ExtResource("22_fcwjt")
+region = Rect2(0, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tb3v7"]
+atlas = ExtResource("22_fcwjt")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b4sio"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd1hi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hacdq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d56kj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0k685")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tb3v7")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fcwjt"]
+bg_color = Color(0.93333334, 0.14901961, 0.5882353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.09803922, 0.8, 0.8, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ykfa"]
 atlas = ExtResource("6_hckn7")
@@ -607,6 +665,50 @@ text = "Clear Selection"
 script = ExtResource("4_ctecg")
 order_manager = NodePath("../../../../Managers/OrderManager")
 
+[node name="CustomerMoodUI" type="Control" parent="UI" node_paths=PackedStringArray("customer_manager")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 50.0
+offset_top = 100.0
+offset_right = 90.0
+offset_bottom = 140.0
+scale = Vector2(1.3, 1.3)
+script = ExtResource("21_bj4mb")
+customer_manager = NodePath("../../Managers/CustomerManager")
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/CustomerMoodUI"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/CustomerMoodUI/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/CustomerMoodUI/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 200
+
+[node name="MoodFace" type="AnimatedSprite2D" parent="UI/CustomerMoodUI/PanelContainer/MarginContainer/HBoxContainer"]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_b4sio")
+offset = Vector2(-10, 10)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/CustomerMoodUI/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="MoodLabel" type="Label" parent="UI/CustomerMoodUI/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_7hopq")
+text = "Mood: 78%"
+
+[node name="MoodBar" type="ProgressBar" parent="UI/CustomerMoodUI/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_fcwjt")
+show_percentage = false
+
 [node name="CursorManager" type="Control" parent="UI" node_paths=PackedStringArray("camera")]
 layout_mode = 3
 anchors_preset = 0
@@ -626,6 +728,40 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 color = Color(1, 0, 0.08235294, 0)
+
+[node name="SalesResultPopup" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+script = ExtResource("23_gs1vr")
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/SalesResultPopup"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/SalesResultPopup/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/SalesResultPopup/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ResultTitleLabel" type="Label" parent="UI/SalesResultPopup/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SaleTotalLabel" type="Label" parent="UI/SalesResultPopup/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MoodLabel" type="Label" parent="UI/SalesResultPopup/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="XPLabel" type="Label" parent="UI/SalesResultPopup/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
 
 [node name="Managers" type="Node" parent="."]
 
@@ -663,7 +799,7 @@ station_manager = NodePath("../StationManager")
 counter_drag_bounds = NodePath("../../StoreBlockout/CounterDragBounds")
 computer_drag_blocker = NodePath("../../StoreBlockout/ComputerDragBlocker")
 
-[node name="OrderManager" type="Node" parent="Managers" node_paths=PackedStringArray("selected_items_label", "result_label", "customer_manager", "current_total_label", "money_given_label", "change_input", "day_manager", "register_monitor")]
+[node name="OrderManager" type="Node" parent="Managers" node_paths=PackedStringArray("selected_items_label", "result_label", "customer_manager", "current_total_label", "money_given_label", "change_input", "day_manager", "sale_result_popup", "register_monitor")]
 script = ExtResource("4_ka4yf")
 selected_items_label = NodePath("../../UI/WallItemUI/VBoxContainer/SelectedItemsLabel")
 result_label = NodePath("../../UI/RegisterUI/VBoxContainer/ResultLabel")
@@ -672,6 +808,7 @@ current_total_label = NodePath("../../UI/RegisterUI/VBoxContainer/CurrentTotalLa
 money_given_label = NodePath("../../UI/RegisterUI/VBoxContainer/MoneyGivenLabel")
 change_input = NodePath("../../UI/RegisterUI/VBoxContainer/ChangeInput")
 day_manager = NodePath("../DayManager")
+sale_result_popup = NodePath("../../UI/SalesResultPopup")
 register_monitor = NodePath("../../StoreBlockout/RegisterScreen3D/ScreenMesh/RegisterMonitorViewport/RegisterMonitor")
 
 [node name="DayManager" type="Node" parent="Managers"]

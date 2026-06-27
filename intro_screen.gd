@@ -14,8 +14,11 @@ extends Node
 @export var glitch_stretch_amount: float = 0.78
 @export var glitch_duration: float = 0.035
 
+@onready var glitch_sound: AudioStreamPlayer = $AudioStreamPlayer
+
 var logo_base_scale: Vector2
 var intro_is_running: bool = true
+var glitch_sound_playing = false
 
 
 func _ready() -> void:
@@ -59,7 +62,8 @@ func glitch_logo_loop() -> void:
 
 		if !intro_is_running:
 			return
-
+		
+		glitch_sound.play()
 		var stretch_x := randf_range(
 			1.0 - glitch_stretch_amount,
 			1.0 + glitch_stretch_amount

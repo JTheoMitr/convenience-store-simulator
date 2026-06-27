@@ -19,6 +19,14 @@ extends Node
 @export var counter_drag_bounds: Area3D
 @export var computer_drag_blocker: Area3D
 
+signal customer_mood_changed(mood: float)
+signal customer_mood_finished(mood: float)
+
+@export var mood_loss_per_second: float = 0.5
+
+var current_customer_mood: float = 100.0
+var customer_is_active: bool = false
+
 var current_customer_instance: Node3D
 
 var current_customer_index: int = 0
@@ -93,6 +101,7 @@ func load_customer(index: int) -> void:
 	var customer: Dictionary = customers[index]
 
 	spawn_customer(customer)
+	start_customer_mood()
 
 	dialogue_label.text = customer["dialogue"]
 	order_manager.set_current_order(customer)
@@ -213,3 +222,27 @@ func clear_current_customer() -> void:
 	if current_customer_instance != null:
 		current_customer_instance.queue_free()
 		current_customer_instance = null
+		
+		
+func start_customer_mood() -> void:
+	current_customer_mood = randf_range(70.0, 100.0)
+	customer_is_active = true
+	customer_mood_changed.emit(current_customer_mood)
+
+
+func stop_customer_mood() -> float:
+	customer_is_active = false
+	customer_mood_finished.emit(current_customer_mood)
+	return current_customer_mood
+
+
+func _process(delta: float) -> void:
+	if !customer_is_active:
+		return
+
+	current_customer_mood = maxf(
+		0.0,
+		current_customer_mood - mood_loss_per_second * delta
+	)
+
+	customer_mood_changed.emit(current_customer_mood)	
