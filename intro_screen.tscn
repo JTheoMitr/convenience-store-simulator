@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://6wxbo1opkg"]
+
+[ext_resource type="Texture2D" uid="uid://3q56jmeekxuv" path="res://vomvis_logo/Vomvis_Logo.png" id="1_4pqbn"]
+[ext_resource type="Script" uid="uid://bxlt06krxx4gk" path="res://intro_screen.gd" id="1_6a5pb"]
+[ext_resource type="PackedScene" uid="uid://mjigkhvivkin" path="res://title_screen.tscn" id="2_p3req"]
+[ext_resource type="AudioStream" uid="uid://qskthr7eudtl" path="res://music/conv_playlist_2.mp3" id="3_p3req"]
+
+[node name="IntroScreen" type="Node" node_paths=PackedStringArray("logo_sprite")]
+script = ExtResource("1_6a5pb")
+logo_sprite = NodePath("Sprite2D")
+title_screen = ExtResource("2_p3req")
+main_theme = ExtResource("3_p3req")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(577, 332)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_4pqbn")

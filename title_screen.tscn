@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://mjigkhvivkin"]
+[gd_scene load_steps=14 format=3 uid="uid://mjigkhvivkin"]
 
 [ext_resource type="PackedScene" uid="uid://dmtb05ljv8xe2" path="res://models/store/6twelve-elbolillo.glb" id="1_ak2if"]
 [ext_resource type="Script" uid="uid://cpl38vdn1wsqc" path="res://title_screen.gd" id="1_ig5kc"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bjvoc8h4s5ojb" path="res://exterior_sprites/red_pixel_rear_car.png" id="5_hafda"]
 [ext_resource type="Script" uid="uid://b3igmmxprpu0i" path="res://cigarette_light.gd" id="5_jqemp"]
 [ext_resource type="FontFile" uid="uid://b2w1ob5cucx3n" path="res://fonts/Revoinex.ttf" id="5_tpml5"]
+[ext_resource type="Script" uid="uid://dkh8ogio04mxr" path="res://title_container.gd" id="6_xfn3p"]
 [ext_resource type="Script" uid="uid://boodmng78kuv4" path="res://title_cursor.gd" id="7_8vmu4"]
 [ext_resource type="Texture2D" uid="uid://blxek0ggbxfuk" path="res://cursor_sprites/holo-cursor-1.png" id="8_xfn3p"]
 
@@ -79,20 +80,52 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TitleLabel" type="Label" parent="CanvasLayer/UIRoot"]
+[node name="TitleContainer" type="Control" parent="CanvasLayer/UIRoot"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_xfn3p")
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/UIRoot/TitleContainer"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -672.0
-offset_top = -118.0
-offset_right = -12.0
-offset_bottom = -24.0
+offset_left = 440.0
+offset_top = 490.0
+offset_right = 1100.0
+offset_bottom = 584.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.89843816, 0.2865041, 0.8286153, 1)
+theme_override_colors/font_shadow_color = Color(0.8980392, 0, 0.76862746, 0.37254903)
+theme_override_colors/font_outline_color = Color(0.84313726, 0, 0.6431373, 0.5764706)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 11
+theme_override_fonts/font = ExtResource("5_tpml5")
+theme_override_font_sizes/font_size = 90
+text = "BODEGA RUNNER"
+horizontal_alignment = 1
+
+[node name="GlitchLabel" type="Label" parent="CanvasLayer/UIRoot/TitleContainer"]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 440.0
+offset_top = 490.0
+offset_right = 1100.0
+offset_bottom = 584.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.26947197, 0.6500667, 0.6850148, 1)
 theme_override_fonts/font = ExtResource("5_tpml5")
 theme_override_font_sizes/font_size = 90
 text = "BODEGA RUNNER"
