@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://mjigkhvivkin"]
+[gd_scene load_steps=27 format=3 uid="uid://mjigkhvivkin"]
 
 [ext_resource type="PackedScene" uid="uid://dmtb05ljv8xe2" path="res://models/store/6twelve-elbolillo.glb" id="1_ak2if"]
 [ext_resource type="Script" uid="uid://cpl38vdn1wsqc" path="res://title_screen.gd" id="1_ig5kc"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://dkh8ogio04mxr" path="res://title_container.gd" id="6_xfn3p"]
 [ext_resource type="Script" uid="uid://boodmng78kuv4" path="res://title_cursor.gd" id="7_8vmu4"]
 [ext_resource type="Texture2D" uid="uid://blxek0ggbxfuk" path="res://cursor_sprites/holo-cursor-1.png" id="8_xfn3p"]
+[ext_resource type="Texture2D" uid="uid://cl4y2bpda7sox" path="res://effects/Free Smoke Fx  Pixel 05.png" id="11_rhgbh"]
 
 [sub_resource type="Environment" id="Environment_05l2w"]
 background_mode = 2
@@ -41,6 +42,91 @@ corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skmiq"]
+atlas = ExtResource("11_rhgbh")
+region = Rect2(0, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lf08s"]
+atlas = ExtResource("11_rhgbh")
+region = Rect2(64, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1yhu"]
+atlas = ExtResource("11_rhgbh")
+region = Rect2(128, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7w76"]
+atlas = ExtResource("11_rhgbh")
+region = Rect2(192, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wot2p"]
+atlas = ExtResource("11_rhgbh")
+region = Rect2(256, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvwfe"]
+atlas = ExtResource("11_rhgbh")
+region = Rect2(320, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4tom"]
+atlas = ExtResource("11_rhgbh")
+region = Rect2(384, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8ura"]
+atlas = ExtResource("11_rhgbh")
+region = Rect2(448, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aav61"]
+atlas = ExtResource("11_rhgbh")
+region = Rect2(512, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a64np"]
+atlas = ExtResource("11_rhgbh")
+region = Rect2(576, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2tdu"]
+atlas = ExtResource("11_rhgbh")
+region = Rect2(640, 384, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7yan6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skmiq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lf08s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1yhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7w76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wot2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvwfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4tom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8ura")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aav61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a64np")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2tdu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="TitleScreen" type="Node3D" node_paths=PackedStringArray("clock_in_button")]
 script = ExtResource("1_ig5kc")
@@ -197,6 +283,18 @@ cursor_offset = Vector2(25, 20)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("8_xfn3p")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="Car" type="Sprite3D" parent="."]
 transform = Transform3D(0.20562351, 0, 0.9786312, 0, 1, 0, -0.9786312, 0, 0.20562351, -7.32379, 0.35815048, -0.4346906)
 texture = ExtResource("5_hafda")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(-0.005009078, 0, 0.9999875, 0, 1, 0, -0.9999875, 0, -0.005009078, -7.095064, -0.013069153, 0.15007198)
+sprite_frames = SubResource("SpriteFrames_7yan6")
+autoplay = "default"
+frame_progress = 0.5832563
+
+[node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(-0.005009078, 0, 0.9999875, 0, 1, 0, -0.9999875, 0, -0.005009078, -7.132855, -0.07080197, -1.0161189)
+sprite_frames = SubResource("SpriteFrames_7yan6")
+autoplay = "default"
+frame_progress = 0.12163707
