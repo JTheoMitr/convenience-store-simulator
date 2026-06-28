@@ -118,3 +118,14 @@ func hide_station_ui() -> void:
 
 	if pinpad_ui != null:
 		pinpad_ui.visible = false
+		
+		
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			var hovered_control := get_viewport().gui_get_hovered_control()
+
+			if hovered_control != null:
+				print("GUI IS CATCHING CLICK: ", hovered_control.get_path())
+			else:
+				print("No GUI control under mouse.")

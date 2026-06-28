@@ -284,17 +284,17 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("8_xfn3p")
 
 [node name="Car" type="Sprite3D" parent="."]
-transform = Transform3D(0.20562351, 0, 0.9786312, 0, 1, 0, -0.9786312, 0, 0.20562351, -7.32379, 0.35815048, -0.4346906)
+transform = Transform3D(0.20562351, 0, 0.9786312, 0, 1, 0, -0.9786312, 0, 0.20562351, -8.79537, 0.35815048, -0.4346906)
 texture = ExtResource("5_hafda")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(-0.005009078, 0, 0.9999875, 0, 1, 0, -0.9999875, 0, -0.005009078, -7.095064, -0.013069153, 0.15007198)
+transform = Transform3D(-0.005009078, 0, 0.9999875, 0, 1, 0, -0.9999875, 0, -0.005009078, -8.566644, -0.013069153, 0.15007198)
 sprite_frames = SubResource("SpriteFrames_7yan6")
 autoplay = "default"
 frame_progress = 0.5832563
 
 [node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(-0.005009078, 0, 0.9999875, 0, 1, 0, -0.9999875, 0, -0.005009078, -7.132855, -0.07080197, -1.0161189)
+transform = Transform3D(-0.005009078, 0, 0.9999875, 0, 1, 0, -0.9999875, 0, -0.005009078, -8.604435, -0.07080197, -1.0161189)
 sprite_frames = SubResource("SpriteFrames_7yan6")
 autoplay = "default"
 frame_progress = 0.12163707

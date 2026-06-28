@@ -24,7 +24,8 @@ func show_sale_completed(
 
 	result_title_label.text = "SALE COMPLETED"
 	sale_total_label.text = "TOTAL: $%.2f" % sale_total
-	mood_label.text = "CUSTOMER MOOD: %d%%" % roundi(ending_mood)
+	mood_label.text = "CUSTOMER MOOD: %s" % get_mood_state(ending_mood)
+	#mood_label.text = "CUSTOMER MOOD: %d%%" % roundi(ending_mood)
 	xp_label.text = "+%d XP" % xp_earned
 
 	visible = true
@@ -45,3 +46,15 @@ func show_sale_completed(
 
 	if this_popup_version == popup_version:
 		visible = false
+		
+func get_mood_state(mood: float) -> String:
+	if mood >= 85.0:
+		return "Ecstatic"
+	elif mood >= 65.0:
+		return "Happy"
+	elif mood >= 40.0:
+		return "Fine"
+	elif mood >= 20.0:
+		return "Upset"
+	else:
+		return "Pissed"

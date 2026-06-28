@@ -6,9 +6,10 @@
 [ext_resource type="AudioStream" uid="uid://qskthr7eudtl" path="res://music/conv_playlist_2.mp3" id="3_p3req"]
 [ext_resource type="AudioStream" uid="uid://dyelyrxnl8sa6" path="res://sfx/glitch/electricity_glitch_46.wav" id="5_h5lro"]
 
-[node name="IntroScreen" type="Node" node_paths=PackedStringArray("logo_sprite")]
+[node name="IntroScreen" type="Node" node_paths=PackedStringArray("logo_sprite", "glitch_logo_sprite")]
 script = ExtResource("1_6a5pb")
 logo_sprite = NodePath("Sprite2D")
+glitch_logo_sprite = NodePath("Sprite2D2")
 title_screen = ExtResource("2_p3req")
 main_theme = ExtResource("3_p3req")
 
@@ -25,7 +26,13 @@ position = Vector2(577, 332)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_4pqbn")
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+self_modulate = Color(0.21568628, 1, 1, 1)
+position = Vector2(590, 343)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_4pqbn")
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_h5lro")
-volume_db = -16.0
-pitch_scale = 1.7
+volume_db = -23.0
+pitch_scale = 1.9
