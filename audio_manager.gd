@@ -8,6 +8,7 @@ extends Node
 @export var error_sound: AudioStream
 @export var bottle_grab_sound: AudioStream
 @export var chips_grab_sound: AudioStream
+@export var register_checkout_sound: AudioStream
 
 @onready var ui_button_player: AudioStreamPlayer = $UIButtonPlayer
 @onready var ui_select_player: AudioStreamPlayer = $UISelectPlayer
@@ -17,6 +18,7 @@ extends Node
 @onready var error_player: AudioStreamPlayer = $ErrorPlayer
 @onready var bottle_grab_player: AudioStreamPlayer = $BottleGrab
 @onready var chips_grab_player: AudioStreamPlayer = $ChipsGrab
+@onready var register_checkout_player: AudioStreamPlayer = $RegisterPlayer
 
 
 func _ready() -> void:
@@ -26,6 +28,7 @@ func _ready() -> void:
 	bag_rustle_player.stream = bag_rustle_sound
 	pinpad_player.stream = pinpad_sound
 	error_player.stream = error_sound
+	register_checkout_player.stream = register_checkout_sound
 	bottle_grab_player.stream = bottle_grab_sound
 	chips_grab_player.stream = chips_grab_sound
 	print("AudioManager autoload ready")
@@ -57,6 +60,9 @@ func play_bottle_grab() -> void:
 	
 func play_chips_grab() -> void:
 	_play_from_start(chips_grab_player)
+	
+func play_register_checkout_sound() -> void:
+	_play_from_start(register_checkout_player)
 
 
 func _play_from_start(player: AudioStreamPlayer) -> void:

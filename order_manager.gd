@@ -11,12 +11,15 @@ extends Node
 
 @export var register_monitor: Control
 
+@export var payment_label: Label
+@export var change_due_label: Label
+
 var current_order: Dictionary = {}
 var selected_wall_items: Dictionary = {}
 var selected_scanned_items: Dictionary = {}
 var gas_amount: float = 0.0
 
-var item_names: Dictionary = {
+var item_names: Dictionary = {	
 	"reds": "Reds",
 	"blues": "Blues",
 	"chapmans": "Chapmans",
@@ -107,18 +110,19 @@ func checkout() -> void:
 	var selected_items := get_selected_all_items()
 	var items_correct := dictionaries_match(expected_items, selected_items)
 	var gas_correct: bool = is_gas_correct()
-	var typed_change_text := change_input.text.strip_edges()
+	#removed the bottom change input for the cash minigame
+	#var typed_change_text := change_input.text.strip_edges()
+#
+	#if typed_change_text == "":
+		#result_label.text = "Enter the customer's change."
+		#return
+#
+	#var player_change := float(typed_change_text)
+	#var expected_change := get_expected_change()
+#
+	#var change_correct := is_equal_approx(player_change, expected_change)
 
-	if typed_change_text == "":
-		result_label.text = "Enter the customer's change."
-		return
-
-	var player_change := float(typed_change_text)
-	var expected_change := get_expected_change()
-
-	var change_correct := is_equal_approx(player_change, expected_change)
-
-	if items_correct and gas_correct and change_correct:
+	if items_correct and gas_correct: # and change_correct:
 		var completed_sale_total: float = calculate_total(get_selected_all_items()) + gas_amount
 
 		if day_manager != null:
@@ -150,22 +154,22 @@ func checkout() -> void:
 			result_label.text += "\nExpected gas: $%.2f" % get_expected_gas_amount()
 			result_label.text += "\nYou entered: $%.2f" % gas_amount
 
-		if !change_correct:
-			result_label.text += "\nExpected change: $%.2f" % expected_change
+		#if !change_correct:
+			#result_label.text += "\nExpected change: $%.2f" % expected_change
 
 	elif !gas_correct:
 		result_label.text = "Wrong gas amount!"
 		result_label.text += "\nExpected: $%.2f" % get_expected_gas_amount()
 		result_label.text += "\nYou entered: $%.2f" % gas_amount
 
-		if !change_correct:
-			result_label.text += "\nExpected change: $%.2f" % expected_change
+		#if !change_correct:
+			#result_label.text += "\nExpected change: $%.2f" % expected_change
 
-	else:
-		result_label.text = "Wrong change!\nExpected: $%.2f\nYou entered: $%.2f" % [
-			expected_change,
-			player_change
-		]
+	#else:
+		#result_label.text = "Wrong change!\nExpected: $%.2f\nYou entered: $%.2f" % [
+			#expected_change,
+			#player_change
+		#]
 		
 func dictionaries_match(expected: Dictionary, actual: Dictionary) -> bool:
 	if expected.size() != actual.size():
@@ -242,6 +246,7 @@ func calculate_total(items: Dictionary) -> float:
 
 func get_money_given() -> float:
 	return float(current_order.get("money_given", 0.0))
+	
 
 func get_expected_gas_amount() -> float:
 	return float(current_order.get("gas_amount", 0.0))
@@ -252,12 +257,11 @@ func is_gas_correct() -> bool:
 	
 	
 func get_expected_change() -> float:
-	var expected_items: Dictionary = get_expected_all_items()
-	var item_total: float = calculate_total(expected_items)
-	var expected_gas: float = get_expected_gas_amount()
-	var money_given: float = get_money_given()
+	if is_card_payment():
+		return 0.0
 
-	return snapped(money_given - item_total - expected_gas, 0.01)
+	var sale_total: float = calculate_total(get_selected_all_items()) + gas_amount
+	return snappedf(get_money_given() - sale_total, 0.01)
 
 
 func update_register_labels() -> void:
@@ -275,7 +279,7 @@ func update_register_labels() -> void:
 	money_given_label.text = "Customer paid: $%.2f" % money_given
 	var display_prices := item_prices.duplicate()
 	var display_names := item_names.duplicate()
-
+	update_payment_details()
 	if register_monitor != null:
 		if gas_amount > 0.0:
 			display_prices["gas"] = gas_amount
@@ -354,3 +358,22 @@ func get_selected_items_for_display() -> Dictionary:
 		display_items["gas"] = 1
 
 	return display_items
+
+func get_payment_type() -> String:
+	return str(current_order.get("payment_type", "cash"))
+
+
+func is_card_payment() -> bool:
+	return get_payment_type() == "card"
+
+func update_payment_details() -> void:
+	if payment_label == null or change_due_label == null:
+		return
+
+	if is_card_payment():
+		payment_label.text = "PAID BY CARD"
+		change_due_label.visible = false
+	else:
+		payment_label.text = "CASH PAID: $%.2f" % get_money_given()
+		change_due_label.text = "CHANGE DUE: $%.2f" % maxf(get_expected_change(), 0.0)
+		change_due_label.visible = true

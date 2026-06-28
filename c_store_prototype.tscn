@@ -570,10 +570,12 @@ layout_mode = 2
 text = "Total: $0.00"
 
 [node name="MoneyGivenLabel" type="Label" parent="UI/RegisterUI/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Customer Paid: $0.00"
 
 [node name="ChangeInput" type="LineEdit" parent="UI/RegisterUI/VBoxContainer"]
+visible = false
 layout_mode = 2
 placeholder_text = "Enter Change"
 
@@ -586,6 +588,14 @@ order_manager = NodePath("../../../../Managers/OrderManager")
 [node name="ResultLabel" type="Label" parent="UI/RegisterUI/VBoxContainer"]
 layout_mode = 2
 text = "Result"
+
+[node name="PaymentLabel" type="Label" parent="UI/RegisterUI/VBoxContainer"]
+layout_mode = 2
+text = "CASH PAID: $20.00"
+
+[node name="ChangeDueLabel" type="Label" parent="UI/RegisterUI/VBoxContainer"]
+layout_mode = 2
+text = "CHANGE DUE: $6.50"
 
 [node name="WallItemUI" type="PanelContainer" parent="UI"]
 visible = false
@@ -809,7 +819,7 @@ station_manager = NodePath("../StationManager")
 counter_drag_bounds = NodePath("../../StoreBlockout/CounterDragBounds")
 computer_drag_blocker = NodePath("../../StoreBlockout/ComputerDragBlocker")
 
-[node name="OrderManager" type="Node" parent="Managers" node_paths=PackedStringArray("selected_items_label", "result_label", "customer_manager", "current_total_label", "money_given_label", "change_input", "day_manager", "sale_result_popup", "register_monitor")]
+[node name="OrderManager" type="Node" parent="Managers" node_paths=PackedStringArray("selected_items_label", "result_label", "customer_manager", "current_total_label", "money_given_label", "change_input", "day_manager", "sale_result_popup", "register_monitor", "payment_label", "change_due_label")]
 script = ExtResource("4_ka4yf")
 selected_items_label = NodePath("../../UI/WallItemUI/VBoxContainer/SelectedItemsLabel")
 result_label = NodePath("../../UI/RegisterUI/VBoxContainer/ResultLabel")
@@ -820,6 +830,8 @@ change_input = NodePath("../../UI/RegisterUI/VBoxContainer/ChangeInput")
 day_manager = NodePath("../DayManager")
 sale_result_popup = NodePath("../../UI/SalesResultPopup")
 register_monitor = NodePath("../../StoreBlockout/RegisterScreen3D/ScreenMesh/RegisterMonitorViewport/RegisterMonitor")
+payment_label = NodePath("../../UI/RegisterUI/VBoxContainer/PaymentLabel")
+change_due_label = NodePath("../../UI/RegisterUI/VBoxContainer/ChangeDueLabel")
 
 [node name="DayManager" type="Node" parent="Managers"]
 script = ExtResource("23_1gxxx")

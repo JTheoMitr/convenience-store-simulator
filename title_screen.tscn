@@ -128,10 +128,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="TitleScreen" type="Node3D" node_paths=PackedStringArray("clock_in_button")]
+[node name="TitleScreen" type="Node3D" node_paths=PackedStringArray("clock_in_button", "title_camera")]
 script = ExtResource("1_ig5kc")
 clock_in_button = NodePath("CanvasLayer/UIRoot/MainMenu/ClockInButton")
 gameplay_scene = ExtResource("2_05l2w")
+title_camera = NodePath("Camera3D")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.6187512, 0, 0.7855871, 0, 1, 0, -0.7855871, 0, 0.6187512, -3.8880649, 0.51818943, -0.028685689)

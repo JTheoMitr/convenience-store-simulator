@@ -36,6 +36,7 @@ var customers: Array[Dictionary] = [
 	"name": "Customer 1",
 	"dialogue": "Can I get a pack of Reds and a Mega Money?",
 	"sprite_frame": 0,
+	"payment_type": "cash",
 	"money_given": 20.00,
 	"wall_items": {
 		"reds": 1,
@@ -46,16 +47,17 @@ var customers: Array[Dictionary] = [
 	},
 	{
 		"name": "Customer 2",
-		"dialogue": "Give me two King D's and this whiskey bottle.",
+		"dialogue": "Give me two King D's and this bottle of whiskey.",
 		"sprite_frame": 1,
-		"money_given": 50.00,
+		"payment_type": "cash",
+		"money_given": 40.00,
 		"wall_items": {
 			"king_diamond": 2
 		},
 		"counter_items": {
-			"whiskey_bottle": 1,
-			"croky_chips": 1,
-			"genshin_energy": 1
+			"whiskey_bottle": 1
+			#"croky_chips": 1,
+			#"genshin_energy": 1
 		},
 		"gas_amount": 0.0
 	},
@@ -63,6 +65,7 @@ var customers: Array[Dictionary] = [
 	"name": "Customer 3",
 	"dialogue": "Can I get a pack of Reds and fifteen dollars on gas?",
 	"sprite_frame": 2,
+	"payment_type": "card",
 	"money_given": 30.00,
 	"wall_items": {
 		"reds": 1
@@ -74,6 +77,7 @@ var customers: Array[Dictionary] = [
 	"name": "Customer 4",
 	"dialogue": "I'll get these and a pack of Chapmans... and twenty on the pump.",
 	"sprite_frame": 3,
+	"payment_type": "card",
 	"money_given": 35.00,
 	"wall_items": {
 		"chapmans": 1
