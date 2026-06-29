@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://pf0ein572cyu"]
+[gd_scene load_steps=118 format=3 uid="uid://pf0ein572cyu"]
 
 [ext_resource type="Script" uid="uid://byt2xuix81f60" path="res://navigation_ui.gd" id="1_uxvq6"]
 [ext_resource type="Script" uid="uid://cqlrtaadyc8ne" path="res://checkout_button.gd" id="2_fknbs"]
@@ -45,9 +45,30 @@
 [ext_resource type="Texture2D" uid="uid://cofvqi052e116" path="res://npc_sprites/npc (2).png" id="24_snmny"]
 [ext_resource type="Texture2D" uid="uid://cwsobwdj6e7od" path="res://money/paper/lowpoly/Obverse_of_the_series_2017A_$20_Federal_Reserve_Note_lowpoly_hover.png" id="25_3q5fw"]
 [ext_resource type="Script" uid="uid://fcrm838j8d7y" path="res://cash_drawer_ui.gd" id="25_hacdq"]
+[ext_resource type="Texture2D" uid="uid://cr8iyvrpe168x" path="res://money/paper/lowpoly/US_$10_Series_2003_obverse_lowpoly.png" id="26_3q5fw"]
+[ext_resource type="Texture2D" uid="uid://b8mq1hl4lkjtc" path="res://money/paper/lowpoly/US_$10_Series_2003_obverse_lowpoly_clicked.png" id="27_xrftl"]
+[ext_resource type="Texture2D" uid="uid://c7jrkbfvpo0m1" path="res://money/paper/lowpoly/US_$10_Series_2003_obverse_lowpoly_hover.png" id="28_53urf"]
+[ext_resource type="Texture2D" uid="uid://cs38s0lm6dxms" path="res://money/paper/lowpoly/US_5_Dollar_Bill_lowpoly.png" id="29_l86gn"]
 [ext_resource type="Texture2D" uid="uid://blvih2hw1x1y3" path="res://store_utilities/pinpad_ui_stand_in.png" id="29_mgsg2"]
+[ext_resource type="Texture2D" uid="uid://b5snfb5rh5jpk" path="res://money/paper/lowpoly/US_5_Dollar_Bill_lowpoly_clicked.png" id="30_ldfis"]
 [ext_resource type="Texture2D" uid="uid://dj5do3c03bugt" path="res://store_utilities/scanner_arrow_1.png" id="30_r3oaa"]
+[ext_resource type="Texture2D" uid="uid://br0xv1v6fosgv" path="res://money/paper/lowpoly/US_5_Dollar_Bill_lowpoly_hover.png" id="31_d5lg4"]
 [ext_resource type="Texture2D" uid="uid://b5jdxf0kymn7c" path="res://store_utilities/scanner_arrow_2.png" id="31_ekuo6"]
+[ext_resource type="Texture2D" uid="uid://b4q6b4h7utwn1" path="res://money/paper/lowpoly/US_1_dollar_bill_lowpoly.png" id="32_cebl4"]
+[ext_resource type="Texture2D" uid="uid://cyu0augnnbewy" path="res://money/paper/lowpoly/US_1_dollar_bill_lowpoly_clicked.png" id="33_yqrkl"]
+[ext_resource type="Texture2D" uid="uid://om1ca71481yu" path="res://money/paper/lowpoly/US_1_dollar_bill_lowpoly_hover.png" id="34_o5xvp"]
+[ext_resource type="Texture2D" uid="uid://duw8y53hes44g" path="res://money/coin/lowpoly/quarter-1.png" id="35_3v02y"]
+[ext_resource type="Texture2D" uid="uid://e60qifhcuels" path="res://money/coin/lowpoly/quarter-1-pressed.png" id="36_ttci7"]
+[ext_resource type="Texture2D" uid="uid://bdbiqi4dpbjqp" path="res://money/coin/lowpoly/quarter-1-hover.png" id="37_ttx6n"]
+[ext_resource type="Texture2D" uid="uid://b7nqsvkugrvnv" path="res://money/coin/lowpoly/dime-1-lowpoly.png" id="38_8xjri"]
+[ext_resource type="Texture2D" uid="uid://cis8sesrjitoe" path="res://money/coin/lowpoly/dime-1-lowpoly-hover copy.png" id="39_0ngkt"]
+[ext_resource type="Texture2D" uid="uid://d3ym0xjd20gu4" path="res://money/coin/lowpoly/dime-1-lowpoly-hover.png" id="40_0ilf0"]
+[ext_resource type="Texture2D" uid="uid://c87ebdb2i6lcl" path="res://money/coin/lowpoly/nickel-1-lowpoly.png" id="41_0c0xj"]
+[ext_resource type="Texture2D" uid="uid://gsbyh8xpvrra" path="res://money/coin/lowpoly/penny-new-lowpoly.png" id="42_k8k7j"]
+[ext_resource type="Texture2D" uid="uid://cra1rcp4mm2uy" path="res://money/coin/lowpoly/nickel-1-lowpoly-pressed.png" id="42_ttx6n"]
+[ext_resource type="Texture2D" uid="uid://cevoamicnxife" path="res://money/coin/lowpoly/nickel-1-lowpoly-hover.png" id="43_8xjri"]
+[ext_resource type="Texture2D" uid="uid://kp7ox0g1p000" path="res://money/coin/lowpoly/penny-new-lowpoly-pressed.png" id="43_s7lws"]
+[ext_resource type="Texture2D" uid="uid://rsmhngfhtuqi" path="res://money/coin/lowpoly/penny-new-lowpoly-hover.png" id="44_3kepf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d77sd"]
 bg_color = Color(0.4392157, 0.18431373, 0.87058824, 0.44705883)
@@ -837,62 +858,85 @@ texture_normal = ExtResource("23_tb3v7")
 texture_pressed = ExtResource("24_b4sio")
 texture_hover = ExtResource("25_3q5fw")
 
-[node name="Bill10Button" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+[node name="Bill10Button" type="TextureButton" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
 layout_mode = 0
-offset_left = 448.0
-offset_top = 226.0
-offset_right = 562.0
-offset_bottom = 247.0
-text = "10"
+offset_left = 563.0
+offset_top = -9.0
+offset_right = 763.0
+offset_bottom = 76.0
+rotation = 1.5707964
+scale = Vector2(1.33, 1.33)
+texture_normal = ExtResource("26_3q5fw")
+texture_pressed = ExtResource("27_xrftl")
+texture_hover = ExtResource("28_53urf")
 
-[node name="Bill5Button" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+[node name="Bill5Button" type="TextureButton" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
 layout_mode = 0
-offset_left = 593.0
-offset_top = 227.0
-offset_right = 700.0
-offset_bottom = 251.0
-text = "5
-"
+offset_left = 706.0
+offset_top = -9.0
+offset_right = 881.0
+offset_bottom = 65.0
+rotation = 1.5707964
+scale = Vector2(1.55, 1.55)
+texture_normal = ExtResource("29_l86gn")
+texture_pressed = ExtResource("30_ldfis")
+texture_hover = ExtResource("31_d5lg4")
 
-[node name="Bill1Button" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+[node name="Bill1Button" type="TextureButton" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
 layout_mode = 0
-offset_left = 737.0
-offset_top = 226.0
-offset_right = 844.0
-offset_bottom = 257.0
-text = "1"
+offset_left = 845.0
+offset_top = -1.000001
+offset_right = 1095.0
+offset_bottom = 108.0
+rotation = 1.5707964
+scale = Vector2(1.03, 1.03)
+texture_normal = ExtResource("32_cebl4")
+texture_pressed = ExtResource("33_yqrkl")
+texture_hover = ExtResource("34_o5xvp")
 
-[node name="QuarterButton" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+[node name="QuarterButton" type="TextureButton" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
 layout_mode = 0
-offset_left = 307.0
-offset_top = 316.0
-offset_right = 360.0
-offset_bottom = 360.0
-text = "0.25"
+offset_left = 292.0
+offset_top = 306.00003
+offset_right = 382.0
+offset_bottom = 396.00003
+scale = Vector2(0.9, 0.9)
+texture_normal = ExtResource("35_3v02y")
+texture_pressed = ExtResource("36_ttci7")
+texture_hover = ExtResource("37_ttx6n")
 
-[node name="DimeButton" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+[node name="DimeButton" type="TextureButton" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
 layout_mode = 0
-offset_left = 418.0
-offset_top = 327.0
-offset_right = 470.0
-offset_bottom = 363.0
-text = "0.1"
+offset_left = 421.00003
+offset_top = 306.0
+offset_right = 511.00003
+offset_bottom = 409.0
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("38_8xjri")
+texture_pressed = ExtResource("39_0ngkt")
+texture_hover = ExtResource("40_0ilf0")
 
-[node name="NickelButton" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+[node name="NickelButton" type="TextureButton" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
 layout_mode = 0
-offset_left = 549.0
-offset_top = 334.0
-offset_right = 593.0
-offset_bottom = 360.0
-text = "0.05"
+offset_left = 529.0
+offset_top = 310.0
+offset_right = 629.0
+offset_bottom = 408.0
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("41_0c0xj")
+texture_pressed = ExtResource("42_ttx6n")
+texture_hover = ExtResource("43_8xjri")
 
-[node name="PennyButton" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+[node name="PennyButton" type="TextureButton" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
 layout_mode = 0
-offset_left = 651.0
-offset_top = 332.0
-offset_right = 689.0
-offset_bottom = 364.0
-text = "0.01"
+offset_left = 650.0
+offset_top = 313.0
+offset_right = 850.0
+offset_bottom = 513.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("42_k8k7j")
+texture_pressed = ExtResource("43_s7lws")
+texture_hover = ExtResource("44_3kepf")
 
 [node name="CursorManager" type="Control" parent="UI" node_paths=PackedStringArray("camera")]
 layout_mode = 3
