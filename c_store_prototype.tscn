@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=3 uid="uid://pf0ein572cyu"]
+[gd_scene load_steps=120 format=3 uid="uid://pf0ein572cyu"]
 
 [ext_resource type="Script" uid="uid://byt2xuix81f60" path="res://navigation_ui.gd" id="1_uxvq6"]
 [ext_resource type="Script" uid="uid://cqlrtaadyc8ne" path="res://checkout_button.gd" id="2_fknbs"]
@@ -37,7 +37,9 @@
 [ext_resource type="Script" uid="uid://b67l8agwov5im" path="res://pinpad_interaction.gd" id="20_a7w5d"]
 [ext_resource type="Script" uid="uid://dww7pbfaf0fiy" path="res://customer_mood_ui.gd" id="21_bj4mb"]
 [ext_resource type="Texture2D" uid="uid://28kk112mtai2" path="res://money/cash_drawer_low_poly.png" id="22_0k685"]
+[ext_resource type="Texture2D" uid="uid://bujtwni520n7f" path="res://ui/tiled_1 copy.png" id="22_0ngkt"]
 [ext_resource type="Texture2D" uid="uid://bid6cgo3v8x1m" path="res://ui/Smiley_Emotions.png" id="22_fcwjt"]
+[ext_resource type="Texture2D" uid="uid://b2m73klh58din" path="res://ui/wood_grain_1.png" id="23_0ilf0"]
 [ext_resource type="Script" uid="uid://cly4xgh4wn0n8" path="res://day_manager.gd" id="23_1gxxx"]
 [ext_resource type="Script" uid="uid://712omx18uaq4" path="res://sales_result_popup.gd" id="23_gs1vr"]
 [ext_resource type="Texture2D" uid="uid://bigqpp5wb55ko" path="res://money/paper/lowpoly/Obverse_of_the_series_2017A_$20_Federal_Reserve_Note_lowpoly.png" id="23_tb3v7"]
@@ -796,6 +798,11 @@ text = "RESULT"
 [node name="DrawerVisualArea" type="Control" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
+[node name="Floor" type="Sprite2D" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+position = Vector2(572, 672)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("22_0ngkt")
+
 [node name="ColorRect" type="ColorRect" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
 layout_mode = 1
 anchors_preset = 15
@@ -803,10 +810,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -80.0
 offset_right = 1109.0
-offset_bottom = 569.0
+offset_bottom = 62.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.1148968, 0.11489681, 0.1148968, 1)
+
+[node name="Countertop" type="Sprite2D" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+position = Vector2(591.475, -10.300001)
+scale = Vector2(2.618736, 1.1482142)
+texture = ExtResource("23_0ilf0")
 
 [node name="DrawerBackground" type="TextureRect" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
 layout_mode = 0
@@ -845,7 +857,12 @@ text = "SUBMIT"
 layout_mode = 2
 text = "CANCEL"
 
-[node name="Bill20Button" type="TextureButton" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+[node name="CashButtons" type="Control" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Bill20Button" type="TextureButton" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/CashButtons"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 0
 offset_left = 415.0
@@ -858,7 +875,7 @@ texture_normal = ExtResource("23_tb3v7")
 texture_pressed = ExtResource("24_b4sio")
 texture_hover = ExtResource("25_3q5fw")
 
-[node name="Bill10Button" type="TextureButton" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+[node name="Bill10Button" type="TextureButton" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/CashButtons"]
 layout_mode = 0
 offset_left = 563.0
 offset_top = -9.0
@@ -870,7 +887,7 @@ texture_normal = ExtResource("26_3q5fw")
 texture_pressed = ExtResource("27_xrftl")
 texture_hover = ExtResource("28_53urf")
 
-[node name="Bill5Button" type="TextureButton" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+[node name="Bill5Button" type="TextureButton" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/CashButtons"]
 layout_mode = 0
 offset_left = 706.0
 offset_top = -9.0
@@ -882,10 +899,10 @@ texture_normal = ExtResource("29_l86gn")
 texture_pressed = ExtResource("30_ldfis")
 texture_hover = ExtResource("31_d5lg4")
 
-[node name="Bill1Button" type="TextureButton" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+[node name="Bill1Button" type="TextureButton" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/CashButtons"]
 layout_mode = 0
 offset_left = 845.0
-offset_top = -1.000001
+offset_top = -1.0
 offset_right = 1095.0
 offset_bottom = 108.0
 rotation = 1.5707964
@@ -894,7 +911,7 @@ texture_normal = ExtResource("32_cebl4")
 texture_pressed = ExtResource("33_yqrkl")
 texture_hover = ExtResource("34_o5xvp")
 
-[node name="QuarterButton" type="TextureButton" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+[node name="QuarterButton" type="TextureButton" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/CashButtons"]
 layout_mode = 0
 offset_left = 292.0
 offset_top = 306.00003
@@ -905,7 +922,7 @@ texture_normal = ExtResource("35_3v02y")
 texture_pressed = ExtResource("36_ttci7")
 texture_hover = ExtResource("37_ttx6n")
 
-[node name="DimeButton" type="TextureButton" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+[node name="DimeButton" type="TextureButton" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/CashButtons"]
 layout_mode = 0
 offset_left = 421.00003
 offset_top = 306.0
@@ -916,7 +933,7 @@ texture_normal = ExtResource("38_8xjri")
 texture_pressed = ExtResource("39_0ngkt")
 texture_hover = ExtResource("40_0ilf0")
 
-[node name="NickelButton" type="TextureButton" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+[node name="NickelButton" type="TextureButton" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/CashButtons"]
 layout_mode = 0
 offset_left = 529.0
 offset_top = 310.0
@@ -927,7 +944,7 @@ texture_normal = ExtResource("41_0c0xj")
 texture_pressed = ExtResource("42_ttx6n")
 texture_hover = ExtResource("43_8xjri")
 
-[node name="PennyButton" type="TextureButton" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+[node name="PennyButton" type="TextureButton" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/CashButtons"]
 layout_mode = 0
 offset_left = 650.0
 offset_top = 313.0
@@ -1178,11 +1195,11 @@ sprite_frames = SubResource("SpriteFrames_ert6a")
 [connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DrawerBackground/HBoxContainer/ClearButton" to="UI/CashDrawerUI" method="_on_clear_button_pressed"]
 [connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DrawerBackground/HBoxContainer/SubmitChangeButton" to="UI/CashDrawerUI" method="_on_submit_change_button_pressed"]
 [connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DrawerBackground/HBoxContainer/CancelButton" to="UI/CashDrawerUI" method="_on_cancel_button_pressed"]
-[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/Bill20Button" to="UI/CashDrawerUI" method="_on_bill_20_button_pressed"]
-[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/Bill10Button" to="UI/CashDrawerUI" method="_on_bill_10_button_pressed"]
-[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/Bill5Button" to="UI/CashDrawerUI" method="_on_bill_5_button_pressed"]
-[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/Bill1Button" to="UI/CashDrawerUI" method="_on_bill_1_button_pressed"]
-[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/QuarterButton" to="UI/CashDrawerUI" method="_on_quarter_button_pressed"]
-[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DimeButton" to="UI/CashDrawerUI" method="_on_dime_button_pressed"]
-[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/NickelButton" to="UI/CashDrawerUI" method="_on_nickel_button_pressed"]
-[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/PennyButton" to="UI/CashDrawerUI" method="_on_penny_button_pressed"]
+[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/CashButtons/Bill20Button" to="UI/CashDrawerUI" method="_on_bill_20_button_pressed"]
+[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/CashButtons/Bill10Button" to="UI/CashDrawerUI" method="_on_bill_10_button_pressed"]
+[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/CashButtons/Bill5Button" to="UI/CashDrawerUI" method="_on_bill_5_button_pressed"]
+[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/CashButtons/Bill1Button" to="UI/CashDrawerUI" method="_on_bill_1_button_pressed"]
+[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/CashButtons/QuarterButton" to="UI/CashDrawerUI" method="_on_quarter_button_pressed"]
+[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/CashButtons/DimeButton" to="UI/CashDrawerUI" method="_on_dime_button_pressed"]
+[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/CashButtons/NickelButton" to="UI/CashDrawerUI" method="_on_nickel_button_pressed"]
+[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/CashButtons/PennyButton" to="UI/CashDrawerUI" method="_on_penny_button_pressed"]

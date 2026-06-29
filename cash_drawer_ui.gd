@@ -3,6 +3,12 @@ extends Control
 signal change_submitted(change_given: float)
 signal drawer_cancelled
 
+@export var drawer_slide_duration: float = 0.18
+@export var drawer_start_offset_y: float = -260.0
+
+@onready var drawer_texture: TextureRect = $PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DrawerBackground
+@onready var cash_buttons_container: Control = $PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/CashButtons
+
 @onready var change_due_label: Label = $PanelContainer/MarginContainer/VBoxContainer/ChangeDueLabel
 @onready var change_given_label: Label = $PanelContainer/MarginContainer/VBoxContainer/ChangeGivenLabel
 @onready var drawer_result_label: Label = $PanelContainer/MarginContainer/VBoxContainer/DrawerResultLabel
@@ -10,8 +16,11 @@ signal drawer_cancelled
 var expected_change: float = 0.0
 var change_given: float = 0.0
 
+var drawer_rest_position: Vector2
+
 
 func _ready() -> void:
+	drawer_rest_position = drawer_texture.position
 	visible = false
 
 
@@ -24,7 +33,29 @@ func open_drawer(amount_due: float) -> void:
 
 	update_change_display()
 
+	# Reset drawer above its resting position every time.
+	drawer_texture.position = drawer_rest_position + Vector2(0.0, drawer_start_offset_y)
+
+	# Hide all clickable cash until the drawer finishes opening.
+	cash_buttons_container.visible = false
+
 	visible = true
+
+	var drawer_tween := create_tween()
+	drawer_tween.set_trans(Tween.TRANS_QUAD)
+	drawer_tween.set_ease(Tween.EASE_OUT)
+
+	drawer_tween.tween_property(
+		drawer_texture,
+		"position",
+		drawer_rest_position,
+		drawer_slide_duration
+	)
+
+	await drawer_tween.finished
+
+	# Drawer is fully open; now reveal the bills and coins.
+	cash_buttons_container.visible = true
 
 
 func add_money(amount: float) -> void:
@@ -41,6 +72,7 @@ func clear_change() -> void:
 func submit_change() -> void:
 	if is_equal_approx(change_given, expected_change):
 		change_submitted.emit(change_given)
+		reset_drawer_visuals()
 		visible = false
 	else:
 		drawer_result_label.text = "WRONG CHANGE"
@@ -49,6 +81,7 @@ func submit_change() -> void:
 
 func cancel_drawer() -> void:
 	drawer_cancelled.emit()
+	reset_drawer_visuals()
 	visible = false
 
 
@@ -121,3 +154,8 @@ func add_cash_sound(sound_type: String) -> void:
 			AudioManager.play_coin_dime_sound()
 		"quarter":
 			AudioManager.play_coin_quarter_sound()
+
+
+func reset_drawer_visuals() -> void:
+	cash_buttons_container.visible = false
+	drawer_texture.position = drawer_rest_position + Vector2(0.0, drawer_start_offset_y)
