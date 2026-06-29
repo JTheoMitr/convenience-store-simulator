@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://pf0ein572cyu"]
+[gd_scene load_steps=97 format=3 uid="uid://pf0ein572cyu"]
 
 [ext_resource type="Script" uid="uid://byt2xuix81f60" path="res://navigation_ui.gd" id="1_uxvq6"]
 [ext_resource type="Script" uid="uid://cqlrtaadyc8ne" path="res://checkout_button.gd" id="2_fknbs"]
@@ -36,12 +36,15 @@
 [ext_resource type="PackedScene" uid="uid://da846o56kvanr" path="res://items/genshin_energy.tscn" id="20_2cea3"]
 [ext_resource type="Script" uid="uid://b67l8agwov5im" path="res://pinpad_interaction.gd" id="20_a7w5d"]
 [ext_resource type="Script" uid="uid://dww7pbfaf0fiy" path="res://customer_mood_ui.gd" id="21_bj4mb"]
+[ext_resource type="Texture2D" uid="uid://28kk112mtai2" path="res://money/cash_drawer_low_poly.png" id="22_0k685"]
 [ext_resource type="Texture2D" uid="uid://bid6cgo3v8x1m" path="res://ui/Smiley_Emotions.png" id="22_fcwjt"]
 [ext_resource type="Script" uid="uid://cly4xgh4wn0n8" path="res://day_manager.gd" id="23_1gxxx"]
 [ext_resource type="Script" uid="uid://712omx18uaq4" path="res://sales_result_popup.gd" id="23_gs1vr"]
+[ext_resource type="Texture2D" uid="uid://bigqpp5wb55ko" path="res://money/paper/lowpoly/Obverse_of_the_series_2017A_$20_Federal_Reserve_Note_lowpoly.png" id="23_tb3v7"]
+[ext_resource type="Texture2D" uid="uid://b1fk1udmqexdm" path="res://money/paper/lowpoly/Obverse_of_the_series_2017A_$20_Federal_Reserve_Note_lowpoly_clicked.png" id="24_b4sio"]
 [ext_resource type="Texture2D" uid="uid://cofvqi052e116" path="res://npc_sprites/npc (2).png" id="24_snmny"]
+[ext_resource type="Texture2D" uid="uid://cwsobwdj6e7od" path="res://money/paper/lowpoly/Obverse_of_the_series_2017A_$20_Federal_Reserve_Note_lowpoly_hover.png" id="25_3q5fw"]
 [ext_resource type="Script" uid="uid://fcrm838j8d7y" path="res://cash_drawer_ui.gd" id="25_hacdq"]
-[ext_resource type="Texture2D" uid="uid://b0jpv2rb0o7pe" path="res://money/cash_drawer.png" id="26_d56kj"]
 [ext_resource type="Texture2D" uid="uid://blvih2hw1x1y3" path="res://store_utilities/pinpad_ui_stand_in.png" id="29_mgsg2"]
 [ext_resource type="Texture2D" uid="uid://dj5do3c03bugt" path="res://store_utilities/scanner_arrow_1.png" id="30_r3oaa"]
 [ext_resource type="Texture2D" uid="uid://b5jdxf0kymn7c" path="res://store_utilities/scanner_arrow_2.png" id="31_ekuo6"]
@@ -791,7 +794,7 @@ offset_top = -79.0
 offset_right = 1108.0
 offset_bottom = 651.0
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("26_d56kj")
+texture = ExtResource("22_0k685")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DrawerBackground"]
 layout_mode = 1
@@ -821,14 +824,18 @@ text = "SUBMIT"
 layout_mode = 2
 text = "CANCEL"
 
-[node name="Bill20Button" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+[node name="Bill20Button" type="TextureButton" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 0
-offset_left = 295.0
-offset_top = 222.0
-offset_right = 400.0
-offset_bottom = 246.0
-text = "20"
+offset_left = 415.0
+offset_top = -14.0
+offset_right = 640.0
+offset_bottom = 82.0
+rotation = 1.5707964
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("23_tb3v7")
+texture_pressed = ExtResource("24_b4sio")
+texture_hover = ExtResource("25_3q5fw")
 
 [node name="Bill10Button" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
 layout_mode = 0
