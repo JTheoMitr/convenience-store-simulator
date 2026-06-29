@@ -156,7 +156,7 @@ func get_hovered_clickable_control() -> Control:
 	var control := get_viewport().gui_get_hovered_control() as Control
 
 	while control != null:
-		if control is Button or control.is_in_group("clickable_ui"):
+		if control is BaseButton or control.is_in_group("clickable_ui"):
 			return control
 
 		control = control.get_parent() as Control

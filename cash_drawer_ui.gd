@@ -57,34 +57,42 @@ func update_change_display() -> void:
 
 func _on_bill_20_button_pressed() -> void:
 	add_money(20.0)
+	add_cash_sound("bill")
 
 
 func _on_bill_10_button_pressed() -> void:
 	add_money(10.0)
+	add_cash_sound("bill")
 
 
 func _on_bill_5_button_pressed() -> void:
 	add_money(5.0)
+	add_cash_sound("bill")
 
 
 func _on_bill_1_button_pressed() -> void:
 	add_money(1.0)
+	add_cash_sound("bill")
 
 
 func _on_quarter_button_pressed() -> void:
 	add_money(0.25)
+	add_cash_sound("quarter")
 
 
 func _on_dime_button_pressed() -> void:
 	add_money(0.10)
+	add_cash_sound("dime")
 	
 
 func _on_nickel_button_pressed() -> void:
 	add_money(0.05)
+	add_cash_sound("nickel")
 
 
 func _on_penny_button_pressed() -> void:
 	add_money(0.01)
+	add_cash_sound("penny")
 
 
 func _on_clear_button_pressed() -> void:
@@ -97,3 +105,19 @@ func _on_submit_change_button_pressed() -> void:
 
 func _on_cancel_button_pressed() -> void:
 	cancel_drawer()
+	
+	
+func add_cash_sound(sound_type: String) -> void:
+	#add_money(amount)
+
+	match sound_type:
+		"bill":
+			AudioManager.play_paper_money_sound()
+		"penny":
+			AudioManager.play_coin_penny_sound()
+		"nickel":
+			AudioManager.play_coin_nickel_sound()
+		"dime":
+			AudioManager.play_coin_dime_sound()
+		"quarter":
+			AudioManager.play_coin_quarter_sound()

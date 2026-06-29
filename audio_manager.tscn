@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://x7wfr4ohmro2"]
+[gd_scene load_steps=11 format=3 uid="uid://x7wfr4ohmro2"]
 
 [ext_resource type="Script" uid="uid://8bm6l83lcasg" path="res://audio_manager.gd" id="1_jisk1"]
 [ext_resource type="AudioStream" uid="uid://c5860rtivoeat" path="res://sfx/button_clicks/MECHClik_UI Button Click Nailclipper Snip Short Bright 03_ESM_ASMR.wav" id="2_l55mp"]
@@ -7,7 +7,9 @@
 [ext_resource type="AudioStream" uid="uid://1gphrbg87cl" path="res://sfx/bottle/GAP Percussion_Cola Bottle.wav" id="5_v0gdi"]
 [ext_resource type="AudioStream" uid="uid://b7pgsp0mss5h3" path="res://sfx/plastic_bag/CLOTHMvmt_Cloth Fabric Canvas Bag Handling Plastic Items 01_ESM_ASMR.wav" id="6_op7ad"]
 [ext_resource type="AudioStream" uid="uid://d204exwpwucra" path="res://sfx/cash_register/DRWRMetl_Effect Money Register Mechanical Ring Crisp Ding 03_ESM_VCS.wav" id="7_v0gdi"]
+[ext_resource type="AudioStream" uid="uid://djiamt0xs38jq" path="res://sfx/cash_register/paper_pull.wav" id="8_op7ad"]
 [ext_resource type="AudioStream" uid="uid://d1qucb4exq6h7" path="res://sfx/plastic_bag/plastic_bag_chips_rustle.mp3" id="9_7fh0q"]
+[ext_resource type="AudioStream" uid="uid://dsw5l45roobuy" path="res://sfx/cash_register/ESHP_Foley_Coin_01.wav" id="10_wby2p"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_jisk1")
@@ -18,6 +20,11 @@ pinpad_sound = ExtResource("4_v0gdi")
 bottle_grab_sound = ExtResource("5_v0gdi")
 chips_grab_sound = ExtResource("9_7fh0q")
 register_checkout_sound = ExtResource("7_v0gdi")
+paper_money_sound = ExtResource("8_op7ad")
+coin_quarter_sound = ExtResource("10_wby2p")
+coin_dime_sound = ExtResource("10_wby2p")
+coin_nickel_sound = ExtResource("10_wby2p")
+coin_penny_sound = ExtResource("10_wby2p")
 
 [node name="UIButtonPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_l55mp")
@@ -53,3 +60,21 @@ volume_db = -10.0
 
 [node name="ChipsGrab" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_7fh0q")
+
+[node name="PaperMoneyPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_op7ad")
+
+[node name="CoinQuarterPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_wby2p")
+
+[node name="CoinDimePlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_wby2p")
+pitch_scale = 1.1
+
+[node name="CoinNickelPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_wby2p")
+pitch_scale = 1.05
+
+[node name="CoinPennyPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_wby2p")
+pitch_scale = 1.15

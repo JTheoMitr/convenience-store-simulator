@@ -9,4 +9,5 @@ func _ready() -> void:
 
 func _on_pressed() -> void:
 	if order_manager != null:
+		AudioManager.play_register_checkout_sound()
 		order_manager.open_cash_drawer()
