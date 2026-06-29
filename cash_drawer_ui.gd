@@ -9,9 +9,9 @@ signal drawer_cancelled
 @onready var drawer_texture: TextureRect = $PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DrawerBackground
 @onready var cash_buttons_container: Control = $PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/CashButtons
 
-@onready var change_due_label: Label = $PanelContainer/MarginContainer/VBoxContainer/ChangeDueLabel
-@onready var change_given_label: Label = $PanelContainer/MarginContainer/VBoxContainer/ChangeGivenLabel
-@onready var drawer_result_label: Label = $PanelContainer/MarginContainer/VBoxContainer/DrawerResultLabel
+@onready var change_due_label: Label = $PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/ChangeDueLabel
+@onready var change_given_label: Label = $PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/ChangeGivenLabel
+@onready var drawer_result_label: Label = $PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DrawerResultLabel
 
 var expected_change: float = 0.0
 var change_given: float = 0.0

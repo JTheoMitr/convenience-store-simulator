@@ -17,6 +17,7 @@ extends Node
 
 @export var register_monitor: Control
 @export var pinpad_ui: Control
+@export var customer_mood_ui: Control
 
 var current_station: String = "counter"
 var is_moving: bool = false
@@ -100,6 +101,9 @@ func update_ui_for_station(station_name: String) -> void:
 	#register_monitor.visible = station_name == "register" or station_name == "pinpad"
 	if pinpad_placeholder != null:
 		pinpad_placeholder.visible = station_name != "pinpad"
+		
+	if customer_mood_ui != null:
+		customer_mood_ui.visible = station_name == "counter"
 func _on_camera_move_finished(station_name: String) -> void:
 	var rot := camera.global_rotation_degrees
 	rot.y = wrapf(rot.y, -180.0, 180.0)
@@ -115,6 +119,7 @@ func hide_station_ui() -> void:
 	customer_dialogue_panel.visible = false
 	register_ui.visible = false
 	wall_item_ui.visible = false
+	customer_mood_ui.visible = false
 
 	if pinpad_ui != null:
 		pinpad_ui.visible = false

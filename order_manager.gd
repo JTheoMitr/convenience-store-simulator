@@ -61,7 +61,7 @@ func set_current_order(order: Dictionary) -> void:
 	cash_change_confirmed = is_card_payment()
 	
 	if make_change_button != null:
-		make_change_button.text = "MAKE CHANGE"
+		make_change_button.text = "Open Drawer"
 	
 	update_selected_items_label()
 	update_register_labels()

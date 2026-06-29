@@ -1,4 +1,4 @@
-[gd_scene load_steps=120 format=3 uid="uid://pf0ein572cyu"]
+[gd_scene load_steps=124 format=3 uid="uid://pf0ein572cyu"]
 
 [ext_resource type="Script" uid="uid://byt2xuix81f60" path="res://navigation_ui.gd" id="1_uxvq6"]
 [ext_resource type="Script" uid="uid://cqlrtaadyc8ne" path="res://checkout_button.gd" id="2_fknbs"]
@@ -18,8 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://sc87jmlpko3u" path="res://wall_cards/scratcher_mega_money.tscn" id="6_a7w5d"]
 [ext_resource type="PackedScene" uid="uid://v6wnbshdrivi" path="res://wall_cards/cigs_chapmans.tscn" id="6_dr5hb"]
 [ext_resource type="Texture2D" uid="uid://tmojiea5sxtf" path="res://cursor_sprites/hands_array_resized.png" id="6_hckn7"]
+[ext_resource type="FontFile" uid="uid://tijwnd21pkqd" path="res://fonts/MaskedMarvel-loW5.ttf" id="7_0ngkt"]
 [ext_resource type="PackedScene" uid="uid://d4ersnccn3skj" path="res://wall_cards/cigs_manchesters.tscn" id="7_ldu4o"]
-[ext_resource type="FontFile" uid="uid://rbddi6ta856m" path="res://fonts/SDGlitch_Demo.ttf" id="7_oyyba"]
 [ext_resource type="Script" uid="uid://tkiptl2nwe77" path="res://make_change_button.gd" id="8_qd1hi"]
 [ext_resource type="Texture2D" uid="uid://dnv77q35mp2cd" path="res://npc_sprites/construction_dude_1.png" id="8_yip5n"]
 [ext_resource type="Texture2D" uid="uid://dgtgdrxt5nrgi" path="res://npc_sprites/biker_dude_1.png" id="9_6ggm5"]
@@ -144,6 +144,35 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ngkt"]
+bg_color = Color(0.19607843, 0.19607843, 0.19607843, 0.6156863)
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ilf0"]
+bg_color = Color(0.83638793, 0.6858044, 0.14829063, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9122889, 0.9122889, 0.9122887, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0c0xj"]
+bg_color = Color(0.30882472, 0.5281839, 0.16930604, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7ea5"]
 bg_color = Color(0.09803922, 0.09411765, 0.09019608, 0.5647059)
 
@@ -242,6 +271,8 @@ corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k8k7j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ykfa"]
 atlas = ExtResource("6_hckn7")
@@ -435,8 +466,12 @@ day_manager = NodePath("../../Managers/DayManager")
 [node name="PanelContainer" type="PanelContainer" parent="UI/ShiftClockUI"]
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 1
-offset_right = 144.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -180.0
 offset_bottom = 38.0
+grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_d77sd")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/ShiftClockUI/PanelContainer"]
@@ -464,9 +499,13 @@ day_manager = NodePath("../../Managers/DayManager")
 [node name="PanelContainer" type="PanelContainer" parent="UI/DailySalesUI"]
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -180.0
 offset_top = 40.0
-offset_right = 144.0
 offset_bottom = 78.0
+grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_edbqs")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/DailySalesUI/PanelContainer"]
@@ -482,14 +521,17 @@ horizontal_alignment = 1
 
 [node name="NavigationUI" type="Control" parent="UI" node_paths=PackedStringArray("station_manager")]
 layout_mode = 3
-anchors_preset = 1
+anchors_preset = 3
 anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
-offset_left = -192.0
-offset_top = 10.0
-offset_right = -192.0
-offset_bottom = 10.0
+anchor_bottom = 1.0
+offset_left = -202.0
+offset_top = -138.0
+offset_right = -202.0
+offset_bottom = -138.0
 grow_horizontal = 0
+grow_vertical = 0
 scale = Vector2(1.3, 1.3)
 mouse_filter = 2
 script = ExtResource("1_uxvq6")
@@ -571,31 +613,34 @@ theme_override_constants/margin_right = 10
 [node name="DialogueLabel" type="Label" parent="UI/CustomerDialoguePanel/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("7_oyyba")
+theme_override_fonts/font = ExtResource("7_0ngkt")
 theme_override_font_sizes/font_size = 29
 text = "Customer View"
 horizontal_alignment = 1
 
 [node name="RegisterUI" type="PanelContainer" parent="UI"]
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -163.0
-offset_top = -174.0
-grow_horizontal = 0
+offset_left = 6.0
+offset_top = -140.0
+offset_right = 175.0
+offset_bottom = -6.0
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ngkt")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/RegisterUI"]
 layout_mode = 2
 
 [node name="RegisterLabel" type="Label" parent="UI/RegisterUI/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Register"
 
 [node name="CurrentTotalLabel" type="Label" parent="UI/RegisterUI/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_7hopq")
+theme_override_font_sizes/font_size = 23
 text = "Total: $0.00"
 
 [node name="MoneyGivenLabel" type="Label" parent="UI/RegisterUI/VBoxContainer"]
@@ -610,26 +655,39 @@ placeholder_text = "Enter Change"
 
 [node name="MakeChangeButton" type="Button" parent="UI/RegisterUI/VBoxContainer" node_paths=PackedStringArray("order_manager")]
 layout_mode = 2
-text = "Make Change"
+theme_override_colors/font_color = Color(0.12591112, 0.12591073, 0.12591082, 1)
+theme_override_fonts/font = ExtResource("5_7hopq")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ilf0")
+text = "Open Drawer"
 script = ExtResource("8_qd1hi")
 order_manager = NodePath("../../../../Managers/OrderManager")
 
 [node name="CheckoutButton" type="Button" parent="UI/RegisterUI/VBoxContainer" node_paths=PackedStringArray("order_manager")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_7hopq")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_0c0xj")
 text = "Checkout"
 script = ExtResource("2_fknbs")
 order_manager = NodePath("../../../../Managers/OrderManager")
 
 [node name="ResultLabel" type="Label" parent="UI/RegisterUI/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Result"
 
 [node name="PaymentLabel" type="Label" parent="UI/RegisterUI/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("17_aic0c")
+theme_override_font_sizes/font_size = 19
 text = "CASH PAID: $20.00"
 
 [node name="ChangeDueLabel" type="Label" parent="UI/RegisterUI/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.94509804, 0.88235295, 0.26666668, 1)
+theme_override_fonts/font = ExtResource("17_aic0c")
+theme_override_font_sizes/font_size = 21
 text = "CHANGE DUE: $6.50"
 
 [node name="WallItemUI" type="PanelContainer" parent="UI"]
@@ -712,11 +770,14 @@ order_manager = NodePath("../../../../Managers/OrderManager")
 
 [node name="CustomerMoodUI" type="Control" parent="UI" node_paths=PackedStringArray("customer_manager")]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 50.0
-offset_top = 100.0
-offset_right = 90.0
-offset_bottom = 140.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -51.0
+offset_top = 35.0
+offset_right = -11.0
+offset_bottom = 75.0
+grow_horizontal = 2
 scale = Vector2(1.3, 1.3)
 mouse_filter = 2
 script = ExtResource("21_bj4mb")
@@ -773,6 +834,7 @@ script = ExtResource("25_hacdq")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_k8k7j")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/CashDrawerUI/PanelContainer"]
 layout_mode = 2
@@ -780,45 +842,64 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/CashDrawerUI/PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="ChangeDueLabel" type="Label" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer"]
-z_index = 1
-layout_mode = 2
-text = "Change due: 6.50"
-
-[node name="ChangeGivenLabel" type="Label" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer"]
-z_index = 1
-layout_mode = 2
-text = "Change Given:"
-
-[node name="DrawerResultLabel" type="Label" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer"]
-z_index = 1
-layout_mode = 2
-text = "RESULT"
-
 [node name="DrawerVisualArea" type="Control" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="ChangeDueLabel" type="Label" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+z_index = 1
+layout_mode = 0
+offset_left = 45.0
+offset_top = 560.0
+offset_right = 212.0
+offset_bottom = 583.0
+theme_override_colors/font_color = Color(1, 1, 0.14117648, 1)
+theme_override_fonts/font = ExtResource("17_aic0c")
+theme_override_font_sizes/font_size = 26
+text = "Change due: 6.50"
+
+[node name="ChangeGivenLabel" type="Label" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+z_index = 1
+layout_mode = 0
+offset_left = 30.0
+offset_top = 600.0
+offset_right = 162.0
+offset_bottom = 623.0
+theme_override_fonts/font = ExtResource("17_aic0c")
+theme_override_font_sizes/font_size = 22
+text = "Change Given:"
+
+[node name="DrawerResultLabel" type="Label" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 30.0
+offset_top = 590.0
+offset_right = 162.0
+offset_bottom = 613.0
+text = "RESULT"
 
 [node name="Floor" type="Sprite2D" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
 position = Vector2(572, 672)
 scale = Vector2(1.1, 1.1)
 texture = ExtResource("22_0ngkt")
 
+[node name="Countertop" type="Sprite2D" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+position = Vector2(591.475, -10.300001)
+scale = Vector2(2.618736, 1.1482142)
+texture = ExtResource("23_0ilf0")
+
 [node name="ColorRect" type="ColorRect" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -80.0
-offset_right = 1109.0
-offset_bottom = 62.0
+offset_left = 18.0
+offset_top = 543.0
+offset_right = 201.0
+offset_bottom = 642.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.1148968, 0.11489681, 0.1148968, 1)
-
-[node name="Countertop" type="Sprite2D" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
-position = Vector2(591.475, -10.300001)
-scale = Vector2(2.618736, 1.1482142)
-texture = ExtResource("23_0ilf0")
 
 [node name="DrawerBackground" type="TextureRect" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
 layout_mode = 0
@@ -1015,7 +1096,7 @@ layout_mode = 2
 
 [node name="Managers" type="Node" parent="."]
 
-[node name="StationManager" type="Node" parent="Managers" node_paths=PackedStringArray("camera", "navigation_ui", "counter_marker", "register_marker", "wall_marker", "pinpad_marker", "pinpad_placeholder", "customer_dialogue_panel", "register_ui", "wall_item_ui", "register_monitor", "pinpad_ui")]
+[node name="StationManager" type="Node" parent="Managers" node_paths=PackedStringArray("camera", "navigation_ui", "counter_marker", "register_marker", "wall_marker", "pinpad_marker", "pinpad_placeholder", "customer_dialogue_panel", "register_ui", "wall_item_ui", "register_monitor", "pinpad_ui", "customer_mood_ui")]
 script = ExtResource("2_p7mdc")
 camera = NodePath("../../Camera3D")
 navigation_ui = NodePath("../../UI/NavigationUI")
@@ -1029,6 +1110,7 @@ register_ui = NodePath("../../UI/RegisterUI")
 wall_item_ui = NodePath("../../UI/WallItemUI")
 register_monitor = NodePath("../../StoreBlockout/RegisterScreen3D/ScreenMesh/RegisterMonitorViewport/RegisterMonitor")
 pinpad_ui = NodePath("../../UI/PinpadUI")
+customer_mood_ui = NodePath("../../UI/CustomerMoodUI")
 
 [node name="CustomerManager" type="Node" parent="Managers" node_paths=PackedStringArray("dialogue_label", "order_manager", "customers_parent", "customer_spot", "counter_items_parent", "spawn_point_1", "spawn_point_2", "spawn_point_3", "camera", "station_manager", "counter_drag_bounds", "computer_drag_blocker")]
 script = ExtResource("3_ktsie")
