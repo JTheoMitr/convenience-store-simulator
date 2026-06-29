@@ -14,6 +14,11 @@ extends Node
 @export var payment_label: Label
 @export var change_due_label: Label
 
+@export var cash_drawer_ui: Control
+@export var make_change_button: Button
+
+var cash_change_confirmed: bool = false
+
 var current_order: Dictionary = {}
 var selected_wall_items: Dictionary = {}
 var selected_scanned_items: Dictionary = {}
@@ -53,10 +58,16 @@ func set_current_order(order: Dictionary) -> void:
 	selected_scanned_items.clear()
 	gas_amount = 0.0
 	
+	cash_change_confirmed = is_card_payment()
+	
+	if make_change_button != null:
+		make_change_button.text = "MAKE CHANGE"
+	
 	update_selected_items_label()
 	update_register_labels()
 	result_label.text = ""
 	change_input.text = ""
+	
 	
 	
 
@@ -122,7 +133,7 @@ func checkout() -> void:
 #
 	#var change_correct := is_equal_approx(player_change, expected_change)
 
-	if items_correct and gas_correct: # and change_correct:
+	if items_correct and gas_correct and cash_change_confirmed: # and change_correct:
 		var completed_sale_total: float = calculate_total(get_selected_all_items()) + gas_amount
 
 		if day_manager != null:
@@ -164,7 +175,9 @@ func checkout() -> void:
 
 		#if !change_correct:
 			#result_label.text += "\nExpected change: $%.2f" % expected_change
-
+	elif !cash_change_confirmed:
+		result_label.text = "Make the customer's change first."
+		return
 	#else:
 		#result_label.text = "Wrong change!\nExpected: $%.2f\nYou entered: $%.2f" % [
 			#expected_change,
@@ -369,6 +382,10 @@ func is_card_payment() -> bool:
 func update_payment_details() -> void:
 	if payment_label == null or change_due_label == null:
 		return
+		
+	if make_change_button != null:
+		make_change_button.visible = !is_card_payment()
+		make_change_button.disabled = is_card_payment()
 
 	if is_card_payment():
 		payment_label.text = "PAID BY CARD"
@@ -377,3 +394,31 @@ func update_payment_details() -> void:
 		payment_label.text = "CASH PAID: $%.2f" % get_money_given()
 		change_due_label.text = "CHANGE DUE: $%.2f" % maxf(get_expected_change(), 0.0)
 		change_due_label.visible = true
+
+
+func open_cash_drawer() -> void:
+	if current_order.is_empty():
+		return
+
+	if is_card_payment():
+		return
+
+	if cash_drawer_ui != null:
+		cash_drawer_ui.open_drawer(get_expected_change())
+		
+		
+func confirm_cash_change(change_given: float) -> void:
+	if is_equal_approx(change_given, get_expected_change()):
+		cash_change_confirmed = true
+		result_label.text = "Change ready."
+
+		if make_change_button != null:
+			make_change_button.disabled = true
+			make_change_button.text = "CHANGE READY"
+	else:
+		cash_change_confirmed = false
+		
+		
+func _ready() -> void:
+	if cash_drawer_ui != null and cash_drawer_ui.has_signal("change_submitted"):
+		cash_drawer_ui.change_submitted.connect(confirm_cash_change)

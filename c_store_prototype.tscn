@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://pf0ein572cyu"]
+[gd_scene load_steps=94 format=3 uid="uid://pf0ein572cyu"]
 
 [ext_resource type="Script" uid="uid://byt2xuix81f60" path="res://navigation_ui.gd" id="1_uxvq6"]
 [ext_resource type="Script" uid="uid://cqlrtaadyc8ne" path="res://checkout_button.gd" id="2_fknbs"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://tmojiea5sxtf" path="res://cursor_sprites/hands_array_resized.png" id="6_hckn7"]
 [ext_resource type="PackedScene" uid="uid://d4ersnccn3skj" path="res://wall_cards/cigs_manchesters.tscn" id="7_ldu4o"]
 [ext_resource type="FontFile" uid="uid://rbddi6ta856m" path="res://fonts/SDGlitch_Demo.ttf" id="7_oyyba"]
+[ext_resource type="Script" uid="uid://tkiptl2nwe77" path="res://make_change_button.gd" id="8_qd1hi"]
 [ext_resource type="Texture2D" uid="uid://dnv77q35mp2cd" path="res://npc_sprites/construction_dude_1.png" id="8_yip5n"]
 [ext_resource type="Texture2D" uid="uid://dgtgdrxt5nrgi" path="res://npc_sprites/biker_dude_1.png" id="9_6ggm5"]
 [ext_resource type="PackedScene" uid="uid://dj2ow2q87817b" path="res://wall_cards/scratcher_cash_fever.tscn" id="9_f4fab"]
@@ -39,6 +40,8 @@
 [ext_resource type="Script" uid="uid://cly4xgh4wn0n8" path="res://day_manager.gd" id="23_1gxxx"]
 [ext_resource type="Script" uid="uid://712omx18uaq4" path="res://sales_result_popup.gd" id="23_gs1vr"]
 [ext_resource type="Texture2D" uid="uid://cofvqi052e116" path="res://npc_sprites/npc (2).png" id="24_snmny"]
+[ext_resource type="Script" uid="uid://fcrm838j8d7y" path="res://cash_drawer_ui.gd" id="25_hacdq"]
+[ext_resource type="Texture2D" uid="uid://b0jpv2rb0o7pe" path="res://money/cash_drawer.png" id="26_d56kj"]
 [ext_resource type="Texture2D" uid="uid://blvih2hw1x1y3" path="res://store_utilities/pinpad_ui_stand_in.png" id="29_mgsg2"]
 [ext_resource type="Texture2D" uid="uid://dj5do3c03bugt" path="res://store_utilities/scanner_arrow_1.png" id="30_r3oaa"]
 [ext_resource type="Texture2D" uid="uid://b5jdxf0kymn7c" path="res://store_utilities/scanner_arrow_2.png" id="31_ekuo6"]
@@ -579,6 +582,12 @@ visible = false
 layout_mode = 2
 placeholder_text = "Enter Change"
 
+[node name="MakeChangeButton" type="Button" parent="UI/RegisterUI/VBoxContainer" node_paths=PackedStringArray("order_manager")]
+layout_mode = 2
+text = "Make Change"
+script = ExtResource("8_qd1hi")
+order_manager = NodePath("../../../../Managers/OrderManager")
+
 [node name="CheckoutButton" type="Button" parent="UI/RegisterUI/VBoxContainer" node_paths=PackedStringArray("order_manager")]
 layout_mode = 2
 text = "Checkout"
@@ -725,6 +734,159 @@ mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_fcwjt")
 show_percentage = false
 
+[node name="CashDrawerUI" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("25_hacdq")
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/CashDrawerUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/CashDrawerUI/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/CashDrawerUI/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ChangeDueLabel" type="Label" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+text = "Change due: 6.50"
+
+[node name="ChangeGivenLabel" type="Label" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+text = "Change Given:"
+
+[node name="DrawerResultLabel" type="Label" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+text = "RESULT"
+
+[node name="DrawerVisualArea" type="Control" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+offset_right = 1109.0
+offset_bottom = 569.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1148968, 0.11489681, 0.1148968, 1)
+
+[node name="DrawerBackground" type="TextureRect" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+layout_mode = 0
+offset_left = 214.0
+offset_top = -79.0
+offset_right = 1108.0
+offset_bottom = 651.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("26_d56kj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DrawerBackground"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -123.0
+offset_top = -10.0
+offset_right = 123.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 26
+alignment = 2
+
+[node name="ClearButton" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DrawerBackground/HBoxContainer"]
+layout_mode = 2
+text = "CLEAR"
+
+[node name="SubmitChangeButton" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DrawerBackground/HBoxContainer"]
+layout_mode = 2
+text = "SUBMIT"
+
+[node name="CancelButton" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DrawerBackground/HBoxContainer"]
+layout_mode = 2
+text = "CANCEL"
+
+[node name="Bill20Button" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 295.0
+offset_top = 222.0
+offset_right = 400.0
+offset_bottom = 246.0
+text = "20"
+
+[node name="Bill10Button" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 226.0
+offset_right = 562.0
+offset_bottom = 247.0
+text = "10"
+
+[node name="Bill5Button" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+layout_mode = 0
+offset_left = 593.0
+offset_top = 227.0
+offset_right = 700.0
+offset_bottom = 251.0
+text = "5
+"
+
+[node name="Bill1Button" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+layout_mode = 0
+offset_left = 737.0
+offset_top = 226.0
+offset_right = 844.0
+offset_bottom = 257.0
+text = "1"
+
+[node name="QuarterButton" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 316.0
+offset_right = 360.0
+offset_bottom = 360.0
+text = "0.25"
+
+[node name="DimeButton" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 327.0
+offset_right = 470.0
+offset_bottom = 363.0
+text = "0.1"
+
+[node name="NickelButton" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+layout_mode = 0
+offset_left = 549.0
+offset_top = 334.0
+offset_right = 593.0
+offset_bottom = 360.0
+text = "0.05"
+
+[node name="PennyButton" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+layout_mode = 0
+offset_left = 651.0
+offset_top = 332.0
+offset_right = 689.0
+offset_bottom = 364.0
+text = "0.01"
+
 [node name="CursorManager" type="Control" parent="UI" node_paths=PackedStringArray("camera")]
 layout_mode = 3
 anchors_preset = 0
@@ -819,7 +981,7 @@ station_manager = NodePath("../StationManager")
 counter_drag_bounds = NodePath("../../StoreBlockout/CounterDragBounds")
 computer_drag_blocker = NodePath("../../StoreBlockout/ComputerDragBlocker")
 
-[node name="OrderManager" type="Node" parent="Managers" node_paths=PackedStringArray("selected_items_label", "result_label", "customer_manager", "current_total_label", "money_given_label", "change_input", "day_manager", "sale_result_popup", "register_monitor", "payment_label", "change_due_label")]
+[node name="OrderManager" type="Node" parent="Managers" node_paths=PackedStringArray("selected_items_label", "result_label", "customer_manager", "current_total_label", "money_given_label", "change_input", "day_manager", "sale_result_popup", "register_monitor", "payment_label", "change_due_label", "cash_drawer_ui", "make_change_button")]
 script = ExtResource("4_ka4yf")
 selected_items_label = NodePath("../../UI/WallItemUI/VBoxContainer/SelectedItemsLabel")
 result_label = NodePath("../../UI/RegisterUI/VBoxContainer/ResultLabel")
@@ -832,6 +994,8 @@ sale_result_popup = NodePath("../../UI/SalesResultPopup")
 register_monitor = NodePath("../../StoreBlockout/RegisterScreen3D/ScreenMesh/RegisterMonitorViewport/RegisterMonitor")
 payment_label = NodePath("../../UI/RegisterUI/VBoxContainer/PaymentLabel")
 change_due_label = NodePath("../../UI/RegisterUI/VBoxContainer/ChangeDueLabel")
+cash_drawer_ui = NodePath("../../UI/CashDrawerUI")
+make_change_button = NodePath("../../UI/RegisterUI/VBoxContainer/MakeChangeButton")
 
 [node name="DayManager" type="Node" parent="Managers"]
 script = ExtResource("23_1gxxx")
@@ -959,3 +1123,15 @@ transparent_bg = true
 [node name="ScanArrows" type="AnimatedSprite3D" parent="StoreBlockout"]
 transform = Transform3D(0.00020944478, -0.11999981, -4.433709e-09, -2.795132e-09, -4.438593e-09, 0.12000002, -0.119999826, -0.00020944476, -2.8028748e-09, 1.0769401, 1.4989383, 2.8107123)
 sprite_frames = SubResource("SpriteFrames_ert6a")
+
+[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DrawerBackground/HBoxContainer/ClearButton" to="UI/CashDrawerUI" method="_on_clear_button_pressed"]
+[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DrawerBackground/HBoxContainer/SubmitChangeButton" to="UI/CashDrawerUI" method="_on_submit_change_button_pressed"]
+[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DrawerBackground/HBoxContainer/CancelButton" to="UI/CashDrawerUI" method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/Bill20Button" to="UI/CashDrawerUI" method="_on_bill_20_button_pressed"]
+[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/Bill10Button" to="UI/CashDrawerUI" method="_on_bill_10_button_pressed"]
+[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/Bill5Button" to="UI/CashDrawerUI" method="_on_bill_5_button_pressed"]
+[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/Bill1Button" to="UI/CashDrawerUI" method="_on_bill_1_button_pressed"]
+[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/QuarterButton" to="UI/CashDrawerUI" method="_on_quarter_button_pressed"]
+[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DimeButton" to="UI/CashDrawerUI" method="_on_dime_button_pressed"]
+[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/NickelButton" to="UI/CashDrawerUI" method="_on_nickel_button_pressed"]
+[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/PennyButton" to="UI/CashDrawerUI" method="_on_penny_button_pressed"]
