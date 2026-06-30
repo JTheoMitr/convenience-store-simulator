@@ -1,15 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://x7wfr4ohmro2"]
+[gd_scene load_steps=13 format=3 uid="uid://x7wfr4ohmro2"]
 
 [ext_resource type="Script" uid="uid://8bm6l83lcasg" path="res://audio_manager.gd" id="1_jisk1"]
 [ext_resource type="AudioStream" uid="uid://c5860rtivoeat" path="res://sfx/button_clicks/MECHClik_UI Button Click Nailclipper Snip Short Bright 03_ESM_ASMR.wav" id="2_l55mp"]
 [ext_resource type="AudioStream" uid="uid://bfqnsw6u7xftc" path="res://sfx/beeps/TEST_Effect Video Signal Lost Sine Tone Beep Short 01_ESM_VCS.wav" id="3_l55mp"]
 [ext_resource type="AudioStream" uid="uid://cncntet2bvqqm" path="res://sfx/beeps/UIAlert_Alert Designed Notification Synth Neutral Beep 01_ESM_HALG.wav" id="4_v0gdi"]
 [ext_resource type="AudioStream" uid="uid://1gphrbg87cl" path="res://sfx/bottle/GAP Percussion_Cola Bottle.wav" id="5_v0gdi"]
+[ext_resource type="AudioStream" uid="uid://dwsfcv3ltrvs8" path="res://sfx/buzzers/GAP SFX_Buzzer.wav" id="5_wby2p"]
 [ext_resource type="AudioStream" uid="uid://b7pgsp0mss5h3" path="res://sfx/plastic_bag/CLOTHMvmt_Cloth Fabric Canvas Bag Handling Plastic Items 01_ESM_ASMR.wav" id="6_op7ad"]
 [ext_resource type="AudioStream" uid="uid://d204exwpwucra" path="res://sfx/cash_register/DRWRMetl_Effect Money Register Mechanical Ring Crisp Ding 03_ESM_VCS.wav" id="7_v0gdi"]
 [ext_resource type="AudioStream" uid="uid://djiamt0xs38jq" path="res://sfx/cash_register/paper_pull.wav" id="8_op7ad"]
 [ext_resource type="AudioStream" uid="uid://d1qucb4exq6h7" path="res://sfx/plastic_bag/plastic_bag_chips_rustle.mp3" id="9_7fh0q"]
 [ext_resource type="AudioStream" uid="uid://dsw5l45roobuy" path="res://sfx/cash_register/ESHP_Foley_Coin_01.wav" id="10_wby2p"]
+[ext_resource type="AudioStream" uid="uid://dtogd533rly7d" path="res://sfx/cash_register/cash_drawer_close_001.wav" id="12_14skr"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_jisk1")
@@ -17,6 +19,7 @@ ui_click_sound = ExtResource("2_l55mp")
 ui_select_sound = ExtResource("3_l55mp")
 scan_sound = ExtResource("4_v0gdi")
 pinpad_sound = ExtResource("4_v0gdi")
+error_sound = ExtResource("5_wby2p")
 bottle_grab_sound = ExtResource("5_v0gdi")
 chips_grab_sound = ExtResource("9_7fh0q")
 register_checkout_sound = ExtResource("7_v0gdi")
@@ -25,6 +28,7 @@ coin_quarter_sound = ExtResource("10_wby2p")
 coin_dime_sound = ExtResource("10_wby2p")
 coin_nickel_sound = ExtResource("10_wby2p")
 coin_penny_sound = ExtResource("10_wby2p")
+drawer_close_sound = ExtResource("12_14skr")
 
 [node name="UIButtonPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_l55mp")
@@ -53,6 +57,9 @@ pitch_scale = 1.9
 stream = ExtResource("6_op7ad")
 
 [node name="ErrorPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_wby2p")
+volume_db = -3.0
+pitch_scale = 0.9
 
 [node name="BottleGrab" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_v0gdi")
@@ -78,3 +85,6 @@ pitch_scale = 1.05
 [node name="CoinPennyPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_wby2p")
 pitch_scale = 1.15
+
+[node name="DrawerClosePlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_14skr")

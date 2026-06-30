@@ -200,6 +200,7 @@ func dictionaries_match(expected: Dictionary, actual: Dictionary) -> bool:
 
 func build_wrong_order_message(expected: Dictionary, actual: Dictionary) -> String:
 	var message := "Wrong order!\n"
+	AudioManager.play_error()
 
 	message += "Expected: " + dictionary_to_readable_text(expected) + "\n"
 	message += "You selected: " + dictionary_to_readable_text(actual)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=129 format=3 uid="uid://pf0ein572cyu"]
+[gd_scene load_steps=123 format=3 uid="uid://pf0ein572cyu"]
 
 [ext_resource type="Script" uid="uid://byt2xuix81f60" path="res://navigation_ui.gd" id="1_uxvq6"]
 [ext_resource type="Script" uid="uid://cqlrtaadyc8ne" path="res://checkout_button.gd" id="2_fknbs"]
@@ -176,6 +176,15 @@ corner_radius_bottom_left = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7ea5"]
 bg_color = Color(0.09803922, 0.09411765, 0.09019608, 0.5647059)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.07450981, 0.8, 0.8, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dr5hb"]
 bg_color = Color(0.4207762, 0.19600284, 0.5960653, 0.59607846)
@@ -184,39 +193,10 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.9490196, 0.24313726, 0.93333334, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4fab"]
-bg_color = Color(0.09803922, 0.09411765, 0.09019608, 0.5647059)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjb3v"]
-bg_color = Color(0.41960785, 0.19607843, 0.59607846, 0.59607846)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.9490196, 0.24313726, 0.93333334, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ooxus"]
-bg_color = Color(0.09803922, 0.09411765, 0.09019608, 0.5647059)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldu4o"]
-bg_color = Color(0.09803922, 0.09411765, 0.09019608, 0.5647059)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_snmny"]
-bg_color = Color(0.41960785, 0.19607843, 0.59607846, 0.59607846)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.9490196, 0.24313726, 0.93333334, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cea3"]
-bg_color = Color(0.41960785, 0.19607843, 0.59607846, 0.59607846)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.9490196, 0.24313726, 0.93333334, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qd1hi"]
 atlas = ExtResource("22_fcwjt")
@@ -745,7 +725,6 @@ theme_override_font_sizes/font_size = 21
 text = "CHANGE DUE: $6.50"
 
 [node name="WallItemUI" type="PanelContainer" parent="UI"]
-visible = false
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_left = 175.0
@@ -773,8 +752,8 @@ hover_panel_style = SubResource("StyleBoxFlat_dr5hb")
 [node name="Blues" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" node_paths=PackedStringArray("order_manager") instance=ExtResource("5_xksli")]
 layout_mode = 2
 order_manager = NodePath("../../../../../Managers/OrderManager")
-normal_panel_style = SubResource("StyleBoxFlat_f4fab")
-hover_panel_style = SubResource("StyleBoxFlat_vjb3v")
+normal_panel_style = SubResource("StyleBoxFlat_w7ea5")
+hover_panel_style = SubResource("StyleBoxFlat_dr5hb")
 
 [node name="Chapmans" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" node_paths=PackedStringArray("order_manager") instance=ExtResource("6_dr5hb")]
 layout_mode = 2
@@ -785,39 +764,48 @@ hover_panel_style = SubResource("StyleBoxFlat_dr5hb")
 [node name="Manchesters" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" node_paths=PackedStringArray("order_manager") instance=ExtResource("7_ldu4o")]
 layout_mode = 2
 order_manager = NodePath("../../../../../Managers/OrderManager")
-normal_panel_style = SubResource("StyleBoxFlat_ooxus")
+normal_panel_style = SubResource("StyleBoxFlat_w7ea5")
 hover_panel_style = SubResource("StyleBoxFlat_dr5hb")
 
 [node name="KingDiamond" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" node_paths=PackedStringArray("order_manager") instance=ExtResource("5_uceri")]
 layout_mode = 2
 order_manager = NodePath("../../../../../Managers/OrderManager")
-normal_panel_style = SubResource("StyleBoxFlat_ldu4o")
-hover_panel_style = SubResource("StyleBoxFlat_snmny")
+normal_panel_style = SubResource("StyleBoxFlat_w7ea5")
+hover_panel_style = SubResource("StyleBoxFlat_dr5hb")
 
 [node name="MegaMoney" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" node_paths=PackedStringArray("order_manager") instance=ExtResource("6_a7w5d")]
 layout_mode = 2
 order_manager = NodePath("../../../../../Managers/OrderManager")
-normal_panel_style = SubResource("StyleBoxFlat_ooxus")
-hover_panel_style = SubResource("StyleBoxFlat_2cea3")
+normal_panel_style = SubResource("StyleBoxFlat_w7ea5")
+hover_panel_style = SubResource("StyleBoxFlat_dr5hb")
 
 [node name="CashFever" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" node_paths=PackedStringArray("order_manager") instance=ExtResource("9_f4fab")]
 layout_mode = 2
 order_manager = NodePath("../../../../../Managers/OrderManager")
-normal_panel_style = SubResource("StyleBoxFlat_ooxus")
-hover_panel_style = SubResource("StyleBoxFlat_2cea3")
+normal_panel_style = SubResource("StyleBoxFlat_w7ea5")
+hover_panel_style = SubResource("StyleBoxFlat_dr5hb")
 
 [node name="Jackpot" parent="UI/WallItemUI/VBoxContainer/WallItemGrid" node_paths=PackedStringArray("order_manager") instance=ExtResource("11_snmny")]
 layout_mode = 2
 order_manager = NodePath("../../../../../Managers/OrderManager")
-normal_panel_style = SubResource("StyleBoxFlat_ooxus")
+normal_panel_style = SubResource("StyleBoxFlat_w7ea5")
 hover_panel_style = SubResource("StyleBoxFlat_dr5hb")
 
 [node name="SelectedItemsLabel" type="Label" parent="UI/WallItemUI/VBoxContainer"]
+custom_minimum_size = Vector2(0, 45)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.34509805, 1, 0.3372549, 1)
+theme_override_fonts/font = ExtResource("17_aic0c")
+theme_override_font_sizes/font_size = 23
 text = "Selected: none"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ClearSelectionButton" type="Button" parent="UI/WallItemUI/VBoxContainer" node_paths=PackedStringArray("order_manager")]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.1764706, 0.2509804, 1)
+theme_override_fonts/font = ExtResource("5_7hopq")
+theme_override_font_sizes/font_size = 18
 text = "Clear Selection"
 script = ExtResource("4_ctecg")
 order_manager = NodePath("../../../../Managers/OrderManager")
@@ -876,6 +864,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_fcwjt")
 show_percentage = false
 
 [node name="CashDrawerUI" type="Control" parent="UI"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

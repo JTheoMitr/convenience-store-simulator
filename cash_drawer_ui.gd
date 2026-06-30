@@ -72,12 +72,14 @@ func clear_change() -> void:
 func submit_change() -> void:
 	if is_equal_approx(change_given, expected_change):
 		change_submitted.emit(change_given)
+		AudioManager.play_drawer_close_sound()
 		reset_drawer_visuals()
 		visible = false
 	else:
 		drawer_result_label.text = "WRONG CHANGE"
+		AudioManager.play_error()
 		drawer_result_label.modulate = Color(1.0, 0.3, 0.3, 1.0)
-		await get_tree().create_timer(2.0).timeout
+		await get_tree().create_timer(2.5).timeout
 		drawer_result_label.text = ""
 
 

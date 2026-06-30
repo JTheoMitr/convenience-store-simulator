@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://3q56jmeekxuv" path="res://vomvis_logo/Vomvis_Logo.png" id="1_4pqbn"]
 [ext_resource type="Script" uid="uid://bxlt06krxx4gk" path="res://intro_screen.gd" id="1_6a5pb"]
 [ext_resource type="PackedScene" uid="uid://mjigkhvivkin" path="res://title_screen.tscn" id="2_p3req"]
-[ext_resource type="AudioStream" uid="uid://coxx76nwjrl7p" path="res://music/BR_Intro_Theme_1.mp3" id="3_h5lro"]
+[ext_resource type="AudioStream" uid="uid://cfjjsbvcu8a2e" path="res://music/conv_playlist_1.mp3" id="3_h5lro"]
 [ext_resource type="AudioStream" uid="uid://dyelyrxnl8sa6" path="res://sfx/glitch/electricity_glitch_46.wav" id="5_h5lro"]
 
 [node name="IntroScreen" type="Node" node_paths=PackedStringArray("logo_sprite", "glitch_logo_sprite")]

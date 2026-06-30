@@ -14,6 +14,7 @@ extends Node
 @export var coin_dime_sound: AudioStream
 @export var coin_nickel_sound: AudioStream
 @export var coin_penny_sound: AudioStream
+@export var drawer_close_sound: AudioStream
 
 
 
@@ -32,6 +33,7 @@ extends Node
 @onready var coin_dime_player: AudioStreamPlayer = $CoinDimePlayer
 @onready var coin_nickel_player: AudioStreamPlayer = $CoinNickelPlayer
 @onready var coin_penny_player: AudioStreamPlayer = $CoinPennyPlayer
+@onready var drawer_close_player: AudioStreamPlayer = $DrawerClosePlayer
 
 
 func _ready() -> void:
@@ -45,6 +47,7 @@ func _ready() -> void:
 	paper_money_player.stream = paper_money_sound
 	bottle_grab_player.stream = bottle_grab_sound
 	chips_grab_player.stream = chips_grab_sound
+	drawer_close_player.stream = drawer_close_sound
 	print("AudioManager autoload ready")
 
 func play_ui_click() -> void:
@@ -92,6 +95,9 @@ func play_coin_nickel_sound() -> void:
 	
 func play_coin_penny_sound() -> void:
 	_play_from_start(coin_penny_player)
+	
+func play_drawer_close_sound() -> void:
+	_play_from_start(drawer_close_player)
 
 
 func _play_from_start(player: AudioStreamPlayer) -> void:
