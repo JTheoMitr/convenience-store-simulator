@@ -77,6 +77,8 @@ func submit_change() -> void:
 	else:
 		drawer_result_label.text = "WRONG CHANGE"
 		drawer_result_label.modulate = Color(1.0, 0.3, 0.3, 1.0)
+		await get_tree().create_timer(2.0).timeout
+		drawer_result_label.text = ""
 
 
 func cancel_drawer() -> void:
@@ -86,7 +88,7 @@ func cancel_drawer() -> void:
 
 
 func update_change_display() -> void:
-	change_given_label.text = "CHANGE GIVEN: $%.2f" % change_given
+	change_given_label.text = "Current: $%.2f" % change_given
 
 func _on_bill_20_button_pressed() -> void:
 	add_money(20.0)

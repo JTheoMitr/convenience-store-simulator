@@ -1,4 +1,4 @@
-[gd_scene load_steps=124 format=3 uid="uid://pf0ein572cyu"]
+[gd_scene load_steps=129 format=3 uid="uid://pf0ein572cyu"]
 
 [ext_resource type="Script" uid="uid://byt2xuix81f60" path="res://navigation_ui.gd" id="1_uxvq6"]
 [ext_resource type="Script" uid="uid://cqlrtaadyc8ne" path="res://checkout_button.gd" id="2_fknbs"]
@@ -36,6 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://da846o56kvanr" path="res://items/genshin_energy.tscn" id="20_2cea3"]
 [ext_resource type="Script" uid="uid://b67l8agwov5im" path="res://pinpad_interaction.gd" id="20_a7w5d"]
 [ext_resource type="Script" uid="uid://dww7pbfaf0fiy" path="res://customer_mood_ui.gd" id="21_bj4mb"]
+[ext_resource type="FontFile" uid="uid://rbddi6ta856m" path="res://fonts/SDGlitch_Demo.ttf" id="22_0ilf0"]
 [ext_resource type="Texture2D" uid="uid://28kk112mtai2" path="res://money/cash_drawer_low_poly.png" id="22_0k685"]
 [ext_resource type="Texture2D" uid="uid://bujtwni520n7f" path="res://ui/tiled_1 copy.png" id="22_0ngkt"]
 [ext_resource type="Texture2D" uid="uid://bid6cgo3v8x1m" path="res://ui/Smiley_Emotions.png" id="22_fcwjt"]
@@ -273,6 +274,59 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k8k7j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7lws"]
+bg_color = Color(0.73599684, 0.13179621, 0.20290545, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.03610091, 0.03610091, 0.03610091, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3kepf"]
+bg_color = Color(0.8352941, 0.7647059, 0.15686275, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.04303915, 0.043039165, 0.04303909, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nbsip"]
+bg_color = Color(0.34117648, 0.4862745, 0.68235296, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.11858136, 0.11858142, 0.1185813, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74rpy"]
+bg_color = Color(0.15294118, 0.5294118, 0.34901962, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 2.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ykfa"]
 atlas = ExtResource("6_hckn7")
@@ -858,25 +912,29 @@ theme_override_font_sizes/font_size = 26
 text = "Change due: 6.50"
 
 [node name="ChangeGivenLabel" type="Label" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+self_modulate = Color(0.11372549, 1, 1, 1)
 z_index = 1
 layout_mode = 0
-offset_left = 30.0
+offset_left = 45.0
 offset_top = 600.0
-offset_right = 162.0
+offset_right = 177.0
 offset_bottom = 623.0
 theme_override_fonts/font = ExtResource("17_aic0c")
 theme_override_font_sizes/font_size = 22
-text = "Change Given:"
+text = "Current:"
 
 [node name="DrawerResultLabel" type="Label" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
-visible = false
 z_index = 1
 layout_mode = 0
-offset_left = 30.0
-offset_top = 590.0
-offset_right = 162.0
-offset_bottom = 613.0
+offset_left = 3.0
+offset_top = 525.0
+offset_right = 1153.0
+offset_bottom = 592.0
+theme_override_colors/font_color = Color(0.663325, 0.14323959, 9.62615e-08, 1)
+theme_override_fonts/font = ExtResource("22_0ilf0")
+theme_override_font_sizes/font_size = 58
 text = "RESULT"
+horizontal_alignment = 1
 
 [node name="Floor" type="Sprite2D" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
 position = Vector2(572, 672)
@@ -901,6 +959,28 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.1148968, 0.11489681, 0.1148968, 1)
 
+[node name="CancelButton" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 608.0
+offset_right = 315.0
+offset_bottom = 642.0
+theme_override_colors/font_color = Color(0.072842844, 0.072842546, 0.072842605, 1)
+theme_override_fonts/font = ExtResource("5_7hopq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7lws")
+text = "CANCEL"
+
+[node name="ClearButton" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 568.0
+offset_right = 303.0
+offset_bottom = 602.0
+theme_override_colors/font_color = Color(0.017732391, 0.017732391, 0.01773239, 1)
+theme_override_fonts/font = ExtResource("5_7hopq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3kepf")
+text = "CLEAR"
+
 [node name="DrawerBackground" type="TextureRect" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
 layout_mode = 0
 offset_left = 214.0
@@ -910,7 +990,20 @@ offset_bottom = 651.0
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("22_0k685")
 
+[node name="SubmitChangeButton" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DrawerBackground"]
+layout_mode = 0
+offset_left = 353.75
+offset_top = 691.24994
+offset_right = 546.75
+offset_bottom = 725.24994
+theme_override_fonts/font = ExtResource("5_7hopq")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_nbsip")
+theme_override_styles/hover = SubResource("StyleBoxFlat_74rpy")
+text = "Close Drawer"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DrawerBackground"]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -925,18 +1018,6 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 26
 alignment = 2
-
-[node name="ClearButton" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DrawerBackground/HBoxContainer"]
-layout_mode = 2
-text = "CLEAR"
-
-[node name="SubmitChangeButton" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DrawerBackground/HBoxContainer"]
-layout_mode = 2
-text = "SUBMIT"
-
-[node name="CancelButton" type="Button" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DrawerBackground/HBoxContainer"]
-layout_mode = 2
-text = "CANCEL"
 
 [node name="CashButtons" type="Control" parent="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea"]
 anchors_preset = 0
@@ -1274,9 +1355,9 @@ transparent_bg = true
 transform = Transform3D(0.00020944478, -0.11999981, -4.433709e-09, -2.795132e-09, -4.438593e-09, 0.12000002, -0.119999826, -0.00020944476, -2.8028748e-09, 1.0769401, 1.4989383, 2.8107123)
 sprite_frames = SubResource("SpriteFrames_ert6a")
 
-[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DrawerBackground/HBoxContainer/ClearButton" to="UI/CashDrawerUI" method="_on_clear_button_pressed"]
-[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DrawerBackground/HBoxContainer/SubmitChangeButton" to="UI/CashDrawerUI" method="_on_submit_change_button_pressed"]
-[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DrawerBackground/HBoxContainer/CancelButton" to="UI/CashDrawerUI" method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/CancelButton" to="UI/CashDrawerUI" method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/ClearButton" to="UI/CashDrawerUI" method="_on_clear_button_pressed"]
+[connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/DrawerBackground/SubmitChangeButton" to="UI/CashDrawerUI" method="_on_submit_change_button_pressed"]
 [connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/CashButtons/Bill20Button" to="UI/CashDrawerUI" method="_on_bill_20_button_pressed"]
 [connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/CashButtons/Bill10Button" to="UI/CashDrawerUI" method="_on_bill_10_button_pressed"]
 [connection signal="pressed" from="UI/CashDrawerUI/PanelContainer/MarginContainer/VBoxContainer/DrawerVisualArea/CashButtons/Bill5Button" to="UI/CashDrawerUI" method="_on_bill_5_button_pressed"]
