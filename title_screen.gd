@@ -2,6 +2,7 @@ extends Node3D
 
 @export var clock_in_button: Button
 @export var gameplay_scene: PackedScene
+@export var clock_in_screen: PackedScene
 
 @export var breathing_fov_amount: float = 1.0
 @export var breathing_speed: float = 0.65
@@ -18,8 +19,12 @@ func _ready() -> void:
 
 
 func _on_clock_in_pressed() -> void:
-	get_tree().change_scene_to_packed(gameplay_scene)
-
+	#get_tree().change_scene_to_packed(gameplay_scene)
+	TransitionManager.change_scene(
+		clock_in_screen,
+		0.6,
+		0.35
+	)
 func _process(delta: float) -> void:
 	if title_camera == null:
 		return

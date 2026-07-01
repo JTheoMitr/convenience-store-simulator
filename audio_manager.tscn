@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://x7wfr4ohmro2"]
+[gd_scene load_steps=14 format=3 uid="uid://x7wfr4ohmro2"]
 
 [ext_resource type="Script" uid="uid://8bm6l83lcasg" path="res://audio_manager.gd" id="1_jisk1"]
 [ext_resource type="AudioStream" uid="uid://c5860rtivoeat" path="res://sfx/button_clicks/MECHClik_UI Button Click Nailclipper Snip Short Bright 03_ESM_ASMR.wav" id="2_l55mp"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://d1qucb4exq6h7" path="res://sfx/plastic_bag/plastic_bag_chips_rustle.mp3" id="9_7fh0q"]
 [ext_resource type="AudioStream" uid="uid://dsw5l45roobuy" path="res://sfx/cash_register/ESHP_Foley_Coin_01.wav" id="10_wby2p"]
 [ext_resource type="AudioStream" uid="uid://dtogd533rly7d" path="res://sfx/cash_register/cash_drawer_close_001.wav" id="12_14skr"]
+[ext_resource type="AudioStream" uid="uid://qb46nketuxxs" path="res://sfx/ui/ESM_Chime_Score_Money_Achievement.wav" id="12_k4pvn"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_jisk1")
@@ -29,6 +30,7 @@ coin_dime_sound = ExtResource("10_wby2p")
 coin_nickel_sound = ExtResource("10_wby2p")
 coin_penny_sound = ExtResource("10_wby2p")
 drawer_close_sound = ExtResource("12_14skr")
+sale_completed_sound = ExtResource("12_k4pvn")
 
 [node name="UIButtonPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_l55mp")
@@ -88,3 +90,8 @@ pitch_scale = 1.15
 
 [node name="DrawerClosePlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_14skr")
+
+[node name="SaleCompletedPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_k4pvn")
+volume_db = -9.0
+pitch_scale = 1.1

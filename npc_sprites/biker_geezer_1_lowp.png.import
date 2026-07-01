@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6r4ss0e7bs1h"
-path.s3tc="res://.godot/imported/suit_man_1.png-4803dabd6a92e1833580f74d7c8adfb2.s3tc.ctex"
+uid="uid://6q77r1xuan4"
+path.s3tc="res://.godot/imported/biker_geezer_1_lowp.png-362cdeada8ac902794f848dd85bfa82e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://npc_sprites/suit_man_1.png"
-dest_files=["res://.godot/imported/suit_man_1.png-4803dabd6a92e1833580f74d7c8adfb2.s3tc.ctex"]
+source_file="res://npc_sprites/biker_geezer_1_lowp.png"
+dest_files=["res://.godot/imported/biker_geezer_1_lowp.png-362cdeada8ac902794f848dd85bfa82e.s3tc.ctex"]
 
 [params]
 

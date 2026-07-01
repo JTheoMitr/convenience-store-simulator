@@ -102,7 +102,7 @@ func update_selected_items_label() -> void:
 
 	for item_id in selected_items.keys():
 		var count: int = selected_items[item_id]
-		parts.append("%s x%d" % [format_item_name(item_id), count])
+		parts.append("%s (%d)" % [format_item_name(item_id), count])
 
 	if gas_amount > 0.0:
 		parts.append("Gas $%.2f" % gas_amount)

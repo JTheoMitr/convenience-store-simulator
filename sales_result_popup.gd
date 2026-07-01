@@ -1,6 +1,6 @@
 extends Control
 
-@onready var result_title_label: Label = $PanelContainer/MarginContainer/VBoxContainer/ResultTitleLabel
+@onready var result_title_label: RichTextLabel = $PanelContainer/MarginContainer/VBoxContainer/ResultTitleLabel
 @onready var sale_total_label: Label = $PanelContainer/MarginContainer/VBoxContainer/SaleTotalLabel
 @onready var mood_label: Label = $PanelContainer/MarginContainer/VBoxContainer/MoodLabel
 @onready var xp_label: Label = $PanelContainer/MarginContainer/VBoxContainer/XPLabel
@@ -22,11 +22,27 @@ func show_sale_completed(
 	var this_popup_version: int = popup_version
 	print("SALE-RESULT-NOW")
 
-	result_title_label.text = "SALE COMPLETED"
+	result_title_label.text = "[rainbow]SALE COMPLETED"
 	sale_total_label.text = "TOTAL: $%.2f" % sale_total
 	mood_label.text = "CUSTOMER MOOD: %s" % get_mood_state(ending_mood)
-	#mood_label.text = "CUSTOMER MOOD: %d%%" % roundi(ending_mood)
-	xp_label.text = "+%d XP" % xp_earned
+
+	if ending_mood >= 65.0:
+		# Ecstatic / Happy
+		mood_label.modulate = Color(0.35, 1.0, 0.35, 1.0)
+
+	elif ending_mood >= 40.0:
+		# Fine
+		mood_label.modulate = Color(1.0, 0.9, 0.2, 1.0)
+
+	elif ending_mood >= 20.0:
+		# Upset
+		mood_label.modulate = Color(1.0, 0.5, 0.1, 1.0)
+
+	else:
+		# Pissed
+		mood_label.modulate = Color(0.65, 0.08, 0.08, 1.0)
+		#mood_label.text = "CUSTOMER MOOD: %d%%" % roundi(ending_mood)
+		xp_label.text = "+%d XP" % xp_earned
 
 	visible = true
 	modulate.a = 0.0

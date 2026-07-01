@@ -1,9 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://mjigkhvivkin"]
+[gd_scene load_steps=28 format=3 uid="uid://mjigkhvivkin"]
 
 [ext_resource type="PackedScene" uid="uid://dmtb05ljv8xe2" path="res://models/store/6twelve-elbolillo.glb" id="1_ak2if"]
 [ext_resource type="Script" uid="uid://cpl38vdn1wsqc" path="res://title_screen.gd" id="1_ig5kc"]
 [ext_resource type="PackedScene" uid="uid://pf0ein572cyu" path="res://c_store_prototype.tscn" id="2_05l2w"]
 [ext_resource type="PackedScene" uid="uid://bt8p44l30wfqs" path="res://models/smoking_man_downloadable.glb" id="2_ig5kc"]
+[ext_resource type="PackedScene" uid="uid://ucyy05f8wq31" path="res://clock_in_screen.tscn" id="3_skmiq"]
 [ext_resource type="Texture2D" uid="uid://bjvoc8h4s5ojb" path="res://exterior_sprites/red_pixel_rear_car.png" id="5_hafda"]
 [ext_resource type="Script" uid="uid://b3igmmxprpu0i" path="res://cigarette_light.gd" id="5_jqemp"]
 [ext_resource type="FontFile" uid="uid://b2w1ob5cucx3n" path="res://fonts/Revoinex.ttf" id="5_tpml5"]
@@ -132,6 +133,7 @@ animations = [{
 script = ExtResource("1_ig5kc")
 clock_in_button = NodePath("CanvasLayer/UIRoot/MainMenu/ClockInButton")
 gameplay_scene = ExtResource("2_05l2w")
+clock_in_screen = ExtResource("3_skmiq")
 title_camera = NodePath("Camera3D")
 
 [node name="Camera3D" type="Camera3D" parent="."]

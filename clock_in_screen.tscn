@@ -1,0 +1,103 @@
+[gd_scene load_steps=11 format=3 uid="uid://ucyy05f8wq31"]
+
+[ext_resource type="Script" uid="uid://bje01a6ex2xni" path="res://clock_in_screen.gd" id="1_c7a6i"]
+[ext_resource type="FontFile" uid="uid://b2w1ob5cucx3n" path="res://fonts/Revoinex.ttf" id="1_xy2xd"]
+[ext_resource type="Texture2D" uid="uid://cgley8ultjjnd" path="res://ui/card-punch-anim.png" id="2_c7a6i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cun8u"]
+atlas = ExtResource("2_c7a6i")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5amra"]
+atlas = ExtResource("2_c7a6i")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wl85l"]
+atlas = ExtResource("2_c7a6i")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cl106"]
+atlas = ExtResource("2_c7a6i")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4nmx"]
+atlas = ExtResource("2_c7a6i")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwtdk"]
+atlas = ExtResource("2_c7a6i")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4boqs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cun8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5amra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wl85l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cl106")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4nmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwtdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4nmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cl106")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wl85l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5amra")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ClockInScreen" type="Node"]
+script = ExtResource("1_c7a6i")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UIRoot" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="CanvasLayer/UIRoot"]
+layout_mode = 0
+offset_right = 1162.0
+offset_bottom = 656.0
+color = Color(0.066755, 0.066755, 0.066755, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/UIRoot"]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 279.0
+offset_right = 676.0
+offset_bottom = 315.0
+theme_override_fonts/font = ExtResource("1_xy2xd")
+theme_override_font_sizes/font_size = 34
+text = "Clocking In..."
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/UIRoot"]
+position = Vector2(572, 212)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_4boqs")
+autoplay = "default"
+frame_progress = 0.1811964
