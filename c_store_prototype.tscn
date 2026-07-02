@@ -145,12 +145,6 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ngkt"]
-bg_color = Color(0.19607843, 0.19607843, 0.19607843, 0.6156863)
-expand_margin_left = 5.0
-expand_margin_right = 5.0
-expand_margin_bottom = 5.0
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ilf0"]
 bg_color = Color(0.83638793, 0.6858044, 0.14829063, 1)
 border_width_left = 2
@@ -173,6 +167,12 @@ corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ngkt"]
+bg_color = Color(0.19607843, 0.19607843, 0.19607843, 0.6156863)
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7ea5"]
 bg_color = Color(0.09803922, 0.09411765, 0.09019608, 0.5647059)
@@ -664,13 +664,38 @@ theme_override_font_sizes/font_size = 29
 text = "Customer View"
 horizontal_alignment = 1
 
+[node name="MakeChangeButton" type="Button" parent="UI" node_paths=PackedStringArray("order_manager")]
+offset_left = 60.0
+offset_top = 230.0
+offset_right = 229.0
+offset_bottom = 265.0
+theme_override_colors/font_color = Color(0.12591112, 0.12591073, 0.12591082, 1)
+theme_override_fonts/font = ExtResource("5_7hopq")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ilf0")
+text = "Open Drawer"
+script = ExtResource("8_qd1hi")
+order_manager = NodePath("../../Managers/OrderManager")
+
+[node name="CheckoutButton" type="Button" parent="UI" node_paths=PackedStringArray("order_manager")]
+offset_left = 250.0
+offset_top = 230.0
+offset_right = 419.0
+offset_bottom = 265.0
+theme_override_fonts/font = ExtResource("5_7hopq")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_0c0xj")
+text = "Checkout"
+script = ExtResource("2_fknbs")
+order_manager = NodePath("../../Managers/OrderManager")
+
 [node name="RegisterUI" type="PanelContainer" parent="UI"]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 6.0
-offset_top = -140.0
-offset_right = 175.0
+offset_top = -108.0
+offset_right = 193.0
 offset_bottom = -6.0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_0ngkt")
@@ -686,7 +711,7 @@ text = "Register"
 [node name="CurrentTotalLabel" type="Label" parent="UI/RegisterUI/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_7hopq")
-theme_override_font_sizes/font_size = 23
+theme_override_font_sizes/font_size = 29
 text = "Total: $0.00"
 
 [node name="MoneyGivenLabel" type="Label" parent="UI/RegisterUI/VBoxContainer"]
@@ -699,41 +724,20 @@ visible = false
 layout_mode = 2
 placeholder_text = "Enter Change"
 
-[node name="MakeChangeButton" type="Button" parent="UI/RegisterUI/VBoxContainer" node_paths=PackedStringArray("order_manager")]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.12591112, 0.12591073, 0.12591082, 1)
-theme_override_fonts/font = ExtResource("5_7hopq")
-theme_override_font_sizes/font_size = 21
-theme_override_styles/normal = SubResource("StyleBoxFlat_0ilf0")
-text = "Open Drawer"
-script = ExtResource("8_qd1hi")
-order_manager = NodePath("../../../../Managers/OrderManager")
-
-[node name="CheckoutButton" type="Button" parent="UI/RegisterUI/VBoxContainer" node_paths=PackedStringArray("order_manager")]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("5_7hopq")
-theme_override_font_sizes/font_size = 26
-theme_override_styles/normal = SubResource("StyleBoxFlat_0c0xj")
-text = "Checkout"
-script = ExtResource("2_fknbs")
-order_manager = NodePath("../../../../Managers/OrderManager")
-
 [node name="ResultLabel" type="Label" parent="UI/RegisterUI/VBoxContainer"]
-visible = false
 layout_mode = 2
-text = "Result"
 
 [node name="PaymentLabel" type="Label" parent="UI/RegisterUI/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("17_aic0c")
-theme_override_font_sizes/font_size = 19
+theme_override_font_sizes/font_size = 23
 text = "CASH PAID: $20.00"
 
 [node name="ChangeDueLabel" type="Label" parent="UI/RegisterUI/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.94509804, 0.88235295, 0.26666668, 1)
 theme_override_fonts/font = ExtResource("17_aic0c")
-theme_override_font_sizes/font_size = 21
+theme_override_font_sizes/font_size = 24
 text = "CHANGE DUE: $6.50"
 
 [node name="WallItemUI" type="PanelContainer" parent="UI"]
@@ -827,9 +831,9 @@ layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -51.0
+offset_left = -56.0
 offset_top = 35.0
-offset_right = -11.0
+offset_right = -16.0
 offset_bottom = 75.0
 grow_horizontal = 2
 scale = Vector2(1.3, 1.3)
@@ -1203,10 +1207,12 @@ horizontal_alignment = 1
 
 [node name="Managers" type="Node" parent="."]
 
-[node name="StationManager" type="Node" parent="Managers" node_paths=PackedStringArray("camera", "navigation_ui", "counter_marker", "register_marker", "wall_marker", "pinpad_marker", "pinpad_placeholder", "customer_dialogue_panel", "register_ui", "wall_item_ui", "register_monitor", "pinpad_ui", "customer_mood_ui")]
+[node name="StationManager" type="Node" parent="Managers" node_paths=PackedStringArray("camera", "navigation_ui", "checkout_button", "make_change_button", "counter_marker", "register_marker", "wall_marker", "pinpad_marker", "pinpad_placeholder", "customer_dialogue_panel", "register_ui", "wall_item_ui", "register_monitor", "pinpad_ui", "customer_mood_ui", "order_manager")]
 script = ExtResource("2_p7mdc")
 camera = NodePath("../../Camera3D")
 navigation_ui = NodePath("../../UI/NavigationUI")
+checkout_button = NodePath("../../UI/CheckoutButton")
+make_change_button = NodePath("../../UI/MakeChangeButton")
 counter_marker = NodePath("../../StationMarkers/CounterMarker")
 register_marker = NodePath("../../StationMarkers/RegisterMarker")
 wall_marker = NodePath("../../StationMarkers/WallMarker")
@@ -1218,6 +1224,7 @@ wall_item_ui = NodePath("../../UI/WallItemUI")
 register_monitor = NodePath("../../StoreBlockout/RegisterScreen3D/ScreenMesh/RegisterMonitorViewport/RegisterMonitor")
 pinpad_ui = NodePath("../../UI/PinpadUI")
 customer_mood_ui = NodePath("../../UI/CustomerMoodUI")
+order_manager = NodePath("../OrderManager")
 
 [node name="CustomerManager" type="Node" parent="Managers" node_paths=PackedStringArray("dialogue_label", "order_manager", "customers_parent", "customer_spot", "counter_items_parent", "spawn_point_1", "spawn_point_2", "spawn_point_3", "camera", "station_manager", "counter_drag_bounds", "computer_drag_blocker")]
 script = ExtResource("3_ktsie")
@@ -1252,7 +1259,7 @@ register_monitor = NodePath("../../StoreBlockout/RegisterScreen3D/ScreenMesh/Reg
 payment_label = NodePath("../../UI/RegisterUI/VBoxContainer/PaymentLabel")
 change_due_label = NodePath("../../UI/RegisterUI/VBoxContainer/ChangeDueLabel")
 cash_drawer_ui = NodePath("../../UI/CashDrawerUI")
-make_change_button = NodePath("../../UI/RegisterUI/VBoxContainer/MakeChangeButton")
+make_change_button = NodePath("../../UI/MakeChangeButton")
 
 [node name="DayManager" type="Node" parent="Managers"]
 script = ExtResource("23_1gxxx")

@@ -385,7 +385,7 @@ func update_payment_details() -> void:
 		return
 		
 	if make_change_button != null:
-		make_change_button.visible = !is_card_payment()
+		#make_change_button.visible = !is_card_payment()
 		make_change_button.disabled = is_card_payment()
 
 	if is_card_payment():
@@ -423,3 +423,6 @@ func confirm_cash_change(change_given: float) -> void:
 func _ready() -> void:
 	if cash_drawer_ui != null and cash_drawer_ui.has_signal("change_submitted"):
 		cash_drawer_ui.change_submitted.connect(confirm_cash_change)
+
+func should_show_make_change_button() -> bool:
+	return !current_order.is_empty() and !is_card_payment()
