@@ -152,31 +152,34 @@ func checkout() -> void:
 			)
 
 		result_label.text = "Perfect sale! Correct items, gas, and change."
+		AudioManager.play_sale_completed_sound()
 
 		await get_tree().create_timer(1.5).timeout
 
 		if customer_manager != null:
 			customer_manager.next_customer()
 
-	elif !items_correct:
+	elif !items_correct or !gas_correct:
 		result_label.text = build_wrong_order_message(expected_items, selected_items)
+		#AudioManager.play_error()
 
-		if !gas_correct:
-			result_label.text += "\nExpected gas: $%.2f" % get_expected_gas_amount()
-			result_label.text += "\nYou entered: $%.2f" % gas_amount
+		#if !gas_correct:
+			#result_label.text += "\nExpected gas: $%.2f" % get_expected_gas_amount()
+			#result_label.text += "\nYou entered: $%.2f" % gas_amount
 
 		#if !change_correct:
 			#result_label.text += "\nExpected change: $%.2f" % expected_change
 
-	elif !gas_correct:
-		result_label.text = "Wrong gas amount!"
-		result_label.text += "\nExpected: $%.2f" % get_expected_gas_amount()
-		result_label.text += "\nYou entered: $%.2f" % gas_amount
+	#elif !gas_correct:
+		#result_label.text = "Wrong gas amount!"
+		#result_label.text += "\nExpected: $%.2f" % get_expected_gas_amount()
+		#result_label.text += "\nYou entered: $%.2f" % gas_amount
 
 		#if !change_correct:
 			#result_label.text += "\nExpected change: $%.2f" % expected_change
 	elif !cash_change_confirmed:
-		result_label.text = "Make the customer's change first."
+		result_label.text = "Incorrect Change."
+		AudioManager.play_error()
 		return
 	#else:
 		#result_label.text = "Wrong change!\nExpected: $%.2f\nYou entered: $%.2f" % [
@@ -202,8 +205,8 @@ func build_wrong_order_message(expected: Dictionary, actual: Dictionary) -> Stri
 	var message := "Wrong order!\n"
 	AudioManager.play_error()
 
-	message += "Expected: " + dictionary_to_readable_text(expected) + "\n"
-	message += "You selected: " + dictionary_to_readable_text(actual)
+	#message += "Expected: " + dictionary_to_readable_text(expected) + "\n"
+	#message += "You selected: " + dictionary_to_readable_text(actual)
 
 	return message
 

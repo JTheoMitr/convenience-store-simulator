@@ -706,10 +706,11 @@ layout_mode = 2
 [node name="RegisterLabel" type="Label" parent="UI/RegisterUI/VBoxContainer"]
 visible = false
 layout_mode = 2
-text = "Register"
+theme_override_fonts/font = ExtResource("5_7hopq")
 
 [node name="CurrentTotalLabel" type="Label" parent="UI/RegisterUI/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.29411766, 1, 0.2784314, 1)
 theme_override_fonts/font = ExtResource("5_7hopq")
 theme_override_font_sizes/font_size = 29
 text = "Total: $0.00"
@@ -726,6 +727,8 @@ placeholder_text = "Enter Change"
 
 [node name="ResultLabel" type="Label" parent="UI/RegisterUI/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.34117648, 0.27058825, 1)
+theme_override_fonts/font = ExtResource("5_7hopq")
 
 [node name="PaymentLabel" type="Label" parent="UI/RegisterUI/VBoxContainer"]
 layout_mode = 2
